@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Page not found — ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --muted:#5c6470; --line:#dcd5c2;
+  --blue:#1a4d8f; --blue-deep:#0d2b4e; --blue-soft:#e7eef7; --accent:#d9622b;
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --muted:#9aa5b4; --line:#2a3547;
+    --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --muted:#9aa5b4; --line:#2a3547;
+  --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);min-height:100vh;display:flex;align-items:center;justify-content:center;}
+.wrap{max-width:480px;padding:24px;text-align:center;}
+.mark{width:52px;height:52px;border-radius:14px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-family:var(--display);font-size:1.6rem;font-weight:700;margin-bottom:24px;}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .8rem;margin-bottom:1rem;}
+h1{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.1rem);margin:0 0 .8rem;letter-spacing:-.01em;}
+p{color:var(--muted);font-size:1.02rem;line-height:1.6;margin:0 0 2rem;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.7rem 1.4rem;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--accent);color:#fff;}
+.btn:hover{background:#c2551f;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark">R</div>
+    <span class="eyebrow">404</span>
+    <h1>This sheet isn't in the set.</h1>
+    <p>The page you're looking for doesn't exist, or moved. Head back and we'll get you to the right one.</p>
+    <a href="/" class="btn">Back to ReadMyBlueprint</a>
+  </div>
+</body>
+</html>
