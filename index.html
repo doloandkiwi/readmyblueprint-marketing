@@ -72,7 +72,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-links a{text-decoration:none;}
 .nav-links a:hover{color:var(--ink);}
 .nav-cta{display:flex;gap:10px;align-items:center;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
 .btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
@@ -182,8 +182,10 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 }
 @media (max-width:640px){
   .nav-links{display:none;}
-  .nav-row{padding:14px 20px;}
-  .brand{font-size:.95rem;}
+  .nav-row{padding:14px 16px;}
+  .brand{font-size:.88rem;}
+  .nav-cta{gap:6px;}
+  .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;}
 }
 </style>
 
@@ -253,8 +255,8 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 
 <div class="wrap trust">
   <div class="trust-row">
-    <span><span class="t-stat">98%</span> real coverage on a 165-page project set</span>
-    <span><span class="t-stat">1.2M+</span> CMU blocks counted in one real run</span>
+    <span><span class="t-stat">5</span> material categories detected automatically</span>
+    <span><span class="t-stat">100%</span> of counts traced to real vector geometry</span>
     <span><span class="t-stat">0</span> silent guesses — ever</span>
   </div>
 </div>
