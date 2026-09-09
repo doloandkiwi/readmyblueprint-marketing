@@ -88,6 +88,8 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .hero p.lede{font-size:1.15rem;color:var(--muted);max-width:46ch;line-height:1.55;margin:0 0 1.8rem;}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.4rem;}
 .hero-note{font-size:.85rem;color:var(--muted);}
+.scope-note{max-width:60ch;margin:20px auto 0;text-align:left;font-size:.92rem;line-height:1.55;color:var(--ink);background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;}
+.scope-note strong{color:var(--amber);}
 
 /* hero visual: a stylized plan sheet with measurement + confidence badges */
 .plan-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;}
@@ -378,6 +380,7 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
       <span class="eyebrow">Pricing</span>
       <h2>Simple plans, priced for how you actually bid work.</h2>
       <p>No seat minimums, no annual contract required to start — every plan is backed by a 7-day money-back guarantee.</p>
+      <p class="scope-note"><strong>Before you buy:</strong> ReadMyBlueprint measures real vector CAD drawings — the kind exported directly from AutoCAD, Revit, or similar. It does not read scanned or photographed plans, or PDFs that are flat images. If your plan set is a scan rather than a real CAD export, this tool can't measure it.</p>
     </div>
     <div class="pricing-grid">
       <div class="price-card">
@@ -421,6 +424,10 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
       </div>
     </div>
     <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Does this work with scanned or flat-image PDFs?</h4>
+        <p>No. ReadMyBlueprint measures real vector CAD drawings — the kind exported directly from AutoCAD, Revit, or similar software. A scanned or photographed plan has no vector geometry to measure, so the tool will tell you it can't measure those pages rather than guess. If your plan set is a mix of real CAD sheets and scanned ones (common on renovation/repair projects that reference older drawings), the CAD sheets still work fine.</p>
+      </div>
       <div class="faq-item">
         <h4>Is there a free trial?</h4>
         <p>No free trial — instead, every plan comes with a 7-day money-back guarantee, no questions asked. If it's not a fit, email us within 7 days of purchase (or your latest renewal) for a full refund.</p>
