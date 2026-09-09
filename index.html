@@ -107,9 +107,11 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .badge.warn{background:var(--amber-soft);color:var(--amber);}
 
 /* trust strip */
-.trust{padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.trust-row{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:.86rem;color:var(--muted);}
-.trust-row .t-stat{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:1.05rem;}
+.trust{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;}
+.trust-stat{display:flex;flex-direction:column;gap:.3rem;}
+.trust-row .t-stat{font-family:var(--mono);font-weight:700;color:var(--blue);font-size:clamp(2.2rem,4.5vw,3rem);line-height:1;}
+.trust-stat .t-label{font-size:.92rem;color:var(--muted);}
 
 /* sections */
 section{padding:88px 0;}
@@ -184,6 +186,9 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 
 @media (max-width:860px){
   .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid,.faq-grid{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  .trust-row{grid-template-columns:1fr;gap:24px;}
 }
 @media (max-width:640px){
   .nav-links{display:none;}
@@ -260,9 +265,9 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 
 <div class="wrap trust">
   <div class="trust-row">
-    <span><span class="t-stat">5</span> material categories detected automatically</span>
-    <span><span class="t-stat">100%</span> of counts traced to real vector geometry</span>
-    <span><span class="t-stat">0</span> silent guesses — ever</span>
+    <div class="trust-stat"><span class="t-stat">5</span><span class="t-label">material categories detected automatically</span></div>
+    <div class="trust-stat"><span class="t-stat">100%</span><span class="t-label">of counts traced to real vector geometry</span></div>
+    <div class="trust-stat"><span class="t-stat">0</span><span class="t-label">silent guesses — ever</span></div>
   </div>
 </div>
 
