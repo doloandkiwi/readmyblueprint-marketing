@@ -169,6 +169,11 @@ section{padding:88px 0;}
 .price-card li{font-size:.9rem;display:flex;gap:8px;}
 .price-card li::before{content:"✓";color:var(--good);font-weight:700;}
 
+/* pricing FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:56px;}
+.faq-item h4{font-size:1rem;margin:0 0 6px;}
+.faq-item p{color:var(--muted);font-size:.92rem;line-height:1.55;margin:0;}
+
 /* final cta */
 .final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:64px 48px;text-align:center;}
 .final-cta h2{color:#fff;font-size:clamp(1.6rem,3.4vw,2.4rem);margin:0 0 14px;}
@@ -178,7 +183,7 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 
 @media (max-width:860px){
-  .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid{grid-template-columns:1fr;}
+  .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid,.faq-grid{grid-template-columns:1fr;}
 }
 @media (max-width:640px){
   .nav-links{display:none;}
@@ -407,6 +412,32 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
           <li>Priority support</li>
         </ul>
         <a href="mailto:sales@readmyblueprint.com" class="btn btn-ghost">Contact us</a>
+      </div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Is there a free trial?</h4>
+        <p>No free trial — instead, every plan comes with a 7-day money-back guarantee, no questions asked. If it's not a fit, email us within 7 days of purchase (or your latest renewal) for a full refund.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I cancel anytime?</h4>
+        <p>Yes. Solo Estimator cancels anytime from your account's billing portal — you keep access through the end of the period you already paid for. No long-term contract.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What payment methods do you accept?</h4>
+        <p>All major credit and debit cards, processed securely through Stripe.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is my payment information secure?</h4>
+        <p>Yes — we never see or store your card number, expiration date, or CVC. Those go directly to Stripe; we only keep a reference ID so we know which Stripe customer you are.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I need more than one plan set on Per Upload?</h4>
+        <p>Buy as many Per Upload credits as you need, whenever you need them — each one covers one plan set, with no subscription and no expiration.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you offer team or multi-seat pricing?</h4>
+        <p>Yes — the Small Firm plan covers multiple seats with a shared material-mapping library. Email <a href="mailto:sales@readmyblueprint.com" style="text-decoration:underline;">sales@readmyblueprint.com</a> and we'll scope it to your shop.</p>
       </div>
     </div>
   </div>
