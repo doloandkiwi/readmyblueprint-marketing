@@ -188,6 +188,10 @@ section{padding:88px 0;}
 
 footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+.social-links{display:flex;gap:10px;flex-shrink:0;}
+.social-links a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:99px;background:var(--surface-2);color:var(--muted);transition:background .15s ease,color .15s ease;}
+.social-links a:hover{background:var(--blue-soft);color:var(--blue);}
+.social-links svg{width:16px;height:16px;fill:currentColor;}
 
 @media (max-width:860px){
   .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid,.faq-grid{grid-template-columns:1fr;}
@@ -519,6 +523,14 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
     <div class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</div>
     <span>© 2026 ReadMyBlueprint. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
     <span><a href="/about.html" style="text-decoration:underline;">About</a> · <a href="/compare.html" style="text-decoration:underline;">Compare</a> · <a href="/help.html" style="text-decoration:underline;">Help</a> · <a href="/changelog.html" style="text-decoration:underline;">Changelog</a> · <a href="/blog.html" style="text-decoration:underline;">Blog</a> · <a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61594515800442" target="_blank" rel="noopener noreferrer" aria-label="ReadMyBlueprint on Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+      </a>
+      <a href="https://x.com/readmyblueprint" target="_blank" rel="noopener noreferrer" aria-label="ReadMyBlueprint on X">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
   </div>
 </footer>
 
