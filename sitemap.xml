@@ -36,6 +36,11 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.readmyblueprint.com/drywall-takeoff.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.readmyblueprint.com/careers.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
