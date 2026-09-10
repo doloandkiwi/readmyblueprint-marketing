@@ -1,0 +1,221 @@
+<title>CMU Takeoff | ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Get a real concrete masonry unit (CMU) block count from your digital plan set. ReadMyBlueprint measures actual wall area and converts it to a labeled block count — never a silent guess.">
+<link rel="canonical" href="https://www.readmyblueprint.com/cmu-takeoff.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="CMU Takeoff | ReadMyBlueprint">
+<meta property="og:description" content="A real CMU block count from your digital plan set, measured not guessed.">
+<meta property="og:url" content="https://www.readmyblueprint.com/cmu-takeoff.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
+
+.hero{padding:64px 0 32px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:24ch;}
+.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:62ch;line-height:1.6;margin:0;}
+
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:720px;margin:0 0 28px;}
+.section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .6rem;}
+.prose{max-width:72ch;font-size:1.02rem;color:var(--ink);}
+.prose p{margin:0 0 1.1rem;}
+.prose strong{color:var(--blue);}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px 22px;}
+.step .step-num{font-family:var(--mono);font-size:.78rem;color:var(--blue);background:var(--blue-soft);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px;}
+.step h3{font-size:1rem;margin:0 0 8px;}
+.step p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+.limits-box{background:var(--amber-soft);border:1px solid var(--line);border-radius:14px;padding:28px 30px;}
+.limits-box h3{font-size:1.1rem;margin:0 0 12px;color:var(--amber);}
+.limits-box ul{margin:0;padding:0 0 0 1.1rem;}
+.limits-box li{margin-bottom:8px;font-size:.95rem;line-height:1.55;}
+.limits-box li:last-child{margin-bottom:0;}
+
+.mock{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;max-width:520px;}
+.mock-head{padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);}
+.mock-row{padding:14px 16px;border-bottom:1px solid var(--line);}
+.mock-row:last-child{border-bottom:none;}
+.mock-row-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.mock-name{font-weight:600;font-size:.94rem;}
+.mock-metrics{font-family:var(--mono);font-size:.78rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;}
+.badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:99px;}
+.badge.good{background:var(--good-soft);color:var(--good);}
+.badge.warn{background:var(--amber-soft);color:var(--amber);}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .steps{grid-template-columns:1fr;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <a href="/about.html">About</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/help.html">Help</a>
+      <a href="/changelog.html">Changelog</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap hero">
+  <span class="eyebrow">● CMU takeoff</span>
+  <h1>A block count from real wall area, not a per-square-foot rule.</h1>
+  <p class="lede">CMU counts scale fast — a single-story commercial shell can run tens of thousands of blocks, and a small error rate compounds quickly. ReadMyBlueprint measures each wall's real area directly from your plan set and converts it to a block count for that wall's actual thickness.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From wall area to a block count, in three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Measure the real wall area</h3>
+        <p>Every CMU wall is measured directly from the vector geometry in your plan set — length and height, calibrated to the sheet's own printed scale.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Match block size from the legend</h3>
+        <p>Each wall's measured thickness is cross-referenced against your wall-type legend to identify the actual block size specified (commonly 8" or 12" nominal), rather than assuming one size for the whole plan set.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Convert to a labeled block count</h3>
+        <p>Wall area converts into a block count based on that block's real face dimensions, grouped by wall type and labeled matched, ambiguous, or needs confirmation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What it looks like</span>
+      <h2>Block counts grouped by the exact wall they belong to.</h2>
+      <p>No single blended "CMU" line — each block size gets its own row.</p>
+    </div>
+    <div class="mock">
+      <div class="mock-head">Material summary — CMU</div>
+      <div class="mock-row">
+        <div class="mock-row-top"><span class="mock-name">8" CMU wall</span><span class="badge good">Matched</span></div>
+        <div class="mock-metrics"><span>64,831 LF</span><span>655,287 blocks</span></div>
+      </div>
+      <div class="mock-row">
+        <div class="mock-row-top"><span class="mock-name">12" CMU wall</span><span class="badge good">Matched</span></div>
+        <div class="mock-metrics"><span>2,240 LF</span><span>22,624 blocks</span></div>
+      </div>
+      <div class="mock-row">
+        <div class="mock-row-top"><span class="mock-name">Unlabeled masonry wall, 9.6"</span><span class="badge warn">Confirm</span></div>
+        <div class="mock-metrics"><span>118 LF</span><span>block size not found on legend</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Being upfront</span>
+      <h2>What this doesn't do — on purpose.</h2>
+      <p>Part of never presenting a guess as a measurement is telling you plainly where the line sits.</p>
+    </div>
+    <div class="limits-box">
+      <h3>Not covered yet</h3>
+      <ul>
+        <li><strong>Mortar and grout.</strong> ReadMyBlueprint counts block units — mortar joints, grout fill, and mortar mix quantities aren't calculated.</li>
+        <li><strong>Reinforcement.</strong> Vertical and horizontal rebar, and bond beams, are only counted when explicitly labeled — not inferred from wall height or code requirements.</li>
+        <li><strong>Lintels and special units.</strong> Bond beam block, lintel block, and other special shapes are only broken out when your plan set labels them distinctly from standard block.</li>
+        <li><strong>Scanned or flat-image PDFs.</strong> The measurement is only as real as the vector geometry it comes from — a scanned page has none to measure, so those pages are called out rather than guessed at.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>See your own block count.</h2>
+      <p>Upload your plan set and get a real, labeled CMU count in minutes. Your first plan set is $15.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
