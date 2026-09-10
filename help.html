@@ -273,6 +273,10 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   { "item": "2 1/2\" steel stud @ 16\" o.c.", "quantity": 12452, "unit": "ft", "count": 9422, "notes": "" }
 ]</pre>
       <p class="sub">Rate limited to 60 requests/minute per account. A document that doesn't belong to your account returns a 404, the same as everywhere else in the app.</p>
+      <h3>Use it from Claude Desktop or Claude Code</h3>
+      <p>An MCP server wraps this same API so you can ask about your plan sets directly in an AI chat — "what materials did my last upload need?" It runs on your own computer; your key never leaves it except in requests to our own API.</p>
+      <pre>pip install https://readmyblueprint.com/assets/mcp/readmyblueprint_mcp-0.1.0-py3-none-any.whl</pre>
+      <p class="sub">Then add it to Claude Desktop's config as an MCP server (command: <code>readmyblueprint-mcp</code>, env: <code>READMYBLUEPRINT_API_KEY</code>) or run <code>claude mcp add readmyblueprint --env READMYBLUEPRINT_API_KEY=your_key -- readmyblueprint-mcp</code> for Claude Code. Two tools: <code>list_documents</code> and <code>get_document_summary</code>.</p>
     </section>
 
     <section id="faq">
