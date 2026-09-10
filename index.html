@@ -108,6 +108,8 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 
 /* hero visual: a stylized plan sheet with measurement + confidence badges */
 .plan-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;}
+.demo-video{max-width:860px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;}
+.demo-video video{display:block;width:100%;height:auto;background:var(--blue-deep);}
 .plan-card .pc-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);}
 .pc-head .pc-title{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
 .pc-dots{display:flex;gap:6px;}
@@ -345,6 +347,22 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
     <div class="trust-stat"><span class="t-stat">0</span><span class="t-label">silent guesses — ever</span></div>
   </div>
 </div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 40px;text-align:center;">
+      <span class="eyebrow" style="margin-left:auto;margin-right:auto;">Product demo</span>
+      <h2>See it read a real plan set, start to finish.</h2>
+      <p style="margin:0 auto;">Upload to results in one take — no cuts, no staged data. This is the actual app on a real architectural plan set.</p>
+    </div>
+    <div class="demo-video">
+      <video controls preload="metadata" poster="/assets/video/product-demo-poster.jpg">
+        <source src="/assets/video/product-demo.mp4" type="video/mp4">
+        Your browser doesn't support embedded video. <a href="/assets/video/product-demo.mp4">Download the demo</a> instead.
+      </video>
+    </div>
+  </div>
+</section>
 
 <section id="how">
   <div class="wrap">
