@@ -1,13 +1,15 @@
-<title>Blog</title>
+<title>Accuracy, Tested Against Real Plan Sets</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="Real coverage and match-rate numbers from testing ReadMyBlueprint against actual multi-hundred-page commercial plan sets — not a claimed accuracy percentage.">
+<link rel="canonical" href="https://www.readmyblueprint.com/accuracy.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="Accuracy, Tested Against Real Plan Sets — ReadMyBlueprint">
+<meta property="og:description" content="Real coverage and match-rate numbers from real multi-hundred-page commercial plan sets — not a claimed accuracy percentage.">
+<meta property="og:url" content="https://www.readmyblueprint.com/accuracy.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -41,7 +43,7 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
 a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
@@ -65,20 +67,47 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:56px 0 24px;}
+.hero{padding:64px 0 32px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:22ch;}
+.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:66ch;line-height:1.6;margin:0;}
 
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:720px;margin:0 0 28px;}
+.section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .6rem;}
+.prose{max-width:74ch;font-size:1.02rem;color:var(--ink);}
+.prose p{margin:0 0 1.1rem;}
+.prose strong{color:var(--blue);}
+
+.resultsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px;}
+.result-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow);}
+.result-card .n{font-family:var(--mono);font-weight:700;color:var(--blue);font-size:2rem;line-height:1;}
+.result-card .l{color:var(--ink);font-size:.92rem;margin-top:8px;font-weight:600;}
+.result-card .d{color:var(--muted);font-size:.85rem;margin-top:4px;}
+
+.beforeafter{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:20px;}
+.ba-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center;}
+.ba-box .tag{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);}
+.ba-box .n{font-family:var(--mono);font-weight:700;font-size:1.8rem;margin-top:6px;}
+.ba-box.before .n{color:var(--amber);}
+.ba-box.after .n{color:var(--good);}
+.ba-arrow{font-size:1.6rem;color:var(--muted);}
+@media (max-width:640px){ .beforeafter{grid-template-columns:1fr;} .ba-arrow{transform:rotate(90deg);} }
+
+.rule-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:36px 32px;margin-top:8px;}
+.rule-box h3{color:#fff;font-size:1.2rem;margin:0 0 10px;}
+.rule-box p{color:#c7d5e8;margin:0;font-size:1rem;max-width:60ch;}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -156,23 +185,77 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
+  <span class="eyebrow">● Accuracy</span>
+  <h1>Tested against real plan sets, not claimed.</h1>
+  <p class="lede">No accuracy percentage gets put on this site unless it came from actually running the tool against a real, multi-hundred-page commercial plan set and hand-checking the result — the same standard <a href="/about.html" style="text-decoration:underline;color:var(--blue);">described on the About page</a>. These are the real numbers from that testing, including the bugs they found and how they were fixed, not just the numbers that look good.</p>
 </div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Methodology</span>
+      <h2>Real projects, hand-calculated, nothing synthetic.</h2>
+    </div>
+    <div class="prose">
+      <p>Every number below comes from running ReadMyBlueprint against actual real-world plan sets — a 103-page water treatment facility, a 165-page school addition and alteration project, and other commercial sets — not a synthetic test file built to make the tool look good. Each result was checked against what a human estimator would measure by hand from the same drawing.</p>
+      <p><strong>"Coverage"</strong> measures how much of a sheet's real, visible geometry the tool actually extracted and could measure — not an accuracy score on its own, but the completeness signal that has to be right before any measurement on that page can be trusted at all.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Real results</span>
+      <h2>What testing against real plan sets actually found.</h2>
+    </div>
+    <div class="resultsgrid">
+      <div class="result-card"><div class="n">98.6%</div><div class="l">mean geometry coverage</div><div class="d">165-page real school addition/alteration set, full document run</div></div>
+      <div class="result-card"><div class="n">98%</div><div class="l">of sheets clear the coverage threshold</div><div class="d">Same 165-page set — only 4 of 165 pages (2%) flagged, all civil/electrical-site sheets outside this tool's material categories</div></div>
+      <div class="result-card"><div class="n">84%</div><div class="l">of real CMU footage confidently matched</div><div class="d">127,652 of 152,839 LF — see the before/after below for the bug this fixed</div></div>
+      <div class="result-card"><div class="n">13,700 LF</div><div class="l">of framing matched across 3 distinct specs</div><div class="d">2 1/2" steel, 3 5/8" 20-ga steel, and 2x6 wood — correctly kept separate, not merged</div></div>
+      <div class="result-card"><div class="n">~200 sec</div><div class="l">to read a real 165-page plan set</div><div class="d">Full auto-detect pass, every page, on the school addition project</div></div>
+      <div class="result-card"><div class="n">0.125"</div><div class="l">tolerance that correctly stayed "ambiguous"</div><div class="d">A real 2x4 wood stud and a 3 5/8" steel stud landed within 0.125" of each other — flagged, not guessed</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A real bug, and the fix</span>
+      <h2>CMU matching went from 0% to 84% — here's why.</h2>
+    </div>
+    <div class="prose">
+      <p>Early testing found that two different real phrasings of the same wall spec on the same project — a direct "8&quot; CMU" callout on one sheet, and a general note reading "ALL CMU TO BE 8&quot; WYTHE" on another — were being treated as two different, conflicting specs instead of one. The result: every wall on that 152,839 LF of real CMU came back "ambiguous" instead of matched, because two contradictory-looking specs existed for the same thickness.</p>
+    </div>
+    <div class="beforeafter">
+      <div class="ba-box before"><div class="tag">Before the fix</div><div class="n">0%</div><div class="d" style="color:var(--muted);font-size:.85rem;margin-top:6px;">of 152,839 LF of real CMU confidently matched</div></div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-box after"><div class="tag">After the fix</div><div class="n">84%</div><div class="d" style="color:var(--muted);font-size:.85rem;margin-top:6px;">matched, with real computed block counts (1.2M+ blocks)</div></div>
+    </div>
+    <p class="prose" style="margin-top:20px;">The remaining 16% is genuinely different wall thicknesses with no matching spec found anywhere in the document's own text — correctly left unmatched and flagged for the customer to confirm, rather than guessed at to make the percentage look higher.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rule-box">
+      <h3>What this page won't do</h3>
+      <p>It won't claim a single blended "accuracy %" across every project, every material, forever — that number would hide more than it reveals, since accuracy genuinely varies by how a specific architect drew and labeled their sheets. It won't count an "ambiguous" or "needs confirmation" result as a win just because a number came out. And it won't get updated to look better without the underlying bug fix or test run to back it up — every number above stays tied to the real project it came from.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Try it on your own plan set.</h2>
+      <p>Your first plan set is $15 — see exactly what it matches, and exactly what it flags for you to confirm.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap footer-row">
@@ -182,5 +265,5 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </footer>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/chatbot.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
