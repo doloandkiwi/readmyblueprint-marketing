@@ -1,15 +1,15 @@
-<title>Takeoff &amp; Estimating Glossary</title>
+<title>Roadmap</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Plain-English definitions for common material takeoff and estimating terms — stud gauge, CMU wythe, confidence labels, and more.">
-<link rel="canonical" href="https://www.readmyblueprint.com/glossary.html">
+<meta name="description" content="What ReadMyBlueprint is actively considering next, and why — an honest look at what's real, what's a maybe, and what's deliberately not planned.">
+<link rel="canonical" href="https://www.readmyblueprint.com/roadmap.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Takeoff &amp; Estimating Glossary — ReadMyBlueprint">
-<meta property="og:description" content="Plain-English definitions for common material takeoff and estimating terms.">
-<meta property="og:url" content="https://www.readmyblueprint.com/glossary.html">
+<meta property="og:title" content="Roadmap — ReadMyBlueprint">
+<meta property="og:description" content="What's actively being considered next, and why.">
+<meta property="og:url" content="https://www.readmyblueprint.com/roadmap.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -67,27 +67,27 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
-.btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
-.btn-ghost:hover{background:var(--surface-2);}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
 .hero{padding:56px 0 24px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
 .hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:62ch;margin:0;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:64ch;margin:0;}
 
-.glossary{padding:16px 0 64px;display:flex;flex-direction:column;gap:14px;max-width:820px;}
-.term{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px;}
-.term h3{margin:0 0 6px;font-size:1.1rem;}
-.term h3 .abbr{font-family:var(--mono);font-size:.75rem;color:var(--muted);font-weight:400;margin-left:8px;}
-.term p{margin:0;color:var(--ink);font-size:.96rem;}
-.term p a{color:var(--blue);text-decoration:underline;}
+.board{padding:16px 0 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media (max-width:860px){ .board{grid-template-columns:1fr;} }
+.col h2{font-size:1rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--line);}
+.col.considering h2{color:var(--blue);border-color:var(--blue);}
+.col.later h2{color:var(--amber);border-color:var(--amber);}
+.col.not-planned h2{color:var(--muted);}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;}
+.card h3{font-size:.96rem;margin:0 0 6px;}
+.card p{margin:0;font-size:.86rem;color:var(--muted);}
 
-.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:48px 40px;text-align:center;margin-bottom:56px;}
-.final-cta h2{color:#fff;font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 10px;}
-.final-cta p{color:#c7d5e8;font-size:1rem;max-width:52ch;margin:0 auto 20px;}
-.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+.final-cta{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center;margin-bottom:56px;}
+.final-cta h2{font-size:1.2rem;margin:0 0 8px;}
+.final-cta p{color:var(--muted);font-size:.95rem;margin:0 0 16px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -97,21 +97,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="nav-row">
     <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
     <div class="nav-links">
-      <div class="has-mega">
-        <a href="/confidence-labels.html">Features</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>How it works</h4>
-              <a href="/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
-              <a href="/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
-              <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
-              <a href="/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
-              <a href="/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/confidence-labels.html">Features</a>
       <a href="/compare.html">Compare</a>
       <a href="/tour.html">Tour</a>
       <div class="has-mega">
@@ -123,8 +109,8 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
               <a href="/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
               <a href="/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
               <a href="/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
-              <a href="/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
               <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+              <a href="/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
             </div>
           </div>
         </div>
@@ -140,67 +126,36 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Glossary</span>
-  <h1>Takeoff &amp; estimating terms, in plain English.</h1>
-  <p class="lede">No jargon left unexplained. If a term used elsewhere on this site isn't clear, it's probably here.</p>
+  <span class="eyebrow">● Roadmap</span>
+  <h1>What's actually being considered next.</h1>
+  <p class="lede">This isn't a voting board or a marketing wishlist — it's an honest status of what's real, what's a maybe, and what's deliberately not planned right now, and why. See something missing you'd actually pay for? <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;color:var(--blue);">Tell us directly.</a></p>
 </div>
 
-<div class="wrap glossary">
-  <div class="term">
-    <h3>Takeoff</h3>
-    <p>The process of measuring a construction drawing to produce a material quantity list — how many linear feet of wall, how many sheets of drywall, how many studs. The starting point for any bid.</p>
+<div class="wrap board">
+  <div class="col considering">
+    <h2>Actively considering</h2>
+    <div class="card"><h3>AI-agent (MCP) tooling expansion</h3><p>The read-only MCP server just shipped — considering what else would be useful to expose the same way.</p></div>
+    <div class="card"><h3>Re-enabling in-app AI chat</h3><p>Already built, currently off to avoid an unbounded per-question AI cost pre-revenue. Likely comes back in a capped free tier.</p></div>
   </div>
-  <div class="term">
-    <h3>Vector PDF <span class="abbr">vs. raster/scanned</span></h3>
-    <p>A vector PDF stores a drawing as real lines and shapes with exact coordinates — exported directly from design software like AutoCAD or Revit. A raster or scanned PDF is just a flat image (like a photo), with no underlying geometry a computer can measure. ReadMyBlueprint reads vector PDFs only — see <a href="/blog-vector-vs-scanned.html">why that distinction matters</a>.</p>
+  <div class="col later">
+    <h2>Real, but later</h2>
+    <div class="card"><h3>Multi-seat / team accounts</h3><p>Today it's one account per person. Real multi-user support gets built once an actual team asks for it.</p></div>
+    <div class="card"><h3>Regional material/labor cost data</h3><p>A genuinely large feature with real ongoing data costs — worth it once there's revenue to support it.</p></div>
+    <div class="card"><h3>More material categories</h3><p>Expanding beyond steel/wood framing, drywall, plywood, insulation, and CMU is a real product decision, not a content task.</p></div>
   </div>
-  <div class="term">
-    <h3>Wythe</h3>
-    <p>One continuous vertical layer of masonry (CMU block, brick) one unit thick. A wall spec note like "8&quot; CMU, single wythe" describes a wall built from one layer of 8-inch block.</p>
-  </div>
-  <div class="term">
-    <h3>CMU <span class="abbr">Concrete Masonry Unit</span></h3>
-    <p>A standard concrete block, most commonly 8"×8"×16" (nominal). Wall length and height convert to a block count using the block's face area — see the <a href="/cmu-takeoff.html">CMU takeoff page</a> for how ReadMyBlueprint computes this automatically.</p>
-  </div>
-  <div class="term">
-    <h3>Stud gauge</h3>
-    <p>The thickness of steel used in a metal stud, expressed as a gauge number — a lower number means thicker, stronger steel (20-gauge is thinner/lighter than 16-gauge). Read from the wall-type legend, not guessed from the drawn line weight.</p>
-  </div>
-  <div class="term">
-    <h3>O.C. <span class="abbr">On Center</span></h3>
-    <p>The spacing between framing members measured from the center of one to the center of the next — e.g. "16&quot; O.C." means studs spaced 16 inches apart, center to center. Determines how many studs a given wall length needs.</p>
-  </div>
-  <div class="term">
-    <h3>Wall-type legend</h3>
-    <p>A schedule or set of notes on a plan sheet defining what each wall-type tag (e.g. "W1", "W2") actually means — stud size, gauge, spacing, board layers. See <a href="/wall-type-matching.html">how wall-type matching works</a>.</p>
-  </div>
-  <div class="term">
-    <h3>GFA <span class="abbr">Gross Floor Area</span></h3>
-    <p>The total floor area of a building measured to the outside face of exterior walls, including all floors — a whole-building measurement, not a single room's usable space.</p>
-  </div>
-  <div class="term">
-    <h3>NIA / NLA <span class="abbr">Net Internal / Lettable Area</span></h3>
-    <p>The usable floor area inside a space, excluding walls, structure, and shared circulation — the number a tenant actually occupies, smaller than GFA for the same building.</p>
-  </div>
-  <div class="term">
-    <h3>Confidence label</h3>
-    <p>ReadMyBlueprint's own term for how every result is tagged: <strong>matched</strong> (a specific spec found in the document), <strong>ambiguous</strong> (more than one possible spec fits), or <strong>needs confirmation</strong> (no spec found at all). See the <a href="/confidence-labels.html">full explanation</a>.</p>
-  </div>
-  <div class="term">
-    <h3>Assisted takeoff <span class="abbr">vs. automatic</span></h3>
-    <p>A tool that measures from real geometry and flags anything it can't verify for a human to confirm — as opposed to "automatic," which implies no verification step at all. See the <a href="/about.html">one rule</a> this site is built around.</p>
-  </div>
-  <div class="term">
-    <h3>Bid sheet</h3>
-    <p>The final material quantity list, usually exported as a spreadsheet (CSV/Excel), used to price a job and submit a bid.</p>
+  <div class="col not-planned">
+    <h2>Not planned right now</h2>
+    <div class="card"><h3>Native iOS/Android/desktop apps</h3><p>The installable web app (PWA) already covers most of the real benefit for far less overhead.</p></div>
+    <div class="card"><h3>Live "book a demo" calls</h3><p>Runs against the whole point of a $15, no-sales-call product.</p></div>
+    <div class="card"><h3>Scanned/raster PDF support</h3><p>There's no real geometry in a scanned image to measure — this would mean guessing, which is the one thing this tool refuses to do.</p></div>
   </div>
 </div>
 
 <div class="wrap">
   <div class="final-cta">
-    <h2>See these terms applied to a real plan set.</h2>
-    <p>Your first plan set is $15 — see exactly how a real drawing turns into a labeled material list.</p>
-    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    <h2>Have a real use case this doesn't cover yet?</h2>
+    <p>The fastest way onto this page is a real, specific ask from a real user.</p>
+    <a href="mailto:support@readmyblueprint.com" class="btn btn-primary">support@readmyblueprint.com</a>
   </div>
 </div>
 
