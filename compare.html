@@ -51,6 +51,18 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
 .nav-links a{text-decoration:none;}
 .nav-links a:hover{color:var(--ink);}
+.nav-links .has-mega{position:relative;display:flex;align-items:center;}
+.nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
+.nav-links .has-mega>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55;transition:transform .15s ease,margin-top .15s ease;}
+.nav-links .has-mega:hover>a::after,.nav-links .has-mega:focus-within>a::after{transform:rotate(225deg);margin-top:3px;}
+.mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;z-index:30;}
+.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;}
+.mega-panel-inner{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:flex;gap:4px;white-space:nowrap;}
+.mega-col{display:flex;flex-direction:column;min-width:210px;}
+.mega-col h4{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;padding:0 10px;}
+.mega-col a{display:block;padding:8px 10px;border-radius:8px;font-size:.88rem;color:var(--ink);text-decoration:none;line-height:1.3;white-space:normal;}
+.mega-col a:hover{background:var(--surface-2);}
+.mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
@@ -103,10 +115,36 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="nav-row">
     <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
     <div class="nav-links">
-      <a href="/about.html">About</a>
+      <div class="has-mega">
+        <a href="/drywall-takeoff.html">Materials</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>By material</h4>
+              <a href="/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
+              <a href="/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
+              <a href="/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
+              <a href="/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
+              <a href="/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="/compare.html">Compare</a>
-      <a href="/help.html">Help</a>
-      <a href="/changelog.html">Changelog</a>
+      <div class="has-mega">
+        <a href="/help.html">Resources</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Resources</h4>
+              <a href="/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
+              <a href="/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
+              <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/about.html">About</a>
       <a href="/#pricing">Pricing</a>
     </div>
     <div class="nav-cta">
