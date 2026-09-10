@@ -1,14 +1,15 @@
-<title>Vector vs. scanned PDFs</title>
+<title>Public API | ReadMyBlueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Not every PDF is the same underneath. Here's what a vector PDF actually contains, why a scan can't be measured the same way, and how to tell which one you have.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog-vector-vs-scanned.html">
+<meta name="description" content="A real, read-only public API for your ReadMyBlueprint account. List your documents and pull a labeled material summary from your own scripts, with account-scoped API keys.">
+<link rel="canonical" href="https://www.readmyblueprint.com/public-api.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
-<meta property="og:type" content="article">
+
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Vector vs. scanned PDFs: why it matters for automated takeoff">
-<meta property="og:description" content="What's actually inside a PDF, and why it determines whether a takeoff tool can measure it or has to guess.">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog-vector-vs-scanned.html">
+<meta property="og:title" content="Public API | ReadMyBlueprint">
+<meta property="og:description" content="A real, read-only API with account-scoped keys — your documents and material summaries, from your own scripts.">
+<meta property="og:url" content="https://www.readmyblueprint.com/public-api.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -39,17 +40,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:var(--blue);}
+a{color:inherit;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
 .nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;color:var(--muted);}
+.nav-links a{text-decoration:none;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -66,23 +67,42 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
 .btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.hero{padding:64px 0 32px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
-.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
-.article p{font-size:1.03rem;margin:0 0 1.2rem;}
-.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
-.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
-.article li{margin-bottom:.5rem;}
-.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
-.callout strong{color:var(--blue);}
-.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
-.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
-.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:26ch;}
+.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:64ch;line-height:1.6;margin:0;}
+
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:720px;margin:0 0 28px;}
+.section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .6rem;}
+.prose{max-width:72ch;font-size:1.02rem;color:var(--ink);}
+.prose p{margin:0 0 1.1rem;}
+.prose strong{color:var(--blue);}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px 22px;}
+.step .step-num{font-family:var(--mono);font-size:.78rem;color:var(--blue);background:var(--blue-soft);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px;}
+.step h3{font-size:1rem;margin:0 0 8px;}
+.step p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+pre{background:var(--blue-deep);color:#dbe8f8;border-radius:12px;padding:18px 20px;overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6;max-width:100%;}
+code{font-family:var(--mono);}
+
+.faq dt{font-weight:700;margin-top:1.2rem;font-size:1rem;}
+.faq dd{margin:.4rem 0 0;color:var(--muted);font-size:.94rem;line-height:1.55;}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .steps{grid-template-columns:1fr;} }
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -144,36 +164,95 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<article class="article">
-  <span class="eyebrow">● Blog</span>
-  <h1>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h1>
-  <div class="meta">Sep 10, 2026 · 4 min read</div>
+<div class="wrap hero">
+  <span class="eyebrow">● Public API</span>
+  <h1>A real, read-only API for your own documents.</h1>
+  <p class="lede">List your uploaded plan sets and pull a labeled material summary straight into your own scripts, spreadsheets, or internal tools — authenticated with an account-scoped key you control.</p>
+</div>
 
-  <p>Every PDF looks the same on screen — a page, some lines, some text. But underneath, there are really two completely different kinds of file, and which one you have determines whether an automated takeoff tool can measure it at all, or has to guess.</p>
-
-  <h2>What's actually inside a "vector" PDF</h2>
-  <p>When a plan set is exported straight from AutoCAD, Revit, or similar design software, the PDF stores the drawing as real geometric instructions: "draw a line from this exact coordinate to that one," "draw this rectangle at this exact position." Every wall, every dimension, every symbol is a real shape with a real, precise location — the same data the original CAD software used to draw it on screen.</p>
-  <p>That's what makes automated measurement possible in the first place. A tool can read those coordinates directly, apply a scale, and know — not estimate — that a wall is exactly 42.5 feet long, because the number comes from the same data the architect drew with.</p>
-
-  <h2>What's actually inside a scanned PDF</h2>
-  <p>A scanned or photographed plan is a completely different kind of file: it's a picture. There's no line data, no coordinates, no shapes — just a grid of colored pixels, the same as a photo of your desk. A wall isn't "a line from (x1,y1) to (x2,y2)" anymore; it's just a dark smudge of pixels that a human eye recognizes as a wall.</p>
-  <p>A computer can still <em>look</em> at that smudge and guess it's probably a wall — that's what image-recognition-based tools do. But a guess from pixels is fundamentally different from a real measurement from geometry, no matter how good the guess looks.</p>
-
-  <div class="callout"><strong>The practical test:</strong> open the PDF and try to select or highlight a line or piece of text like you would in a Word document. If you can select individual lines and text, it's a real vector file. If the whole page behaves like one big image — nothing selectable, everything moves together — it's a scan.</div>
-
-  <h2>Why this determines what a tool should tell you</h2>
-  <p>This is the actual reason ReadMyBlueprint refuses to measure scanned pages instead of guessing at them. A guess dressed up as a precise-looking number is worse than no number at all — it's the kind of error that doesn't show up until material shows up short on a job site. The honest answer, when a page is a scan, is to say so plainly and ask for a real digital export instead of inventing a confident-sounding figure.</p>
-  <p>The good news: most plan sets that come straight from an architect or engineer's own CAD software are real vector files by default — you don't need to do anything special to get one, and you usually already have it. Scans mostly show up on older renovation projects referencing decades-old drawings, or when a plan set gets printed and re-scanned somewhere along the way.</p>
-
-  <h2>If your set is a mix</h2>
-  <p>It's common for a renovation or repair project to include a few old scanned reference sheets alongside a mostly-current vector set. That's fine — a tool that handles this correctly measures every real vector page normally and just flags the scanned ones individually, rather than treating one bad page as a reason to distrust the whole set.</p>
-
-  <div class="cta-box">
-    <h3>See which kind of file you have</h3>
-    <p>Upload your plan set and find out in minutes — your first one is $15.</p>
-    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From an API key to a material summary, in three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Generate a key</h3>
+        <p>Create an account-scoped API key from your dashboard. Keys are prefixed and hashed server-side — the raw key is shown to you exactly once, the same way most modern APIs handle it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Authenticate your request</h3>
+        <p>Pass your key as a bearer token or a dedicated header. Every request is scoped strictly to your own account's documents — there's no way for a key to see data outside the account that created it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Read your documents and results</h3>
+        <p>List your uploaded documents, then pull a labeled material summary for any of them — the same matched/ambiguous/needs-confirmation data you see in the dashboard, in a format your own code can consume.</p>
+      </div>
+    </div>
   </div>
-</article>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A real example</span>
+      <h2>What a request actually looks like.</h2>
+    </div>
+    <pre><code>curl https://api.readmyblueprint.com/v1/documents \
+  -H "Authorization: Bearer rmb_live_..."
+
+curl https://api.readmyblueprint.com/v1/documents/doc_123/summary \
+  -H "Authorization: Bearer rmb_live_..."</code></pre>
+    <p class="prose">Full endpoint reference, request/response shapes, and rate limits are documented on the <a href="/help.html#api" style="text-decoration:underline;color:var(--blue);">Help Center's API section</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Scope, on purpose</span>
+      <h2>Read-only, by design — for now.</h2>
+    </div>
+    <div class="prose">
+      <p>The public API currently supports reading your own documents and their material summaries — it doesn't upload new plan sets or trigger auto-detection runs. That's a deliberate starting scope: read access is enough to build a lot of useful things (pulling results into an internal dashboard, syncing to a spreadsheet, feeding another tool) without the additional risk surface of a write API that can trigger billable actions or modify account data.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions about the API.</h2>
+    </div>
+    <dl class="faq">
+      <dt>Is the API included in every plan?</dt>
+      <dd>Yes — API access isn't gated behind a higher tier. Any account can generate a key and read its own documents.</dd>
+      <dt>Is there a rate limit?</dt>
+      <dd>Yes, a sane per-key limit applies to keep the service stable for everyone. Details are in the Help Center's API docs.</dd>
+      <dt>Can I create multiple keys?</dt>
+      <dd>Yes — generate separate keys for different scripts or integrations, and revoke any one of them individually without affecting the others.</dd>
+      <dt>What happens if a key is compromised?</dt>
+      <dd>Revoke it immediately from your dashboard. Revocation takes effect right away, and a new key can be generated in its place.</dd>
+      <dt>Can the API upload or trigger a new takeoff?</dt>
+      <dd>Not currently — it's read-only. Uploads and auto-detection runs go through the web app.</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Generate your first API key.</h2>
+      <p>Create a key from your dashboard and start reading your own documents in minutes.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap footer-row">

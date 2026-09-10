@@ -108,6 +108,19 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
     <div class="nav-links">
       <div class="has-mega">
+        <a href="/confidence-labels.html">Features</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>How it works</h4>
+              <a href="/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
+              <a href="/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
+              <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
         <a href="/drywall-takeoff.html">Materials</a>
         <div class="mega-panel">
           <div class="mega-panel-inner">
@@ -160,7 +173,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     </div>
     <div class="prose">
       <p>Manual takeoff works — it's just slow, and slow means fewer bids out the door. The "AI takeoff" tools built to fix that mostly solved the speed problem and quietly introduced a trust problem: a number with no way to tell whether it came from a real measurement or a plausible-sounding guess.</p>
-      <p>ReadMyBlueprint is built the other way around. It starts from a real, calibrated measurement of your actual drawing — never a description of what a wall "probably" is — and only ever adds automation on top of that real geometry: reading your sheet's own printed scale, cross-referencing the wall-type legend your architect already drew, matching a measured thickness against a spec actually present in your document. When it can't do that with real evidence, it says so, in plain language, instead of picking the most likely-looking answer and moving on.</p>
+      <p>ReadMyBlueprint is built the other way around. It starts from a real, calibrated measurement of your actual drawing — never a description of what a wall "probably" is — and only ever adds automation on top of that real geometry: reading your sheet's own printed scale, <a href="/wall-type-matching.html" style="text-decoration:underline;color:var(--blue);">cross-referencing the wall-type legend</a> your architect already drew, matching a measured thickness against a spec actually present in your document. When it can't do that with real evidence, it says so, in plain language, instead of picking the most likely-looking answer and moving on.</p>
       <p>That's <strong>assisted</strong> takeoff, not automatic takeoff. You still verify every bid before it goes out — the tool's job is to make sure your two minutes of double-checking go to the three walls that actually need it, not all three hundred.</p>
     </div>
   </div>
@@ -178,7 +191,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     </div>
     <div class="impact-grid">
       <div class="impact-card"><div class="n">5</div><div class="l">material categories auto-detected: steel &amp; wood framing, drywall, plywood, insulation, CMU</div></div>
-      <div class="impact-card"><div class="n">3</div><div class="l">confidence labels on every result — matched, ambiguous, or needs confirmation. Never unlabeled.</div></div>
+      <div class="impact-card"><div class="n">3</div><div class="l"><a href="/confidence-labels.html" style="text-decoration:underline;color:var(--blue);">confidence labels</a> on every result — matched, ambiguous, or needs confirmation. Never unlabeled.</div></div>
       <div class="impact-card"><div class="n">0</div><div class="l">silent guesses. If it can't measure something with real evidence, it tells you.</div></div>
     </div>
   </div>

@@ -1,14 +1,15 @@
-<title>Vector vs. scanned PDFs</title>
+<title>Confidence Labels | ReadMyBlueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Not every PDF is the same underneath. Here's what a vector PDF actually contains, why a scan can't be measured the same way, and how to tell which one you have.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog-vector-vs-scanned.html">
+<meta name="description" content="Every ReadMyBlueprint result is labeled matched, ambiguous, or needs confirmation. Here's exactly what each label means, how it's decided, and what to do with it.">
+<link rel="canonical" href="https://www.readmyblueprint.com/confidence-labels.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
-<meta property="og:type" content="article">
+
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Vector vs. scanned PDFs: why it matters for automated takeoff">
-<meta property="og:description" content="What's actually inside a PDF, and why it determines whether a takeoff tool can measure it or has to guess.">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog-vector-vs-scanned.html">
+<meta property="og:title" content="Confidence Labels | ReadMyBlueprint">
+<meta property="og:description" content="Every result labeled matched, ambiguous, or needs confirmation — never a silent guess.">
+<meta property="og:url" content="https://www.readmyblueprint.com/confidence-labels.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -39,17 +40,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:var(--blue);}
+a{color:inherit;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
 .nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;color:var(--muted);}
+.nav-links a{text-decoration:none;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -66,23 +67,51 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
 .btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.hero{padding:64px 0 32px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
-.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
-.article p{font-size:1.03rem;margin:0 0 1.2rem;}
-.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
-.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
-.article li{margin-bottom:.5rem;}
-.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
-.callout strong{color:var(--blue);}
-.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
-.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
-.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:26ch;}
+.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:64ch;line-height:1.6;margin:0;}
+
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:720px;margin:0 0 28px;}
+.section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .6rem;}
+.prose{max-width:72ch;font-size:1.02rem;color:var(--ink);}
+.prose p{margin:0 0 1.1rem;}
+.prose strong{color:var(--blue);}
+
+.label-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.label-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;}
+.label-card .dot{width:12px;height:12px;border-radius:99px;margin-bottom:14px;}
+.label-card.matched .dot{background:var(--good);}
+.label-card.ambiguous .dot{background:var(--amber);}
+.label-card.unmatched .dot{background:var(--muted);}
+.label-card h3{font-size:1.05rem;margin:0 0 8px;}
+.label-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+.mock{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;max-width:560px;}
+.mock-head{padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);}
+.mock-row{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.mock-row:last-child{border-bottom:none;}
+.mock-name{font-weight:600;font-size:.92rem;}
+.badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:99px;white-space:nowrap;}
+.badge.good{background:var(--good-soft);color:var(--good);}
+.badge.warn{background:var(--amber-soft);color:var(--amber);}
+
+.faq dt{font-weight:700;margin-top:1.2rem;font-size:1rem;}
+.faq dd{margin:.4rem 0 0;color:var(--muted);font-size:.94rem;line-height:1.55;}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .label-grid{grid-template-columns:1fr;} }
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -144,36 +173,97 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<article class="article">
-  <span class="eyebrow">● Blog</span>
-  <h1>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h1>
-  <div class="meta">Sep 10, 2026 · 4 min read</div>
+<div class="wrap hero">
+  <span class="eyebrow">● Confidence labels</span>
+  <h1>Every result labeled matched, ambiguous, or needs confirmation.</h1>
+  <p class="lede">Instead of one accuracy percentage covering an entire plan set, ReadMyBlueprint labels every individual measurement with exactly how it was produced — so you know precisely where your two minutes of double-checking should go.</p>
+</div>
 
-  <p>Every PDF looks the same on screen — a page, some lines, some text. But underneath, there are really two completely different kinds of file, and which one you have determines whether an automated takeoff tool can measure it at all, or has to guess.</p>
-
-  <h2>What's actually inside a "vector" PDF</h2>
-  <p>When a plan set is exported straight from AutoCAD, Revit, or similar design software, the PDF stores the drawing as real geometric instructions: "draw a line from this exact coordinate to that one," "draw this rectangle at this exact position." Every wall, every dimension, every symbol is a real shape with a real, precise location — the same data the original CAD software used to draw it on screen.</p>
-  <p>That's what makes automated measurement possible in the first place. A tool can read those coordinates directly, apply a scale, and know — not estimate — that a wall is exactly 42.5 feet long, because the number comes from the same data the architect drew with.</p>
-
-  <h2>What's actually inside a scanned PDF</h2>
-  <p>A scanned or photographed plan is a completely different kind of file: it's a picture. There's no line data, no coordinates, no shapes — just a grid of colored pixels, the same as a photo of your desk. A wall isn't "a line from (x1,y1) to (x2,y2)" anymore; it's just a dark smudge of pixels that a human eye recognizes as a wall.</p>
-  <p>A computer can still <em>look</em> at that smudge and guess it's probably a wall — that's what image-recognition-based tools do. But a guess from pixels is fundamentally different from a real measurement from geometry, no matter how good the guess looks.</p>
-
-  <div class="callout"><strong>The practical test:</strong> open the PDF and try to select or highlight a line or piece of text like you would in a Word document. If you can select individual lines and text, it's a real vector file. If the whole page behaves like one big image — nothing selectable, everything moves together — it's a scan.</div>
-
-  <h2>Why this determines what a tool should tell you</h2>
-  <p>This is the actual reason ReadMyBlueprint refuses to measure scanned pages instead of guessing at them. A guess dressed up as a precise-looking number is worse than no number at all — it's the kind of error that doesn't show up until material shows up short on a job site. The honest answer, when a page is a scan, is to say so plainly and ask for a real digital export instead of inventing a confident-sounding figure.</p>
-  <p>The good news: most plan sets that come straight from an architect or engineer's own CAD software are real vector files by default — you don't need to do anything special to get one, and you usually already have it. Scans mostly show up on older renovation projects referencing decades-old drawings, or when a plan set gets printed and re-scanned somewhere along the way.</p>
-
-  <h2>If your set is a mix</h2>
-  <p>It's common for a renovation or repair project to include a few old scanned reference sheets alongside a mostly-current vector set. That's fine — a tool that handles this correctly measures every real vector page normally and just flags the scanned ones individually, rather than treating one bad page as a reason to distrust the whole set.</p>
-
-  <div class="cta-box">
-    <h3>See which kind of file you have</h3>
-    <p>Upload your plan set and find out in minutes — your first one is $15.</p>
-    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The three labels</span>
+      <h2>What each one actually means.</h2>
+    </div>
+    <div class="label-grid">
+      <div class="label-card matched">
+        <div class="dot"></div>
+        <h3>Matched</h3>
+        <p>The wall's measured thickness lines up with a spec found directly on your own drawings — a wall-type legend, a callout, a schedule. The number is ready to use as-is.</p>
+      </div>
+      <div class="label-card ambiguous">
+        <div class="dot"></div>
+        <h3>Ambiguous</h3>
+        <p>More than one material or assembly could explain this wall's measured thickness. ReadMyBlueprint tells you exactly which candidates are possible, instead of silently picking one for you.</p>
+      </div>
+      <div class="label-card unmatched">
+        <div class="dot"></div>
+        <h3>Needs confirmation</h3>
+        <p>No matching spec was found anywhere in the document for this wall. The length and location are still exact — the material assignment just needs a quick human check.</p>
+      </div>
+    </div>
   </div>
-</article>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it shows up</span>
+      <h2>Labels travel with the result, everywhere.</h2>
+      <p>A label isn't a one-time note buried in a report — it's attached to the row in your results dashboard and carried straight through to your CSV or Excel export.</p>
+    </div>
+    <div class="mock">
+      <div class="mock-head">Material summary — labeled</div>
+      <div class="mock-row"><span class="mock-name">3-5/8" 20-ga steel stud @ 16" o.c.</span><span class="badge good">Matched</span></div>
+      <div class="mock-row"><span class="mock-name">8" CMU block</span><span class="badge good">Matched</span></div>
+      <div class="mock-row"><span class="mock-name">Unlabeled partition, 4.4"</span><span class="badge warn">Confirm</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why this instead of a percentage</span>
+      <h2>An average can't tell you which row to check.</h2>
+    </div>
+    <div class="prose">
+      <p>Most takeoff tools put a single accuracy percentage on their homepage — 95%, 98%. That number is an average over some internal test set, and averages hide exactly the thing you need to know: which specific result in front of you right now is solid, and which one needs a second look.</p>
+      <p>A label on every row is a different kind of claim — one you can check yourself, on your own plan set, instead of one you have to take on faith. <strong>We don't publish a blended accuracy percentage either</strong>, for the same reason: there's no independent benchmark every takeoff tool runs, so those numbers aren't even comparable between vendors. What we can show you is exactly how each of your own numbers was produced.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions about labels.</h2>
+    </div>
+    <dl class="faq">
+      <dt>Can I override a label?</dt>
+      <dd>Yes. Every flagged result is editable — confirm the material yourself and it's recorded as your own confirmation, not silently reclassified as "matched."</dd>
+      <dt>Does "matched" guarantee the number is correct?</dt>
+      <dd>It means the measurement traces to real geometry and a real spec found in your document — the same standard a careful human estimator would use. It's not a guarantee against an error in the original drawing itself.</dd>
+      <dt>What's the practical difference between "ambiguous" and "needs confirmation"?</dt>
+      <dd>Ambiguous means ReadMyBlueprint found multiple possible specs and can't pick between them. Needs confirmation means it found none at all. Both need a human decision — the label tells you why.</dd>
+      <dt>Do labels show up in my exported CSV or Excel file?</dt>
+      <dd>Yes — every export includes the label column, so anyone reviewing the file downstream sees exactly what was verified and what wasn't.</dd>
+      <dt>What happens to a "needs confirmation" row if I never confirm it?</dt>
+      <dd>It stays flagged in your export. ReadMyBlueprint never quietly converts an unconfirmed result into a confident-looking number.</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>See the labels on your own plan set.</h2>
+      <p>Upload your plan set and see exactly which results are matched, and which need a second look. Your first one is $15.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap footer-row">
