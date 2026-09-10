@@ -1,0 +1,148 @@
+<title>Why "98% accurate" should make you suspicious</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-accuracy-percentage.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="Why &quot;98% accurate&quot; should make you suspicious">
+<meta property="og:description" content="What an accuracy percentage actually hides, and why a label on every individual measurement tells you more.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-accuracy-percentage.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;color:var(--muted);}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
+
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin:24px 0;}
+.example .row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:.95rem;gap:12px;}
+.example .row:last-child{border-bottom:none;}
+.example .label{font-weight:600;}
+.badge{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;padding:.2rem .55rem;border-radius:99px;white-space:nowrap;}
+.badge.good{background:var(--good-soft);color:var(--good);}
+.badge.warn{background:var(--amber-soft);color:var(--amber);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <a href="/about.html">About</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/help.html">Help</a>
+      <a href="/changelog.html">Changelog</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <span class="eyebrow">● Blog</span>
+  <h1>Why "98% accurate" should make you suspicious, not confident</h1>
+  <div class="meta">Sep 10, 2026 · 5 min read</div>
+
+  <p>Almost every AI takeoff tool puts a single accuracy number on its homepage — 95%, 98%, sometimes higher. It reads like a guarantee. It isn't one, and it can't be, because a single percentage is structurally incapable of telling you the thing you actually need to know: <em>which specific number in front of you right now is solid, and which one needs a second look.</em></p>
+
+  <h2>What a blended percentage actually hides</h2>
+  <p>An accuracy claim is almost always an average across some internal test set — a batch of plan sets the vendor chose, measured against some ground truth the vendor also chose. That's not dishonest on its own, but averaging hides exactly the information that matters on your project:</p>
+  <ul>
+    <li><strong>It doesn't tell you what was easy and what was hard.</strong> A clean, fully-labeled commercial set full of continuous straight walls raises the average. Your actual plan set — with a hand-annotated addendum sheet or an unusual wall type — might sit nowhere near that average.</li>
+    <li><strong>It doesn't tell you which walls on your set it applies to.</strong> "98% accurate" says nothing about whether the 2% of misses landed on your CMU exterior or your interior partitions. An aggregate number can't localize to your project.</li>
+    <li><strong>It's rarely independently verified.</strong> Most of these figures come from the vendor's own internal testing, on their own chosen benchmark. There's no industry-standard test every tool runs, so the numbers aren't even comparable to each other.</li>
+  </ul>
+
+  <h2>What a label on every measurement does instead</h2>
+  <p>Instead of one number covering an entire plan set, a more useful signal is a label on <em>each individual result</em>, reflecting exactly how that specific number was produced:</p>
+  <div class="example">
+    <div class="row"><span class="label">3-5/8" 20-ga steel stud @ 16" o.c. — 312 studs</span><span class="badge good">Matched</span></div>
+    <div class="row"><span class="label">8" CMU block — 4,180 blocks</span><span class="badge good">Matched</span></div>
+    <div class="row"><span class="label">Unlabeled partition, 4.4" — 86 LF</span><span class="badge warn">Confirm</span></div>
+  </div>
+  <p>The first two rows come from a wall whose measured thickness matched a spec that's actually printed on the wall-type legend — there's a real, checkable reason to trust that number. The third row is a wall with no matching spec anywhere in the document; the length is still exact, but the material can't be determined from the drawing alone, so it's flagged rather than filled in with a best guess.</p>
+  <p>That's a fundamentally different kind of information than "98% accurate overall." It tells you exactly where your two minutes of double-checking should go — not "trust the whole thing" or "distrust the whole thing," but "these three rows, specifically."</p>
+
+  <div class="callout"><strong>Why this is actually harder to fake:</strong> a blended accuracy percentage is one number you can pick before you ship the product. A confidence label on every row has to be right on <em>that specific result</em>, every time — there's no averaging away a wrong label on a wall someone's about to bid off of.</div>
+
+  <h2>Why we don't publish an accuracy percentage either</h2>
+  <p>This isn't a claim that ReadMyBlueprint is more accurate than any competitor's stated figure — there's no independent benchmark that every takeoff tool runs, so those numbers aren't comparable to begin with, and we're not going to invent one just to have a bigger number on the homepage. What we can tell you, and show you on every single result, is exactly how that number was produced: measured from real geometry and matched to a real spec, or flagged because it wasn't. That's a claim you can check yourself, on your own plan set, instead of one you have to take on faith.</p>
+
+  <div class="cta-box">
+    <h3>See the labels on your own plan set</h3>
+    <p>Upload your plan set and see exactly which results are matched, and which need a second look. Your first one is $15.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
