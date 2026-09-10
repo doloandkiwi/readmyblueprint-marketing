@@ -1,0 +1,217 @@
+<title>Help Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How to use ReadMyBlueprint, from upload to a finished bid sheet, plus answers to common questions.">
+<link rel="canonical" href="https://www.readmyblueprint.com/help.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="ReadMyBlueprint Help Center">
+<meta property="og:description" content="How to use ReadMyBlueprint, from upload to a finished bid sheet.">
+<meta property="og:url" content="https://www.readmyblueprint.com/help.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;color:var(--muted);}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+@media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
+
+.hero{padding:56px 0 24px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
+
+.layout{display:grid;grid-template-columns:220px 1fr;gap:48px;padding:16px 0 64px;align-items:start;}
+.toc{position:sticky;top:88px;display:flex;flex-direction:column;gap:10px;font-size:.9rem;}
+.toc a{text-decoration:none;color:var(--muted);}
+.toc a:hover{color:var(--blue);}
+.toc .h{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 2px;}
+.toc .h:first-child{margin-top:0;}
+
+.content section{margin-bottom:48px;}
+.content h2{font-size:1.4rem;margin:0 0 6px;padding-top:8px;}
+.content .sub{color:var(--muted);font-size:.95rem;margin:0 0 20px;}
+.steps{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);}
+.step-row{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);}
+.step-row:last-child{border-bottom:none;}
+.step-num{width:32px;height:32px;border-radius:8px;background:var(--blue-soft);color:var(--blue);font-family:var(--mono);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.step-row h3{font-size:1.02rem;margin:0 0 4px;}
+.step-row p{margin:0;color:var(--ink);font-size:.94rem;}
+
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-item h3{font-size:1rem;margin:0 0 6px;}
+.faq-item p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6;}
+
+.conf-list{display:flex;flex-direction:column;gap:14px;}
+.conf-item{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+.conf-dot{width:11px;height:11px;border-radius:99px;margin-top:5px;flex-shrink:0;}
+.conf-dot.matched{background:var(--good);}
+.conf-dot.ambiguous{background:var(--amber);}
+.conf-dot.unmatched{background:var(--muted);}
+.conf-item strong{display:block;font-size:.96rem;margin-bottom:2px;}
+.conf-item span{color:var(--muted);font-size:.9rem;}
+
+@media (max-width:860px){ .layout{grid-template-columns:1fr;} .toc{position:static;flex-direction:row;flex-wrap:wrap;gap:14px;} .toc .h{display:none;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <a href="/about.html">About</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/help.html">Help</a>
+      <a href="/changelog.html">Changelog</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap hero">
+  <span class="eyebrow">● Help Center</span>
+  <h1>How ReadMyBlueprint works</h1>
+  <p class="lede">The full walkthrough, start to finish — the same guide you'll see in your account, plus answers to the questions we hear most.</p>
+</div>
+
+<div class="wrap layout">
+  <div class="toc">
+    <div class="h">On this page</div>
+    <a href="#walkthrough">The full walkthrough</a>
+    <a href="#confidence">What the labels mean</a>
+    <a href="#faq">Common questions</a>
+  </div>
+
+  <div class="content">
+    <section id="walkthrough">
+      <h2>The full walkthrough</h2>
+      <p class="sub">Here's the whole flow, from upload to a finished bid sheet.</p>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div><h3>Upload your plan set</h3><p>It needs to be a real digital plan file — the kind your architect or engineer exports from their own design software — not a scanned or photographed page.</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div><h3>Let it read the whole document</h3><p>As soon as your plan set opens, it starts scanning every page automatically. A progress bar shows roughly how long is left; a large plan set (100+ pages) can take several minutes.</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div><h3>Don't worry about "Not calibrated yet"</h3><p>That message is about the separate, optional manual measuring tool on each page — it has nothing to do with the automatic scan, which reads each page's own printed scale by itself. You only need to calibrate a page if you plan to manually click-measure something on it.</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">4</div>
+          <div><h3>Review your results</h3><p>Once the scan finishes, click "Open results" to see a table with one column per material — CMU, Metal, Lumber, Drywall, Insulation. Each row is labeled matched, ambiguous, or needs confirmation (see below for what those mean).</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">5</div>
+          <div><h3>Add anything it didn't catch</h3><p>The 5 categories above cover most framing and masonry, but doors, windows, pipe, fixtures, and other one-off items aren't auto-detected. Click any page, then either click a line/shape directly on the drawing or use "Manual count" in the sidebar — both add straight to your takeoff, using the same calibrated scale as everything else.</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">6</div>
+          <div><h3>Export your bid sheet</h3><p>Use "Export these results (CSV)" above the results table for the auto-detected materials, or the Export CSV/Excel buttons in the sidebar once you've added anything manually — either one gives you a spreadsheet ready to drop into a bid.</p></div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">7</div>
+          <div><h3>Come back anytime</h3><p>Every plan set you've uploaded stays listed under "Your projects," and your billing and usage are always visible in the Billing panel at the top of the page.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="confidence">
+      <h2>What the labels mean</h2>
+      <p class="sub">Every auto-detected result is labeled — never left unmarked.</p>
+      <div class="conf-list">
+        <div class="conf-item"><span class="conf-dot matched"></span><div><strong>Matched</strong><span>The wall's measured thickness lines up with a spec found directly on your own drawings. Ready to use.</span></div></div>
+        <div class="conf-item"><span class="conf-dot ambiguous"></span><div><strong>Ambiguous</strong><span>More than one material could explain that thickness, so you're shown exactly which ones instead of a silent guess.</span></div></div>
+        <div class="conf-item"><span class="conf-dot unmatched"></span><div><strong>Needs confirmation</strong><span>No matching spec was found anywhere in the document. The measurement itself is still exact — the material just needs a quick check from you.</span></div></div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Common questions</h2>
+      <div class="faq-item">
+        <h3>How many plan sets can I upload?</h3>
+        <p>Solo Estimator includes 10 plan sets a month. If you go over, a one-time Per Upload credit ($49) covers the extra one — you're never just locked out. If you're consistently over 10, Small Firm gives unlimited plan sets.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why is a page showing a scanned/raster PDF error?</h3>
+        <p>This tool only measures the actual lines and shapes drawn in a digital plan file — not a scanned image. A scanned or photographed sheet has nothing on it for the tool to measure, so it can't be traced automatically. If a specific page is scanned but the rest of your plan set is a real digital file, the other pages still work fine.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I cancel my subscription or get a refund?</h3>
+        <p>Click "Manage billing" in the Billing panel to open your account portal, where you can cancel any time — you keep access through the period you already paid for. Not happy with your results on Solo Estimator or Per Upload within 7 days of a purchase or renewal? Email <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a> for a full refund, no questions asked. The $15 first-upload offer is final sale and isn't covered by this guarantee.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data secure?</h3>
+        <p>Your plan sets and takeoff data are private to your account — every request is scoped so another customer's data is never visible to you, and vice versa. We never see or store your card details; those go directly to Stripe. See our <a href="/privacy.html">Privacy Policy</a> for the full details.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this work with scanned or flat-image PDFs?</h3>
+        <p>No — it needs a real digital plan file exported from design software like AutoCAD or Revit. See "Why is a page showing a scanned/raster PDF error?" above.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Still stuck?</h3>
+        <p>Email <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a> and we'll help directly.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->

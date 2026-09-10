@@ -1,0 +1,196 @@
+<title>ReadMyBlueprint vs. STACK & Bluebeam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An honest comparison: where ReadMyBlueprint fits next to larger preconstruction platforms like STACK and Bluebeam, and where it doesn't.">
+<link rel="canonical" href="https://www.readmyblueprint.com/compare.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="ReadMyBlueprint vs. STACK & Bluebeam">
+<meta property="og:description" content="An honest comparison of where ReadMyBlueprint fits, and where it doesn't.">
+<meta property="og:url" content="https://www.readmyblueprint.com/compare.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
+
+.hero{padding:56px 0 24px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:0 0 .8rem;max-width:22ch;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:66ch;margin:0;}
+
+section{padding:48px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:680px;margin:0 0 24px;}
+.section-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0 0 .5rem;}
+.section-head p{color:var(--muted);margin:0;}
+
+table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.92rem;}
+table.cmp th, table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--surface-2);}
+table.cmp td:first-child{font-weight:600;width:26%;}
+.tbl-wrap{overflow-x:auto;}
+
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
+.fit-card.good{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
+.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
+.fit-card.good h3{color:#fff;}
+.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
+.fit-card:not(.good) li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
+.fit-card.good li::before{content:"✓";color:#8fd4a8;font-weight:700;flex-shrink:0;}
+
+.note{background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:.9rem;margin-top:20px;}
+.note strong{color:var(--amber);}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <a href="/about.html">About</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/help.html">Help</a>
+      <a href="/changelog.html">Changelog</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap hero">
+  <span class="eyebrow">● Compare</span>
+  <h1>ReadMyBlueprint vs. STACK &amp; Bluebeam</h1>
+  <p class="lede">STACK and Bluebeam are real, established platforms — this isn't a "we're better at everything" page. It's an honest look at where each one actually fits, so you don't buy more (or less) than you need.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The short version</span>
+      <h2>Same job, different scope.</h2>
+      <p>STACK and Bluebeam are full preconstruction-and-field platforms: takeoff, estimating, project management, field collaboration, mobile apps, regional cost data, and more, priced and sold accordingly. ReadMyBlueprint does one job — turning a real digital plan set into a labeled material count — and is priced for a solo estimator or small shop instead of an enterprise rollout.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>&nbsp;</th><th>ReadMyBlueprint</th><th>STACK / Bluebeam</th></tr>
+        <tr><td>Core focus</td><td>Automated material takeoff from real vector plan data</td><td>Full preconstruction + field/project management suite</td></tr>
+        <tr><td>Pricing</td><td>Flat: $49/plan set, or $199/mo for 10/month — shown up front, no call required</td><td>Per-seat, "as low as" pricing — full price typically requires a sales conversation</td></tr>
+        <tr><td>Getting started</td><td>Self-serve signup, first plan set for $15</td><td>Free trial or demo call, onboarding-assisted</td></tr>
+        <tr><td>Built for</td><td>A homeowner doing one remodel, or a solo estimator/small shop</td><td>Larger GC and subcontractor teams, multi-seat organizations</td></tr>
+        <tr><td>Auto-detected materials</td><td>Metal &amp; wood framing, drywall, plywood, insulation, CMU</td><td>Broader trade/material coverage across a larger platform</td></tr>
+        <tr><td>Field &amp; project management</td><td>Not offered — takeoff only</td><td>Full field app: daily reports, RFIs, punch lists, markup</td></tr>
+        <tr><td>Mobile app</td><td>Works in any mobile browser, no install</td><td>Native iOS/Android/Windows apps</td></tr>
+        <tr><td>Team seats</td><td>Single-user accounts today; Small Firm is a custom quote</td><td>Unlimited viewer seats built into most plans</td></tr>
+      </table>
+    </div>
+    <div class="note"><strong>What we won't claim:</strong> we haven't run a side-by-side accuracy benchmark against either platform, and neither has anyone independent, as far as we know — so we're not going to tell you our numbers are "more accurate." What we can tell you is exactly how our own numbers are produced: real calibrated geometry, labeled matched/ambiguous/needs-confirmation, never a silent guess. See <a href="/about.html" style="text-decoration:underline;">how it's built</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Which one fits you</span>
+      <h2>Pick based on the job, not the brand.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>STACK or Bluebeam probably fits better if…</h3>
+        <ul>
+          <li>You need field collaboration, daily reports, or RFIs — not just takeoff</li>
+          <li>You're outfitting a multi-person team with shared seats and admin controls</li>
+          <li>You want a native mobile app for jobsite crews</li>
+          <li>You need built-in regional material/labor cost data</li>
+        </ul>
+      </div>
+      <div class="fit-card good">
+        <h3>ReadMyBlueprint probably fits better if…</h3>
+        <ul>
+          <li>You just need a fast, trustworthy material count from a real plan set</li>
+          <li>You want to see the real price and start today, with no sales call</li>
+          <li>You're a solo estimator, small shop, or a homeowner doing one project</li>
+          <li>You want to try it for $15 before deciding on anything bigger</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>See your own numbers first.</h2>
+      <p>Your first plan set is $15 — no sales call, no subscription required to start.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
