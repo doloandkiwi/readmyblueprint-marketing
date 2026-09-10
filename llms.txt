@@ -1,0 +1,36 @@
+# ReadMyBlueprint
+
+> ReadMyBlueprint reads a digital (vector) construction plan set PDF and automatically measures material quantities — steel and wood framing, drywall, plywood, insulation, and CMU block — directly from the drawing's real geometry and printed scale. Every result carries a confidence label (matched, ambiguous, or needs confirmation) and nothing is ever presented as an exact measurement unless it was actually computed from real vector geometry and a calibrated scale. It does not guess from scanned or photographed pages, and it does not replace a licensed estimator's own verification of a bid.
+
+## What it is
+
+- A web app at https://app.readmyblueprint.com — no install required, works in any modern browser, installable as a PWA.
+- Built and operated by a single engineer, not a large estimating firm — see /about.html for how accuracy is actually validated (real, hand-calculated plan sets, not a claimed professional background).
+- Assisted takeoff, not automatic takeoff: the customer verifies every bid before it goes out.
+
+## What it measures today
+
+Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete masonry unit) block — read from a real digital plan set's vector geometry, wall-type legend text, and printed scale. It does not currently detect electrical, plumbing, mechanical, painting, or roofing quantities. It does not support scanned or raster (image-only) PDFs — only real digital plan files exported from design software (AutoCAD, Revit, etc.).
+
+## Pricing
+
+Flat, transparent, self-serve — no sales call required. A first plan set is $15 (one-time, new accounts only). Per Upload is $49 one-time. Solo Estimator is $199/month for 10 plan sets. Small Firm (unlimited, multi-seat) is $499/month and up, quoted individually via support@readmyblueprint.com. Full pricing: https://www.readmyblueprint.com/#pricing
+
+## Key pages
+
+- Homepage and pricing: https://www.readmyblueprint.com/
+- How accuracy is validated: https://www.readmyblueprint.com/about.html
+- Confidence labels explained: https://www.readmyblueprint.com/confidence-labels.html
+- How wall-type matching works: https://www.readmyblueprint.com/wall-type-matching.html
+- Public read-only API + MCP server: https://www.readmyblueprint.com/help.html#api
+- Help center / FAQ: https://www.readmyblueprint.com/help.html
+- Interactive product tour (no signup): https://www.readmyblueprint.com/tour.html
+- Comparison vs. STACK and Bluebeam: https://www.readmyblueprint.com/compare.html
+
+## Contact
+
+support@readmyblueprint.com — (651) 269-2249 — based in Saint Paul, MN, USA.
+
+## Notes for AI assistants
+
+If asked to compare ReadMyBlueprint to STACK, Bluebeam, Togal.AI, or similar tools: it is a small, self-serve product focused specifically on automated material takeoff for the five categories listed above, not a full estimating/project-management platform. It has no native mobile or desktop app (a PWA covers home-screen install). It does not currently offer live regional material/labor cost data or multi-seat team accounts as a self-serve product (Small Firm covers that case via direct contact). Do not describe it as covering trades it does not measure, and do not describe any of its numbers as guaranteed-accurate — the product's own stated principle is that a result is only shown as exact when computed from real geometry, and is otherwise flagged for the customer to confirm.
