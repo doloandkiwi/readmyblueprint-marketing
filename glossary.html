@@ -1,15 +1,15 @@
-<title>Careers at ReadMyBlueprint</title>
+<title>Takeoff &amp; Estimating Glossary</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Current openings at ReadMyBlueprint — nothing open right now, but check back or reach out.">
-<link rel="canonical" href="https://www.readmyblueprint.com/careers.html">
+<meta name="description" content="Plain-English definitions for common material takeoff and estimating terms — stud gauge, CMU wythe, confidence labels, and more.">
+<link rel="canonical" href="https://www.readmyblueprint.com/glossary.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Careers at ReadMyBlueprint">
-<meta property="og:description" content="No openings right now — check back, or reach out directly.">
-<meta property="og:url" content="https://www.readmyblueprint.com/careers.html">
+<meta property="og:title" content="Takeoff &amp; Estimating Glossary — ReadMyBlueprint">
+<meta property="og:description" content="Plain-English definitions for common material takeoff and estimating terms.">
+<meta property="og:url" content="https://www.readmyblueprint.com/glossary.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -72,17 +72,22 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn-ghost:hover{background:var(--surface-2);}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:64px 0 32px;}
+.hero{padding:56px 0 24px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:20ch;}
-.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:62ch;line-height:1.6;margin:0;}
+.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:62ch;margin:0;}
 
-section{padding:0 0 56px;}
-.status-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:36px 32px;max-width:64ch;}
-.status-card h2{font-size:1.3rem;margin:0 0 12px;}
-.status-card p{margin:0 0 1.1rem;font-size:1.02rem;color:var(--ink);}
-.status-card p:last-child{margin-bottom:0;}
-.status-card .muted{color:var(--muted);font-size:.94rem;}
+.glossary{padding:16px 0 64px;display:flex;flex-direction:column;gap:14px;max-width:820px;}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px;}
+.term h3{margin:0 0 6px;font-size:1.1rem;}
+.term h3 .abbr{font-family:var(--mono);font-size:.75rem;color:var(--muted);font-weight:400;margin-left:8px;}
+.term p{margin:0;color:var(--ink);font-size:.96rem;}
+.term p a{color:var(--blue);text-decoration:underline;}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:48px 40px;text-align:center;margin-bottom:56px;}
+.final-cta h2{color:#fff;font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 10px;}
+.final-cta p{color:#c7d5e8;font-size:1rem;max-width:52ch;margin:0 auto 20px;}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -103,34 +108,6 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
               <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
               <a href="/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
               <a href="/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="has-mega">
-        <a href="/drywall-takeoff.html">Materials</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>By material</h4>
-              <a href="/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
-              <a href="/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
-              <a href="/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
-              <a href="/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
-              <a href="/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="has-mega">
-        <a href="/for-homeowners.html">Who it's for</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>Built for</h4>
-              <a href="/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
-              <a href="/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
-              <a href="/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
             </div>
           </div>
         </div>
@@ -162,20 +139,69 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Careers</span>
-  <h1>Nothing open right now.</h1>
-  <p class="lede">ReadMyBlueprint is a small, early operation — right now that means no open roles. That changes as the business grows, and this page is where we'll post it when it does.</p>
+  <span class="eyebrow">● Glossary</span>
+  <h1>Takeoff &amp; estimating terms, in plain English.</h1>
+  <p class="lede">No jargon left unexplained. If a term used elsewhere on this site isn't clear, it's probably here.</p>
 </div>
 
-<section>
-  <div class="wrap">
-    <div class="status-card">
-      <h2>No current openings</h2>
-      <p>There are no positions available at ReadMyBlueprint at this time. Check back here later — this page will be updated the moment that changes.</p>
-      <p class="muted">Want to reach out anyway — about a future role, a partnership, or anything else? Email <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;color:var(--blue);">support@readmyblueprint.com</a> and we'll get back to you.</p>
-    </div>
+<div class="wrap glossary">
+  <div class="term">
+    <h3>Takeoff</h3>
+    <p>The process of measuring a construction drawing to produce a material quantity list — how many linear feet of wall, how many sheets of drywall, how many studs. The starting point for any bid.</p>
   </div>
-</section>
+  <div class="term">
+    <h3>Vector PDF <span class="abbr">vs. raster/scanned</span></h3>
+    <p>A vector PDF stores a drawing as real lines and shapes with exact coordinates — exported directly from design software like AutoCAD or Revit. A raster or scanned PDF is just a flat image (like a photo), with no underlying geometry a computer can measure. ReadMyBlueprint reads vector PDFs only — see <a href="/blog-vector-vs-scanned.html">why that distinction matters</a>.</p>
+  </div>
+  <div class="term">
+    <h3>Wythe</h3>
+    <p>One continuous vertical layer of masonry (CMU block, brick) one unit thick. A wall spec note like "8&quot; CMU, single wythe" describes a wall built from one layer of 8-inch block.</p>
+  </div>
+  <div class="term">
+    <h3>CMU <span class="abbr">Concrete Masonry Unit</span></h3>
+    <p>A standard concrete block, most commonly 8"×8"×16" (nominal). Wall length and height convert to a block count using the block's face area — see the <a href="/cmu-takeoff.html">CMU takeoff page</a> for how ReadMyBlueprint computes this automatically.</p>
+  </div>
+  <div class="term">
+    <h3>Stud gauge</h3>
+    <p>The thickness of steel used in a metal stud, expressed as a gauge number — a lower number means thicker, stronger steel (20-gauge is thinner/lighter than 16-gauge). Read from the wall-type legend, not guessed from the drawn line weight.</p>
+  </div>
+  <div class="term">
+    <h3>O.C. <span class="abbr">On Center</span></h3>
+    <p>The spacing between framing members measured from the center of one to the center of the next — e.g. "16&quot; O.C." means studs spaced 16 inches apart, center to center. Determines how many studs a given wall length needs.</p>
+  </div>
+  <div class="term">
+    <h3>Wall-type legend</h3>
+    <p>A schedule or set of notes on a plan sheet defining what each wall-type tag (e.g. "W1", "W2") actually means — stud size, gauge, spacing, board layers. See <a href="/wall-type-matching.html">how wall-type matching works</a>.</p>
+  </div>
+  <div class="term">
+    <h3>GFA <span class="abbr">Gross Floor Area</span></h3>
+    <p>The total floor area of a building measured to the outside face of exterior walls, including all floors — a whole-building measurement, not a single room's usable space.</p>
+  </div>
+  <div class="term">
+    <h3>NIA / NLA <span class="abbr">Net Internal / Lettable Area</span></h3>
+    <p>The usable floor area inside a space, excluding walls, structure, and shared circulation — the number a tenant actually occupies, smaller than GFA for the same building.</p>
+  </div>
+  <div class="term">
+    <h3>Confidence label</h3>
+    <p>ReadMyBlueprint's own term for how every result is tagged: <strong>matched</strong> (a specific spec found in the document), <strong>ambiguous</strong> (more than one possible spec fits), or <strong>needs confirmation</strong> (no spec found at all). See the <a href="/confidence-labels.html">full explanation</a>.</p>
+  </div>
+  <div class="term">
+    <h3>Assisted takeoff <span class="abbr">vs. automatic</span></h3>
+    <p>A tool that measures from real geometry and flags anything it can't verify for a human to confirm — as opposed to "automatic," which implies no verification step at all. See the <a href="/about.html">one rule</a> this site is built around.</p>
+  </div>
+  <div class="term">
+    <h3>Bid sheet</h3>
+    <p>The final material quantity list, usually exported as a spreadsheet (CSV/Excel), used to price a job and submit a bid.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="final-cta">
+    <h2>See these terms applied to a real plan set.</h2>
+    <p>Your first plan set is $15 — see exactly how a real drawing turns into a labeled material list.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</div>
 
 <footer>
   <div class="wrap footer-row">
@@ -185,5 +211,5 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </footer>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/chatbot.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
