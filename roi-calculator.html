@@ -1,13 +1,15 @@
-<title>Blog</title>
+<title>ROI Calculator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="See whether a ReadMyBlueprint subscription pays for itself, based on your own real numbers — how many plan sets you take off, how long each one takes by hand, and what your time is worth.">
+<link rel="canonical" href="https://www.readmyblueprint.com/roi-calculator.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="ROI Calculator — ReadMyBlueprint">
+<meta property="og:description" content="See whether a subscription pays for itself, based on your own real numbers.">
+<meta property="og:url" content="https://www.readmyblueprint.com/roi-calculator.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -41,7 +43,7 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
 a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
@@ -65,20 +67,41 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:56px 0 24px;}
+.hero{padding:56px 0 8px;text-align:center;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
+.hero h1{font-size:clamp(2rem,4vw,2.6rem);line-height:1.1;margin:0 auto .8rem;max-width:24ch;}
+.hero p.lede{font-size:1.06rem;color:var(--muted);max-width:60ch;line-height:1.6;margin:0 auto;}
 
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+section{padding:40px 0 72px;}
+
+.calc{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media (max-width:760px){ .calc{grid-template-columns:1fr;} }
+.calc-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:28px;}
+.calc-card h3{margin:0 0 20px;font-size:1.1rem;}
+.field{margin-bottom:22px;}
+.field:last-child{margin-bottom:0;}
+.field label{display:flex;justify-content:space-between;font-size:.92rem;font-weight:600;margin-bottom:8px;}
+.field .val{font-family:var(--mono);color:var(--blue);}
+.field input[type=range]{width:100%;accent-color:var(--blue);}
+.field .hint{font-size:.8rem;color:var(--muted);margin-top:4px;}
+
+.result-card{background:var(--blue-deep);color:#fff;}
+.result-card h3{color:#fff;}
+.result-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.result-row:last-of-type{border-bottom:none;}
+.result-row .l{color:#c7d5e8;font-size:.92rem;}
+.result-row .v{font-family:var(--mono);font-weight:700;font-size:1.3rem;}
+.result-verdict{margin-top:20px;padding:16px;border-radius:10px;background:rgba(255,255,255,.1);font-size:.92rem;line-height:1.5;}
+.result-verdict strong{color:#fff;}
+.result-card .btn{margin-top:18px;width:100%;}
+
+.disclaimer{max-width:70ch;margin:32px auto 0;font-size:.85rem;color:var(--muted);text-align:center;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -103,49 +126,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
           </div>
         </div>
       </div>
-      <div class="has-mega">
-        <a href="/drywall-takeoff.html">Materials</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>By material</h4>
-              <a href="/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
-              <a href="/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
-              <a href="/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
-              <a href="/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
-              <a href="/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="has-mega">
-        <a href="/for-homeowners.html">Who it's for</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>Built for</h4>
-              <a href="/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
-              <a href="/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
-              <a href="/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
       <a href="/compare.html">Compare</a>
       <a href="/tour.html">Tour</a>
-      <div class="has-mega">
-        <a href="/help.html">Resources</a>
-        <div class="mega-panel">
-          <div class="mega-panel-inner">
-            <div class="mega-col">
-              <h4>Resources</h4>
-              <a href="/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
-              <a href="/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
-              <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/help.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/#pricing">Pricing</a>
     </div>
@@ -157,23 +140,44 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
+  <span class="eyebrow">● ROI calculator</span>
+  <h1>Does it pay for itself? Use your own numbers.</h1>
+  <p class="lede">No made-up "80% faster" claim here — just your real plan set volume, your real manual takeoff time, and what your time is actually worth. Move the sliders.</p>
 </div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+<section>
+  <div class="wrap calc">
+    <div class="calc-card">
+      <h3>Your current numbers</h3>
+      <div class="field">
+        <label>Plan sets per month <span class="val" id="v-sets">5</span></label>
+        <input type="range" id="sets" min="1" max="20" value="5">
+      </div>
+      <div class="field">
+        <label>Hours of manual takeoff per plan set <span class="val" id="v-hours">3</span> hrs</label>
+        <input type="range" id="hours" min="0.5" max="10" step="0.5" value="3">
+        <div class="hint">Time spent measuring and counting materials by hand, before any bid math.</div>
+      </div>
+      <div class="field">
+        <label>What an hour of that time is worth <span class="val" id="v-rate">$50</span></label>
+        <input type="range" id="rate" min="15" max="150" step="5" value="50">
+        <div class="hint">Your own billing rate, or an estimator's loaded hourly cost.</div>
+      </div>
+    </div>
+
+    <div class="calc-card result-card">
+      <h3>What that costs you today</h3>
+      <div class="result-row"><span class="l">Manual takeoff hours / month</span><span class="v" id="r-hours">15.0</span></div>
+      <div class="result-row"><span class="l">Value of that time / month</span><span class="v" id="r-cost">$750</span></div>
+      <div class="result-row"><span class="l">Plan that fits your volume</span><span class="v" id="r-plan">Solo Estimator</span></div>
+      <div class="result-row"><span class="l">Plan cost / month</span><span class="v" id="r-plancost">$199</span></div>
+      <div class="result-verdict" id="r-verdict"></div>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started — $15 first plan set</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This compares the cost of your own current manual-takeoff time against ReadMyBlueprint's flat subscription price — it does not claim a specific time-savings percentage, because that genuinely varies by how a given architect draws and labels their sheets. See <a href="/accuracy.html" style="text-decoration:underline;">real accuracy numbers</a> from actual plan sets instead of an estimate.</p>
+</section>
 
 <footer>
   <div class="wrap footer-row">
@@ -183,5 +187,53 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </footer>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+var sets = document.getElementById('sets');
+var hours = document.getElementById('hours');
+var rate = document.getElementById('rate');
+
+function fmtMoney(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function planFor(setsPerMonth) {
+  if (setsPerMonth <= 1) return { name: '$15 first plan set', cost: 15 };
+  if (setsPerMonth <= 10) return { name: 'Solo Estimator', cost: 199 };
+  return { name: 'Small Firm (contact sales)', cost: null };
+}
+
+function render() {
+  var s = Number(sets.value);
+  var h = Number(hours.value);
+  var r = Number(rate.value);
+
+  document.getElementById('v-sets').textContent = s;
+  document.getElementById('v-hours').textContent = h;
+  document.getElementById('v-rate').textContent = '$' + r;
+
+  var totalHours = s * h;
+  var totalCost = totalHours * r;
+  var plan = planFor(s);
+
+  document.getElementById('r-hours').textContent = totalHours.toFixed(1);
+  document.getElementById('r-cost').textContent = fmtMoney(totalCost);
+  document.getElementById('r-plan').textContent = plan.name;
+  document.getElementById('r-plancost').textContent = plan.cost === null ? 'custom quote' : fmtMoney(plan.cost);
+
+  var verdict = document.getElementById('r-verdict');
+  if (plan.cost === null) {
+    verdict.innerHTML = 'At ' + s + ' plan sets a month, <strong>Small Firm</strong> is the right fit — email <a href="mailto:sales@readmyblueprint.com" style="color:#fff;">sales@readmyblueprint.com</a> for a quote.';
+  } else if (totalCost > plan.cost) {
+    var margin = totalCost - plan.cost;
+    verdict.innerHTML = 'Your current manual-takeoff time is worth <strong>' + fmtMoney(margin) + ' more</strong> than ' + plan.name + ' costs — even if this only cuts that time partway, not to zero, it\'s likely worth trying on your own plan set.';
+  } else {
+    verdict.innerHTML = 'At this volume, your manual-takeoff time is worth less than ' + plan.name + ' costs per month — the <strong>$15 first plan set</strong> is the low-risk way to see if it\'s still worth it for the accuracy and confirmation labels alone.';
+  }
+}
+
+[sets, hours, rate].forEach(function (el) { el.addEventListener('input', render); });
+render();
+</script>
+
 <script src="/assets/chatbot.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
