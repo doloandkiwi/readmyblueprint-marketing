@@ -63,6 +63,13 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
 
 .layout{display:grid;grid-template-columns:220px 1fr;gap:48px;padding:16px 0 64px;align-items:start;}
+/* Grid items default to min-width:auto, which lets a wide child (here, the
+   API section's <pre> code blocks) force this column -- and the whole
+   page -- wider than the viewport instead of scrolling within itself.
+   min-width:0 lets the column actually shrink to the track's real width,
+   the same fix this project's own product app needed for its canvas
+   column next to a wide drawing. */
+.content{min-width:0;}
 .toc{position:sticky;top:88px;display:flex;flex-direction:column;gap:10px;font-size:.9rem;}
 .toc a{text-decoration:none;color:var(--muted);}
 .toc a:hover{color:var(--blue);}
@@ -79,6 +86,9 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .step-row h3{font-size:1.02rem;margin:0 0 4px;}
 .step-row p{margin:0;color:var(--ink);font-size:.94rem;}
 
+.content pre{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--ink);margin:0 0 20px;}
+.content code{font-family:var(--mono);font-size:.9em;background:var(--surface-2);padding:.1rem .35rem;border-radius:4px;}
+.content pre code{background:none;padding:0;}
 .faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
 .faq-item:last-child{border-bottom:none;}
 .faq-item h3{font-size:1rem;margin:0 0 6px;}
@@ -127,6 +137,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     <div class="h">On this page</div>
     <a href="#walkthrough">The full walkthrough</a>
     <a href="#confidence">What the labels mean</a>
+    <a href="#api">API access</a>
     <a href="#faq">Common questions</a>
   </div>
 
@@ -174,6 +185,29 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
         <div class="conf-item"><span class="conf-dot ambiguous"></span><div><strong>Ambiguous</strong><span>More than one material could explain that thickness, so you're shown exactly which ones instead of a silent guess.</span></div></div>
         <div class="conf-item"><span class="conf-dot unmatched"></span><div><strong>Needs confirmation</strong><span>No matching spec was found anywhere in the document. The measurement itself is still exact — the material just needs a quick check from you.</span></div></div>
       </div>
+    </section>
+
+    <section id="api">
+      <h2>API access</h2>
+      <p class="sub">Read-only access to your own documents and takeoff summaries, for scripts or other tools you use.</p>
+      <p>Create a key from the "API access" panel in your account (below the Billing panel). Every key is scoped to your own account only — it can list your documents and read a document's material summary, and nothing else. There's no way to upload, edit, or delete anything through the API.</p>
+      <h3>Authentication</h3>
+      <p>Send your key as either an <code>Authorization: Bearer</code> header or a plain <code>X-API-Key</code> header — use whichever your tool defaults to.</p>
+      <pre>curl https://readmyblueprint.onrender.com/api/v1/documents \
+  -H "X-API-Key: rmb_your_key_here"</pre>
+      <h3>List your documents</h3>
+      <pre>GET /api/v1/documents
+
+[
+  { "id": 12, "filename": "unit-a-floor-plan.pdf", "page_count": 24, "created_at": "2026-09-10T14:22:00" }
+]</pre>
+      <h3>Get a document's material summary</h3>
+      <pre>GET /api/v1/documents/{id}/summary
+
+[
+  { "item": "2 1/2\" steel stud @ 16\" o.c.", "quantity": 12452, "unit": "ft", "count": 9422, "notes": "" }
+]</pre>
+      <p class="sub">Rate limited to 60 requests/minute per account. A document that doesn't belong to your account returns a 404, the same as everywhere else in the app.</p>
     </section>
 
     <section id="faq">
