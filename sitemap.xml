@@ -81,6 +81,21 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.readmyblueprint.com/for-homeowners.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.readmyblueprint.com/for-estimators.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.readmyblueprint.com/for-general-contractors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.readmyblueprint.com/careers.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

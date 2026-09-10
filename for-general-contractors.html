@@ -1,15 +1,15 @@
-<title>Confidence Labels | ReadMyBlueprint</title>
+<title>ReadMyBlueprint for General Contractors</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Every ReadMyBlueprint result is labeled matched, ambiguous, or needs confirmation. Here's exactly what each label means, how it's decided, and what to do with it.">
-<link rel="canonical" href="https://www.readmyblueprint.com/confidence-labels.html">
+<meta name="description" content="Cross-check a subcontractor's numbers, or turn around a bid fast when a project needs an answer today. A real, independent material count from the same plan set.">
+<link rel="canonical" href="https://www.readmyblueprint.com/for-general-contractors.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Confidence Labels | ReadMyBlueprint">
-<meta property="og:description" content="Every result labeled matched, ambiguous, or needs confirmation — never a silent guess.">
-<meta property="og:url" content="https://www.readmyblueprint.com/confidence-labels.html">
+<meta property="og:title" content="ReadMyBlueprint for General Contractors">
+<meta property="og:description" content="An independent material count to cross-check a sub's bid, or turn one around fast yourself.">
+<meta property="og:url" content="https://www.readmyblueprint.com/for-general-contractors.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -49,7 +49,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
-.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+.nav-links{display:flex;gap:24px;font-size:.92rem;color:var(--muted);}
 .nav-links a{text-decoration:none;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
@@ -86,23 +86,12 @@ section + section{border-top:1px solid var(--line);}
 .prose p{margin:0 0 1.1rem;}
 .prose strong{color:var(--blue);}
 
-.label-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.label-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;}
-.label-card .dot{width:12px;height:12px;border-radius:99px;margin-bottom:14px;}
-.label-card.matched .dot{background:var(--good);}
-.label-card.ambiguous .dot{background:var(--amber);}
-.label-card.unmatched .dot{background:var(--muted);}
-.label-card h3{font-size:1.05rem;margin:0 0 8px;}
-.label-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
-
-.mock{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;max-width:560px;}
-.mock-head{padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);}
-.mock-row{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.mock-row:last-child{border-bottom:none;}
-.mock-name{font-weight:600;font-size:.92rem;}
-.badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:99px;white-space:nowrap;}
-.badge.good{background:var(--good-soft);color:var(--good);}
-.badge.warn{background:var(--amber-soft);color:var(--amber);}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
+.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
+.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
+.fit-card li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
 
 .faq dt{font-weight:700;margin-top:1.2rem;font-size:1rem;}
 .faq dd{margin:.4rem 0 0;color:var(--muted);font-size:.94rem;line-height:1.55;}
@@ -111,7 +100,7 @@ section + section{border-top:1px solid var(--line);}
 .final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
 .final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
 
-@media (max-width:860px){ .label-grid{grid-template-columns:1fr;} }
+@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -187,62 +176,49 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Confidence labels</span>
-  <h1>Every result labeled matched, ambiguous, or needs confirmation.</h1>
-  <p class="lede">Instead of one accuracy percentage covering an entire plan set, ReadMyBlueprint labels every individual measurement with exactly how it was produced — so you know precisely where your two minutes of double-checking should go.</p>
+  <span class="eyebrow">● For general contractors</span>
+  <h1>An independent number, when you can't just take a sub's word for it.</h1>
+  <p class="lede">Cross-check a subcontractor's submitted material count against an independent measurement of the same plan set, or turn around your own bid fast when an opportunity needs an answer today, not next week.</p>
 </div>
 
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">The three labels</span>
-      <h2>What each one actually means.</h2>
-    </div>
-    <div class="label-grid">
-      <div class="label-card matched">
-        <div class="dot"></div>
-        <h3>Matched</h3>
-        <p>The wall's measured thickness lines up with a spec found directly on your own drawings — a wall-type legend, a callout, a schedule. The number is ready to use as-is.</p>
-      </div>
-      <div class="label-card ambiguous">
-        <div class="dot"></div>
-        <h3>Ambiguous</h3>
-        <p>More than one material or assembly could explain this wall's measured thickness. ReadMyBlueprint tells you exactly which candidates are possible, instead of silently picking one for you.</p>
-      </div>
-      <div class="label-card unmatched">
-        <div class="dot"></div>
-        <h3>Needs confirmation</h3>
-        <p>No matching spec was found anywhere in the document for this wall. The length and location are still exact — the material assignment just needs a quick human check.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">How it shows up</span>
-      <h2>Labels travel with the result, everywhere.</h2>
-      <p>A label isn't a one-time note buried in a report — it's attached to the row in your results dashboard and carried straight through to your CSV or Excel export.</p>
-    </div>
-    <div class="mock">
-      <div class="mock-head">Material summary — labeled</div>
-      <div class="mock-row"><span class="mock-name">3-5/8" 20-ga steel stud @ 16" o.c.</span><span class="badge good">Matched</span></div>
-      <div class="mock-row"><span class="mock-name">8" CMU block</span><span class="badge good">Matched</span></div>
-      <div class="mock-row"><span class="mock-name">Unlabeled partition, 4.4"</span><span class="badge warn">Confirm</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Why this instead of a percentage</span>
-      <h2>An average can't tell you which row to check.</h2>
+      <span class="eyebrow">The problem this solves</span>
+      <h2>You're accountable for numbers you didn't produce yourself.</h2>
     </div>
     <div class="prose">
-      <p>Most takeoff tools put a single accuracy percentage on their homepage — 95%, 98%. That number is an average over some internal test set, and averages hide exactly the thing you need to know: which specific result in front of you right now is solid, and which one needs a second look.</p>
-      <p>A label on every row is a different kind of claim — one you can check yourself, on your own plan set, instead of one you have to take on faith. <strong>We don't publish a blended accuracy percentage either</strong>, for the same reason: there's no independent benchmark every takeoff tool runs, so those numbers aren't even comparable between vendors. What we can show you is exactly how each of your own numbers was produced.</p>
+      <p>When a sub hands you a material count, you're trusting their math without an easy way to verify it — and a bad number from one trade can wipe out your margin on the whole job. Running a full independent takeoff yourself usually isn't practical when you're managing the project, not estimating it full-time.</p>
+      <p>ReadMyBlueprint gives you a fast, independent second opinion: upload the same plan set, get a real measured count back, and compare it against what you were handed — without needing to be an estimator yourself, and without the turnaround time of hiring one for a spot-check.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where this fits your workflow</span>
+      <h2>A fast, independent check — not a full estimating department.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>What it's good for</h3>
+        <ul>
+          <li>Cross-checking a subcontractor's bid against an independent measurement</li>
+          <li>Turning around a rush bid when there's no time to wait on a sub's numbers</li>
+          <li>A quick sanity check before you commit to a number in a proposal</li>
+          <li>No subscription needed if you only need this occasionally — pay per upload</li>
+        </ul>
+      </div>
+      <div class="fit-card">
+        <h3>Being upfront about scope</h3>
+        <ul>
+          <li>This is takeoff, not project management — no daily reports or punch lists</li>
+          <li>Single-user accounts today; if your team needs shared seats, email <a href="mailto:sales@readmyblueprint.com" style="text-decoration:underline;color:var(--blue);">sales@readmyblueprint.com</a></li>
+          <li>Best for verifying material quantities, not full estimating with labor and markup</li>
+          <li>Works from a real digital plan set — not a scanned or hand-marked copy</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -251,19 +227,17 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
-      <h2>Common questions about labels.</h2>
+      <h2>Questions GCs actually ask.</h2>
     </div>
     <dl class="faq">
-      <dt>Can I override a label?</dt>
-      <dd>Yes. Every flagged result is editable — confirm the material yourself and it's recorded as your own confirmation, not silently reclassified as "matched."</dd>
-      <dt>Does "matched" guarantee the number is correct?</dt>
-      <dd>It means the measurement traces to real geometry and a real spec found in your document — the same standard a careful human estimator would use. It's not a guarantee against an error in the original drawing itself.</dd>
-      <dt>What's the practical difference between "ambiguous" and "needs confirmation"?</dt>
-      <dd>Ambiguous means ReadMyBlueprint found multiple possible specs and can't pick between them. Needs confirmation means it found none at all. Both need a human decision — the label tells you why.</dd>
-      <dt>Do labels show up in my exported CSV or Excel file?</dt>
-      <dd>Yes — every export includes the label column, so anyone reviewing the file downstream sees exactly what was verified and what wasn't.</dd>
-      <dt>What happens to a "needs confirmation" row if I never confirm it?</dt>
-      <dd>It stays flagged in your export. ReadMyBlueprint never quietly converts an unconfirmed result into a confident-looking number.</dd>
+      <dt>Can I use this to double-check a sub's material count?</dt>
+      <dd>Yes — upload the same plan set your sub bid from and compare their numbers against ReadMyBlueprint's independent measurement. A big mismatch is worth a conversation before you sign off.</dd>
+      <dt>Do I need a separate account for every project?</dt>
+      <dd>No — one account, upload as many plan sets as your plan allows (or pay per upload for occasional use).</dd>
+      <dt>Can multiple people on my team use one account?</dt>
+      <dd>Not yet — accounts are single-user today. If you need shared team access, email sales and we'll talk about what you actually need.</dd>
+      <dt>How fast can I get results on a rush bid?</dt>
+      <dd>Minutes from upload to a full labeled material count, not hours — that's the specific problem this solves for a time-sensitive opportunity.</dd>
     </dl>
   </div>
 </section>
@@ -271,8 +245,8 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <section>
   <div class="wrap">
     <div class="final-cta">
-      <h2>See the labels on your own plan set.</h2>
-      <p>Upload your plan set and see exactly which results are matched, and which need a second look. Your first one is $15.</p>
+      <h2>Get an independent number, fast.</h2>
+      <p>Upload the plan set and get a real, labeled material count in minutes. Your first one is $15.</p>
       <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
     </div>
   </div>
