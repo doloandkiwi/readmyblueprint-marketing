@@ -1,15 +1,15 @@
-<title>Careers at ReadMyBlueprint</title>
+<title>Interactive Product Tour</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Current openings at ReadMyBlueprint — nothing open right now, but check back or reach out.">
-<link rel="canonical" href="https://www.readmyblueprint.com/careers.html">
+<meta name="description" content="Click through the real ReadMyBlueprint app — login, upload, auto-detected material counts, flagged items, and CSV export — without creating an account.">
+<link rel="canonical" href="https://www.readmyblueprint.com/tour.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Careers at ReadMyBlueprint">
-<meta property="og:description" content="No openings right now — check back, or reach out directly.">
-<meta property="og:url" content="https://www.readmyblueprint.com/careers.html">
+<meta property="og:title" content="Interactive Product Tour — ReadMyBlueprint">
+<meta property="og:description" content="Click through the real app — login, upload, auto-detected counts, and export — without creating an account.">
+<meta property="og:url" content="https://www.readmyblueprint.com/tour.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -70,22 +70,50 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn-primary:hover{background:#c2551f;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
 .btn-ghost:hover{background:var(--surface-2);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:64px 0 32px;}
+.hero{padding:56px 0 8px;text-align:center;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:20ch;}
-.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:62ch;line-height:1.6;margin:0;}
+.hero h1{font-size:clamp(2rem,4vw,2.6rem);line-height:1.1;margin:0 auto .8rem;max-width:22ch;}
+.hero p.lede{font-size:1.08rem;color:var(--muted);max-width:56ch;line-height:1.6;margin:0 auto;}
 
-section{padding:0 0 56px;}
-.status-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:36px 32px;max-width:64ch;}
-.status-card h2{font-size:1.3rem;margin:0 0 12px;}
-.status-card p{margin:0 0 1.1rem;font-size:1.02rem;color:var(--ink);}
-.status-card p:last-child{margin-bottom:0;}
-.status-card .muted{color:var(--muted);font-size:.94rem;}
+section{padding:40px 0 64px;}
+
+/* tour widget */
+.tour{max-width:920px;margin:0 auto;}
+.tour-steps{display:flex;justify-content:center;gap:6px;margin:0 0 22px;flex-wrap:wrap;}
+.tour-steps button{font-family:var(--mono);font-size:.68rem;letter-spacing:.03em;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:99px;padding:.35rem .8rem;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease;}
+.tour-steps button:hover{border-color:var(--blue);color:var(--ink);}
+.tour-steps button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+.tour-steps button.visited:not(.active){background:var(--blue-soft);color:var(--blue);border-color:var(--blue-soft);}
+
+.tour-stage{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;}
+.tour-media{background:var(--blue-deep);display:flex;align-items:center;justify-content:center;min-height:280px;padding:0;position:relative;}
+.tour-media img{display:block;width:100%;height:auto;}
+.tour-cta-slide{padding:56px 40px;text-align:center;background:linear-gradient(180deg,var(--blue-deep),#08192e);color:#fff;}
+.tour-cta-slide h3{color:#fff;font-size:1.5rem;margin:0 0 10px;}
+.tour-cta-slide p{color:#c7d5e8;max-width:46ch;margin:0 auto 22px;font-size:1rem;}
+.tour-badge{width:56px;height:56px;border-radius:99px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.6rem;}
+
+.tour-caption{padding:22px 28px 26px;border-top:1px solid var(--line);}
+.tour-caption .step-tag{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:.4rem;display:block;}
+.tour-caption h3{font-size:1.15rem;margin:0 0 .4rem;}
+.tour-caption p{color:var(--muted);margin:0;font-size:.96rem;line-height:1.55;}
+
+.tour-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;gap:12px;}
+.tour-nav .btn{min-width:96px;}
+.tour-progress{font-family:var(--mono);font-size:.82rem;color:var(--muted);}
+.tour-dots{display:flex;gap:6px;}
+.tour-dots span{width:6px;height:6px;border-radius:99px;background:var(--line);}
+.tour-dots span.active{background:var(--blue);width:18px;}
+
+.hint{text-align:center;color:var(--muted);font-size:.85rem;margin-top:14px;}
+kbd{font-family:var(--mono);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.05rem .4rem;font-size:.78rem;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+@media (max-width:640px){ .tour-caption{padding:18px 20px 22px;} .tour-cta-slide{padding:40px 24px;} }
 </style>
 
 <nav>
@@ -159,18 +187,30 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Careers</span>
-  <h1>Nothing open right now.</h1>
-  <p class="lede">ReadMyBlueprint is a small, early operation — right now that means no open roles. That changes as the business grows, and this page is where we'll post it when it does.</p>
+  <span class="eyebrow">● Interactive tour</span>
+  <h1>Click through the real app. No account needed.</h1>
+  <p class="lede">These are real screenshots from a real plan set run through ReadMyBlueprint — the same one in our <a href="/#how" style="text-decoration:underline;">homepage demo video</a>. Step through login, upload, the automatic read, a flagged item, and the final export.</p>
 </div>
 
 <section>
-  <div class="wrap">
-    <div class="status-card">
-      <h2>No current openings</h2>
-      <p>There are no positions available at ReadMyBlueprint at this time. Check back here later — this page will be updated the moment that changes.</p>
-      <p class="muted">Want to reach out anyway — about a future role, a partnership, or anything else? Email <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;color:var(--blue);">support@readmyblueprint.com</a> and we'll get back to you.</p>
+  <div class="wrap tour">
+    <div class="tour-steps" id="tourSteps"></div>
+
+    <div class="tour-stage">
+      <div class="tour-media" id="tourMedia"></div>
+      <div class="tour-caption" id="tourCaptionWrap">
+        <span class="step-tag" id="tourTag"></span>
+        <h3 id="tourTitle"></h3>
+        <p id="tourDesc"></p>
+      </div>
     </div>
+
+    <div class="tour-nav">
+      <button class="btn btn-ghost" id="tourPrev">← Back</button>
+      <div class="tour-dots" id="tourDots"></div>
+      <button class="btn btn-primary" id="tourNext">Next →</button>
+    </div>
+    <p class="hint">Use <kbd>←</kbd> <kbd>→</kbd> to move between steps.</p>
   </div>
 </section>
 
@@ -181,5 +221,111 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
   </div>
 </footer>
+
+<script>
+var STEPS = [
+  {
+    tag: "Step 1 of 5 — Sign in",
+    title: "Log in — no setup wizard, no onboarding call.",
+    desc: "The account screen is the whole barrier to entry: an email and a password. Homeowners and solo estimators land in the same place.",
+    img: "/assets/tour/step1.jpg",
+    alt: "ReadMyBlueprint login screen with email and password fields"
+  },
+  {
+    tag: "Step 2 of 5 — Upload",
+    title: "Drop in the PDF. It starts reading immediately.",
+    desc: "No manual setup beyond choosing the file. On this real plan set, ReadMyBlueprint finished reading all 5 pages and found 20 materials on its own — nothing else to click.",
+    img: "/assets/tour/step2.jpg",
+    alt: "Upload screen showing 'Done reading your plan — 20 materials found across 5 pages'"
+  },
+  {
+    tag: "Step 3 of 5 — Flagged, not guessed",
+    title: "When something's missing from the drawing, it says so.",
+    desc: "This sheet set didn't print a wall/ceiling height on every page, so drywall, insulation, and CMU counts were incomplete. Instead of guessing a height, ReadMyBlueprint stops and asks you to confirm one — the same rule behind every confidence label in the app.",
+    img: "/assets/tour/step3.jpg",
+    alt: "Confirmation prompt asking the user to enter a wall height before re-running incomplete counts"
+  },
+  {
+    tag: "Step 4 of 5 — Results",
+    title: "A full material breakdown, ready to export.",
+    desc: "Studs and track, drywall sheets, insulation bags — each row traced back to a real wall on the drawing. One click turns this into a bid-ready CSV.",
+    img: "/assets/tour/step4.jpg",
+    alt: "Final material counts table with an Export these results (CSV) button"
+  },
+  {
+    tag: "Step 5 of 5",
+    title: "That's the whole flow.",
+    desc: "Login to export, on a real plan set, in well under a minute of your own clicking. Your first plan set is $15 — see exactly what it finds on your own drawings.",
+    cta: true
+  }
+];
+
+var current = 0;
+var visited = [0];
+var stepsEl = document.getElementById('tourSteps');
+var dotsEl = document.getElementById('tourDots');
+var mediaEl = document.getElementById('tourMedia');
+var tagEl = document.getElementById('tourTag');
+var titleEl = document.getElementById('tourTitle');
+var descEl = document.getElementById('tourDesc');
+var captionWrap = document.getElementById('tourCaptionWrap');
+var prevBtn = document.getElementById('tourPrev');
+var nextBtn = document.getElementById('tourNext');
+
+STEPS.forEach(function(s, i){
+  var b = document.createElement('button');
+  b.textContent = (i + 1);
+  b.setAttribute('aria-label', 'Go to step ' + (i + 1) + ': ' + s.title);
+  b.addEventListener('click', function(){ goTo(i); });
+  stepsEl.appendChild(b);
+
+  var d = document.createElement('span');
+  dotsEl.appendChild(d);
+});
+
+function render(){
+  var s = STEPS[current];
+  tagEl.textContent = s.tag;
+  titleEl.textContent = s.title;
+  descEl.textContent = s.desc;
+
+  if (s.cta) {
+    mediaEl.innerHTML = '<div class="tour-cta-slide"><div class="tour-badge">✓</div><h3>' + s.title + '</h3><p>' + s.desc + '</p><a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started for $15</a></div>';
+    captionWrap.style.display = 'none';
+  } else {
+    mediaEl.innerHTML = '<img src="' + s.img + '" alt="' + s.alt + '">';
+    captionWrap.style.display = 'block';
+  }
+
+  Array.prototype.forEach.call(stepsEl.children, function(b, i){
+    b.classList.toggle('active', i === current);
+    b.classList.toggle('visited', visited.indexOf(i) !== -1);
+  });
+  Array.prototype.forEach.call(dotsEl.children, function(d, i){
+    d.classList.toggle('active', i === current);
+  });
+
+  prevBtn.disabled = current === 0;
+  prevBtn.style.visibility = current === 0 ? 'hidden' : 'visible';
+  nextBtn.textContent = current === STEPS.length - 1 ? 'Start over' : 'Next →';
+}
+
+function goTo(i){
+  current = Math.max(0, Math.min(STEPS.length - 1, i));
+  if (visited.indexOf(current) === -1) visited.push(current);
+  render();
+}
+
+prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+nextBtn.addEventListener('click', function(){
+  if (current === STEPS.length - 1) { goTo(0); } else { goTo(current + 1); }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'ArrowRight') goTo(current + 1);
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+});
+
+render();
+</script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
