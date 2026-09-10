@@ -1,0 +1,63 @@
+READMYBLUEPRINT — PRE-BID REVIEW CHECKLIST
+A practical last pass before a material takeoff goes into a real bid.
+
+1. SCALE CHECK
+   Does the sheet's printed scale (e.g. 1/8" = 1'-0") match what your
+   takeoff tool actually calibrated to? A wrong scale is the single
+   biggest source of a bad count, and it's silent unless you check it
+   against the title block yourself.
+
+2. CONFIRM EVERY FLAGGED ITEM
+   Anything labeled "ambiguous" or "needs confirmation" should be opened
+   back up against the real drawing before it goes into your total —
+   don't let a flagged item quietly round to zero or get skipped.
+
+3. WALL HEIGHT
+   Drywall, insulation, and CMU block counts all depend on a wall/ceiling
+   height that a floor plan often doesn't print directly. Confirm the
+   height you used against a section or elevation sheet, not a guess.
+
+4. UNITS MATCH YOUR ESTIMATE
+   LF (linear feet) vs. SF (square feet) vs. EA (each) — a mismatch here
+   is an easy way to be off by an order of magnitude without any single
+   number looking obviously wrong.
+
+5. WASTE / OVERAGE FACTOR
+   A raw material count is not a purchase order. Add your own standard
+   waste percentage (commonly 5-10%, higher for irregular layouts)
+   before pricing — this tool measures the drawing, not your job-site
+   cut waste.
+
+6. TRADES NOT COVERED
+   Confirm what's actually being auto-counted (steel/wood framing,
+   drywall, plywood, insulation, CMU) versus what still needs a manual
+   count — electrical, plumbing, mechanical, finishes, and site work
+   are not in scope and need their own line items.
+
+7. ADDENDA AND REVISIONS
+   Check the sheet's own revision block and any bid addenda issued after
+   the original plan set — a takeoff run on an outdated sheet revision
+   will confidently produce the wrong number.
+
+8. LEGEND CROSS-CHECK
+   For anything wall-type-related, confirm the legend or schedule you're
+   reading from is the current one — some projects carry more than one
+   wall-type schedule across different sheet sets.
+
+9. SPOT-CHECK BY HAND
+   Pick 2-3 walls or areas at random and measure them yourself, by hand,
+   against the drawing. If your tool's count is close, that's a good
+   sign; if it's off, better to find out on 3 walls than on the whole bid.
+
+10. FINAL GUT CHECK
+    Does the total square footage implied by your counts roughly match
+    the building's stated gross floor area? A takeoff that implies a
+    50,000 SF building on a 20,000 SF floor plan is worth a second look
+    before it goes out the door.
+
+---
+This checklist reflects the same principle ReadMyBlueprint is built
+around: a number is only as good as your ability to verify it. Assisted
+takeoff, not automatic takeoff — you verify every bid before it goes out.
+
+https://www.readmyblueprint.com

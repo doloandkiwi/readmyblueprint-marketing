@@ -1,0 +1,144 @@
+<title>Bid-Prep Toolkit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A free bid-sheet template and a 10-point pre-bid review checklist, sent straight to your inbox.">
+<link rel="canonical" href="https://www.readmyblueprint.com/toolkit.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="Bid-Prep Toolkit — ReadMyBlueprint">
+<meta property="og:description" content="A free bid-sheet template and a 10-point pre-bid review checklist.">
+<meta property="og:url" content="https://www.readmyblueprint.com/toolkit.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
+  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+@media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
+
+section{padding:56px 0;}
+.center{max-width:640px;margin:0 auto;text-align:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
+.lede{font-size:1.05rem;color:var(--muted);margin:0 0 2rem;}
+
+.contents{display:flex;flex-direction:column;gap:14px;text-align:left;margin:0 0 2rem;}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;}
+.item .ic{font-size:1.4rem;flex-shrink:0;}
+.item h3{margin:0 0 4px;font-size:1rem;}
+.item p{margin:0;color:var(--muted);font-size:.9rem;}
+
+form{display:flex;gap:10px;max-width:420px;margin:0 auto;}
+form input[type=email]{flex:1;padding:.7rem .9rem;border:1px solid var(--line);border-radius:8px;font-size:.95rem;background:var(--surface);color:var(--ink);}
+.error-note{color:var(--amber);background:var(--amber-soft);border-radius:8px;padding:.6rem 1rem;font-size:.88rem;margin:0 0 1rem;max-width:420px;margin-left:auto;margin-right:auto;}
+.fineprint{font-size:.8rem;color:var(--muted);margin-top:.9rem;}
+@media (max-width:480px){ form{flex-direction:column;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <a href="/confidence-labels.html">Features</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/tour.html">Tour</a>
+      <a href="/help.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+  </div>
+</nav>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">● Free toolkit</span>
+    <h1>Two things worth having before your next bid.</h1>
+    <p class="lede">No account needed — just an email. Real files, not a teaser for a sales call.</p>
+
+    <div class="contents">
+      <div class="item">
+        <span class="ic">📋</span>
+        <div><h3>Bid sheet template (CSV)</h3><p>The exact column format ReadMyBlueprint itself exports — item, quantity, unit, count, notes — ready to fill in by hand or drop your own numbers into.</p></div>
+      </div>
+      <div class="item">
+        <span class="ic">✅</span>
+        <div><h3>10-point pre-bid review checklist</h3><p>Scale check, wall height, unit mismatches, waste factor, what's not covered by auto-detection — the real things worth double-checking before any takeoff goes into a bid, from anyone's tool.</p></div>
+      </div>
+    </div>
+
+    <div id="toolkitError" class="error-note" hidden>That doesn't look like a valid email — mind trying again?</div>
+
+    <form action="https://readmyblueprint.onrender.com/leads/toolkit" method="POST">
+      <input type="email" name="email" placeholder="you@company.com" required>
+      <button type="submit" class="btn btn-primary">Send it to me</button>
+    </form>
+    <p class="fineprint">We'll email you the two files. No spam — just the toolkit, sent once.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+  // Surfaces the backend's ?error=invalid_email redirect (see
+  // app/routes/leads.py) as an inline message instead of a bare query
+  // string sitting silently in the address bar.
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("error") === "invalid_email") {
+    document.getElementById("toolkitError").hidden = false;
+  }
+</script>
+
+<script src="/assets/chatbot.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
