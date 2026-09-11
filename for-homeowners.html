@@ -76,6 +76,10 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
 .hero{padding:64px 0 32px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;}
+.hero-visual{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface);}
+.hero-visual img{display:block;width:100%;height:auto;}
+@media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
 .hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:26ch;}
 .hero p.lede{font-size:1.1rem;color:var(--muted);max-width:64ch;line-height:1.6;margin:0;}
@@ -184,9 +188,15 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
+  <div class="hero-grid">
+    <div>
   <span class="eyebrow">● For homeowners</span>
   <h1>One remodel. One real material count. No experience needed.</h1>
   <p class="lede">You don't need to know what a takeoff is to use ReadMyBlueprint. Upload the plan your architect or contractor already sent you, and get back a plain-English list of what the project actually needs — no CAD background, no subscription for a single project.</p>
+    </div>
+    <div class="hero-visual"><img src="/assets/illustrations/homeowners.webp" alt="Isometric illustration of a home floor plan and a tablet showing a simple material list on a desk" loading="lazy" width="1200" height="895"></div>
+  </div>
+
 </div>
 
 <section>
