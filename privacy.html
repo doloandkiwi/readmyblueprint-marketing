@@ -14,7 +14,10 @@
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0d2b4e">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -42,7 +45,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
-.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid var(--line);color:var(--ink);}
 main{padding:56px 0 80px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1rem;}
@@ -65,7 +68,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);}
 
 <nav>
   <div class="nav-row">
-    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
     <a href="/" class="btn">Back to site</a>
   </div>
 </nav>
@@ -145,7 +148,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);}
 
 <footer>
   <div class="footer-row">
-    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
     <span>© 2026 ReadMyBlueprint · <a href="/terms.html">Terms of Service</a> · <a href="/privacy.html">Privacy Policy</a></span>
   </div>
 </footer>

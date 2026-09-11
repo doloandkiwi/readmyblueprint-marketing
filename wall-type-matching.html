@@ -6,7 +6,10 @@
 <meta name="description" content="How ReadMyBlueprint identifies what a wall is actually made of — by measuring real geometry and cross-referencing the wall-type legend already on your plan set, not by guessing.">
 <link rel="canonical" href="https://www.readmyblueprint.com/wall-type-matching.html">
 <meta name="theme-color" content="#0d2b4e">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4d8f'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
@@ -64,7 +67,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
 .brand .dim{font-weight:500;color:var(--muted);}
-.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
 .nav-links a{text-decoration:none;white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
@@ -134,7 +137,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 
 <nav>
   <div class="nav-row">
-    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
     <div class="nav-links">
       <div class="has-mega">
         <a href="/confidence-labels.html">Features</a>
@@ -304,7 +307,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 
 <footer>
   <div class="wrap footer-row">
-    <a href="/" class="brand"><span class="mark">R</span><span class="dim">Read My</span>Blueprint</a>
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
     <span>© 2026 ReadMyBlueprint. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
     <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
   </div>
