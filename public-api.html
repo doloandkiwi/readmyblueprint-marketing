@@ -15,6 +15,20 @@
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is the API included in every plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — API access isn't gated behind a higher tier. Any account can generate a key and read its own documents." } },
+    { "@type": "Question", "name": "Is there a rate limit?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, a sane per-key limit applies to keep the service stable for everyone. Details are in the Help Center's API docs." } },
+    { "@type": "Question", "name": "Can I create multiple keys?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — generate separate keys for different scripts or integrations, and revoke any one of them individually without affecting the others." } },
+    { "@type": "Question", "name": "What happens if a key is compromised?", "acceptedAnswer": { "@type": "Answer", "text": "Revoke it immediately from your dashboard. Revocation takes effect right away, and a new key can be generated in its place." } },
+    { "@type": "Question", "name": "Can the API upload or trigger a new takeoff?", "acceptedAnswer": { "@type": "Answer", "text": "Not currently — it's read-only. Uploads and auto-detection runs go through the web app." } }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{

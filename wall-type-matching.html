@@ -15,6 +15,19 @@
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What counts as a \"wall-type legend\"?", "acceptedAnswer": { "@type": "Answer", "text": "Any table, schedule, or set of callouts on your plan set that defines what a given wall type or thickness is made of — this is standard practice on most architectural and structural drawings, not something you need to add." } },
+    { "@type": "Question", "name": "What if my plan set doesn't have a legend at all?", "acceptedAnswer": { "@type": "Answer", "text": "Every wall gets measured exactly regardless, but without a legend to check against, results will mostly come back as \"needs confirmation\" rather than \"matched\" — the measurement is real, the material assignment isn't guessed." } },
+    { "@type": "Question", "name": "Can two different-looking walls match to the same assembly?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — if your legend defines one assembly used at multiple locations, every wall built to that spec matches it, regardless of where it sits on the plan." } },
+    { "@type": "Question", "name": "Does this work on scanned plans?", "acceptedAnswer": { "@type": "Answer", "text": "No — matching depends on a real measured thickness, which requires real vector geometry. A scanned page has none to measure, so it's flagged rather than approximated from the image." } }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{

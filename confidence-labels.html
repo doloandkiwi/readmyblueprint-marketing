@@ -15,6 +15,20 @@
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can I override a label?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every flagged result is editable — confirm the material yourself and it's recorded as your own confirmation, not silently reclassified as \"matched.\"" } },
+    { "@type": "Question", "name": "Does \"matched\" guarantee the number is correct?", "acceptedAnswer": { "@type": "Answer", "text": "It means the measurement traces to real geometry and a real spec found in your document — the same standard a careful human estimator would use. It's not a guarantee against an error in the original drawing itself." } },
+    { "@type": "Question", "name": "What's the practical difference between \"ambiguous\" and \"needs confirmation\"?", "acceptedAnswer": { "@type": "Answer", "text": "Ambiguous means ReadMyBlueprint found multiple possible specs and can't pick between them. Needs confirmation means it found none at all. Both need a human decision — the label tells you why." } },
+    { "@type": "Question", "name": "Do labels show up in my exported CSV or Excel file?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every export includes the label column, so anyone reviewing the file downstream sees exactly what was verified and what wasn't." } },
+    { "@type": "Question", "name": "What happens to a \"needs confirmation\" row if I never confirm it?", "acceptedAnswer": { "@type": "Answer", "text": "It stays flagged in your export. ReadMyBlueprint never quietly converts an unconfirmed result into a confident-looking number." } }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
