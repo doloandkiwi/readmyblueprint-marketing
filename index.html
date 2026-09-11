@@ -218,14 +218,27 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 
 /* hero */
+.hero-video-band{position:relative;overflow:hidden;background:#061224;isolation:isolate;}
+.hero-video-band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero-video-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,18,36,.72) 0%,rgba(6,18,36,.82) 55%,rgba(6,18,36,.94) 100%);}
+.hero-video-band .wrap{position:relative;z-index:2;}
 .hero{padding:76px 0 40px;}
 .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero-video-band .eyebrow{color:#9dc4f5;background:rgba(157,196,245,.12);border:1px solid rgba(157,196,245,.25);}
 .hero h1{font-size:clamp(2.1rem,4.2vw,3.1rem);line-height:1.08;margin:0 0 1.1rem;}
 .hero h1 em{font-style:normal;color:var(--blue);}
+.hero-video-band .hero h1{color:#fff;}
+.hero-video-band .hero h1 em{color:#7ea6df;}
 .hero p.lede{font-size:1.15rem;color:var(--muted);max-width:46ch;line-height:1.55;margin:0 0 1.8rem;}
+.hero-video-band .hero p.lede{color:#c7d5e8;}
+.hero-video-band .hero p.lede a{color:#fff;}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.4rem;}
 .hero-note{font-size:.85rem;color:var(--muted);}
+.hero-video-band .hero-note{color:#93a3ba;}
+.hero-video-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35);}
+.hero-video-band .btn-ghost:hover{background:rgba(255,255,255,.12);}
+.hero-video-band .trust-badges{color:#93a3ba;}
 .scope-note{max-width:60ch;margin:20px auto 0;text-align:left;font-size:.92rem;line-height:1.55;color:var(--ink);background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;}
 .scope-note strong{color:var(--amber);}
 .offer-note{max-width:60ch;margin:16px auto 0;text-align:left;font-size:.92rem;line-height:1.55;color:var(--ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:10px;padding:14px 18px;}
@@ -250,6 +263,19 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:99px;}
 .badge.good{background:var(--good-soft);color:var(--good);}
 .badge.warn{background:var(--amber-soft);color:var(--amber);}
+
+/* feature video strip */
+.feature-videos{padding:64px 0;background:var(--blue-deep);}
+.fv-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+.fv-head .eyebrow{color:#9dc4f5;background:rgba(157,196,245,.12);border:1px solid rgba(157,196,245,.25);}
+.fv-head h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .8rem;}
+.fv-head p{color:#c7d5e8;font-size:1.05rem;line-height:1.6;margin:0 auto;}
+.fv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.fv-card{border-radius:14px;overflow:hidden;background:#061224;border:1px solid rgba(255,255,255,.1);}
+.fv-card video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;}
+.fv-card-cap{padding:16px 20px;}
+.fv-card-cap h3{color:#fff;font-size:1rem;margin:0 0 4px;}
+.fv-card-cap p{color:#93a3ba;font-size:.88rem;margin:0;line-height:1.5;}
 
 /* trust strip */
 .trust{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);}
@@ -334,7 +360,7 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 .social-links svg{width:16px;height:16px;fill:currentColor;}
 
 @media (max-width:860px){
-  .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid,.faq-grid{grid-template-columns:1fr;}
+  .hero-grid,.compare,.steps,.confidence-panel,.pricing-grid,.faq-grid,.fv-grid{grid-template-columns:1fr;}
 }
 @media (max-width:600px){
   .trust-row{grid-template-columns:1fr;gap:24px;}
@@ -423,7 +449,11 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
+<div class="hero-video-band">
+  <video autoplay muted loop playsinline poster="/assets/video/product-demo-poster.jpg">
+    <source src="/assets/video/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="wrap hero">
   <div class="hero-grid">
     <div>
       <span class="eyebrow">● Assisted takeoff — you verify every flag</span>
@@ -470,6 +500,7 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <div class="wrap trust">
@@ -477,6 +508,36 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
     <div class="trust-stat"><span class="t-stat">5</span><span class="t-label">material categories detected automatically</span></div>
     <div class="trust-stat"><span class="t-stat">100%</span><span class="t-label">of counts traced to the real drawing</span></div>
     <div class="trust-stat"><span class="t-stat">0</span><span class="t-label">silent guesses — ever</span></div>
+  </div>
+</div>
+
+<div class="feature-videos">
+  <div class="wrap">
+    <div class="fv-head">
+      <span class="eyebrow">Built for the field, not just the office</span>
+      <h2>Read on site. Verified before you bid.</h2>
+      <p>Pull up a plan set on the way to a walkthrough, or double-check a sub's numbers before you sign off — the same results, wherever you need them.</p>
+    </div>
+    <div class="fv-grid">
+      <div class="fv-card">
+        <video autoplay muted loop playsinline>
+          <source src="/assets/video/feature-worker.mp4" type="video/mp4">
+        </video>
+        <div class="fv-card-cap">
+          <h3>Take the results to the field</h3>
+          <p>The same wall-by-wall breakdown you'd get at your desk, right on site when a question comes up.</p>
+        </div>
+      </div>
+      <div class="fv-card">
+        <video autoplay muted loop playsinline>
+          <source src="/assets/video/feature-scan.mp4" type="video/mp4">
+        </video>
+        <div class="fv-card-cap">
+          <h3>Every sheet, actually measured</h3>
+          <p>Not a page count or a thumbnail scan — the real drawing geometry and legend text, sheet by sheet.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
