@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <title>ReadMyBlueprint — Assisted takeoff from digital plans</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ReadMyBlueprint reads your digital plan set and hands back a material count in minutes — metal studs, drywall, wood framing, plywood, insulation. Every number is backed by the real drawing, or flagged for you to confirm. Never a silent guess.">
@@ -15,6 +17,129 @@
 <meta name="twitter:title" content="ReadMyBlueprint — Assisted takeoff from digital plans">
 <meta name="twitter:description" content="Upload a plan set, get a material count in minutes. Every number backed by the real drawing, or flagged for you to confirm.">
 <meta name="twitter:image" content="https://www.readmyblueprint.com/og-image.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ReadMyBlueprint",
+  "url": "https://www.readmyblueprint.com/",
+  "logo": "https://www.readmyblueprint.com/og-image.svg",
+  "email": "support@readmyblueprint.com",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61594515800442",
+    "https://x.com/readmyblueprint"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ReadMyBlueprint",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Reads a digital plan set and hands back a material count in minutes — metal studs, drywall, wood framing, plywood, insulation. Every number is backed by the real drawing, or flagged for confirmation.",
+  "url": "https://www.readmyblueprint.com/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Per Upload",
+      "price": "49",
+      "priceCurrency": "USD",
+      "description": "One plan set, no subscription."
+    },
+    {
+      "@type": "Offer",
+      "name": "Solo Estimator",
+      "price": "199",
+      "priceCurrency": "USD",
+      "description": "10 plan sets a month, one seat.",
+      "eligibleDuration": { "@type": "QuantitativeValue", "value": "1", "unitCode": "MON" }
+    },
+    {
+      "@type": "Offer",
+      "name": "Small Firm",
+      "price": "499",
+      "priceCurrency": "USD",
+      "description": "Unlimited plan sets, multiple seats.",
+      "eligibleDuration": { "@type": "QuantitativeValue", "value": "1", "unitCode": "MON" }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this work with scanned or flat-image PDFs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ReadMyBlueprint works with digital plan files exported directly from design software — AutoCAD, Revit, or similar. A scanned or photographed plan has no real drawing data for it to measure, so the tool will tell you it can't measure those pages rather than guess. If your plan set is a mix of real digital sheets and scanned ones, the digital sheets still work fine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free trial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No free trial, but a new account can try its very first plan set for $15 instead of the regular $49 — that introductory price is final sale. Solo Estimator and Per Upload both come with a 7-day money-back guarantee: email within 7 days of purchase (or your latest renewal) for a full refund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I cancel anytime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Solo Estimator cancels anytime from your account's billing portal — you keep access through the end of the period you already paid for. No long-term contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All major credit and debit cards, processed securely through Stripe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my payment information secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — we never see or store your card number, expiration date, or CVC. Those go directly to Stripe; we only keep a reference ID so we know which Stripe customer you are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need more than one plan set on Per Upload?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buy as many Per Upload credits as you need, whenever you need them — each one covers one plan set, with no subscription and no expiration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I go over 10 plan sets a month on Solo Estimator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buy a Per Upload credit ($49) to cover any extra plan set that month, or switch to Small Firm for unlimited plan sets if you're consistently going over."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer team or multi-seat pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Small Firm starts at $499/month for multiple seats, a shared material-mapping library, and unlimited plan sets."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -624,3 +749,4 @@ footer{padding:48px 0 60px;border-top:1px solid var(--line);}
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/chatbot.js" defer></script>
+</html>
