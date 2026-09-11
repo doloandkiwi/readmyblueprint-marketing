@@ -10,18 +10,18 @@
 <style>
 :root{
   --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --muted:#5c6470; --line:#dcd5c2;
-  --blue:#1a4d8f; --blue-deep:#0d2b4e; --blue-soft:#e7eef7; --accent:#d9622b;
+  --blue:#1a4d8f; --blue-deep:#0d2b4e; --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f;
   --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --muted:#9aa5b4; --line:#2a3547;
-    --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;
+    --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611;
   }
 }
 :root[data-theme="dark"]{
   --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --muted:#9aa5b4; --line:#2a3547;
-  --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;
+  --blue:#6ea3e0; --blue-deep:#dbe8f8; --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611;
 }
 *{box-sizing:border-box;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);min-height:100vh;display:flex;align-items:center;justify-content:center;}
@@ -30,7 +30,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);m
 .eyebrow{display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .8rem;margin-bottom:1rem;}
 h1{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.1rem);margin:0 0 .8rem;letter-spacing:-.01em;}
 p{color:var(--muted);font-size:1.02rem;line-height:1.6;margin:0 0 2rem;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.7rem 1.4rem;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--accent);color:#fff;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.7rem 1.4rem;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--btn-accent);color:#fff;}
 .btn:hover{background:#c2551f;}
 </style>
 </head>

@@ -19,7 +19,7 @@
 :root{
   --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
   --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
-  --blue-soft:#e7eef7; --accent:#d9622b; --accent-soft:#fbe7da;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f; --accent-soft:#fbe7da;
   --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
   --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
   --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
@@ -28,7 +28,7 @@
   :root:not([data-theme="light"]){
     --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
     --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
-    --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+    --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
     --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
     --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
   }
@@ -36,7 +36,7 @@
 :root[data-theme="dark"]{
   --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
   --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-deep:#dbe8f8;
-  --blue-soft:#1c2b40; --accent:#f0895a; --accent-soft:#3a2416;
+  --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
   --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
@@ -67,7 +67,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
 .nav-cta{display:flex;gap:10px;align-items:center;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
-.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
 @media (max-width:640px){ .nav-links{display:none;} .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
