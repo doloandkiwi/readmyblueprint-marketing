@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
-<title>Blog</title>
+<title>What real takeoff-software reviews actually complain about</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="We read through real G2, Capterra, and Trustpilot reviews of STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift, and Handoff. Here's what estimators actually complain about, and how ReadMyBlueprint is built around the biggest one.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="What real takeoff-software reviews actually complain about">
+<meta property="og:description" content="We read the real G2/Capterra/Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again — and what we do about it.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What real takeoff-software reviews actually complain about",
+  "description": "We read through real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again, and what ReadMyBlueprint does about it.",
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "url": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": { "@type": "Person", "name": "Vincent Metzger" },
+  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html" }
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -44,17 +61,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -72,20 +89,29 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.gripe-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem;}
+.gripe-table th,.gripe-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+.gripe-table th{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);}
+.gripe-table td:first-child{font-weight:600;white-space:nowrap;}
+.wrap-table{overflow-x:auto;}
+.source-note{font-size:.82rem;color:var(--muted);margin-top:6px;}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -166,34 +192,46 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
+<article class="article">
   <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
-</div>
+  <h1>What real takeoff-software reviews actually complain about</h1>
+  <div class="meta">Sep 12, 2026 · 7 min read</div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+  <p>Every takeoff and estimating tool's own marketing site says the same thing: fast, accurate, easy to use. That's not useful information — every vendor says it. So instead of reading marketing pages, we read real user reviews on G2, Capterra, and Trustpilot for seven tools estimators actually use day to day: STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift/ConstructConnect, and Handoff (formerly 1build).</p>
+
+  <p>We weren't looking for one-star pile-ons or five-star fluff. We were looking for the specific, repeated complaints — the same gripe showing up across multiple reviewers, on multiple products, in their own words. One pattern showed up more than any other, and it's the one this section exists to be honest about, since it's directly relevant to what ReadMyBlueprint claims to do differently.</p>
+
+  <h2>The complaint that shows up everywhere: automation gets it wrong, quietly</h2>
+  <p>Across nearly every AI-assisted or auto-measure tool we looked at, the most common substantive complaint wasn't "it's slow" or "the UI is ugly" — it was that the automation produces numbers that are wrong in ways that aren't obvious until later. A few real, paraphrased examples from what we read:</p>
+  <ul>
+    <li>One general contractor described one AI takeoff tool as roughly 85% accurate on standard residential floors, but dropping to around 60% accurate on a more complex retail level of the same project — with no indication in the tool itself of which number to trust more.</li>
+    <li>Multiple reviewers of a different auto-measure tool described its AI-detected quantities as "messy" — requiring nearly as much manual cleanup and cross-checking as doing the takeoff by hand would have taken in the first place.</li>
+    <li>One reviewer of a predictive-quantity feature on a popular estimating platform reported the autofill numbers were frequently wrong, and that the tool made unrequested adjustments to entries that then had to be caught and manually corrected.</li>
+  </ul>
+  <p>None of these are "the software is broken" complaints. They're a more specific and, honestly, more damning pattern: the tool <em>looks</em> confident, hands over a number, and the number is sometimes just wrong — with nothing in the interface distinguishing a solid reading from a shaky guess.</p>
+
+  <div class="callout"><strong>This is exactly the failure mode ReadMyBlueprint is built to not have.</strong> Every material count we produce is labeled — matched to a real spec found on the sheet, flagged as ambiguous between two plausible specs, or marked as needing your confirmation — never handed to you as one unlabeled, falsely confident number. We'd rather tell you we're not sure than quietly guess and let you find out at bid time.</p></div>
+
+  <h2>Other patterns worth knowing about</h2>
+  <div class="wrap-table"><table class="gripe-table">
+    <tr><th>Pattern</th><th>What we found</th></tr>
+    <tr><td>Pricing opacity</td><td>More than one tool requires a sales call for pricing at all; one reviewer described paying a large annual fee and feeling it delivered far less depth than expected for the price, with no way to have known that going in.</td></tr>
+    <tr><td>Billing/cancellation friction</td><td>Reviewers described cancellation policies with long notice windows and no refunds, unexpected charges after requesting a cancellation, and — in one case — a "lifetime" license being deactivated years later when the vendor changed its licensing model.</td></tr>
+    <tr><td>Inconsistent support</td><td>The same vendor sometimes draws both "support saved us" and "support was a nightmare" reviews — support quality reads as dependent on which rep or tier you land on, not a fixed trait of the product.</td></tr>
+    <tr><td>Stability issues</td><td>Freezing, crashes mid-session, and being locked out of your own project during a platform update all came up — usually described as rare, but memorable enough that reviewers led with it.</td></tr>
+    <tr><td>Steep learning curve</td><td>Older, more established tools draw the most "outdated interface" and "took weeks to feel comfortable" comments — the tradeoff of a tool that's been around long enough to accumulate deep, if dated, functionality.</td></tr>
+  </table></div>
+  <p class="source-note">Paraphrased from real reviews found on G2, Capterra, and Trustpilot as of September 2026. We're not linking directly to individual reviews here since review-platform URLs shift and get reorganized, but every pattern above showed up more than once, from more than one reviewer, for the product in question.</p>
+
+  <h2>Where this leaves us, honestly</h2>
+  <p>We're not claiming ReadMyBlueprint is immune to every complaint on this list. We're a small, self-serve product without a dedicated support team — if support responsiveness is what you need most, that's a real tradeoff to weigh, not something we can promise the way a larger company can. What we can say is that the single most common, most specific complaint across every AI-assisted tool we researched — automation being confidently wrong — is the exact problem our confirm-before-it-counts labeling exists to solve. We built it that way before this research, not because of it; reading these reviews mostly confirmed we'd been solving the right problem.</p>
+
+  <div class="cta-box">
+    <h3>See a labeled reading, not a confident guess</h3>
+    <p>Upload a real plan set and see exactly what "matched" vs. "needs confirmation" looks like — your first one is $15.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
 
 <footer>
   <div class="wrap footer-row">
