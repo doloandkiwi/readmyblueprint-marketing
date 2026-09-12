@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
-<title>Changelog</title>
+<title>A bug we found in our own insulation detection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="What's shipped in ReadMyBlueprint, in plain language, with real dates.">
-<link rel="canonical" href="https://www.readmyblueprint.com/changelog.html">
+<meta name="description" content="ReadMyBlueprint's own insulation detection once produced a fabricated R-308 reading from an unrelated door-size legend entry. Here's exactly how it happened, how we caught it, and how we fixed it for good.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-a-real-bug-we-found.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Changelog">
-<meta property="og:description" content="What's shipped, in plain language, with real dates.">
-<meta property="og:url" content="https://www.readmyblueprint.com/changelog.html">
+<meta property="og:title" content="A bug we found in our own insulation detection">
+<meta property="og:description" content="How a real permit set produced a fabricated 'R-308 batt insulation' reading, why it happened, and how we fixed it.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-a-real-bug-we-found.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A bug we found in our own insulation detection",
+  "description": "ReadMyBlueprint's own insulation detection once produced a fabricated R-308 reading from an unrelated door-size legend entry. Here's exactly how it happened, how we caught it, and how we fixed it for good.",
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "url": "https://www.readmyblueprint.com/blog-a-real-bug-we-found.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": { "@type": "Person", "name": "Vincent Metzger" },
+  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-a-real-bug-we-found.html" }
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -45,17 +61,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -73,23 +89,33 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.log{padding:8px 0 64px;}
-.entry{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);}
-.entry:last-child{border-bottom:none;}
-.entry .date{font-family:var(--mono);font-size:.82rem;color:var(--muted);padding-top:2px;}
-.entry h3{font-size:1.1rem;margin:0 0 8px;}
-.entry ul{margin:0;padding-left:1.1rem;color:var(--ink);font-size:.95rem;}
-.entry li{margin-bottom:6px;line-height:1.55;}
-.entry li:last-child{margin-bottom:0;}
-@media (max-width:600px){ .entry{grid-template-columns:1fr;gap:6px;} }
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.code-block{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:20px 0;font-family:var(--mono);font-size:.85rem;overflow-x:auto;white-space:pre;line-height:1.6;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.ba-card{border-radius:10px;padding:16px 18px;border:1px solid var(--line);}
+.ba-card.bad{background:var(--amber-soft);}
+.ba-card.good{background:var(--good-soft);}
+.ba-card .lbl{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:block;}
+.ba-card.bad .lbl{color:var(--amber);}
+.ba-card.good .lbl{color:var(--good);}
+.ba-card .val{font-family:var(--mono);font-size:.92rem;}
+@media (max-width:600px){ .before-after{grid-template-columns:1fr;} }
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -170,79 +196,54 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
-  <span class="eyebrow">● Changelog</span>
-  <h1>What's shipped</h1>
-  <p class="lede">A real, dated log of what's changed — no marketing spin, just what's new and why it matters for your bids.</p>
-</div>
+<article class="article">
+  <span class="eyebrow">● Blog</span>
+  <h1>A bug we found in our own insulation detection</h1>
+  <div class="meta">Sep 12, 2026 · 5 min read</div>
 
-<div class="wrap log">
+  <p>We're not going to pretend this doesn't happen: while running a real permit set through ReadMyBlueprint to double-check the results, we found a genuine bug in our own insulation detection. It fabricated a callout for "R-308 batt insulation" — a number that doesn't exist in the real world. We're writing this up in detail, not because it makes us look good, but because how a tool handles being wrong tells you more about it than any accuracy claim on a homepage.</p>
 
-  <div class="entry">
-    <div class="date">Sep 12, 2026</div>
-    <div>
-      <h3>A new logo, a real video hero, and a fixed insulation-reading bug</h3>
-      <ul>
-        <li>New brand mark site-wide — a ruler-and-tick-mark "R" — replacing the plain blue square.</li>
-        <li>The homepage now opens with a real animated hero and two on-site feature videos instead of a static mockup.</li>
-        <li>Fixed a real bug where an unrelated door-size legend entry could be misread as an implausible insulation R-value; the same class of issue was found and closed in CMU/wythe reading too. See the <a href="/blog-a-real-bug-we-found.html">full writeup</a>.</li>
-        <li>Fixed a display bug where a manually-counted item (not tied to a clicked measurement) could show up as "Element None" in your results and exports instead of a real label.</li>
-        <li>Fixed the site's own navigation menu disappearing or overflowing on certain tablet and laptop window sizes.</li>
-      </ul>
+  <h2>What actually happened</h2>
+  <p>Real batt insulation comes in a narrow, well-known range — roughly R-11 for a thin wall cavity up to R-49 for a deep attic. So when a real 5-page permit set came back with a callout reading "R-308 batt insulation" on two of its pages, that number was an immediate red flag. Nothing in construction insulates to R-308. The measurement itself wasn't wrong — the callout was fabricated from text that was never describing insulation at all.</p>
+
+  <div class="before-after">
+    <div class="ba-card bad">
+      <span class="lbl">What the tool reported</span>
+      <span class="val">R-308 batt insulation</span>
+    </div>
+    <div class="ba-card good">
+      <span class="lbl">What was actually on the sheet</span>
+      <span class="val">A door-size code, "3080"</span>
     </div>
   </div>
 
-  <div class="entry">
-    <div class="date">Sep 10, 2026</div>
-    <div>
-      <h3>Faster, cleaner, and mobile-friendly</h3>
-      <ul>
-        <li>The plan workspace now works properly on a phone — review results and add anything auto-detect missed from the jobsite, not just a desktop.</li>
-        <li>Routine security and dependency updates across the platform.</li>
-      </ul>
-    </div>
-  </div>
+  <h2>The actual root cause</h2>
+  <p>ReadMyBlueprint reads insulation callouts by scanning the real text embedded in your PDF for patterns like "R-13 BATT" or "R-38." The pattern that does this allowed the letter "R" to appear as the tail end of <em>any</em> word — not just a standalone "R" — with a small gap before the digits that followed. That gap was permissive enough to jump across a line break into a completely unrelated sentence.</p>
+  <p>On the sheet in question, a legend block read, in part:</p>
+  <div class="code-block">= CARBON MONOXIDE
+    DETECTOR
+3080
+= DOOR SIZE W/H - INCHES</div>
+  <p>"DETECTOR" ends in the letter R. "3080" is a standard architectural code for a 3'-0" × 8'-0" door — completely ordinary, completely unrelated to insulation. But the pattern matching didn't require that "R" to be its own standalone word, so it read the R at the end of "DETECTOR," jumped the line break, and grabbed the first three digits of the door code that happened to follow it. R + "308" became "R-308 batt insulation" — a real, physically impossible reading built entirely out of two unrelated legend entries.</p>
 
-  <div class="entry">
-    <div class="date">Sep 9, 2026</div>
-    <div>
-      <h3>First-time offer, a real getting-started guide, and a clearer results view</h3>
-      <ul>
-        <li>New accounts can try their first plan set for $15 instead of $49 — once per account.</li>
-        <li>Added a full step-by-step guide, right on the page, covering upload through export.</li>
-        <li>Auto-detect now shows a live progress estimate instead of a bare "reading plan…" spinner.</li>
-        <li>Results are now a real category grid — Metal, Lumber, Drywall, Insulation, CMU — instead of one mixed list, with a one-click CSV export straight from the results.</li>
-        <li>Unspecified wall thicknesses are grouped sensibly instead of listing dozens of near-duplicate rows for normal measurement noise.</li>
-      </ul>
-    </div>
-  </div>
+  <h2>How we caught it</h2>
+  <p>Not from a customer complaint — from actually using the product the way we're always telling people to. We ran a real, unremarkable permit set through auto-detect specifically to check the output line by line rather than trust it, the same way we'd want anyone doing a real bid to treat any tool's numbers. R-308 didn't blend in; it stood out immediately as physically implausible, which is exactly the point of looking at your own results instead of assuming they're right.</p>
 
-  <div class="entry">
-    <div class="date">Sep 8, 2026</div>
-    <div>
-      <h3>Public launch: accounts, billing, and full auto-detection</h3>
-      <ul>
-        <li>Real accounts with private, isolated data per customer — your plans are never visible to anyone else.</li>
-        <li>Subscriptions and one-time uploads, backed by a 7-day money-back guarantee.</li>
-        <li>Full-plan-set auto-detection shipped for the first time: metal framing, wood framing, drywall, plywood, insulation, and CMU block, read directly from your drawing's own geometry and wall-type legend.</li>
-        <li>Password reset and email notifications added.</li>
-        <li>Live error monitoring and uptime checks turned on across the whole platform.</li>
-      </ul>
-    </div>
-  </div>
+  <h2>The fix, and why it's not just a patch</h2>
+  <p>The fix requires that "R" stand on its own — not be the last letter of some other word — before a number counts as an insulation value. We then went back and audited every other pattern in the same file for the identical shape of mistake, since a bug found once in one place is a real signal to check for siblings, not a one-off. That audit found and closed the same gap in how the tool reads CMU block sizes, and documented one more theoretical case we chose not to force a fix for, because the fix itself risked being worse than the bug — silently dropping real, valid readings to prevent a false one.</p>
+  <p>Every one of these fixes shipped with a permanent test built from the exact real text that exposed it, so this specific mistake — and the pattern behind it — can't quietly come back in a future change without a test failing first.</p>
 
-  <div class="entry">
-    <div class="date">Aug 23, 2026</div>
-    <div>
-      <h3>Core takeoff engine hardened against real-world plan sets</h3>
-      <ul>
-        <li>Fixed a measurement bug affecting some rotated large-format sheets (common on D/E-size architectural and civil drawings) — every affected page re-verified against hand-calculated values after the fix, with zero regressions.</li>
-        <li>Added a coverage check that tells you when a page couldn't be fully read, instead of silently returning a partial result.</li>
-      </ul>
-    </div>
-  </div>
+  <div class="callout"><strong>The part that matters more than the bug itself:</strong> this is exactly why every reading ReadMyBlueprint gives you is labeled — matched, ambiguous, or flagged for confirmation — instead of handed to you as one confident, unlabeled number. A tool that never shows you anything to double-check isn't a tool with no bugs; it's a tool where you'd have no way to notice one.</div>
 
-</div>
+  <h2>What this doesn't mean</h2>
+  <p>It doesn't mean the reading was somehow "close enough" or that this class of mistake is common — an R-308 callout is exactly as implausible as it sounds, and the real point of writing this up is that implausible, wrong output is findable and fixable when a tool's reasoning is a real, inspectable pattern instead of an opaque model's best guess. It also doesn't mean every number ReadMyBlueprint has ever produced is now suspect — the fix was verified against the same real document plus every other real plan set we test against, and every genuinely correct reading (R-13, R-30, R-38, R-48, and more) still comes through exactly as before.</p>
+
+  <div class="cta-box">
+    <h3>See what confirm-before-it-counts actually looks like</h3>
+    <p>Upload a real plan set and see every reading labeled honestly — your first one is $15.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
 
 <footer>
   <div class="wrap footer-row">
