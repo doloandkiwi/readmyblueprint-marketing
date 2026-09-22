@@ -2,21 +2,38 @@
 <html lang="en">
 <meta charset="utf-8">
 <script src="/assets/analytics.js" defer></script>
-<title>Blog</title>
+<title>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="We ran a real apartment plan set through our own tool — here's exactly what happened">
+<meta property="og:description" content="41.3% of wall footage auto-matched on a real 21-page plan set, the rest honestly flagged, and the exact root cause we found.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "We ran a real 21-page apartment plan set through our own tool — here's exactly what happened",
+  "description": "A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "url": "https://www.readmyblueprint.com/blog-real-test-freeport-square.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": { "@type": "Person", "name": "Vincent Metzger" },
+  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-real-test-freeport-square.html" }
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -45,17 +62,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -73,20 +90,43 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.code-block{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:20px 0;font-family:var(--mono);font-size:.85rem;overflow-x:auto;white-space:pre;line-height:1.6;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.ba-card{border-radius:10px;padding:16px 18px;border:1px solid var(--line);}
+.ba-card.bad{background:var(--amber-soft);}
+.ba-card.good{background:var(--good-soft);}
+.ba-card .lbl{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:block;}
+.ba-card.bad .lbl{color:var(--amber);}
+.ba-card.good .lbl{color:var(--good);}
+.ba-card .val{font-family:var(--mono);font-size:.92rem;}
+@media (max-width:600px){ .before-after{grid-template-columns:1fr;} }
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.stat-card{border-radius:10px;padding:18px 20px;border:1px solid var(--line);background:var(--surface);}
+.stat-card .num{font-family:var(--mono);font-size:1.6rem;font-weight:600;color:var(--blue);}
+.stat-card .lbl{font-size:.85rem;color:var(--muted);margin-top:4px;}
+@media (max-width:600px){ .stat-grid{grid-template-columns:1fr;} }
+table.mat{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem;margin:20px 0;}
+table.mat th, table.mat td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);}
+table.mat th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;color:var(--muted);background:var(--surface-2);}
+table.mat tr:last-child td{border-bottom:none;}
+.tbl-wrap{overflow-x:auto;}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -167,39 +207,63 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
+<article class="article">
   <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
-</div>
+  <h1>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h1>
+  <div class="meta">Sep 22, 2026 · 6 min read</div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-real-test-freeport-square.html">
-    <span class="date">Sep 22, 2026</span>
-    <h2>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h2>
-    <p>41.3% of wall footage auto-matched, the rest honestly flagged rather than guessed — plus the exact root cause we found in the plan sheet itself.</p>
-  </a>
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+  <p>Most "case studies" you'll read from a takeoff-software vendor are curated wins. This one isn't curated — it's a real end-to-end run against a real 21-page apartment building plan set (a multi-building project we're calling "Freeport Square" here), uploaded through the live product, results exported, numbers reported exactly as they came out. Including the part that didn't fully resolve.</p>
+
+  <h2>The headline number</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="num">41.3%</div><div class="lbl">of total wall footage auto-matched to a confirmed material spec</div></div>
+    <div class="stat-card"><div class="num">7,294 / 17,648</div><div class="lbl">linear feet resolved out of the total measured</div></div>
+  </div>
+  <p>Every wall on the plan set was measured — that part worked cleanly, no errors, no crashes, real processing time, real CSV export. Of the 25 distinct wall types the plan contained, 2 (both wood-stud partition types) came back with a full matched material spec: stud gauge, track, drywall sheet count, insulation bag count, sheet citations and all.</p>
+
+  <div class="tbl-wrap">
+    <table class="mat">
+      <tr><th>Material</th><th>Length (LF)</th><th>Result</th></tr>
+      <tr><td>2x6 wood stud</td><td>5,252.0</td><td>Matched — 3,955 studs / 1,055 track, 1,975 drywall sheets, 362 insulation bags</td></tr>
+      <tr><td>2x4 wood stud</td><td>2,042.4</td><td>Matched — 1,546 studs / 412 track, 772 drywall sheets, 144 insulation bags</td></tr>
+      <tr><td>23 other wall types (partition &amp; CMU, various thicknesses)</td><td>10,353.4</td><td>Flagged "SPEC UNKNOWN — confirm manually," not guessed</td></tr>
+    </table>
+  </div>
+
+  <h2>The other 23 wall types didn't get guessed. They got flagged.</h2>
+  <p>This is the part that actually matters more than the headline percentage. The remaining 23 wall types — the majority of the total linear footage — came back with an honest note attached to every single one: <em>"no legend text matched this thickness — confirm manually."</em> No stud gauge was invented. No CMU block size was assumed. The tool measured the geometry correctly and then declined to guess the spec it couldn't confirm.</p>
+
+  <h2>We didn't stop at the number — we found the actual cause</h2>
+  <p>Rather than publish "41.3%" and move on, we opened the plan PDF's own text layer directly to find out why. Here's what we found: this plan set's wall-type legend is printed on the <strong>same sheet as the door schedule</strong>, with the two tables' columns interleaved in the drawing layout. When text is extracted from that sheet, the door-schedule and wall-type-legend text comes out scrambled together instead of in clean reading order — a structural quirk of how this specific architect laid out that one sheet, not a generic flaw in how plan sets are typically formatted.</p>
+
+  <div class="before-after">
+    <div class="ba-card bad">
+      <span class="lbl">What the auto-reader saw</span>
+      <span class="val">Wall-type legend + door schedule text interleaved on one sheet</span>
+    </div>
+    <div class="ba-card good">
+      <span class="lbl">What that caused</span>
+      <span class="val">23 of 25 wall specs correctly flagged as unconfirmable, not guessed</span>
+    </div>
+  </div>
+
+  <div class="callout"><strong>This is exactly the scenario our "Import a wall-type schedule from Excel" feature exists for.</strong> When the automatic legend read can't confidently resolve a sheet like this one, you can type the wall-type-to-assembly mapping into a spreadsheet yourself — <code>TYPE / STUD SIZE / GYP THICK</code> or <code>TYPE / WALL WIDTH</code> columns — and upload it instead of confirming each wall one at a time in the UI. Every row stays reviewable before anything saves.</div>
+
+  <h2>What this actually means if you're evaluating a takeoff tool</h2>
+  <ul>
+    <li>A tool that never shows you anything to double-check isn't more accurate — it just gives you no way to notice when it's wrong.</li>
+    <li>"41.3%" is not a general accuracy number for this product — it's specific to one real plan set with an unusually laid-out wall-schedule sheet. A cleaner sheet resolves a much higher share automatically.</li>
+    <li>The real question to ask any takeoff tool isn't "what's your accuracy percentage" — it's "what happens to the readings you can't confirm." Ours get labeled and handed back to you. They don't get silently guessed into a number that looks clean on a spreadsheet.</li>
+  </ul>
+
+  <p>We're publishing this the same way we published <a href="/blog-a-real-bug-we-found.html">the real bug we found in our own insulation detection</a> — because a specific, inspectable failure mode you can verify is worth more than a marketing number you can't.</p>
+
+  <div class="cta-box">
+    <h3>See what confirm-before-it-counts actually looks like</h3>
+    <p>Upload a real plan set and see every reading labeled honestly — your first one is $15.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
 
 <footer>
   <div class="wrap footer-row">

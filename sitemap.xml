@@ -16,6 +16,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.readmyblueprint.com/compare-planswift-buildxact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.readmyblueprint.com/accuracy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -77,6 +82,11 @@
   </url>
   <url>
     <loc>https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.readmyblueprint.com/blog-real-test-freeport-square.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

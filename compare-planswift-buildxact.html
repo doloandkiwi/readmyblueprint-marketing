@@ -2,10 +2,10 @@
 <html lang="en">
 <meta charset="utf-8">
 <script src="/assets/analytics.js" defer></script>
-<title>Blog</title>
+<title>ReadMyBlueprint vs. PlanSwift & Buildxact</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="An honest comparison: where ReadMyBlueprint fits next to manual-takeoff tools like PlanSwift and quote-based estimating platforms like Buildxact, and where it doesn't.">
+<link rel="canonical" href="https://www.readmyblueprint.com/compare-planswift-buildxact.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="ReadMyBlueprint vs. PlanSwift & Buildxact">
+<meta property="og:description" content="An honest comparison of where ReadMyBlueprint fits next to PlanSwift and Buildxact, and where it doesn't.">
+<meta property="og:url" content="https://www.readmyblueprint.com/compare-planswift-buildxact.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -48,7 +49,7 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
 a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
@@ -73,20 +74,46 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} }
 
 .hero{padding:56px 0 24px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:0 0 .8rem;max-width:24ch;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:66ch;margin:0;}
 
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+section{padding:48px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:680px;margin:0 0 24px;}
+.section-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0 0 .5rem;}
+.section-head p{color:var(--muted);margin:0;}
+
+table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.92rem;}
+table.cmp th, table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--surface-2);}
+table.cmp td:first-child{font-weight:600;width:26%;}
+.tbl-wrap{overflow-x:auto;}
+
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
+.fit-card.good{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
+.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
+.fit-card.good h3{color:#fff;}
+.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
+.fit-card:not(.good) li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
+.fit-card.good li::before{content:"✓";color:#8fd4a8;font-weight:700;flex-shrink:0;}
+
+.note{background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:.9rem;margin-top:20px;}
+.note strong{color:var(--amber);}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -168,38 +195,72 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="wrap hero">
-  <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
+  <span class="eyebrow">● Compare</span>
+  <h1>ReadMyBlueprint vs. PlanSwift &amp; Buildxact</h1>
+  <p class="lede">PlanSwift is a manual digitizer-style takeoff tool — you click every wall, door, and fixture yourself. Buildxact bundles estimating with job and project management. Neither one reads your plan set for you. Here's an honest look at where each actually fits.</p>
 </div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-real-test-freeport-square.html">
-    <span class="date">Sep 22, 2026</span>
-    <h2>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h2>
-    <p>41.3% of wall footage auto-matched, the rest honestly flagged rather than guessed — plus the exact root cause we found in the plan sheet itself.</p>
-  </a>
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The short version</span>
+      <h2>Manual clicking vs. automated reading.</h2>
+      <p>PlanSwift's core workflow is still you, tracing walls and counting fixtures by hand on-screen — it's faster than a paper takeoff, but every measurement is still a manual click. Buildxact adds estimating, scheduling, and client-facing quoting on top of a similar manual-takeoff core, priced for small builders running a full job pipeline, not just a takeoff. ReadMyBlueprint skips the manual tracing step entirely: it reads the real vector geometry and legends already embedded in your PDF and hands you a labeled material count.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>&nbsp;</th><th>ReadMyBlueprint</th><th>PlanSwift / Buildxact</th></tr>
+        <tr><td>Core focus</td><td>Automated material takeoff from real vector plan data</td><td>Manual on-screen digitizing (PlanSwift) or estimating + job management (Buildxact)</td></tr>
+        <tr><td>How a wall gets counted</td><td>Read automatically from the plan's own geometry and legend</td><td>You trace it, click it, or measure it by hand on-screen</td></tr>
+        <tr><td>Pricing</td><td>Flat: $49/plan set, or $199/mo for 10/month — shown up front, no call required</td><td>PlanSwift and Buildxact are typically sold on subscription/seat pricing, often behind a demo or trial signup</td></tr>
+        <tr><td>Getting started</td><td>Self-serve signup, first plan set for $15</td><td>Free trial or demo, software install (PlanSwift is a Windows desktop app)</td></tr>
+        <tr><td>Built for</td><td>A homeowner doing one remodel, or a solo estimator/small shop</td><td>Small builders and remodelers running an ongoing job pipeline</td></tr>
+        <tr><td>Estimating / quoting</td><td>Not offered — material takeoff only</td><td>Buildxact includes client-facing quotes and job costing; PlanSwift focuses on takeoff, add-on estimating modules available</td></tr>
+        <tr><td>Time per plan set</td><td>Minutes — no manual tracing required</td><td>Depends on plan complexity — every measurement is a manual action</td></tr>
+      </table>
+    </div>
+    <div class="note"><strong>What we won't claim:</strong> we haven't run a side-by-side benchmark against either platform, and we're not going to tell you our numbers are universally "more accurate" than a careful manual takeoff — a human tracing every wall by hand can be exactly as accurate as any tool, just slower. What we can tell you is exactly how our own numbers are produced: real calibrated geometry, labeled matched/ambiguous/needs-confirmation, never a silent guess. See <a href="/about.html" style="text-decoration:underline;">how it's built</a>, or read our <a href="/compare.html" style="text-decoration:underline;">comparison against STACK &amp; Bluebeam</a> for the enterprise-platform side of this.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Which one fits you</span>
+      <h2>Pick based on the job, not the brand.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>PlanSwift or Buildxact probably fits better if…</h3>
+        <ul>
+          <li>You want full manual control over every single measurement</li>
+          <li>You need client-facing quoting, job costing, or scheduling built in</li>
+          <li>You're running an ongoing pipeline of jobs, not a one-off plan set</li>
+          <li>You already have a digitizer workflow your team is trained on</li>
+        </ul>
+      </div>
+      <div class="fit-card good">
+        <h3>ReadMyBlueprint probably fits better if…</h3>
+        <ul>
+          <li>You don't want to manually trace every wall, door, and fixture</li>
+          <li>You want a real material count in minutes, not hours of clicking</li>
+          <li>You want to see the real price and start today, with no sales call</li>
+          <li>You're a solo estimator, small shop, or a homeowner doing one project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>See your own numbers first.</h2>
+      <p>Your first plan set is $15 — no sales call, no subscription required to start.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap footer-row">
