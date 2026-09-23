@@ -1,9 +1,9 @@
-// Scroll-reveal for sections/cards and count-up for stats. No-op with reduced motion.
+﻿// Scroll-reveal for sections/cards and count-up for stats. No-op with reduced motion.
 // Uses a scroll check (not IntersectionObserver alone) so content can never stay hidden.
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var targets = Array.prototype.slice.call(document.querySelectorAll(
-    'section .section-head, section .wrap > *:not(.section-head), .fv-card, .trust-stat, .step, .price-card'));
+    'section .section-head, section .wrap > *:not(.section-head), .fv-card, .trust-stat, .step, .price-card, .article > h2, .article > p, .article > ul, .article > table, .callout, .cta-box, .post-card, .faq-item, .card'));
   targets.forEach(function (el, i) {
     el.classList.add('reveal');
     el.style.transitionDelay = (i % 4) * 80 + 'ms';
