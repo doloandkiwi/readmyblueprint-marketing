@@ -107,7 +107,7 @@ footer{padding:36px 16px;text-align:center;color:var(--muted);font-size:.82rem;b
 </nav>
 
 <header class="hero">
-  <video autoplay muted loop playsinline preload="auto" poster="/assets/video/cine-1-poster.jpg"><source src="/assets/video/cine-1.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline poster="/assets/video/cine-1-poster.jpg" preload="none" data-video="cine-1"></video>
   <div class="hero-inner">
     <div class="eyebrow">Construction takeoff software</div>
     <h1 data-scramble>Your plans, <em>counted.</em></h1>
@@ -139,14 +139,14 @@ footer{padding:36px 16px;text-align:center;color:var(--muted);font-size:.82rem;b
 </section>
 
 <section class="cine">
-  <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/cine-2-poster.jpg"><source src="/assets/video/cine-2.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline poster="/assets/video/cine-2-poster.jpg" preload="none" data-video="cine-2"></video>
   <div class="cine-inner reveal"><div class="eyebrow">From linework to framing</div><h2>Lines on paper become real quantities.</h2><p>No clicking wall by wall. The drawing's own geometry is measured, so the count comes from the plan — not from a guess about the plan.</p></div>
 </section>
 
 <section class="statement"><p data-words>Every number is traced to the <span class="hl">wall</span> it came from. Anything uncertain is <span class="hl">flagged</span>, not guessed.</p></section>
 
 <section class="cine">
-  <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/cine-3-poster.jpg"><source src="/assets/video/cine-3.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline poster="/assets/video/cine-3-poster.jpg" preload="none" data-video="cine-3"></video>
   <div class="cine-inner reveal"><div class="eyebrow">Built for estimators</div><h2>Order the right material the first time.</h2><p>Sheets, studs, track, insulation and block — grouped by type, ready to drop into your bid.</p></div>
 </section>
 
@@ -163,7 +163,7 @@ footer{padding:36px 16px;text-align:center;color:var(--muted);font-size:.82rem;b
 </section>
 
 <section class="final cine">
-  <video autoplay muted loop playsinline preload="metadata" poster="/assets/video/cine-4-poster.jpg"><source src="/assets/video/cine-4.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline poster="/assets/video/cine-4-poster.jpg" preload="none" data-video="cine-4"></video>
   <div class="cine-inner reveal"><div class="eyebrow">Get started</div><h2>Stop counting by hand.</h2><p>Upload your next plan set and see your takeoff in minutes.</p><a href="https://app.readmyblueprint.com" class="btn btn-primary">Upload a plan set →</a></div>
 </section>
 
@@ -199,4 +199,5 @@ footer{padding:36px 16px;text-align:center;color:var(--muted);font-size:.82rem;b
 })();
 </script>
 </body>
+<script src="/assets/video-loader.js" defer></script>
 </html>

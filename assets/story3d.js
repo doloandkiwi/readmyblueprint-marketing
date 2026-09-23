@@ -5,8 +5,9 @@ import * as THREE from 'three';
 const canvas = document.getElementById('story-canvas');
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+const isSmall = window.matchMedia('(max-width: 800px)').matches;
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isSmall, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall ? 1.25 : 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
