@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<script src="/assets/analytics.js" defer></script>
+<title>Confidence Labels | ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Every ReadMyBlueprint result is labeled matched, ambiguous, or needs confirmation. Here's exactly what each label means, how it's decided, and what to do with it.">
+<link rel="canonical" href="https://www.readmyblueprint.com/confidence-labels.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="Confidence Labels | ReadMyBlueprint">
+<meta property="og:description" content="Every result labeled matched, ambiguous, or needs confirmation — never a silent guess.">
+<meta property="og:url" content="https://www.readmyblueprint.com/confidence-labels.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can I override a label?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every flagged result is editable — confirm the material yourself and it's recorded as your own confirmation, not silently reclassified as \"matched.\"" } },
+    { "@type": "Question", "name": "Does \"matched\" guarantee the number is correct?", "acceptedAnswer": { "@type": "Answer", "text": "It means the measurement traces to real geometry and a real spec found in your document — the same standard a careful human estimator would use. It's not a guarantee against an error in the original drawing itself." } },
+    { "@type": "Question", "name": "What's the practical difference between \"ambiguous\" and \"needs confirmation\"?", "acceptedAnswer": { "@type": "Answer", "text": "Ambiguous means ReadMyBlueprint found multiple possible specs and can't pick between them. Needs confirmation means it found none at all. Both need a human decision — the label tells you why." } },
+    { "@type": "Question", "name": "Do labels show up in my exported CSV or Excel file?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every export includes the label column, so anyone reviewing the file downstream sees exactly what was verified and what wasn't." } },
+    { "@type": "Question", "name": "What happens to a \"needs confirmation\" row if I never confirm it?", "acceptedAnswer": { "@type": "Answer", "text": "It stays flagged in your export. ReadMyBlueprint never quietly converts an unconfirmed result into a confident-looking number." } }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+    --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+  --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
+.nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links .has-mega{position:relative;display:flex;align-items:center;}
+.nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
+.nav-links .has-mega>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55;transition:transform .15s ease,margin-top .15s ease;}
+.nav-links .has-mega:hover>a::after,.nav-links .has-mega:focus-within>a::after{transform:rotate(225deg);margin-top:3px;}
+.mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;z-index:30;}
+.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;}
+.mega-panel-inner{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:flex;gap:4px;white-space:nowrap;}
+.mega-col{display:flex;flex-direction:column;min-width:210px;}
+.mega-col h4{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;padding:0 10px;}
+.mega-col a{display:block;padding:8px 10px;border-radius:8px;font-size:.88rem;color:var(--ink);text-decoration:none;line-height:1.3;white-space:normal;}
+.mega-col a:hover{background:var(--surface-2);}
+.mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--btn-accent);color:#fff;}
+.btn-primary:hover{background:#c2551f;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{background:var(--surface-2);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:1080px){ .nav-links{display:none;} }
+@media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
+
+.hero{padding:64px 0 32px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;}
+.hero-visual{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface);}
+.hero-visual img{display:block;width:100%;height:auto;}
+@media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 0 1rem;max-width:26ch;}
+.hero p.lede{font-size:1.1rem;color:var(--muted);max-width:64ch;line-height:1.6;margin:0;}
+
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:720px;margin:0 0 28px;}
+.section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .6rem;}
+.prose{max-width:72ch;font-size:1.02rem;color:var(--ink);}
+.prose p{margin:0 0 1.1rem;}
+.prose strong{color:var(--blue);}
+
+.label-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.label-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;}
+.label-card .dot{width:12px;height:12px;border-radius:99px;margin-bottom:14px;}
+.label-card.matched .dot{background:var(--good);}
+.label-card.ambiguous .dot{background:var(--amber);}
+.label-card.unmatched .dot{background:var(--muted);}
+.label-card h3{font-size:1.05rem;margin:0 0 8px;}
+.label-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+.mock{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;max-width:560px;}
+.mock-head{padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);}
+.mock-row{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.mock-row:last-child{border-bottom:none;}
+.mock-name{font-weight:600;font-size:.92rem;}
+.badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:99px;white-space:nowrap;}
+.badge.good{background:var(--good-soft);color:var(--good);}
+.badge.warn{background:var(--amber-soft);color:var(--amber);}
+
+.faq dt{font-weight:700;margin-top:1.2rem;font-size:1rem;}
+.faq dd{margin:.4rem 0 0;color:var(--muted);font-size:.94rem;line-height:1.55;}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .label-grid{grid-template-columns:1fr;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+<link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
+<meta name="theme-color" content="#06101f">
+
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="/assets/video/page-estimator-poster.jpg"><source src="/assets/video/page-estimator.mp4" type="video/mp4"></video></div>
+<nav>
+  <div class="nav-row">
+    <a href="/preview/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <div class="has-mega">
+        <a href="/preview/confidence-labels.html">Features</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>How it works</h4>
+              <a href="/preview/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
+              <a href="/preview/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
+              <a href="/preview/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
+              <a href="/preview/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
+              <a href="/preview/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/preview/drywall-takeoff.html">Materials</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>By material</h4>
+              <a href="/preview/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
+              <a href="/preview/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
+              <a href="/preview/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
+              <a href="/preview/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
+              <a href="/preview/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/preview/for-homeowners.html">Who it's for</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Built for</h4>
+              <a href="/preview/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
+              <a href="/preview/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
+              <a href="/preview/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/preview/compare.html">Compare</a>
+      <a href="/preview/tour.html">Tour</a>
+      <div class="has-mega">
+        <a href="/preview/help.html">Resources</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Resources</h4>
+              <a href="/preview/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
+              <a href="/preview/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
+              <a href="/preview/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
+              <a href="/preview/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
+              <a href="/preview/toolkit.html">Bid-Prep Toolkit<span class="mega-desc">Free template + checklist</span></a>
+              <a href="/preview/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/preview/about.html">About</a>
+      <a href="/preview/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+  <span class="eyebrow">● Confidence labels</span>
+  <h1>Every result labeled matched, ambiguous, or needs confirmation.</h1>
+  <p class="lede">Instead of one accuracy percentage covering an entire plan set, ReadMyBlueprint labels every individual measurement with exactly how it was produced — so you know precisely where your two minutes of double-checking should go.</p>
+    </div>
+    <div class="hero-visual"><img src="/assets/illustrations/confidence-labels.webp" alt="Three identical wall cross-sections labeled matched, ambiguous, and needs confirmation with check, question, and warning icons" loading="eager" fetchpriority="high" width="1200" height="895"></div>
+  </div>
+
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The three labels</span>
+      <h2>What each one actually means.</h2>
+    </div>
+    <div class="label-grid">
+      <div class="label-card matched">
+        <div class="dot"></div>
+        <h3>Matched</h3>
+        <p>The wall's measured thickness lines up with a spec found directly on your own drawings — a wall-type legend, a callout, a schedule. The number is ready to use as-is.</p>
+      </div>
+      <div class="label-card ambiguous">
+        <div class="dot"></div>
+        <h3>Ambiguous</h3>
+        <p>More than one material or assembly could explain this wall's measured thickness. ReadMyBlueprint tells you exactly which candidates are possible, instead of silently picking one for you.</p>
+      </div>
+      <div class="label-card unmatched">
+        <div class="dot"></div>
+        <h3>Needs confirmation</h3>
+        <p>No matching spec was found anywhere in the document for this wall. The length and location are still exact — the material assignment just needs a quick human check.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it shows up</span>
+      <h2>Labels travel with the result, everywhere.</h2>
+      <p>A label isn't a one-time note buried in a report — it's attached to the row in your results dashboard and carried straight through to your CSV or Excel export.</p>
+    </div>
+    <div class="mock">
+      <div class="mock-head">Material summary — labeled</div>
+      <div class="mock-row"><span class="mock-name">3-5/8" 20-ga steel stud @ 16" o.c.</span><span class="badge good">Matched</span></div>
+      <div class="mock-row"><span class="mock-name">8" CMU block</span><span class="badge good">Matched</span></div>
+      <div class="mock-row"><span class="mock-name">Unlabeled partition, 4.4"</span><span class="badge warn">Confirm</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why this instead of a percentage</span>
+      <h2>An average can't tell you which row to check.</h2>
+    </div>
+    <div class="prose">
+      <p>Most takeoff tools put a single accuracy percentage on their homepage — 95%, 98%. That number is an average over some internal test set, and averages hide exactly the thing you need to know: which specific result in front of you right now is solid, and which one needs a second look.</p>
+      <p>A label on every row is a different kind of claim — one you can check yourself, on your own plan set, instead of one you have to take on faith. <strong>We don't publish a blended accuracy percentage either</strong>, for the same reason: there's no independent benchmark every takeoff tool runs, so those numbers aren't even comparable between vendors. What we can show you is exactly how each of your own numbers was produced.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions about labels.</h2>
+    </div>
+    <dl class="faq">
+      <dt>Can I override a label?</dt>
+      <dd>Yes. Every flagged result is editable — confirm the material yourself and it's recorded as your own confirmation, not silently reclassified as "matched."</dd>
+      <dt>Does "matched" guarantee the number is correct?</dt>
+      <dd>It means the measurement traces to real geometry and a real spec found in your document — the same standard a careful human estimator would use. It's not a guarantee against an error in the original drawing itself.</dd>
+      <dt>What's the practical difference between "ambiguous" and "needs confirmation"?</dt>
+      <dd>Ambiguous means ReadMyBlueprint found multiple possible specs and can't pick between them. Needs confirmation means it found none at all. Both need a human decision — the label tells you why.</dd>
+      <dt>Do labels show up in my exported CSV or Excel file?</dt>
+      <dd>Yes — every export includes the label column, so anyone reviewing the file downstream sees exactly what was verified and what wasn't.</dd>
+      <dt>What happens to a "needs confirmation" row if I never confirm it?</dt>
+      <dd>It stays flagged in your export. ReadMyBlueprint never quietly converts an unconfirmed result into a confident-looking number.</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>See the labels on your own plan set.</h2>
+      <p>Upload your plan set and see exactly which results are matched, and which need a second look. Your first one is $15.</p>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/preview/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint LLC. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/preview/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/preview/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/chatbot.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
+</html>

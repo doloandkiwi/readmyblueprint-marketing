@@ -1,0 +1,13 @@
+/* Homepage subset of premium.css (the homepage already has its own hero and type). */
+.step,.price-card,.faq-item,.aud a{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s !important}
+.step::before,.price-card::before,.faq-item::before,.aud a::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(110,163,224,.16),transparent 45%)}
+.step:hover::before,.price-card:hover::before,.faq-item:hover::before,.aud a:hover::before{opacity:1}
+.step:hover,.price-card:hover{transform:translateY(-4px);border-color:rgba(224,105,47,.45) !important}
+.price-card.featured{border:1px solid transparent !important;
+  background:linear-gradient(#0b1a2e,#0b1a2e) padding-box,conic-gradient(from var(--ang,0deg),#e0692f,#6ea3e0,#e0692f) border-box !important;
+  animation:ang 6s linear infinite}
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes ang{to{--ang:360deg}}
+.scroll-bar{position:fixed;left:0;top:0;height:2px;width:100%;z-index:101;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+@media (prefers-reduced-motion: reduce){.price-card.featured{animation:none}}

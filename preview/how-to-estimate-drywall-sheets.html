@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<script src="/assets/analytics.js" defer></script>
+<title>How to estimate drywall sheets from plans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Step-by-step: how to count drywall sheets from a floor plan — wall length, height, both sides, layers, openings, and waste — with a worked example.">
+<link rel="canonical" href="https://www.readmyblueprint.com/how-to-estimate-drywall-sheets.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="How to estimate drywall sheets from plans">
+<meta property="og:description" content="Step-by-step: how to count drywall sheets from a floor plan — wall length, height, both sides, layers, openings, and waste — with a worked example.">
+<meta property="og:url" content="https://www.readmyblueprint.com/how-to-estimate-drywall-sheets.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to estimate drywall sheets from plans",
+  "description": "Step-by-step: how to count drywall sheets from a floor plan — wall length, height, both sides, layers, openings, and waste — with a worked example.",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "url": "https://www.readmyblueprint.com/how-to-estimate-drywall-sheets.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/how-to-estimate-drywall-sheets.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+    --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+  --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
+.nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links .has-mega{position:relative;display:flex;align-items:center;}
+.nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
+.nav-links .has-mega>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55;transition:transform .15s ease,margin-top .15s ease;}
+.nav-links .has-mega:hover>a::after,.nav-links .has-mega:focus-within>a::after{transform:rotate(225deg);margin-top:3px;}
+.mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;z-index:30;}
+.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;}
+.mega-panel-inner{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:flex;gap:4px;white-space:nowrap;}
+.mega-col{display:flex;flex-direction:column;min-width:210px;}
+.mega-col h4{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;padding:0 10px;}
+.mega-col a{display:block;padding:8px 10px;border-radius:8px;font-size:.88rem;color:var(--ink);text-decoration:none;line-height:1.3;white-space:normal;}
+.mega-col a:hover{background:var(--surface-2);}
+.mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--btn-accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:1080px){ .nav-links{display:none;} }
+@media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
+
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+<link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
+<meta name="theme-color" content="#06101f">
+
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="/assets/video/page-drywall-poster.jpg"><source src="/assets/video/page-drywall.mp4" type="video/mp4"></video></div>
+<nav>
+  <div class="nav-row">
+    <a href="/preview/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <div class="has-mega">
+        <a href="/preview/confidence-labels.html">Features</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>How it works</h4>
+              <a href="/preview/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
+              <a href="/preview/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
+              <a href="/preview/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
+              <a href="/preview/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
+              <a href="/preview/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/preview/drywall-takeoff.html">Materials</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>By material</h4>
+              <a href="/preview/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
+              <a href="/preview/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
+              <a href="/preview/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
+              <a href="/preview/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
+              <a href="/preview/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/preview/for-homeowners.html">Who it's for</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Built for</h4>
+              <a href="/preview/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
+              <a href="/preview/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
+              <a href="/preview/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/preview/compare.html">Compare</a>
+      <a href="/preview/tour.html">Tour</a>
+      <div class="has-mega">
+        <a href="/preview/help.html">Resources</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Resources</h4>
+              <a href="/preview/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
+              <a href="/preview/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
+              <a href="/preview/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
+              <a href="/preview/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
+              <a href="/preview/toolkit.html">Bid-Prep Toolkit<span class="mega-desc">Free template + checklist</span></a>
+              <a href="/preview/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/preview/about.html">About</a>
+      <a href="/preview/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <span class="eyebrow">● Guide</span>
+  <h1>How to estimate drywall sheets from plans</h1>
+  <div class="meta">Sep 23, 2026 · Guide</div>
+
+  <p>A drywall estimate comes down to one number: total board area, divided by the area of one sheet, plus waste. The work is in getting the board area right — every wall, every side, every layer.</p>
+
+  <h2>1. Measure the linear feet of each wall type</h2>
+  <p>Go through the floor plan and total the length of every wall, grouped by wall type (the tag that points to the wall-type legend). Different types often mean different board: 5/8" Type X on rated walls, moisture-resistant board in wet areas, two layers on some partitions.</p>
+
+  <h2>2. Multiply by the board height</h2>
+  <p>Wall area = linear feet × height. Use the height the board actually runs — to the ceiling, or full height to the deck above if the wall-type detail says so. That detail matters: a wall that runs to the deck can be 30–50% more board than one that stops at the ceiling.</p>
+
+  <h2>3. Count sides and layers</h2>
+  <ul>
+    <li>An interior partition usually has board on <strong>both sides</strong> — double the area.</li>
+    <li>An exterior wall usually has board on the <strong>inside only</strong>.</li>
+    <li>Multiply by the number of layers the wall type calls for (a 2-layer each side wall is 4× the single-side area).</li>
+  </ul>
+
+  <h2>4. Openings: subtract the big ones only</h2>
+  <p>Common practice is to ignore small openings (standard doors, small windows) — the cut-out usually becomes waste anyway. Subtract large openings like storefronts, big windows, and wide cased openings.</p>
+
+  <h2>5. Divide by sheet size and add waste</h2>
+  <p>A 4×8 sheet covers 32 sq ft; a 4×12 covers 48 sq ft. Divide total board area by sheet area and add 10–15% for waste (more for lots of small rooms and corners, less for long straight corridors).</p>
+
+  <div class="callout"><strong>Worked example:</strong> 220 LF of interior partition, board to 9 ft, one layer each side.<br>
+  220 × 9 = 1,980 sq ft per side × 2 sides = 3,960 sq ft.<br>
+  3,960 ÷ 32 = 123.75 sheets of 4×8 → × 1.12 waste ≈ <strong>139 sheets</strong>.</div>
+
+  <h2>6. Don't forget ceilings and soffits</h2>
+  <p>Hard-lid ceilings come from the reflected ceiling plan: room area in sq ft, same sheet math. Soffits and bulkheads are easy to miss — check the RCP and sections.</p>
+
+  <h2>Where estimates usually go wrong</h2>
+  <ul>
+    <li>Wall types misread or a legend on a different sheet than expected.</li>
+    <li>Board-to-deck walls counted at ceiling height.</li>
+    <li>Second layers and both sides missed on rated or acoustic walls.</li>
+  </ul>
+  <p>That's exactly the part ReadMyBlueprint automates: it reads the wall-type legend, matches each wall on the plan to its type, and shows you which walls it's sure about and which need your confirmation.</p>
+
+  <div class="cta-box">
+    <h3>Skip the hand count</h3>
+    <p>Upload a digital plan set and get drywall sheet counts back, traced to each wall, in minutes.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+  <p style="margin-top:28px;font-size:.92rem;">Related: <a href="/preview/drywall-takeoff.html">Drywall takeoff</a> · <a href="/preview/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/preview/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a></p>
+</article>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/preview/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint LLC. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/preview/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/preview/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/chatbot.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
+</html>
