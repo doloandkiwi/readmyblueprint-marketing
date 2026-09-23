@@ -2,10 +2,10 @@
 <html lang="en">
 <meta charset="utf-8">
 <script src="/assets/analytics.js" defer></script>
-<title>What real takeoff-software reviews actually complain about</title>
+<title>How many CMU blocks do I need? Block count from plans</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="We read through real G2, Capterra, and Trustpilot reviews of STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift, and Handoff. Here's what estimators actually complain about, and how ReadMyBlueprint is built around the biggest one.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
+<meta name="description" content="How to calculate CMU block count from a plan: wall area, 1.125 blocks per square foot for 8x8x16 block, openings, and waste — with a worked example.">
+<link rel="canonical" href="https://www.readmyblueprint.com/how-many-cmu-blocks.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -13,25 +13,38 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="What real takeoff-software reviews actually complain about">
-<meta property="og:description" content="We read the real G2/Capterra/Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again — and what we do about it.">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
+<meta property="og:title" content="How many CMU blocks do I need? Block count from plans">
+<meta property="og:description" content="How to calculate CMU block count from a plan: wall area, 1.125 blocks per square foot for 8x8x16 block, openings, and waste — with a worked example.">
+<meta property="og:url" content="https://www.readmyblueprint.com/how-many-cmu-blocks.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "What real takeoff-software reviews actually complain about",
-  "description": "We read through real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again, and what ReadMyBlueprint does about it.",
-  "datePublished": "2026-09-12",
-  "dateModified": "2026-09-12",
-  "url": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html",
+  "@type": "Article",
+  "headline": "How many CMU blocks do I need? Block count from plans",
+  "description": "How to calculate CMU block count from a plan: wall area, 1.125 blocks per square foot for 8x8x16 block, openings, and waste — with a worked example.",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "url": "https://www.readmyblueprint.com/how-many-cmu-blocks.html",
   "image": "https://www.readmyblueprint.com/og-image.svg",
-  "author": { "@type": "Organization", "name": "ReadMyBlueprint LLC" },
-  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html" }
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/how-many-cmu-blocks.html"
+  }
 }
 </script>
 
@@ -104,12 +117,6 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .article li{margin-bottom:.5rem;}
 .callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
 .callout strong{color:var(--blue);}
-.gripe-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem;}
-.gripe-table th,.gripe-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
-.gripe-table th{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);}
-.gripe-table td:first-child{font-weight:600;white-space:nowrap;}
-.wrap-table{overflow-x:auto;}
-.source-note{font-size:.82rem;color:var(--muted);margin-top:6px;}
 .cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
 .cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
 .cta-box p{color:#c7d5e8;margin:0 0 18px;}
@@ -194,44 +201,42 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <article class="article">
-  <span class="eyebrow">● Blog</span>
-  <h1>What real takeoff-software reviews actually complain about</h1>
-  <div class="meta">Sep 12, 2026 · 7 min read</div>
+  <span class="eyebrow">● Guide</span>
+  <h1>How many CMU blocks do I need? Block count from plans</h1>
+  <div class="meta">Sep 23, 2026 · Guide</div>
 
-  <p>Every takeoff and estimating tool's own marketing site says the same thing: fast, accurate, easy to use. That's not useful information — every vendor says it. So instead of reading marketing pages, we read real user reviews on G2, Capterra, and Trustpilot for seven tools estimators actually use day to day: STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift/ConstructConnect, and Handoff (formerly 1build).</p>
+  <p>For standard 8×8×16 concrete block, the count is simple: <strong>1.125 blocks per square foot of wall</strong>. The work is getting the net wall area right.</p>
 
-  <p>We weren't looking for one-star pile-ons or five-star fluff. We were looking for the specific, repeated complaints — the same gripe showing up across multiple reviewers, on multiple products, in their own words. One pattern showed up more than any other, and it's the one this section exists to be honest about, since it's directly relevant to what ReadMyBlueprint claims to do differently.</p>
+  <h2>Why 1.125?</h2>
+  <p>A nominal 8×16 block face, including the 3/8" mortar joint, covers 8" × 16" = 128 sq in, or 0.889 sq ft. One square foot ÷ 0.889 = 1.125 blocks.</p>
 
-  <h2>The complaint that shows up everywhere: automation gets it wrong, quietly</h2>
-  <p>Across nearly every AI-assisted or auto-measure tool we looked at, the most common substantive complaint wasn't "it's slow" or "the UI is ugly" — it was that the automation produces numbers that are wrong in ways that aren't obvious until later. A few real, paraphrased examples from what we read:</p>
-  <ul>
-    <li>One general contractor described one AI takeoff tool as roughly 85% accurate on standard residential floors, but dropping to around 60% accurate on a more complex retail level of the same project — with no indication in the tool itself of which number to trust more.</li>
-    <li>Multiple reviewers of a different auto-measure tool described its AI-detected quantities as "messy" — requiring nearly as much manual cleanup and cross-checking as doing the takeoff by hand would have taken in the first place.</li>
-    <li>One reviewer of a predictive-quantity feature on a popular estimating platform reported the autofill numbers were frequently wrong, and that the tool made unrequested adjustments to entries that then had to be caught and manually corrected.</li>
-  </ul>
-  <p>None of these are "the software is broken" complaints. They're a more specific and, honestly, more damning pattern: the tool <em>looks</em> confident, hands over a number, and the number is sometimes just wrong — with nothing in the interface distinguishing a solid reading from a shaky guess.</p>
+  <h2>1. Wall area</h2>
+  <p>Wall length × wall height, for each CMU wall. Heights come from the elevations or wall sections — check whether the wall runs to a bond beam, the roof deck, or a parapet.</p>
 
-  <div class="callout"><strong>This is exactly the failure mode ReadMyBlueprint is built to not have.</strong> Every material count we produce is labeled — matched to a real spec found on the sheet, flagged as ambiguous between two plausible specs, or marked as needing your confirmation — never handed to you as one unlabeled, falsely confident number. We'd rather tell you we're not sure than quietly guess and let you find out at bid time.</p></div>
+  <h2>2. Subtract openings</h2>
+  <p>Unlike drywall, subtract every door and window opening from CMU area: each one is block you won't lay.</p>
 
-  <h2>Other patterns worth knowing about</h2>
-  <div class="wrap-table"><table class="gripe-table">
-    <tr><th>Pattern</th><th>What we found</th></tr>
-    <tr><td>Pricing opacity</td><td>More than one tool requires a sales call for pricing at all; one reviewer described paying a large annual fee and feeling it delivered far less depth than expected for the price, with no way to have known that going in.</td></tr>
-    <tr><td>Billing/cancellation friction</td><td>Reviewers described cancellation policies with long notice windows and no refunds, unexpected charges after requesting a cancellation, and — in one case — a "lifetime" license being deactivated years later when the vendor changed its licensing model.</td></tr>
-    <tr><td>Inconsistent support</td><td>The same vendor sometimes draws both "support saved us" and "support was a nightmare" reviews — support quality reads as dependent on which rep or tier you land on, not a fixed trait of the product.</td></tr>
-    <tr><td>Stability issues</td><td>Freezing, crashes mid-session, and being locked out of your own project during a platform update all came up — usually described as rare, but memorable enough that reviewers led with it.</td></tr>
-    <tr><td>Steep learning curve</td><td>Older, more established tools draw the most "outdated interface" and "took weeks to feel comfortable" comments — the tradeoff of a tool that's been around long enough to accumulate deep, if dated, functionality.</td></tr>
-  </table></div>
-  <p class="source-note">Paraphrased from real reviews found on G2, Capterra, and Trustpilot as of September 2026. We're not linking directly to individual reviews here since review-platform URLs shift and get reorganized, but every pattern above showed up more than once, from more than one reviewer, for the product in question.</p>
+  <h2>3. Multiply and add waste</h2>
+  <p>Net area × 1.125, then add about 5% for breakage and cuts.</p>
 
-  <h2>Where this leaves us, honestly</h2>
-  <p>We're not claiming ReadMyBlueprint is immune to every complaint on this list. We're a small, self-serve product without a dedicated support team — if support responsiveness is what you need most, that's a real tradeoff to weigh, not something we can promise the way a larger company can. What we can say is that the single most common, most specific complaint across every AI-assisted tool we researched — automation being confidently wrong — is the exact problem our confirm-before-it-counts labeling exists to solve. We built it that way before this research, not because of it; reading these reviews mostly confirmed we'd been solving the right problem.</p>
+  <div class="callout"><strong>Worked example:</strong> 160 LF of 8" CMU wall, 12 ft high, with 3 doors (3×7 ft) and 4 windows (4×4 ft).<br>
+  Gross: 160 × 12 = 1,920 sq ft · openings: 63 + 64 = 127 sq ft · net: 1,793 sq ft.<br>
+  1,793 × 1.125 = 2,017 blocks × 1.05 ≈ <strong>2,118 blocks</strong>.</div>
+
+  <h2>4. Special blocks</h2>
+  <p>Count separately: bond beam block (usually a course at the top and at floor lines), lintel block over openings, and corner/end blocks. The structural notes and wall sections say where bond beams and grouted cells go.</p>
+
+  <h2>5. Mortar</h2>
+  <p>A common rule of thumb is roughly 8–9 bags of masonry cement per 100 block — confirm against your supplier's numbers.</p>
+
+  <p>ReadMyBlueprint measures CMU wall length and area straight from the plan's own geometry, so the area you multiply is measured, not guessed.</p>
 
   <div class="cta-box">
-    <h3>See a labeled reading, not a confident guess</h3>
-    <p>Upload a real plan set and see exactly what "matched" vs. "needs confirmation" looks like — your first one is $15.</p>
+    <h3>Skip the hand count</h3>
+    <p>Upload a digital plan set and get CMU block counts back, traced to each wall, in minutes.</p>
     <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
   </div>
+  <p style="margin-top:28px;font-size:.92rem;">Related: <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a></p>
 </article>
 
 <footer>

@@ -2,10 +2,10 @@
 <html lang="en">
 <meta charset="utf-8">
 <script src="/assets/analytics.js" defer></script>
-<title>What real takeoff-software reviews actually complain about</title>
+<title>How to calculate metal studs and track from plans</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="We read through real G2, Capterra, and Trustpilot reviews of STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift, and Handoff. Here's what estimators actually complain about, and how ReadMyBlueprint is built around the biggest one.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
+<meta name="description" content="How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.">
+<link rel="canonical" href="https://www.readmyblueprint.com/how-to-calculate-metal-studs.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -13,25 +13,38 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="What real takeoff-software reviews actually complain about">
-<meta property="og:description" content="We read the real G2/Capterra/Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again — and what we do about it.">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html">
+<meta property="og:title" content="How to calculate metal studs and track from plans">
+<meta property="og:description" content="How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.">
+<meta property="og:url" content="https://www.readmyblueprint.com/how-to-calculate-metal-studs.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "What real takeoff-software reviews actually complain about",
-  "description": "We read through real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. Here's the pattern that shows up again and again, and what ReadMyBlueprint does about it.",
-  "datePublished": "2026-09-12",
-  "dateModified": "2026-09-12",
-  "url": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html",
+  "@type": "Article",
+  "headline": "How to calculate metal studs and track from plans",
+  "description": "How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "url": "https://www.readmyblueprint.com/how-to-calculate-metal-studs.html",
   "image": "https://www.readmyblueprint.com/og-image.svg",
-  "author": { "@type": "Organization", "name": "ReadMyBlueprint LLC" },
-  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-what-reviewers-actually-complain-about.html" }
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/how-to-calculate-metal-studs.html"
+  }
 }
 </script>
 
@@ -104,12 +117,6 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .article li{margin-bottom:.5rem;}
 .callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
 .callout strong{color:var(--blue);}
-.gripe-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem;}
-.gripe-table th,.gripe-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
-.gripe-table th{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);}
-.gripe-table td:first-child{font-weight:600;white-space:nowrap;}
-.wrap-table{overflow-x:auto;}
-.source-note{font-size:.82rem;color:var(--muted);margin-top:6px;}
 .cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
 .cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
 .cta-box p{color:#c7d5e8;margin:0 0 18px;}
@@ -194,44 +201,51 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </nav>
 
 <article class="article">
-  <span class="eyebrow">● Blog</span>
-  <h1>What real takeoff-software reviews actually complain about</h1>
-  <div class="meta">Sep 12, 2026 · 7 min read</div>
+  <span class="eyebrow">● Guide</span>
+  <h1>How to calculate metal studs and track from plans</h1>
+  <div class="meta">Sep 23, 2026 · Guide</div>
 
-  <p>Every takeoff and estimating tool's own marketing site says the same thing: fast, accurate, easy to use. That's not useful information — every vendor says it. So instead of reading marketing pages, we read real user reviews on G2, Capterra, and Trustpilot for seven tools estimators actually use day to day: STACK, Bluebeam, Togal.AI, Buildxact, Kreo, PlanSwift/ConstructConnect, and Handoff (formerly 1build).</p>
+  <p>Metal stud framing is a count, not an area: studs along the wall at a fixed spacing, track top and bottom, and extras wherever the wall starts, stops, turns, or opens.</p>
 
-  <p>We weren't looking for one-star pile-ons or five-star fluff. We were looking for the specific, repeated complaints — the same gripe showing up across multiple reviewers, on multiple products, in their own words. One pattern showed up more than any other, and it's the one this section exists to be honest about, since it's directly relevant to what ReadMyBlueprint claims to do differently.</p>
+  <h2>1. Get linear feet per wall type</h2>
+  <p>From the floor plan, total the length of each wall type. The wall-type legend tells you stud size (e.g. 3-5/8" or 6"), gauge, and spacing (usually 16" or 24" on center).</p>
 
-  <h2>The complaint that shows up everywhere: automation gets it wrong, quietly</h2>
-  <p>Across nearly every AI-assisted or auto-measure tool we looked at, the most common substantive complaint wasn't "it's slow" or "the UI is ugly" — it was that the automation produces numbers that are wrong in ways that aren't obvious until later. A few real, paraphrased examples from what we read:</p>
+  <h2>2. Base stud count</h2>
+  <p>Studs = (wall length in inches ÷ spacing) + 1.</p>
+  <p>A 20 ft wall at 16" o.c.: (240 ÷ 16) + 1 = 16 studs. At 24" o.c.: (240 ÷ 24) + 1 = 11 studs.</p>
+  <p>A quick rule for totals: at 16" o.c. figure about 0.75 studs per LF; at 24" o.c., about 0.5 per LF — then add extras.</p>
+
+  <h2>3. Add extras</h2>
   <ul>
-    <li>One general contractor described one AI takeoff tool as roughly 85% accurate on standard residential floors, but dropping to around 60% accurate on a more complex retail level of the same project — with no indication in the tool itself of which number to trust more.</li>
-    <li>Multiple reviewers of a different auto-measure tool described its AI-detected quantities as "messy" — requiring nearly as much manual cleanup and cross-checking as doing the takeoff by hand would have taken in the first place.</li>
-    <li>One reviewer of a predictive-quantity feature on a popular estimating platform reported the autofill numbers were frequently wrong, and that the tool made unrequested adjustments to entries that then had to be caught and manually corrected.</li>
+    <li><strong>Corners and intersections:</strong> 1–2 extra studs each.</li>
+    <li><strong>Openings:</strong> typically 2 extra studs per door or window (jambs), plus the header and cripples the details call for.</li>
+    <li><strong>Wall ends:</strong> 1 extra where a wall dead-ends.</li>
   </ul>
-  <p>None of these are "the software is broken" complaints. They're a more specific and, honestly, more damning pattern: the tool <em>looks</em> confident, hands over a number, and the number is sometimes just wrong — with nothing in the interface distinguishing a solid reading from a shaky guess.</p>
 
-  <div class="callout"><strong>This is exactly the failure mode ReadMyBlueprint is built to not have.</strong> Every material count we produce is labeled — matched to a real spec found on the sheet, flagged as ambiguous between two plausible specs, or marked as needing your confirmation — never handed to you as one unlabeled, falsely confident number. We'd rather tell you we're not sure than quietly guess and let you find out at bid time.</p></div>
+  <h2>4. Track</h2>
+  <p>Track runs top and bottom: track LF = wall LF × 2. Add about 5–10% for laps and cuts, then divide by stick length (commonly 10 ft) for piece count.</p>
 
-  <h2>Other patterns worth knowing about</h2>
-  <div class="wrap-table"><table class="gripe-table">
-    <tr><th>Pattern</th><th>What we found</th></tr>
-    <tr><td>Pricing opacity</td><td>More than one tool requires a sales call for pricing at all; one reviewer described paying a large annual fee and feeling it delivered far less depth than expected for the price, with no way to have known that going in.</td></tr>
-    <tr><td>Billing/cancellation friction</td><td>Reviewers described cancellation policies with long notice windows and no refunds, unexpected charges after requesting a cancellation, and — in one case — a "lifetime" license being deactivated years later when the vendor changed its licensing model.</td></tr>
-    <tr><td>Inconsistent support</td><td>The same vendor sometimes draws both "support saved us" and "support was a nightmare" reviews — support quality reads as dependent on which rep or tier you land on, not a fixed trait of the product.</td></tr>
-    <tr><td>Stability issues</td><td>Freezing, crashes mid-session, and being locked out of your own project during a platform update all came up — usually described as rare, but memorable enough that reviewers led with it.</td></tr>
-    <tr><td>Steep learning curve</td><td>Older, more established tools draw the most "outdated interface" and "took weeks to feel comfortable" comments — the tradeoff of a tool that's been around long enough to accumulate deep, if dated, functionality.</td></tr>
-  </table></div>
-  <p class="source-note">Paraphrased from real reviews found on G2, Capterra, and Trustpilot as of September 2026. We're not linking directly to individual reviews here since review-platform URLs shift and get reorganized, but every pattern above showed up more than once, from more than one reviewer, for the product in question.</p>
+  <h2>5. Stud length</h2>
+  <p>Order studs to the wall height from the wall-type detail — to ceiling or to deck. Heights over standard lengths may need longer studs or a heavier gauge; the legend or structural notes will say.</p>
 
-  <h2>Where this leaves us, honestly</h2>
-  <p>We're not claiming ReadMyBlueprint is immune to every complaint on this list. We're a small, self-serve product without a dedicated support team — if support responsiveness is what you need most, that's a real tradeoff to weigh, not something we can promise the way a larger company can. What we can say is that the single most common, most specific complaint across every AI-assisted tool we researched — automation being confidently wrong — is the exact problem our confirm-before-it-counts labeling exists to solve. We built it that way before this research, not because of it; reading these reviews mostly confirmed we'd been solving the right problem.</p>
+  <div class="callout"><strong>Worked example:</strong> 300 LF of 3-5/8" 20 ga partition at 16" o.c., 10 ft tall, 8 doors, 14 corners/intersections.<br>
+  Base: 300 × 0.75 = 225 studs · doors: 8 × 2 = 16 · corners: 14 × 2 = 28 → <strong>≈ 269 studs</strong> at 10 ft.<br>
+  Track: 300 × 2 = 600 LF × 1.07 ≈ 642 LF → <strong>65 pieces</strong> of 10 ft track.</div>
+
+  <h2>Where counts usually go wrong</h2>
+  <ul>
+    <li>Mixing spacings or stud sizes across wall types.</li>
+    <li>Missing walls that are only shown on an enlarged plan.</li>
+    <li>Using ceiling height for walls that run to deck.</li>
+  </ul>
+  <p>ReadMyBlueprint reads stud size, gauge and spacing straight from the wall-type legend and totals studs and track per wall type — every number traced back to the wall it came from.</p>
 
   <div class="cta-box">
-    <h3>See a labeled reading, not a confident guess</h3>
-    <p>Upload a real plan set and see exactly what "matched" vs. "needs confirmation" looks like — your first one is $15.</p>
+    <h3>Skip the hand count</h3>
+    <p>Upload a digital plan set and get stud and track counts back, traced to each wall, in minutes.</p>
     <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
   </div>
+  <p style="margin-top:28px;font-size:.92rem;">Related: <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a></p>
 </article>
 
 <footer>
