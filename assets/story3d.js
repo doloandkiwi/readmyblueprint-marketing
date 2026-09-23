@@ -201,11 +201,14 @@ function camAt(p) {
 // ---------- scroll ----------
 let target = 0, prog = 0;
 const story = document.getElementById('story');
+// Plays automatically (about 9s) once the section is on screen; no scroll-driving.
+let playStart = -1;
 function readScroll() {
   const r = story.getBoundingClientRect();
-  target = clamp01(-r.top / (r.height - window.innerHeight));
+  if (playStart < 0 && r.top < window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.4) playStart = performance.now();
 }
 window.addEventListener('scroll', readScroll, { passive: true }); readScroll();
+setInterval(() => { if (playStart >= 0) target = clamp01((performance.now() - playStart) / 9000); }, 50);
 let mx = 0, my = 0, smx = 0, smy = 0, lastP = -1;
 window.addEventListener('pointermove', e => { mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; });
 let storyVisible = true;
@@ -219,7 +222,7 @@ const clock = new THREE.Clock();
 function frame() {
   requestAnimationFrame(frame);
   const t = clock.getElapsedTime();
-  prog += (target - prog) * (reduce ? 1 : 0.08);
+  prog += (target - prog) * (reduce ? 1 : 0.2);
   smx += (mx - smx) * 0.06; smy += (my - smy) * 0.06;
   const moving = Math.abs(target - prog) > 1e-4 || Math.abs(mx - smx) > 1e-3 || Math.abs(my - smy) > 1e-3;
   if (!storyVisible || (!moving && lastP >= 0)) return;

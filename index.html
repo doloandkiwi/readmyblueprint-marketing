@@ -157,13 +157,13 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.98rem;transition:transform .2s,box-shadow .2s,background .2s}
 .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px -10px rgba(224,105,47,.8)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(224,105,47,.9)}
-.btn-ghost{border:1px solid rgba(255,255,255,.25);color:#fff;backdrop-filter:blur(8px);background:rgba(255,255,255,.05)}
+.btn-ghost{border:1px solid rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.05)}
 .btn-ghost:hover{background:rgba(255,255,255,.12)}
 
 /* nav */
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1100px,calc(100% - 32px));
   display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px;border-radius:999px;
-  background:rgba(8,20,38,.55);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px)}
+  background:rgba(8,20,38,.92);border:1px solid rgba(255,255,255,.1);}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;text-decoration:none}
 .brand img{width:24px;height:24px}.brand span{color:var(--muted);font-weight:500}
 .nav-links{display:flex;gap:22px;font-size:.9rem;color:var(--muted)}.nav-links a{text-decoration:none}.nav-links a:hover{color:#fff}
@@ -185,8 +185,8 @@ nav .btn{padding:.55rem 1.1rem;font-size:.88rem}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* 3D story */
-#story{position:relative;height:620vh}
-.story-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
+#story{position:relative;height:100vh;min-height:600px}
+.story-sticky{position:relative;height:100%;overflow:hidden}
 #story-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .story-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(6,16,31,.75) 100%)}
 .chapter{position:absolute;left:max(24px,calc(50% - 550px));bottom:12vh;max-width:430px;opacity:0;transition:none}
@@ -196,7 +196,7 @@ nav .btn{padding:.55rem 1.1rem;font-size:.88rem}
 .chapter.right{}
 .chapter.center{left:50%;transform:translateX(-50%);text-align:center;bottom:auto;top:18vh}
 .tally{position:absolute;right:max(24px,calc(50% - 550px));top:20vh;display:grid;gap:10px;font-family:var(--mono)}
-.tally{transition:opacity .4s}.tally.off{opacity:0}.tally div{background:rgba(8,20,38,.72);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;backdrop-filter:blur(8px);min-width:230px}
+.tally{transition:opacity .4s}.tally.off{opacity:0}.tally div{background:rgba(8,20,38,.72);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;min-width:230px}
 .tally b{font-family:var(--display);font-size:1.5rem;display:block;color:#fff}
 .tally small{color:var(--muted);font-size:.72rem}
 .tally .tag{float:right;font-size:.62rem;padding:2px 7px;border-radius:99px;background:#1f5a37;color:#b8f0c9;margin-top:4px}
@@ -290,16 +290,16 @@ footer .f-links{margin-top:10px;line-height:2}footer .f-links a{text-decoration:
   <div class="scroll-cue">SCROLL</div>
 </header>
 
-<section id="story">
+<section id="story" aria-label="How it works, in 20 seconds">
   <div class="story-sticky">
     <canvas id="story-canvas"></canvas>
     <div class="story-vignette"></div>
 
-    <div class="chapter" data-from="0.0" data-to="0.15"><div class="n">01 — READ</div><h2>It starts with your plan set.</h2><p>ReadMyBlueprint reads the real vector geometry and the wall-type legend — the same data the architect drew with.</p></div>
-    <div class="chapter right" data-from="0.16" data-to="0.3"><div class="n">02 — MATCH</div><h2>Every wall, matched to its type.</h2><p>Each partition is traced and tied to its spec: stud size, gauge, spacing, board, height.</p></div>
-    <div class="chapter" data-from="0.31" data-to="0.46"><div class="n">03 — FRAME</div><h2>Studs and track, counted.</h2><p>Spacing from the legend, extras at corners and openings, track top and bottom.</p></div>
-    <div class="chapter right" data-from="0.47" data-to="0.66"><div class="n">04 — BOARD &amp; BLOCK</div><h2>Drywall sheets. CMU blocks.</h2><p>Both sides, every layer, the right height — and block walls course by course.</p></div>
-    <div class="chapter center" data-from="0.72" data-to="0.93"><div class="n">05 — TAKEOFF</div><h2>One clean material list.</h2><p>Ready for your bid. Anything the drawings don't prove is flagged — never a silent guess.</p></div>
+    <div class="chapter" data-from="0.0" data-to="0.15"><div class="n">STEP 1</div><h2>You upload your plans.</h2><p>Any digital PDF plan set your architect sent you.</p></div>
+    <div class="chapter right" data-from="0.16" data-to="0.3"><div class="n">STEP 2</div><h2>We find every wall.</h2><p>Each wall is measured and matched to its type from your wall legend.</p></div>
+    <div class="chapter" data-from="0.31" data-to="0.46"><div class="n">STEP 3</div><h2>We count the studs.</h2><p>Studs and track for every wall, at the right spacing.</p></div>
+    <div class="chapter right" data-from="0.47" data-to="0.66"><div class="n">STEP 4</div><h2>Then the drywall and block.</h2><p>Sheets for both sides of every wall, and blocks for masonry walls.</p></div>
+    <div class="chapter center" data-from="0.72" data-to="0.93"><div class="n">RESULT</div><h2>You get your material list.</h2><p>Ready for your bid, in minutes. Anything we're unsure about is flagged for you to check.</p></div>
 
     <div class="tally"><small style="padding-left:4px;letter-spacing:.12em">SAMPLE PROJECT · LIVE TALLY</small>
       <div><small>3-5/8" 20 ga studs</small><b data-count="studs" data-from="0.33">0</b><span class="tag">Matched</span></div>

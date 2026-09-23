@@ -1,4 +1,4 @@
-/* Cinematic theme for all inner pages — matches the homepage. Loaded after each page's own styles.
+﻿/* Cinematic theme for all inner pages — matches the homepage. Loaded after each page's own styles.
    :root:root:root outranks the pages' :root:not([data-theme]) dark-mode blocks, so this wins in every mode. */
 :root:root:root{
   --ink:#eef3fa; --paper:#06101f; --surface:#0b1a2e; --surface-2:#10233d;
@@ -16,7 +16,6 @@ body{
     linear-gradient(rgba(110,163,224,.045) 1px, transparent 1px) 0 0/48px 48px,
     linear-gradient(90deg, rgba(110,163,224,.045) 1px, transparent 1px) 0 0/48px 48px,
     #06101f !important;
-  background-attachment:fixed !important;
   color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
@@ -25,7 +24,7 @@ h1{font-weight:600}
 
 /* glass pill nav */
 nav{position:sticky;top:12px !important;margin:12px auto 0;width:min(1240px,calc(100% - 24px));border-radius:999px;
-  background:rgba(8,20,38,.6) !important;border:1px solid rgba(255,255,255,.1) !important;backdrop-filter:blur(14px)}
+  background:rgba(8,20,38,.6) !important;border:1px solid rgba(255,255,255,.1) !important;background:rgba(8,20,38,.92) !important}
 nav .mega-panel-inner{background:rgba(11,26,46,.96);border-color:rgba(255,255,255,.1)}
 nav .mega-col a:hover{background:rgba(255,255,255,.06)}
 .brand .mark{filter:none}
