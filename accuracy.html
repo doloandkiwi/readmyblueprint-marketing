@@ -125,8 +125,10 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 </style>
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
 
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="/assets/video/page-estimator-poster.jpg"><source src="/assets/video/page-estimator.mp4" type="video/mp4"></video></div>
 <nav>
   <div class="nav-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
@@ -209,7 +211,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <h1>Tested against real plan sets, not claimed.</h1>
   <p class="lede">No accuracy percentage gets put on this site unless it came from actually running the tool against a real, multi-hundred-page commercial plan set and hand-checking the result — the same standard <a href="/about.html" style="text-decoration:underline;color:var(--blue);">described on the About page</a>. These are the real numbers from that testing, including the bugs they found and how they were fixed, not just the numbers that look good.</p>
     </div>
-    <div class="hero-visual"><img src="/assets/illustrations/accuracy.webp" alt="Isometric illustration of a magnifying glass over a stack of real plan sheets, revealing a measured wall detail" loading="lazy" width="1200" height="895"></div>
+    <div class="hero-visual"><img src="/assets/illustrations/accuracy.webp" alt="Isometric illustration of a magnifying glass over a stack of real plan sheets, revealing a measured wall detail" loading="eager" fetchpriority="high" width="1200" height="895"></div>
   </div>
 
 </div>
@@ -292,4 +294,5 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <script src="/assets/chatbot.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
 </html>

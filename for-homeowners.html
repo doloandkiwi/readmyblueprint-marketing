@@ -118,8 +118,10 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 </style>
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
 
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="/assets/video/page-home-poster.jpg"><source src="/assets/video/page-home.mp4" type="video/mp4"></video></div>
 <nav>
   <div class="nav-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
@@ -202,7 +204,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <h1>One remodel. One real material count. No experience needed.</h1>
   <p class="lede">You don't need to know what a takeoff is to use ReadMyBlueprint. Upload the plan your architect or contractor already sent you, and get back a plain-English list of what the project actually needs — no CAD background, no subscription for a single project.</p>
     </div>
-    <div class="hero-visual"><img src="/assets/illustrations/homeowners.webp" alt="Isometric illustration of a home floor plan and a tablet showing a simple material list on a desk" loading="lazy" width="1200" height="895"></div>
+    <div class="hero-visual"><img src="/assets/illustrations/homeowners.webp" alt="Isometric illustration of a home floor plan and a tablet showing a simple material list on a desk" loading="eager" fetchpriority="high" width="1200" height="895"></div>
   </div>
 
 </div>
@@ -289,4 +291,5 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/chatbot.js" defer></script>
 <script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
 </html>
