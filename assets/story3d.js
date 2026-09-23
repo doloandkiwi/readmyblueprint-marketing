@@ -212,6 +212,7 @@ new IntersectionObserver(([e]) => { storyVisible = e.isIntersecting; }).observe(
 
 const chapters = [...document.querySelectorAll('.chapter')];
 const bar = document.getElementById('story-progress');
+const tally = document.querySelector('.tally');
 const clock = new THREE.Clock();
 
 function frame() {
@@ -289,5 +290,6 @@ function frame() {
     el.textContent = Math.round(+el.dataset.total * k).toLocaleString('en-US');
   });
   if (bar) bar.style.transform = `scaleX(${p})`;
+  if (tally) tally.classList.toggle('off', p > 0.7);
 }
 frame();
