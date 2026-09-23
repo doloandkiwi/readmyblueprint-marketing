@@ -1,7 +1,9 @@
 (function () {
   var GA4_ID = "G-QYSRNLSF27";
   var APP_ORIGIN = "https://app.readmyblueprint.com";
-  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  // gclid is Google Ads' auto-tagging click id: carried to the app like the
+  // UTMs so a paying customer can be matched back to the exact ad click.
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"];
   var STORE_KEY = "rmb_utm";
 
   var script = document.createElement("script");
