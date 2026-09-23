@@ -6,19 +6,26 @@
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"];
   var STORE_KEY = "rmb_utm";
 
-  var script = document.createElement("script");
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
-  document.head.appendChild(script);
+  // Pages now start GA in an inline <head> snippet (so a visitor who bounces
+  // within a second of arriving from an ad is still counted -- this file is
+  // `defer`red and would otherwise only start GA after the whole page parsed).
+  // Only boot GA here for any page that doesn't have that snippet.
+  var gtag = window.gtag;
+  if (typeof gtag !== "function") {
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+    document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
+    window.dataLayer = window.dataLayer || [];
+    gtag = function () {
+      dataLayer.push(arguments);
+    };
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", GA4_ID);
   }
-  window.gtag = gtag;
-
-  gtag("js", new Date());
-  gtag("config", GA4_ID);
 
   // Remember the campaign a visitor arrived on (e.g. a per-contact outreach link)
   // so it survives page-to-page browsing and is handed to the app at signup.
