@@ -200,7 +200,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     </div>
     <div class="nav-cta">
       <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
-      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary">Get started</a>
     </div>
   </div>
 </nav>
@@ -309,7 +309,7 @@ function render(){
   descEl.textContent = s.desc;
 
   if (s.cta) {
-    mediaEl.innerHTML = '<div class="tour-cta-slide"><div class="tour-badge">✓</div><h3>' + s.title + '</h3><p>' + s.desc + '</p><a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started for $15</a></div>';
+    mediaEl.innerHTML = '<div class="tour-cta-slide"><div class="tour-badge">✓</div><h3>' + s.title + '</h3><p>' + s.desc + '</p><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started for $15</a></div>';
     captionWrap.style.display = 'none';
   } else {
     mediaEl.innerHTML = '<img src="' + s.img + '" alt="' + s.alt + '">';
