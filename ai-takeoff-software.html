@@ -4,10 +4,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Takeoff & Estimating Guides | ReadMyBlueprint</title>
+<title>AI Takeoff Software for Drywall, Framing & CMU (2026)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free guides for estimators and contractors: reading blueprints and wall type legends, drawing scales, metal stud gauges, drywall types, and step-by-step takeoffs for drywall, framing and CMU.">
-<link rel="canonical" href="https://www.readmyblueprint.com/guides.html">
+<meta name="description" content="AI takeoff software reads a PDF plan set and counts materials automatically. How it works, what the main AI takeoff tools cost in 2026, and where ReadMyBlueprint fits.">
+<link rel="canonical" href="https://www.readmyblueprint.com/ai-takeoff-software.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -15,12 +15,60 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Takeoff & Estimating Guides">
-<meta property="og:description" content="Free guides for estimators and contractors: reading blueprints and wall type legends, drawing scales, metal stud gauges, drywall types, and step-by-step takeoffs for drywall, framing and CMU.">
-<meta property="og:url" content="https://www.readmyblueprint.com/guides.html">
+<meta property="og:title" content="AI Takeoff Software for Drywall, Framing & CMU (2026)">
+<meta property="og:description" content="AI takeoff software reads a PDF plan set and counts materials automatically. How it works, what the main AI takeoff tools cost in 2026, and where ReadMyBlueprint fits.">
+<meta property="og:url" content="https://www.readmyblueprint.com/ai-takeoff-software.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is AI takeoff software?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "AI takeoff software reads a digital plan set and measures or counts quantities automatically, instead of an estimator clicking every wall and corner by hand. You review the result, fix what it flagged, and export the quantities into your bid."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How does ReadMyBlueprint's AI takeoff work?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It reads the vector geometry inside a CAD-exported PDF, measures every wall, and matches each wall to the plan's own wall-type legend. It then returns studs, track, drywall sheets, insulation and CMU block, with every quantity labeled matched, ambiguous or needs-confirmation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does AI takeoff software cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "As of September 2026, Togal.AI lists $299 per user per month billed yearly (about $3,588 a year). ReadMyBlueprint is $49 per plan set with no subscription, $199 a month for 10 plan sets, and your first plan set is $15."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is AI takeoff accurate?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the plan set. A good AI takeoff tool should show you which numbers it is sure of and which it guessed. ReadMyBlueprint never folds a guess into your total: anything it can't match to a spec on your drawings is flagged for you to confirm."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does AI takeoff work on scanned plans?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing."
+   }
+  }
+ ]
+}
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -120,26 +168,6 @@ table.cmp td:first-child{font-weight:600;width:26%;}
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 </style>
-<style>
-.calc{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
-.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.calc label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem}
-.calc input,.calc select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
-.calc small{font-weight:400;color:var(--muted)}
-.calc-out{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.calc-out div{background:var(--blue-soft);border-radius:12px;padding:14px 16px}
-.calc-out b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--blue-deep)}
-.calc-out span{font-size:.85rem;color:var(--muted)}
-.calc-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
-.calc-cta{margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--accent-soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-.faq h3{margin:18px 0 6px;font-size:1.05rem}
-.faq p{margin:0;color:var(--muted);line-height:1.6}
-.calc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.calc-list a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink)}
-.calc-list a b{display:block;margin-bottom:6px}
-.calc-list a span{color:var(--muted);font-size:.9rem}
-</style>
-
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
 <link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
@@ -220,9 +248,84 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero"><span class="eyebrow">● Guides</span><h1>Takeoff & Estimating Guides</h1><p class="lede">Practical references for reading plans and doing takeoffs by hand, and for knowing what to check when software does it for you.</p></div>
-<section><div class="wrap"><div class="calc-list"><a href="/ai-takeoff-software.html"><b>AI takeoff software</b><span>What it does, what it costs in 2026, where it fits.</span></a><a href="/online-takeoff-software.html"><b>Online takeoff software</b><span>Browser-based vs. desktop takeoff tools.</span></a><a href="/how-to-read-blueprints.html"><b>How to read blueprints</b><span>Sheet numbers, plans, sections, details, schedules and scales.</span></a><a href="/how-to-read-a-wall-type-legend.html"><b>How to read a wall type legend</b><span>Tags, stud vs. assembly width, fire rating and STC, with a real example.</span></a><a href="/architectural-scale-chart.html"><b>Architectural scale chart</b><span>1/8" = 1', 1/4" = 1' and every common scale, with ratios.</span></a><a href="/how-to-do-a-construction-takeoff.html"><b>How to do a construction takeoff</b><span>Step by step, from plan set to material list.</span></a><a href="/how-to-estimate-drywall-sheets.html"><b>How to estimate drywall sheets</b><span>Sheet counts from wall length, height and faces.</span></a><a href="/how-to-calculate-metal-studs.html"><b>How to calculate metal studs & track</b><span>Stud and track counts from plans.</span></a><a href="/how-many-cmu-blocks.html"><b>How many CMU blocks do I need?</b><span>Block counts from wall area.</span></a><a href="/metal-stud-sizes-and-gauges.html"><b>Metal stud sizes & gauge chart</b><span>Depths, gauges vs. mils, typical uses.</span></a><a href="/types-of-drywall.html"><b>Types of drywall</b><span>Type X, Type C, moisture resistant, abuse resistant and more.</span></a></div>
-<div style="max-width:880px;margin:30px auto 0"><h2 style="font-size:1.2rem">Free calculators</h2><p><a href="/calculators.html" style="text-decoration:underline;">Metal studs, wood studs, drywall, CMU and insulation calculators</a>.</p></div></div></section>
+
+<div class="wrap hero">
+  <span class="eyebrow">● AI takeoff</span>
+  <h1>AI takeoff software for drywall, framing and CMU</h1>
+  <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back in minutes, each number traced to the wall it came from. It costs $49 per plan set with no subscription, and your first plan set is $15.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>What "AI takeoff" actually does</h2>
+      <p>Manual digital takeoff means clicking every wall, corner and opening on a PDF. AI takeoff does the measuring pass for you, and you spend your time checking the result instead of producing it.</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card good"><h3>What ReadMyBlueprint does</h3><ul>
+        <li>Reads the real vector geometry in your PDF, so lengths come from the drawing, not from a guess about the drawing</li>
+        <li>Reads each page's printed scale on its own</li>
+        <li>Matches wall thicknesses to your plan's wall-type legend to pick the right assembly</li>
+        <li>Labels every quantity: matched, ambiguous, or needs confirmation</li>
+        <li>Exports a CSV/Excel material list for your bid</li></ul></div>
+      <div class="fit-card"><h3>What it doesn't do</h3><ul>
+        <li>Scanned or photographed plans. It needs a CAD-exported PDF.</li>
+        <li>MEP, concrete, roofing or sitework. It covers walls: framing, drywall, insulation and CMU.</li>
+        <li>Doors, windows and fixtures automatically. You add those with manual count.</li>
+        <li>Pricing and labor. It gives you quantities; your bid is still yours.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The options</span>
+      <h2>AI takeoff tools in 2026</h2>
+      <p>From each company's public site or published comparisons. Check their sites for current terms.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Tool</th><th>What its AI does</th><th>Price</th></tr>
+        <tr><td>ReadMyBlueprint</td><td>Reads walls from vector PDFs and counts framing, drywall, insulation and CMU, matched to your wall legend</td><td>$49 per plan set; first plan set $15; $199/mo for 10</td></tr>
+        <tr><td>Togal.AI</td><td>Detects and measures areas and objects on drawings across trades</td><td>$299 per user per month, billed yearly</td></tr>
+        <tr><td>eTakeoff (SnapAI)</td><td>AI-assisted point and line selection inside eTakeoff Dimension, powered by Togal.AI</td><td>Yearly per-user licenses</td></tr>
+        <tr><td>Kreo</td><td>AI measuring and estimating in the browser</td><td>Subscription plans</td></tr>
+        <tr><td>Beam AI</td><td>Delivers completed takeoffs from your drawings</td><td>Quote-based</td></tr>
+      </table>
+    </div>
+    <div class="note"><strong>What we won't claim:</strong> we haven't run side-by-side accuracy tests against these tools, so we don't say our counts are "more accurate." What we can show is how our numbers are produced, including a <a href="/blog-real-test-freeport-square.html" style="text-decoration:underline;">real end-to-end test on a 21-page plan set</a>, with the parts that didn't fully resolve.</div>
+    <p style="margin-top:18px;">More detail: <a href="/compare-togal.html" style="text-decoration:underline;">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html" style="text-decoration:underline;">vs. Kreo &amp; Bobyard</a> · <a href="/etakeoff-alternative.html" style="text-decoration:underline;">eTakeoff alternative</a> · <a href="/online-takeoff-software.html" style="text-decoration:underline;">online takeoff software</a> · <a href="/confidence-labels.html" style="text-decoration:underline;">how the confidence labels work</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card"><h3>What is AI takeoff software?</h3><p>AI takeoff software reads a digital plan set and measures or counts quantities automatically, instead of an estimator clicking every wall and corner by hand. You review the result, fix what it flagged, and export the quantities into your bid.</p></div>
+      <div class="fit-card"><h3>How does ReadMyBlueprint's AI takeoff work?</h3><p>It reads the vector geometry inside a CAD-exported PDF, measures every wall, and matches each wall to the plan's own wall-type legend. It then returns studs, track, drywall sheets, insulation and CMU block, with every quantity labeled matched, ambiguous or needs-confirmation.</p></div>
+      <div class="fit-card"><h3>How much does AI takeoff software cost?</h3><p>As of September 2026, Togal.AI lists $299 per user per month billed yearly (about $3,588 a year). ReadMyBlueprint is $49 per plan set with no subscription, $199 a month for 10 plan sets, and your first plan set is $15.</p></div>
+      <div class="fit-card"><h3>Is AI takeoff accurate?</h3><p>It depends on the plan set. A good AI takeoff tool should show you which numbers it is sure of and which it guessed. ReadMyBlueprint never folds a guess into your total: anything it can't match to a spec on your drawings is flagged for you to confirm.</p></div>
+      <div class="fit-card"><h3>Does AI takeoff work on scanned plans?</h3><p>ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Try it on the plan set in front of you.</h2>
+      <p>Your first plan set is $15. No sales call, no subscription, nothing to install.</p>
+      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>

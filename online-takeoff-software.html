@@ -4,10 +4,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Takeoff & Estimating Guides | ReadMyBlueprint</title>
+<title>Online Takeoff Software: Browser-Based, Nothing to Install (2026)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free guides for estimators and contractors: reading blueprints and wall type legends, drawing scales, metal stud gauges, drywall types, and step-by-step takeoffs for drywall, framing and CMU.">
-<link rel="canonical" href="https://www.readmyblueprint.com/guides.html">
+<meta name="description" content="Online construction takeoff software runs in your browser: upload a PDF plan set and get quantities with nothing to install. Online vs desktop tools, and what they cost in 2026.">
+<link rel="canonical" href="https://www.readmyblueprint.com/online-takeoff-software.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -15,12 +15,60 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Takeoff & Estimating Guides">
-<meta property="og:description" content="Free guides for estimators and contractors: reading blueprints and wall type legends, drawing scales, metal stud gauges, drywall types, and step-by-step takeoffs for drywall, framing and CMU.">
-<meta property="og:url" content="https://www.readmyblueprint.com/guides.html">
+<meta property="og:title" content="Online Takeoff Software: Browser-Based, Nothing to Install (2026)">
+<meta property="og:description" content="Online construction takeoff software runs in your browser: upload a PDF plan set and get quantities with nothing to install. Online vs desktop tools, and what they cost in 2026.">
+<meta property="og:url" content="https://www.readmyblueprint.com/online-takeoff-software.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is online takeoff software?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Online (or cloud) takeoff software runs in a web browser. You upload a PDF plan set and measure or count quantities without installing anything, and it works on Windows or Mac."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is ReadMyBlueprint online takeoff software?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It runs in your browser at app.readmyblueprint.com. Upload a CAD-exported PDF and it automatically counts studs, track, drywall sheets, insulation and CMU block, and you can export the list to CSV or Excel."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which takeoff software is desktop-only?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "PlanSwift and On-Screen Takeoff are Windows desktop programs you install. STACK, Square Takeoff, zzTakeoff and ReadMyBlueprint run in a browser."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does online takeoff software cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Published comparisons put most online takeoff tools at roughly $150 to $250 per user per month. ReadMyBlueprint charges per plan set instead: $49 per plan set, $15 for your first one, or $199 a month for 10 plan sets."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I do a takeoff online without a subscription?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. ReadMyBlueprint's per-upload plan is $49 per plan set with no subscription."
+   }
+  }
+ ]
+}
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -120,26 +168,6 @@ table.cmp td:first-child{font-weight:600;width:26%;}
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 </style>
-<style>
-.calc{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
-.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.calc label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem}
-.calc input,.calc select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
-.calc small{font-weight:400;color:var(--muted)}
-.calc-out{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.calc-out div{background:var(--blue-soft);border-radius:12px;padding:14px 16px}
-.calc-out b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--blue-deep)}
-.calc-out span{font-size:.85rem;color:var(--muted)}
-.calc-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
-.calc-cta{margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--accent-soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-.faq h3{margin:18px 0 6px;font-size:1.05rem}
-.faq p{margin:0;color:var(--muted);line-height:1.6}
-.calc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.calc-list a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink)}
-.calc-list a b{display:block;margin-bottom:6px}
-.calc-list a span{color:var(--muted);font-size:.9rem}
-</style>
-
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
 <link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
@@ -220,9 +248,77 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero"><span class="eyebrow">● Guides</span><h1>Takeoff & Estimating Guides</h1><p class="lede">Practical references for reading plans and doing takeoffs by hand, and for knowing what to check when software does it for you.</p></div>
-<section><div class="wrap"><div class="calc-list"><a href="/ai-takeoff-software.html"><b>AI takeoff software</b><span>What it does, what it costs in 2026, where it fits.</span></a><a href="/online-takeoff-software.html"><b>Online takeoff software</b><span>Browser-based vs. desktop takeoff tools.</span></a><a href="/how-to-read-blueprints.html"><b>How to read blueprints</b><span>Sheet numbers, plans, sections, details, schedules and scales.</span></a><a href="/how-to-read-a-wall-type-legend.html"><b>How to read a wall type legend</b><span>Tags, stud vs. assembly width, fire rating and STC, with a real example.</span></a><a href="/architectural-scale-chart.html"><b>Architectural scale chart</b><span>1/8" = 1', 1/4" = 1' and every common scale, with ratios.</span></a><a href="/how-to-do-a-construction-takeoff.html"><b>How to do a construction takeoff</b><span>Step by step, from plan set to material list.</span></a><a href="/how-to-estimate-drywall-sheets.html"><b>How to estimate drywall sheets</b><span>Sheet counts from wall length, height and faces.</span></a><a href="/how-to-calculate-metal-studs.html"><b>How to calculate metal studs & track</b><span>Stud and track counts from plans.</span></a><a href="/how-many-cmu-blocks.html"><b>How many CMU blocks do I need?</b><span>Block counts from wall area.</span></a><a href="/metal-stud-sizes-and-gauges.html"><b>Metal stud sizes & gauge chart</b><span>Depths, gauges vs. mils, typical uses.</span></a><a href="/types-of-drywall.html"><b>Types of drywall</b><span>Type X, Type C, moisture resistant, abuse resistant and more.</span></a></div>
-<div style="max-width:880px;margin:30px auto 0"><h2 style="font-size:1.2rem">Free calculators</h2><p><a href="/calculators.html" style="text-decoration:underline;">Metal studs, wood studs, drywall, CMU and insulation calculators</a>.</p></div></div></section>
+
+<div class="wrap hero">
+  <span class="eyebrow">● Online takeoff</span>
+  <h1>Online takeoff software: nothing to install</h1>
+  <p class="lede"><strong>Short answer:</strong> online takeoff software runs in your browser, so you upload a PDF and measure with nothing to install on Windows or Mac. ReadMyBlueprint goes one step further: it does the counting pass for you, returning framing, drywall, insulation and CMU from the plan's own geometry. It costs $49 per plan set with no subscription, and your first plan set is $15.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Online vs. desktop</span>
+      <h2>Which takeoff tools run in a browser</h2>
+      <p>Based on each vendor's published product information, September 2026.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Tool</th><th>Where it runs</th><th>How you measure</th></tr>
+        <tr><td>ReadMyBlueprint</td><td>Browser</td><td>Automatic wall takeoff from vector PDFs, then you confirm flagged walls</td></tr>
+        <tr><td>STACK</td><td>Browser (cloud)</td><td>Manual digital takeoff</td></tr>
+        <tr><td>Square Takeoff</td><td>Browser, including iPad</td><td>Manual digital takeoff</td></tr>
+        <tr><td>zzTakeoff</td><td>Browser</td><td>Manual digital takeoff</td></tr>
+        <tr><td>PlanSwift</td><td>Windows desktop install</td><td>Manual digital takeoff</td></tr>
+        <tr><td>On-Screen Takeoff</td><td>Windows desktop install</td><td>Manual digital takeoff</td></tr>
+      </table>
+    </div>
+    <div class="note"><strong>What we won't claim:</strong> we haven't run side-by-side accuracy tests against these tools, so we don't say our counts are "more accurate." What we can show is how our numbers are produced, including a <a href="/blog-real-test-freeport-square.html" style="text-decoration:underline;">real end-to-end test on a 21-page plan set</a>, with the parts that didn't fully resolve.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>An online takeoff in three steps</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card"><h3>1. Upload the PDF</h3><p>Use the plan set your architect exported from CAD or Revit. Every page is scanned automatically, and each page's printed scale is read for you.</p></div>
+      <div class="fit-card"><h3>2. Check the flagged walls</h3><p>Walls that match a spec on your drawings are ready. Anything ambiguous or unmatched is flagged, with the plan's own material pre-filled where possible. One "Confirm all" usually finishes it.</p></div>
+      <div class="fit-card"><h3>3. Export to your bid</h3><p>Download the material list as CSV or Excel. Add doors, windows and fixtures with manual count.</p></div>
+      <div class="fit-card good"><h3>What you get back</h3><ul><li>Metal studs and track</li><li>Wood framing and sheathing</li><li>Drywall sheets</li><li>Insulation coverage</li><li>CMU block counts</li></ul></div>
+    </div>
+    <p style="margin-top:18px;">See also: <a href="/ai-takeoff-software.html" style="text-decoration:underline;">AI takeoff software</a> · <a href="/takeoff-software-without-subscription.html" style="text-decoration:underline;">takeoff software without a subscription</a> · <a href="/how-to-do-a-construction-takeoff.html" style="text-decoration:underline;">how to do a construction takeoff</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card"><h3>What is online takeoff software?</h3><p>Online (or cloud) takeoff software runs in a web browser. You upload a PDF plan set and measure or count quantities without installing anything, and it works on Windows or Mac.</p></div>
+      <div class="fit-card"><h3>Is ReadMyBlueprint online takeoff software?</h3><p>Yes. It runs in your browser at app.readmyblueprint.com. Upload a CAD-exported PDF and it automatically counts studs, track, drywall sheets, insulation and CMU block, and you can export the list to CSV or Excel.</p></div>
+      <div class="fit-card"><h3>Which takeoff software is desktop-only?</h3><p>PlanSwift and On-Screen Takeoff are Windows desktop programs you install. STACK, Square Takeoff, zzTakeoff and ReadMyBlueprint run in a browser.</p></div>
+      <div class="fit-card"><h3>How much does online takeoff software cost?</h3><p>Published comparisons put most online takeoff tools at roughly $150 to $250 per user per month. ReadMyBlueprint charges per plan set instead: $49 per plan set, $15 for your first one, or $199 a month for 10 plan sets.</p></div>
+      <div class="fit-card"><h3>Can I do a takeoff online without a subscription?</h3><p>Yes. ReadMyBlueprint's per-upload plan is $49 per plan set with no subscription.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Try it on the plan set in front of you.</h2>
+      <p>Your first plan set is $15. No sales call, no subscription, nothing to install.</p>
+      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
