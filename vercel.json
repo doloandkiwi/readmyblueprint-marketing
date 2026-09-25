@@ -10,6 +10,11 @@
       ],
       "destination": "https://www.readmyblueprint.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/1/:path*",
+      "destination": "/?utm_source=cold_email&utm_medium=email&utm_campaign=prospect_outreach_2026&utm_content=tracking_fallback#pricing",
+      "permanent": false
     }
   ],
   "rewrites": [
