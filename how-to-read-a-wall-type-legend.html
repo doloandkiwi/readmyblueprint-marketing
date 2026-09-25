@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
+<script src="/assets/analytics.js" defer></script>
+<title>How to Read a Wall Type Legend on Construction Drawings</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a wall type legend?", "acceptedAnswer": {"@type": "Answer", "text": "A table on the architectural drawings (often titled Wall Types or Partition Types) that defines every wall assembly used on the project and gives each one a tag, like A4 or C6. Floor plans then label each wall with its tag instead of repeating the full assembly."}}, {"@type": "Question", "name": "What is the difference between stud width and assembly width?", "acceptedAnswer": {"@type": "Answer", "text": "Stud width is the framing member alone (3 1/2\" for a 2x4, 3 5/8\" for a common steel stud). Assembly width is the finished wall including every layer of board: a 2x4 with 5/8\" gypsum on both sides is 4 3/4\"."}}, {"@type": "Question", "name": "What does STC mean on a wall type?", "acceptedAnswer": {"@type": "Answer", "text": "Sound Transmission Class: how well the assembly blocks airborne sound. Higher is better; STC 50+ is typical between apartments. It often means extra layers, insulation or resilient channel, which change your material counts."}}, {"@type": "Question", "name": "Where do I find the wall type legend?", "acceptedAnswer": {"@type": "Answer", "text": "Usually on an early architectural sheet (A0.x or G-series) or on the same sheet as the door schedule. Some sets put partition types on each floor plan; on others, notes like 'partition type A4 unless noted otherwise' set the default wall."}}]}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What a wall type legend (partition schedule) is, how to read wall type tags, stud width, assembly width, fire rating and STC, with a real example, and how to use it for drywall and framing takeoffs.">
+<link rel="canonical" href="https://www.readmyblueprint.com/how-to-read-a-wall-type-legend.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="How to Read a Wall Type Legend on Construction Drawings">
+<meta property="og:description" content="What a wall type legend (partition schedule) is, how to read wall type tags, stud width, assembly width, fire rating and STC, with a real example, and how to use it for drywall and framing takeoffs.">
+<meta property="og:url" content="https://www.readmyblueprint.com/how-to-read-a-wall-type-legend.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Read a Wall Type Legend on Construction Drawings",
+  "description": "What a wall type legend (partition schedule) is, how to read wall type tags, stud width, assembly width, fire rating and STC, with a real example, and how to use it for drywall and framing takeoffs.",
+  "datePublished": "2026-09-25",
+  "dateModified": "2026-09-23",
+  "url": "https://www.readmyblueprint.com/how-to-read-a-wall-type-legend.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/how-to-read-a-wall-type-legend.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+    --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+  --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
+.nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links .has-mega{position:relative;display:flex;align-items:center;}
+.nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
+.nav-links .has-mega>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55;transition:transform .15s ease,margin-top .15s ease;}
+.nav-links .has-mega:hover>a::after,.nav-links .has-mega:focus-within>a::after{transform:rotate(225deg);margin-top:3px;}
+.mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;z-index:30;}
+.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;}
+.mega-panel-inner{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:flex;gap:4px;white-space:nowrap;}
+.mega-col{display:flex;flex-direction:column;min-width:210px;}
+.mega-col h4{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;padding:0 10px;}
+.mega-col a{display:block;padding:8px 10px;border-radius:8px;font-size:.88rem;color:var(--ink);text-decoration:none;line-height:1.3;white-space:normal;}
+.mega-col a:hover{background:var(--surface-2);}
+.mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--btn-accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:1080px){ .nav-links{display:none;} }
+@media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
+
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+<link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
+<meta name="theme-color" content="#06101f">
+
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-site-poster.jpg" preload="none" data-video="page-site"></video></div>
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <div class="has-mega">
+        <a href="/confidence-labels.html">Features</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>How it works</h4>
+              <a href="/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
+              <a href="/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
+              <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
+              <a href="/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
+              <a href="/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/drywall-takeoff.html">Materials</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>By material</h4>
+              <a href="/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
+              <a href="/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
+              <a href="/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
+              <a href="/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
+              <a href="/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/for-homeowners.html">Who it's for</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Built for</h4>
+              <a href="/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
+              <a href="/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
+              <a href="/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/compare.html">Compare</a>
+      <a href="/tour.html">Tour</a>
+      <div class="has-mega">
+        <a href="/help.html">Resources</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Resources</h4>
+              <a href="/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
+              <a href="/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
+              <a href="/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
+              <a href="/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
+              <a href="/toolkit.html">Bid-Prep Toolkit<span class="mega-desc">Free template + checklist</span></a><a href="/calculators.html">Free Calculators<span class="mega-desc">Studs, drywall, CMU, insulation</span></a>
+              <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/about.html">About</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="https://app.readmyblueprint.com" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <span class="eyebrow">● Guide</span>
+  <h1>How to Read a Wall Type Legend on Construction Drawings</h1>
+  <div class="meta">Sep 25, 2026 · Guide</div>
+
+  <p>The wall type legend is the most important sheet in a drywall or framing takeoff, and the easiest one to misread. It tells you what every wall on the floor plans is actually made of. Get it right and every quantity downstream is right; get one tag wrong and it's wrong on every sheet.</p>
+
+  <h2>What a wall type legend is</h2>
+  <p>Architects don't write out "2x4 wood studs at 16&quot; o.c. with 5/8&quot; gypsum board both sides" on every wall. They define each assembly once in a table (usually titled <strong>Wall Types</strong> or <strong>Partition Types</strong>), give it a short tag like <strong>A4</strong>, and put that tag on the floor plans. The legend is the key that turns tags into materials.</p>
+
+  <h2>A real example</h2>
+  <p>This is the wall type table from a real 21-page apartment renovation (Freeport Square Apartments), simplified:</p>
+  <table class="mat" style="width:100%;border-collapse:collapse;margin:14px 0">
+    <tr><th style="text-align:left">Tag</th><th style="text-align:left">Assembly</th><th>Stud width</th><th>Assembly width</th><th style="text-align:left">Notes</th></tr>
+    <tr><td>A4</td><td>Wood partition, 5/8&quot; gyp both sides</td><td>3 1/2&quot;</td><td>4 3/4&quot;</td><td>Typical unless noted</td></tr>
+    <tr><td>A6</td><td>Wood partition, 5/8&quot; gyp both sides</td><td>5 1/2&quot;</td><td>6 3/4&quot;</td><td></td></tr>
+    <tr><td>A8</td><td>Wood partition, 5/8&quot; gyp both sides</td><td>7 1/4&quot;</td><td>8 1/2&quot;</td><td></td></tr>
+    <tr><td>B4</td><td>Wood furring, 5/8&quot; gyp one side</td><td>3 1/2&quot;</td><td>4 1/8&quot;</td><td></td></tr>
+    <tr><td>C4</td><td>1-hour rated, 5/8&quot; Type X both sides</td><td>3 1/2&quot;</td><td>4 3/4&quot;</td><td>UL U305</td></tr>
+  </table>
+  <p>Notice that A4 and C4 are the <em>same thickness</em> but different materials: C4 needs fire-rated Type X board. You can't tell them apart by measuring the wall; only the tag on the plan says which is which.</p>
+
+  <h2>How to read each column</h2>
+  <ul>
+    <li><strong>Tag / sub-type:</strong> the label you'll find on the floor plans (often in a diamond or hexagon). A letter usually means the family (A = partitions, B = furring, C = rated), the number the stud size.</li>
+    <li><strong>Stud width:</strong> the framing member alone: 3 1/2&quot; (2x4), 5 1/2&quot; (2x6), 3 5/8&quot; or 6&quot; steel.</li>
+    <li><strong>Assembly width:</strong> the finished wall, board included. This is what you'd measure on the drawing: a 2x4 with 5/8&quot; board both sides is 3 1/2 + 5/8 + 5/8 = 4 3/4&quot;.</li>
+    <li><strong>Fire rating / UL design:</strong> rated walls usually mean Type X board, sometimes two layers, and continuous to the deck. Budget for it.</li>
+    <li><strong>STC:</strong> sound rating. Higher STC often adds insulation, a second layer or resilient channel, which all change your counts.</li>
+    <li><strong>Typical notes:</strong> read them. "Partition type A4 unless noted otherwise" means every untagged wall is A4.</li>
+  </ul>
+
+  <h2>Using the legend in a takeoff</h2>
+  <ol>
+    <li>Find the legend first, before measuring anything. It's often on an early A-sheet, or sharing a sheet with the door schedule.</li>
+    <li>List every tag with its stud size, board layers and sides, rating and height (to deck or to ceiling).</li>
+    <li>Measure linear feet of wall <em>per tag</em> on the floor plans.</li>
+    <li>Convert each tag's footage into studs, track or plates, board, and insulation. Our free <a href="/metal-stud-calculator.html">metal stud</a>, <a href="/wood-stud-calculator.html">wood stud</a> and <a href="/drywall-calculator.html">drywall</a> calculators do the per-wall math.</li>
+    <li>Flag walls with no tag and walls the legend doesn't cover (exterior walls are often detailed elsewhere). Those are where takeoff errors hide.</li>
+  </ol>
+
+  <h2>Common mistakes</h2>
+  <ul>
+    <li><strong>Same thickness, different assembly:</strong> a rated and a non-rated wall can be identical in plan. Always go by the tag.</li>
+    <li><strong>Missing the default note:</strong> untagged walls aren't "unknown"; the typical note usually defines them.</li>
+    <li><strong>Ignoring height:</strong> "to deck" vs. "6&quot; above ceiling" can change board quantities by a third.</li>
+    <li><strong>Reading a scanned legend:</strong> blurry fractions (4 3/4 vs 4 1/4) are easy to misread; get the vector PDF.</li>
+  </ul>
+
+  <h2>How ReadMyBlueprint uses the legend</h2>
+  <p>ReadMyBlueprint reads the wall type table straight from a digital PDF, measures every wall's real thickness from the drawing geometry, and matches each wall to its legend row. Walls that match are counted automatically; walls the legend doesn't cover, or two rows could explain, are flagged for a one-click confirmation instead of guessed. See how <a href="/wall-type-matching.html">wall-type matching</a> works, or the <a href="/blog-real-test-freeport-square.html">real test on the plan set above</a>.</p>
+
+  <h2>Quick answers</h2>
+  <h3>What is a wall type legend?</h3><p>A table on the architectural drawings (often titled Wall Types or Partition Types) that defines every wall assembly used on the project and gives each one a tag, like A4 or C6. Floor plans then label each wall with its tag instead of repeating the full assembly.</p><h3>What is the difference between stud width and assembly width?</h3><p>Stud width is the framing member alone (3 1/2" for a 2x4, 3 5/8" for a common steel stud). Assembly width is the finished wall including every layer of board: a 2x4 with 5/8" gypsum on both sides is 4 3/4".</p><h3>What does STC mean on a wall type?</h3><p>Sound Transmission Class: how well the assembly blocks airborne sound. Higher is better; STC 50+ is typical between apartments. It often means extra layers, insulation or resilient channel, which change your material counts.</p><h3>Where do I find the wall type legend?</h3><p>Usually on an early architectural sheet (A0.x or G-series) or on the same sheet as the door schedule. Some sets put partition types on each floor plan; on others, notes like 'partition type A4 unless noted otherwise' set the default wall.</p>
+
+  <div class="cta-box">
+    <h3>Let the legend do the work</h3>
+    <p>Upload a digital plan set and get wall-by-wall material counts matched to its own wall types. Your first plan set is $15.</p>
+    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Try it for $15</a>
+  </div>
+  <p style="margin-top:28px;font-size:.92rem;">Related: <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a> · <a href="/glossary.html">Glossary</a> · <a href="/calculators.html">Free calculators</a> · <a href="/drywall-takeoff.html">Drywall takeoff</a></p>
+</article>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint LLC. Based in Saint Paul, MN — <a href="tel:+16512692249" style="text-decoration:underline;">(651) 269-2249</a>. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/chatbot.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
+<script src="/assets/video-loader.js" defer></script>
+</html>
