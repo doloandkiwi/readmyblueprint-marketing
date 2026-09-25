@@ -2,9 +2,20 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "readmyblueprint-marketing.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "readmyblueprint-marketing.vercel.app"
+        }
+      ],
       "destination": "https://www.readmyblueprint.com/:path*",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/demo",
+      "destination": "/demo.html"
     }
   ]
 }
