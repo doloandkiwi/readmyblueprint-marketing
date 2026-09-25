@@ -4,51 +4,22 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>How to calculate metal studs and track from plans</title>
+<title>Metal Stud Calculator: Studs & Track | ReadMyBlueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.">
-<link rel="canonical" href="https://www.readmyblueprint.com/how-to-calculate-metal-studs.html">
+<meta name="description" content="Free metal stud calculator: enter wall length, height and spacing to get the number of steel studs, track sticks and drywall sheets for a framed wall.">
+<link rel="canonical" href="https://www.readmyblueprint.com/metal-stud-calculator.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="How to calculate metal studs and track from plans">
-<meta property="og:description" content="How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.">
-<meta property="og:url" content="https://www.readmyblueprint.com/how-to-calculate-metal-studs.html">
+<meta property="og:title" content="Metal Stud Calculator: Studs & Track">
+<meta property="og:description" content="Free metal stud calculator: enter wall length, height and spacing to get the number of steel studs, track sticks and drywall sheets for a framed wall.">
+<meta property="og:url" content="https://www.readmyblueprint.com/metal-stud-calculator.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to calculate metal studs and track from plans",
-  "description": "How to count metal studs and track for a wall: the spacing formula, extras for corners and openings, track footage, and a worked example.",
-  "datePublished": "2026-09-23",
-  "dateModified": "2026-09-23",
-  "url": "https://www.readmyblueprint.com/how-to-calculate-metal-studs.html",
-  "image": "https://www.readmyblueprint.com/og-image.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "ReadMyBlueprint LLC"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ReadMyBlueprint",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.readmyblueprint.com/og-image.svg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.readmyblueprint.com/how-to-calculate-metal-studs.html"
-  }
-}
-</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -77,17 +48,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:var(--blue);}
+a{color:inherit;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
+.nav-links a{text-decoration:none;white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -109,28 +80,71 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
 
-.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+.hero{padding:56px 0 24px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
-.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
-.article p{font-size:1.03rem;margin:0 0 1.2rem;}
-.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
-.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
-.article li{margin-bottom:.5rem;}
-.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
-.callout strong{color:var(--blue);}
-.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
-.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
-.cta-box p{color:#c7d5e8;margin:0 0 18px;}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:0 0 .8rem;max-width:22ch;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:66ch;margin:0;}
+
+section{padding:48px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:680px;margin:0 0 24px;}
+.section-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0 0 .5rem;}
+.section-head p{color:var(--muted);margin:0;}
+
+table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.92rem;}
+table.cmp th, table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--surface-2);}
+table.cmp td:first-child{font-weight:600;width:26%;}
+.tbl-wrap{overflow-x:auto;}
+
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
+.fit-card.good{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
+.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
+.fit-card.good h3{color:#fff;}
+.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
+.fit-card:not(.good) li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
+.fit-card.good li::before{content:"✓";color:#8fd4a8;font-weight:700;flex-shrink:0;}
+
+.note{background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:.9rem;margin-top:20px;}
+.note strong{color:var(--amber);}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 </style>
+<style>
+.calc{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem}
+.calc input,.calc select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+.calc small{font-weight:400;color:var(--muted)}
+.calc-out{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.calc-out div{background:var(--blue-soft);border-radius:12px;padding:14px 16px}
+.calc-out b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--blue-deep)}
+.calc-out span{font-size:.85rem;color:var(--muted)}
+.calc-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.calc-cta{margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--accent-soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.faq h3{margin:18px 0 6px;font-size:1.05rem}
+.faq p{margin:0;color:var(--muted);line-height:1.6}
+.calc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.calc-list a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink)}
+.calc-list a b{display:block;margin-bottom:6px}
+.calc-list a span{color:var(--muted);font-size:.9rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many metal studs do I need per foot of wall?", "acceptedAnswer": {"@type": "Answer", "text": "At 16\" on center it's 0.75 studs per linear foot plus one to close each run, so a 100 ft run needs 76 studs before corners, openings and waste. At 24\" on center it's 0.5 per foot."}}, {"@type": "Question", "name": "How much track do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Track runs along the floor and the ceiling, so you need twice the wall length. 100 ft of wall needs 200 ft of track: 20 ten-foot sticks before waste."}}, {"@type": "Question", "name": "What waste factor should I use for steel framing?", "acceptedAnswer": {"@type": "Answer", "text": "5\u201310% is common for straight runs; go higher for walls with many openings, corners or short segments."}}]}</script>
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
 <link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
 
-<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-metal-poster.jpg" preload="none" data-video="page-metal"></video></div>
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-studio-poster.jpg" preload="none" data-video="page-studio"></video></div>
 <nav>
   <div class="nav-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
@@ -206,55 +220,50 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<article class="article">
-  <span class="eyebrow">● Guide</span>
-  <h1>How to calculate metal studs and track from plans</h1>
-  <div class="meta">Sep 23, 2026 · Guide</div>
+<div class="wrap hero">
+  <span class="eyebrow">● Free calculator</span>
+  <h1>Metal stud & track calculator</h1>
+  <p class="lede">Enter the wall length and spacing to get stud and track counts for a steel-framed wall, the same math ReadMyBlueprint uses on a full plan set.</p>
+</div>
 
-  <p>Metal stud framing is a count, not an area: studs along the wall at a fixed spacing, track top and bottom, and extras wherever the wall starts, stops, turns, or opens.</p>
-
-  <h2>1. Get linear feet per wall type</h2>
-  <p>From the floor plan, total the length of each wall type. The wall-type legend tells you stud size (e.g. 3-5/8" or 6"), gauge, and spacing (usually 16" or 24" on center).</p>
-
-  <h2>2. Base stud count</h2>
-  <p>Studs = (wall length in inches ÷ spacing) + 1.</p>
-  <p>A 20 ft wall at 16" o.c.: (240 ÷ 16) + 1 = 16 studs. At 24" o.c.: (240 ÷ 24) + 1 = 11 studs.</p>
-  <p>A quick rule for totals: at 16" o.c. figure about 0.75 studs per LF; at 24" o.c., about 0.5 per LF — then add extras.</p>
-
-  <h2>3. Add extras</h2>
-  <ul>
-    <li><strong>Corners and intersections:</strong> 1–2 extra studs each.</li>
-    <li><strong>Openings:</strong> typically 2 extra studs per door or window (jambs), plus the header and cripples the details call for.</li>
-    <li><strong>Wall ends:</strong> 1 extra where a wall dead-ends.</li>
-  </ul>
-
-  <h2>4. Track</h2>
-  <p>Track runs top and bottom: track LF = wall LF × 2. Add about 5–10% for laps and cuts, then divide by stick length (commonly 10 ft) for piece count.</p>
-
-  <h2>5. Stud length</h2>
-  <p>Order studs to the wall height from the wall-type detail — to ceiling or to deck. Heights over standard lengths may need longer studs or a heavier gauge; the legend or structural notes will say.</p>
-
-  <div class="callout"><strong>Worked example:</strong> 300 LF of 3-5/8" 20 ga partition at 16" o.c., 10 ft tall, 8 doors, 14 corners/intersections.<br>
-  Base: 300 × 0.75 = 225 studs · doors: 8 × 2 = 16 · corners: 14 × 2 = 28 → <strong>≈ 269 studs</strong> at 10 ft.<br>
-  Track: 300 × 2 = 600 LF × 1.07 ≈ 642 LF → <strong>65 pieces</strong> of 10 ft track.</div>
-
-  <h2>Where counts usually go wrong</h2>
-  <ul>
-    <li>Mixing spacings or stud sizes across wall types.</li>
-    <li>Missing walls that are only shown on an enlarged plan.</li>
-    <li>Using ceiling height for walls that run to deck.</li>
-  </ul>
-  <p>ReadMyBlueprint reads stud size, gauge and spacing straight from the wall-type legend and totals studs and track per wall type — every number traced back to the wall it came from.</p>
-
-  <div class="cta-box">
-    <h3>Skip the hand count</h3>
-    <p>Upload a digital plan set and get stud and track counts back, traced to each wall, in minutes.</p>
-    <a href="https://app.readmyblueprint.com" class="btn btn-primary btn-lg">Get started</a>
+<section>
+  <div class="wrap">
+    <div class="calc">
+      <div class="calc-grid">
+<label>Total wall length (ft)<input type="number" id="len" value="100" min="0" step="any" inputmode="decimal"></label>
+<label>Wall height (ft)<input type="number" id="ht" value="9" min="0" step="any" inputmode="decimal"></label>
+<label>Stud spacing (in)<input type="number" id="sp" value="16" min="0" step="any" inputmode="decimal"><small>16 or 24 on center is typical</small></label>
+<label>Track stick length (ft)<input type="number" id="stick" value="10" min="0" step="any" inputmode="decimal"><small>10 ft sticks are standard</small></label>
+<label>Waste allowance (%)<input type="number" id="waste" value="10" min="0" step="any" inputmode="decimal"></label>
+      </div>
+      <div class="calc-out" id="out" aria-live="polite"></div>
+      <p class="calc-note">Studs = wall length ÷ spacing + 1 (one extra to close the run). Track runs top and bottom, so it's twice the wall length in 10 ft sticks. Add studs at every corner, opening and intersection; this is a straight-run starting point.</p>
+      <div class="calc-cta"><span><strong>Counting a whole plan set?</strong> Upload the PDF and ReadMyBlueprint measures every wall for you, traced to the sheet it came from. Your first plan set is $15.</span>
+<a href="https://app.readmyblueprint.com" class="btn btn-primary">Try it for $15</a></div>
+    </div>
   </div>
-  <p style="margin-top:28px;font-size:.92rem;">Related: <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a></p>
-</article>
+</section>
 
-<section><div class="wrap"><p><strong>Quick check:</strong> try the free <a href="/metal-stud-calculator.html" style="text-decoration:underline;">metal stud & track calculator</a>.</p></div></section>
+<section>
+  <div class="wrap faq" style="max-width:880px">
+    <div class="section-head"><span class="eyebrow">Questions</span><h2>Common questions</h2></div>
+    <h3>How many metal studs do I need per foot of wall?</h3><p>At 16" on center it's 0.75 studs per linear foot plus one to close each run, so a 100 ft run needs 76 studs before corners, openings and waste. At 24" on center it's 0.5 per foot.</p><h3>How much track do I need?</h3><p>Track runs along the floor and the ceiling, so you need twice the wall length. 100 ft of wall needs 200 ft of track: 20 ten-foot sticks before waste.</p><h3>What waste factor should I use for steel framing?</h3><p>5–10% is common for straight runs; go higher for walls with many openings, corners or short segments.</p>
+    <p style="margin-top:22px">Doing it from plans instead? Read <a href="/how-to-calculate-metal-studs.html" style="text-decoration:underline;">How to calculate metal studs and track from plans</a>, or see <a href="/calculators.html" style="text-decoration:underline;">all free takeoff calculators</a>.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  const ids=["len", "ht", "sp", "stick", "waste"];
+  const get=()=>Object.fromEntries(ids.map(k=>[k,Math.max(0,parseFloat(document.getElementById(k).value)||0)]));
+  function out(rows){document.getElementById("out").innerHTML=rows.map(([l,v])=>`<div><b>${typeof v==="number"?v.toLocaleString():v}</b><span>${l}</span></div>`).join("");}
+  function calc(){const {len, ht, sp, stick, waste}=get(); const n=len>0?Math.ceil(len/(sp/12))+1:0, w=1+waste/100;
+out([["Studs", Math.ceil(n*w)], ["Track sticks (top + bottom)", Math.ceil((2*len/stick)*w)], ["Stud length", ht+" ft"], ["Drywall sheets (4x8, both sides)", Math.ceil(len*ht*2/32*w)]]);}
+  ids.forEach(k=>document.getElementById(k).addEventListener("input",calc));
+  calc();
+})();
+</script>
+
 <footer>
   <div class="wrap footer-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
