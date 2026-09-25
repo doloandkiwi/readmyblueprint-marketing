@@ -21,6 +21,10 @@
     {
       "source": "/demo",
       "destination": "/demo.html"
+    },
+    {
+      "source": "/:slug([a-z0-9-]+)",
+      "destination": "/:slug.html"
     }
   ]
 }
