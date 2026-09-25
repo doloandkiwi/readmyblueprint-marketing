@@ -240,6 +240,14 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <p>This is the part that actually matters more than the headline percentage. The remaining 23 wall types — the majority of the total linear footage — came back with an honest note attached to every single one: <em>"no legend text matched this thickness — confirm manually."</em> No stud gauge was invented. No CMU block size was assumed. The tool measured the geometry correctly and then declined to guess the spec it couldn't confirm.</p>
 
   <h2>We didn't stop at the number — we found the actual cause</h2>
+  <div class="note" style="margin:22px 0;border-left:4px solid var(--accent);">
+    <p><strong>Update, September 25, 2026 — what this test changed.</strong> We went back to this same plan set and dug deeper than the first pass below. Two things turned out to be real bugs on our side, and both are now fixed in the live product:</p>
+    <ul>
+      <li><strong>Drawing precision.</strong> This set is drawn at 1/8" = 1'-0", where the PDF can only store a wall's thickness in steps of about 0.16". Our matching tolerance was tighter than that, so identical 2x4 walls matched or missed depending on export rounding. The tolerance now follows the sheet's own scale (unchanged at 1/4" scale and larger).</li>
+      <li><strong>Thick wood walls read as masonry.</strong> The legend's 2x8 partition (row A8, 8 1/2" finished) was always filed as concrete block because of its thickness. It now matches its own legend row.</li>
+    </ul>
+    <p>Result on this exact set: <strong>41.3% → 50.1%</strong> of wall footage matched automatically, with nothing guessed. And the walls that still need a human now come back as one short list: the plan's own material (wood here) is pre-filled, tiny leftover fragments are tucked away, and one <em>Confirm all</em> click finishes the count. We also got one thing wrong below: the wall-type legend on sheet 21 <em>is</em> read correctly; what's left unmatched is mostly exterior walls and openings the legend never lists — exactly what a human should confirm.</p>
+  </div>
   <p>Rather than publish "41.3%" and move on, we opened the plan PDF's own text layer directly to find out why. Here's what we found: this plan set's wall-type legend is printed on the <strong>same sheet as the door schedule</strong>, with the two tables' columns interleaved in the drawing layout. When text is extracted from that sheet, the door-schedule and wall-type-legend text comes out scrambled together instead of in clean reading order — a structural quirk of how this specific architect laid out that one sheet, not a generic flaw in how plan sets are typically formatted.</p>
 
   <div class="before-after">
