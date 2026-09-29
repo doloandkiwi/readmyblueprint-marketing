@@ -4,10 +4,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Real Takeoff Test: 21-Page Apartment Plan Set Results</title>
+<title>Our Takeoff Tool Was Counting Walls Twice. Here Is the Fix.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
+<meta name="description" content="Plan sets redraw the same walls on ceiling plans, finish plans, elevations and details. We found our tool counting all of them, fixed it, and re-ran the Freeport Square set: 17,648 LF measured became 8,684 LF, with 68% matched automatically.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-counting-walls-once.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="We ran a real apartment plan set through our own tool — here's exactly what happened">
-<meta property="og:description" content="41.3% of wall footage auto-matched on a real 21-page plan set, the rest honestly flagged, and the exact root cause we found.">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
+<meta property="og:title" content="Our tool was counting some walls two or three times. Here's the fix, tested on the same apartment plan set">
+<meta property="og:description" content="Plan sets redraw the same walls on ceiling plans, finish plans, elevations and details. We found our tool counting all of them, fixed it, and re-ran the Freeport Square set: 17,648 LF measured became 8,684 LF, with 68% matched automatically.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-counting-walls-once.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -25,15 +25,15 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "We ran a real 21-page apartment plan set through our own tool — here's exactly what happened",
-  "description": "A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.",
-  "datePublished": "2026-09-22",
+  "headline": "Our tool was counting some walls two or three times. Here's the fix, tested on the same apartment plan set",
+  "description": "Plan sets redraw the same walls on ceiling plans, finish plans, elevations and details. We found our tool counting all of them, fixed it, and re-ran the Freeport Square set: 17,648 LF measured became 8,684 LF, with 68% matched automatically.",
+  "datePublished": "2026-09-29",
   "dateModified": "2026-09-29",
-  "url": "https://www.readmyblueprint.com/blog-real-test-freeport-square.html",
+  "url": "https://www.readmyblueprint.com/blog-counting-walls-once.html",
   "image": "https://www.readmyblueprint.com/og-image.svg",
   "author": { "@type": "Organization", "name": "ReadMyBlueprint LLC" },
   "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-real-test-freeport-square.html" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-counting-walls-once.html" }
 }
 </script>
 
@@ -215,68 +215,65 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 
 <article class="article">
   <span class="eyebrow">● Blog</span>
-  <h1>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h1>
-  <div class="meta">Sep 22, 2026 · 6 min read</div>
+  <h1>Our tool was counting some walls two or three times. Here's the fix, tested on the same apartment plan set</h1>
+  <div class="meta">Sep 29, 2026 · 5 min read</div>
 
-  <p>Most "case studies" you'll read from a takeoff-software vendor are curated wins. This one isn't curated — it's a real end-to-end run against a real 21-page apartment building plan set (a multi-building project we're calling "Freeport Square" here), uploaded through the live product, results exported, numbers reported exactly as they came out. Including the part that didn't fully resolve.</p>
+  <p>A plan set shows the same walls more than once. The floor plan has them, and so do the reflected ceiling plan, the finish plan, the enlarged unit plans, the interior elevations and the details. An estimator counts each wall once, from the floor plan. Until today, our tool counted walls on every sheet and added them together.</p>
 
-  <div class="callout"><strong>Update, September 29, 2026:</strong> the totals below include walls counted on ceiling plans, elevations and detail sheets as well as the floor plans. That's now fixed. Re-run: 8,684 LF measured (not 17,648), with 68.0% matched automatically. <a href="/blog-counting-walls-once.html">Read what changed</a>.</div>
+  <p>We found it by running a public bid set for a small university office renovation. Its 5 sheets were a partition plan, a ceiling plan, a finish plan, an elevations sheet and a door schedule. The tool reported wall footage on all five. Most of it was the same walls drawn again, plus lines inside detail drawings.</p>
 
-  <h2>The headline number</h2>
+  <h2>What changed</h2>
+  <ul>
+    <li><strong>Walls are counted on floor plans only.</strong> The tool reads each sheet's printed title. Ceiling plans, finish plans, enlarged plans, elevations, details, schedules and other trades' sheets are listed as "not counted," with the reason, right above your results.</li>
+    <li><strong>You can still count everything.</strong> One button, "Count every sheet anyway," brings back the old behavior. A sheet with no readable title is always counted, so nothing gets dropped on a guess.</li>
+    <li><strong>Wall-type legends are still read from every sheet.</strong> Legends often live on a schedule sheet, and the tool still uses them.</li>
+    <li><strong>One-sided walls get one side of drywall.</strong> A wall with board on one face (an exterior wall's inside face, a shaft or furring wall) used to get sheets for both faces.</li>
+  </ul>
+
+  <h2>Freeport Square, re-run</h2>
+  <p>We re-ran the same 21-page apartment plan set from our <a href="/blog-real-test-freeport-square.html">September 22 test</a>.</p>
   <div class="stat-grid">
-    <div class="stat-card"><div class="num">41.3%</div><div class="lbl">of total wall footage auto-matched to a confirmed material spec</div></div>
-    <div class="stat-card"><div class="num">7,294 / 17,648</div><div class="lbl">linear feet resolved out of the total measured</div></div>
+    <div class="stat-card"><div class="num">8,684 LF</div><div class="lbl">of wall measured, down from 17,648 LF</div></div>
+    <div class="stat-card"><div class="num">68.0%</div><div class="lbl">matched to a spec from the plan's own legend (5,907 LF), up from 50.1%</div></div>
   </div>
-  <p>Every wall on the plan set was measured — that part worked cleanly, no errors, no crashes, real processing time, real CSV export. Of the 25 distinct wall types the plan contained, 2 (both wood-stud partition types) came back with a full matched material spec: stud gauge, track, drywall sheet count, insulation bag count, sheet citations and all.</p>
+  <p>Eleven sheets were left out: the code plan, site plan, roof plan, ceiling plans, enlarged floor plans, building and interior elevations, details, and two schedule sheets. The code plan alone had added 3,252 LF and the ceiling plans 2,747 LF, all walls already counted on the floor plans.</p>
 
   <div class="tbl-wrap">
     <table class="mat">
-      <tr><th>Material</th><th>Length (LF)</th><th>Result</th></tr>
-      <tr><td>2x6 wood stud</td><td>5,252.0</td><td>Matched — 3,955 studs / 1,055 track, 1,975 drywall sheets, 362 insulation bags</td></tr>
-      <tr><td>2x4 wood stud</td><td>2,042.4</td><td>Matched — 1,546 studs / 412 track, 772 drywall sheets, 144 insulation bags</td></tr>
-      <tr><td>23 other wall types (partition &amp; CMU, various thicknesses)</td><td>10,353.4</td><td>Flagged "SPEC UNKNOWN — confirm manually," not guessed</td></tr>
+      <tr><th>Material</th><th>Length (LF)</th><th>Studs / track</th><th>Drywall sheets</th></tr>
+      <tr><td>2x6 wood stud</td><td>3,008.0</td><td>2,264 / 605</td><td>1,131</td></tr>
+      <tr><td>2x4 wood stud</td><td>2,162.1</td><td>1,631 / 436</td><td>815</td></tr>
+      <tr><td>2x6 wood stud, board one side</td><td>627.9</td><td>477 / 128</td><td>120</td></tr>
+      <tr><td>2x8 wood stud, board one side</td><td>105.0</td><td>82 / 22</td><td>20</td></tr>
+      <tr><td>Other wall thicknesses (mostly CMU and exterior walls not in the legend)</td><td>2,777.0</td><td colspan="2">Marked "confirm," not guessed</td></tr>
     </table>
   </div>
 
-  <h2>The other 23 wall types didn't get guessed. They got flagged.</h2>
-  <p>This is the part that actually matters more than the headline percentage. The remaining 23 wall types — the majority of the total linear footage — came back with an honest note attached to every single one: <em>"no legend text matched this thickness — confirm manually."</em> No stud gauge was invented. No CMU block size was assumed. The tool measured the geometry correctly and then declined to guess the spec it couldn't confirm.</p>
-
-  <h2>We didn't stop at the number — we found the actual cause</h2>
-  <div class="note" style="margin:22px 0;border-left:4px solid var(--accent);">
-    <p><strong>Update, September 25, 2026 — what this test changed.</strong> We went back to this same plan set and dug deeper than the first pass below. Two things turned out to be real bugs on our side, and both are now fixed in the live product:</p>
-    <ul>
-      <li><strong>Drawing precision.</strong> This set is drawn at 1/8" = 1'-0", where the PDF can only store a wall's thickness in steps of about 0.16". Our matching tolerance was tighter than that, so identical 2x4 walls matched or missed depending on export rounding. The tolerance now follows the sheet's own scale (unchanged at 1/4" scale and larger).</li>
-      <li><strong>Thick wood walls read as masonry.</strong> The legend's 2x8 partition (row A8, 8 1/2" finished) was always filed as concrete block because of its thickness. It now matches its own legend row.</li>
-    </ul>
-    <p>Result on this exact set: <strong>41.3% → 50.1%</strong> of wall footage matched automatically, with nothing guessed. And the walls that still need a human now come back as one short list: the plan's own material (wood here) is pre-filled, tiny leftover fragments are tucked away, and one <em>Confirm all</em> click finishes the count. We also got one thing wrong below: the wall-type legend on sheet 21 <em>is</em> read correctly; what's left unmatched is mostly exterior walls and openings the legend never lists — exactly what a human should confirm.</p>
-  </div>
-  <p>Rather than publish "41.3%" and move on, we opened the plan PDF's own text layer directly to find out why. Here's what we found: this plan set's wall-type legend is printed on the <strong>same sheet as the door schedule</strong>, with the two tables' columns interleaved in the drawing layout. When text is extracted from that sheet, the door-schedule and wall-type-legend text comes out scrambled together instead of in clean reading order — a structural quirk of how this specific architect laid out that one sheet, not a generic flaw in how plan sets are typically formatted.</p>
-
   <div class="before-after">
     <div class="ba-card bad">
-      <span class="lbl">What the auto-reader saw</span>
-      <span class="val">Wall-type legend + door schedule text interleaved on one sheet</span>
+      <span class="lbl">Before</span>
+      <span class="val">17,648 LF measured across 17 sheets, including the same walls on ceiling plans, elevations and details</span>
     </div>
     <div class="ba-card good">
-      <span class="lbl">What that caused</span>
-      <span class="val">23 of 25 wall specs correctly flagged as unconfirmable, not guessed</span>
+      <span class="lbl">After</span>
+      <span class="val">8,684 LF from the floor plans, with every sheet left out listed by name</span>
     </div>
   </div>
 
-  <div class="callout"><strong>This is exactly the scenario our "Import a wall-type schedule from Excel" feature exists for.</strong> When the automatic legend read can't confidently resolve a sheet like this one, you can type the wall-type-to-assembly mapping into a spreadsheet yourself — <code>TYPE / STUD SIZE / GYP THICK</code> or <code>TYPE / WALL WIDTH</code> columns — and upload it instead of confirming each wall one at a time in the UI. Every row stays reviewable before anything saves.</div>
+  <div class="callout"><strong>The percentage isn't the point.</strong> It went up partly because duplicate walls came out of the total. What matters is that the footage now describes the building once. A tool that counts a wall three times can show a confident number that's simply wrong.</div>
 
-  <h2>What this actually means if you're evaluating a takeoff tool</h2>
+  <h2>What still isn't right</h2>
   <ul>
-    <li>A tool that never shows you anything to double-check isn't more accurate — it just gives you no way to notice when it's wrong.</li>
-    <li>"41.3%" is not a general accuracy number for this product — it's specific to one real plan set with an unusually laid-out wall-schedule sheet. A cleaner sheet resolves a much higher share automatically.</li>
-    <li>The real question to ask any takeoff tool isn't "what's your accuracy percentage" — it's "what happens to the readings you can't confirm." Ours get labeled and handed back to you. They don't get silently guessed into a number that looks clean on a spreadsheet.</li>
+    <li>Three unit-plan sheets in this set (A301 to A303) don't print a title where the tool looks, so they're still counted. Some of their walls may also appear on the main floor plans. Check those sheets yourself.</li>
+    <li>2,777 LF still needs a person to confirm the wall type, mostly masonry and exterior walls whose thickness doesn't appear in this plan's legend. The tool won't pick a type for them.</li>
+    <li>On renovation plans, existing walls that stay are not separated from new walls yet.</li>
   </ul>
 
-  <p>We're publishing this the same way we published <a href="/blog-a-real-bug-we-found.html">the real bug we found in our own insulation detection</a> — because a specific, inspectable failure mode you can verify is worth more than a marketing number you can't.</p>
+  <p>We're publishing this the same way we published <a href="/blog-a-real-bug-we-found.html">the real bug we found in our insulation detection</a>: what went wrong, what we changed, and what's still open, with numbers you can check.</p>
 
   <div class="cta-box">
-    <h3>See what confirm-before-it-counts actually looks like</h3>
-    <p>Upload a real plan set and see every reading labeled honestly — your first one is $15.</p>
+    <h3>Run your own plan set</h3>
+    <p>Upload a CAD-exported PDF and see which sheets were counted and why. Your first plan set is $15.</p>
     <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
   </div>
 </article>
