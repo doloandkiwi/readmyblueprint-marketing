@@ -186,7 +186,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <div class="result-row"><span class="l">Plan that fits your volume</span><span class="v" id="r-plan">Solo Estimator</span></div>
       <div class="result-row"><span class="l">Plan cost / month</span><span class="v" id="r-plancost">$199</span></div>
       <div class="result-verdict" id="r-verdict"></div>
-      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary">Get started — $15 first plan set</a>
+      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary">Get started — first plan set free</a>
     </div>
   </div>
 
@@ -212,7 +212,7 @@ function fmtMoney(n) {
 }
 
 function planFor(setsPerMonth) {
-  if (setsPerMonth <= 1) return { name: '$15 first plan set', cost: 15 };
+  if (setsPerMonth <= 1) return { name: 'Free first plan set', cost: 0 };
   if (setsPerMonth <= 10) return { name: 'Solo Estimator', cost: 199 };
   return { name: 'Small Firm (contact sales)', cost: null };
 }
@@ -242,7 +242,7 @@ function render() {
     var margin = totalCost - plan.cost;
     verdict.innerHTML = 'Your current manual-takeoff time is worth <strong>' + fmtMoney(margin) + ' more</strong> than ' + plan.name + ' costs — even if this only cuts that time partway, not to zero, it\'s likely worth trying on your own plan set.';
   } else {
-    verdict.innerHTML = 'At this volume, your manual-takeoff time is worth less than ' + plan.name + ' costs per month — the <strong>$15 first plan set</strong> is the low-risk way to see if it\'s still worth it for the accuracy and confirmation labels alone.';
+    verdict.innerHTML = 'At this volume, your manual-takeoff time is worth less than ' + plan.name + ' costs per month — the <strong>Free first plan set</strong> is the low-risk way to see if it\'s still worth it for the accuracy and confirmation labels alone.';
   }
 }
 

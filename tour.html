@@ -369,11 +369,10 @@ function render(){
   if (s.end) {
     countEl.textContent = '';
     nextBtn.textContent = 'Start over';
-    // When the free first plan set is live, change the primary button to "Try your first plan set free".
     mediaEl.innerHTML = '<div class="tour-end"><div class="tour-badge">✓</div>' +
       '<h3>That&#39;s the whole run.</h3>' +
-      '<p>21 pages read, 11 duplicate sheets set aside, flagged walls confirmed in one click, and studs, drywall, insulation and CMU counts traced to the sheets. Try it on a plan set you&#39;re bidding.</p>' +
-      '<div class="ctas"><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>' +
+      '<p>21 pages read, 11 duplicate sheets set aside, flagged walls confirmed in one click, and studs, drywall, insulation and CMU counts traced to the sheets. Try it on a plan set you&#39;re bidding. Your first one is free, no card needed.</p>' +
+      '<div class="ctas"><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Try your first plan set free</a>' +
       '<a href="/blog-real-test-freeport-square.html" class="btn btn-ghost btn-lg">Read the full Freeport test</a></div></div>';
     track('tour_complete');
     return;
