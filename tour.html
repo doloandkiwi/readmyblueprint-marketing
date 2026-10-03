@@ -278,7 +278,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 // (01-Plans-FreeportSquareApts.pdf, 21 pages), captured 2026-10-01.
 // x/y = hotspot position in % of the screenshot.
 var LEADS_URL = "https://readmyblueprint.onrender.com/leads/newsletter";
-var GATE_AFTER = 0; // email gate shows after the first step, same as Togal's tour
+// Gate off 2026-10-03: GA4 showed 37 gate views, 1 submit, 1 tour completion in 30 days.
+// Set back to 0 to gate after the first step again.
+var GATE_AFTER = Infinity;
 var STEPS = [
   { img:"/assets/tour/v2/plan.jpg", x:50, y:42, alt:"First floor plan, sheet A201, Freeport Square Apartments",
     title:"Start with the PDF you're bidding.",
