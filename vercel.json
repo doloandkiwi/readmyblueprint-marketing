@@ -15,6 +15,16 @@
       "source": "/1/:path*",
       "destination": "/?utm_source=cold_email&utm_medium=email&utm_campaign=prospect_outreach_2026&utm_content=tracking_fallback#pricing",
       "permanent": false
+    },
+    {
+      "source": "/takeoff-software-without-subscription",
+      "destination": "/send-plans",
+      "permanent": true
+    },
+    {
+      "source": "/takeoff-software-without-subscription.html",
+      "destination": "/send-plans",
+      "permanent": true
     }
   ],
   "rewrites": [
