@@ -54,7 +54,6 @@
       bot: "Sure thing — we keep support simple. A real person (not a bot) reads every message here.",
       options: [
         { label: "Email support@readmyblueprint.com", href: "mailto:support@readmyblueprint.com" },
-        { label: "Call (651) 269-2249", href: "tel:+16512692249" },
         { label: "← Back to menu", next: "root" }
       ]
     }
