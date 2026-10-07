@@ -33,6 +33,10 @@
       "destination": "/demo.html"
     },
     {
+      "source": "/p/:token([a-f0-9]{12})",
+      "destination": "/p/:token.html"
+    },
+    {
       "source": "/:slug([a-z0-9-]+)",
       "destination": "/:slug.html"
     }
