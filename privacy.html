@@ -83,7 +83,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);}
 <main class="wrap">
   <span class="eyebrow">Legal</span>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 8, 2026</p>
+  <p class="updated">Last updated: October 7, 2026</p>
 
   <h2>Who this policy covers</h2>
   <p>
@@ -98,7 +98,14 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);}
     <li><strong>Billing information:</strong> your subscription plan, subscription status, and any purchased upload credits. We do <strong>not</strong> collect or store your card number, expiration date, or CVC — those go directly to our payment processor, Stripe. We only keep a reference ID Stripe gives us so we know which Stripe customer you are.</li>
     <li><strong>Basic technical data:</strong> IP address and timestamps on login attempts, kept briefly to prevent abuse (see "Security" below).</li>
   </ul>
-  <p>We run privacy-first analytics (Cloudflare Web Analytics) on this marketing site to see aggregate traffic and page views. It doesn't use cookies, doesn't fingerprint your device, and doesn't track you individually across visits or across other sites — see "Who we share it with" below. We run no advertising trackers, and we do not set any non-essential cookies. If that changes, this policy — and a cookie banner where required — will be updated first.</p>
+  <p><strong>Analytics and advertising measurement.</strong> To understand how people find and use ReadMyBlueprint, we use:</p>
+  <ul>
+    <li><strong>Cloudflare Web Analytics</strong> on this marketing site — cookie-free, aggregate page-view counts.</li>
+    <li><strong>Google Analytics 4</strong> on this site and in the web app — page views and a few product events (for example: sign-up, upload started, purchase). It uses cookies and a pseudonymous browser identifier.</li>
+    <li><strong>Google Ads conversion measurement</strong> — if you arrive from one of our Google ads, the ad-click identifier and campaign tags in the link are stored in your browser and passed to the web app, so we can tell which ad led to a sign-up or purchase.</li>
+    <li><strong>PostHog</strong> on this site and in the web app — product analytics and session replay, so we can see where people get stuck. Replays mask everything typed into form fields; we don't record passwords or card details. It uses cookies/local storage and a pseudonymous identifier.</li>
+  </ul>
+  <p>None of these tools receive your plan files, and we don't sell this data or use it to build advertising profiles about you. Our legal basis for analytics is our legitimate interest in improving the product and measuring which marketing works, or your consent where the law requires it.</p>
 
   <h2>Why we collect it, and our legal basis</h2>
   <p>Everything above is collected because it's directly necessary to provide the service you signed up for: authenticating you, running your takeoff, remembering your material library between sessions, and billing you correctly for the plan you chose. If you're covered by the GDPR, our legal basis for each category is:</p>
@@ -115,6 +122,9 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);}
     <li><strong>Render</strong> — hosts our backend application and database.</li>
     <li><strong>Vercel</strong> — hosts the web app you use in your browser.</li>
     <li><strong>Cloudflare</strong> — provides DNS, and runs cookie-free aggregate traffic analytics on our marketing site.</li>
+    <li><strong>Google</strong> — Google Analytics 4 and Google Ads conversion measurement (see "Analytics and advertising measurement" above).</li>
+    <li><strong>PostHog</strong> — product analytics and session replay on our site and web app, hosted in the United States.</li>
+    <li><strong>Sentry</strong> — receives error reports when something breaks in the app, so we can fix it. We configure it not to send personal data such as your email or request contents.</li>
     <li><strong>Resend</strong> — sends transactional email on our behalf (account confirmation, password resets, and similar service emails). It sees your email address and the content of those messages, nothing else.</li>
   </ul>
   <p>These providers are based in the United States. Where your data crosses from the EU/EEA to the US, it's covered by those providers' own Standard Contractual Clauses and data-processing agreements.</p>

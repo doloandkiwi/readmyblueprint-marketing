@@ -27,6 +27,24 @@
     gtag("config", GA4_ID);
   }
 
+  // PostHog: funnels + session replay, to see where visitors drop off.
+  // The project key (phc_...) is public by design, like the GA4 id. Empty = off.
+  var POSTHOG_KEY = "phc_qQnLaGouHUr36rXR3TkjrynAL3tDXYgmYeAaY2ZNqY28";
+  var POSTHOG_HOST = "https://us.i.posthog.com";
+  if (POSTHOG_KEY && !window.posthog) {
+    // Official PostHog loader stub: queues calls until /static/array.js arrives.
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister identify alias people.set people.set_once set_config reset get_distinct_id get_session_id startSessionRecording stopSessionRecording opt_in_capturing opt_out_capturing has_opted_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    window.posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_HOST,
+      defaults: "2026-05-30",
+      person_profiles: "identified_only",
+      session_recording: { maskAllInputs: true },
+    });
+  }
+  function phCapture(name, props) {
+    if (POSTHOG_KEY && window.posthog) window.posthog.capture(name, props);
+  }
+
   // Remember the campaign a visitor arrived on (e.g. a per-contact outreach link)
   // so it survives page-to-page browsing and is handed to the app at signup.
   function readStoredUtm() {
@@ -91,13 +109,15 @@
       var a = e.target.closest && e.target.closest('a[href^="' + APP_ORIGIN + '"]');
       if (!a) return;
       var isLogin = isLoginLink(a);
-      gtag("event", isLogin ? "login_click" : "cta_click", {
+      var props = {
         link_text: (a.textContent || "").trim().slice(0, 60),
         page_path: window.location.pathname,
         cta_section: (a.closest("nav") && "nav") || (a.closest("footer") && "footer") || "body",
         campaign_content: utm && utm.utm_content,
         campaign_term: utm && utm.utm_term,
-      });
+      };
+      gtag("event", isLogin ? "login_click" : "cta_click", props);
+      phCapture(isLogin ? "login_click" : "cta_click", props);
     },
     true
   );
