@@ -49,6 +49,22 @@
     "@type": "Answer",
     "text": "No. It needs vector PDFs exported from CAD or Revit, because it measures the real drawing lines. On a scanned page it tells you it can't measure it instead of guessing."
    }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I know which walls the automation got right?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "ReadMyBlueprint labels every result as matched, ambiguous or needs confirmation. Matched means the measurement traces to real geometry and a spec found in your own plan set. Anything else is flagged for your decision, and an unconfirmed row stays flagged in your export instead of turning into a confident-looking number."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What happens if my plan set has no wall-type legend?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every wall is still measured from the drawing's vector geometry, but without a legend to check against, most results come back as needs confirmation rather than matched. The measurement is real; the material assignment is not guessed."
+   }
   }
  ]
 }
@@ -284,6 +300,8 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <div class="fit-card"><h3>What is a Togal.AI alternative for drywall contractors?</h3><p>ReadMyBlueprint is built for wall trades: it counts studs, track, drywall sheets, insulation and CMU from the plan's own geometry and wall-type legend, at $49 a plan set with no yearly plan.</p></div>
       <div class="fit-card"><h3>How much does Togal.AI cost?</h3><p>As of September 2026 Togal.AI lists $299 per user per month, billed yearly. ReadMyBlueprint is $49 per plan set or $199 a month for 10.</p></div>
       <div class="fit-card"><h3>Does ReadMyBlueprint work on scanned plans?</h3><p>No. It needs vector PDFs exported from CAD or Revit, because it measures the real drawing lines. On a scanned page it tells you it can't measure it instead of guessing.</p></div>
+      <div class="fit-card"><h3>How do I know which walls the automation got right?</h3><p>ReadMyBlueprint labels every result as matched, ambiguous or needs confirmation. Matched means the measurement traces to real geometry and a spec found in your own plan set. Anything else is flagged for your decision, and an unconfirmed row stays flagged in your export instead of turning into a confident-looking number.</p></div>
+      <div class="fit-card"><h3>What happens if my plan set has no wall-type legend?</h3><p>Every wall is still measured from the drawing's vector geometry, but without a legend to check against, most results come back as needs confirmation rather than matched. The measurement is real; the material assignment is not guessed.</p></div>
     </div>
   </div>
 </section>

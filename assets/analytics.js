@@ -53,6 +53,15 @@
       opt_out_capturing_by_default: !trackingAllowed,
     });
   }
+  // Homepage A/B test (10/08): tag every event with the variant this visitor was given.
+  try {
+    var homeVariant = localStorage.getItem("rmb_home_ab");
+    if (location.pathname.indexOf("/home-simple") === 0) homeVariant = "simple";
+    if (homeVariant) {
+      if (window.posthog) window.posthog.register({ home_variant: homeVariant });
+      if (typeof gtag === "function") gtag("set", "user_properties", { home_variant: homeVariant });
+    }
+  } catch (e) {}
 
   function setConsent(granted) {
     try { localStorage.setItem(CONSENT_KEY, granted ? "granted" : "denied"); } catch (e) {}

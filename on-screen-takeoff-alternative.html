@@ -49,6 +49,14 @@
     "@type": "Answer",
     "text": "No. It needs vector PDFs exported from CAD or Revit, because it measures the real drawing lines. On a scanned page it tells you it can't measure it instead of guessing."
    }
+  },
+  {
+   "@type": "Question",
+   "name": "Does ReadMyBlueprint measure the picture or the drawing data?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The drawing data. It reads the line geometry inside a CAD-exported PDF, calibrated to each sheet's own printed scale, and measures each wall's length and drawn thickness. It does not trace the page as an image."
+   }
   }
  ]
 }
@@ -284,6 +292,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <div class="fit-card"><h3>Is there an On-Screen Takeoff alternative that works on Mac?</h3><p>Yes. ReadMyBlueprint runs in any browser, including on a Mac.</p></div>
       <div class="fit-card"><h3>How is ReadMyBlueprint different from On-Screen Takeoff?</h3><p>In OST you draw and measure conditions yourself. ReadMyBlueprint measures walls automatically and flags any it isn't sure of for you to confirm.</p></div>
       <div class="fit-card"><h3>Does ReadMyBlueprint work on scanned plans?</h3><p>No. It needs vector PDFs exported from CAD or Revit, because it measures the real drawing lines. On a scanned page it tells you it can't measure it instead of guessing.</p></div>
+      <div class="fit-card"><h3>Does ReadMyBlueprint measure the picture or the drawing data?</h3><p>The drawing data. It reads the line geometry inside a CAD-exported PDF, calibrated to each sheet's own printed scale, and measures each wall's length and drawn thickness. It does not trace the page as an image.</p></div>
     </div>
   </div>
 </section>

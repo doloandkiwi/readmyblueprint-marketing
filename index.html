@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
+<script>/* Homepage A/B test (10/08): half of human visitors see the plain /home-simple.html variant. ?v=classic or ?v=simple forces a side. */(function(){try{var q=location.search;if(/bot|crawl|spider|slurp|lighthouse|headless|preview/i.test(navigator.userAgent))return;var k="rmb_home_ab",v=/[?&]v=(simple|classic)/.exec(q);v=v?(v[1]==="classic"?"cinematic":"simple"):localStorage.getItem(k);if(v!=="simple"&&v!=="cinematic")v=Math.random()<0.5?"simple":"cinematic";localStorage.setItem(k,v);if(v==="simple")location.replace("/home-simple.html"+q+location.hash)}catch(e){}})();</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
