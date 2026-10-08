@@ -12,6 +12,21 @@
       "permanent": true
     },
     {
+      "source": "/go",
+      "destination": "/send-plans?utm_source=cold_email&utm_medium=email&utm_campaign=outreach_go&utm_content=send_plans",
+      "permanent": false
+    },
+    {
+      "source": "/go/tour",
+      "destination": "/tour?utm_source=cold_email&utm_medium=email&utm_campaign=outreach_go&utm_content=tour",
+      "permanent": false
+    },
+    {
+      "source": "/go/home",
+      "destination": "/?utm_source=cold_email&utm_medium=email&utm_campaign=outreach_go&utm_content=home",
+      "permanent": false
+    },
+    {
       "source": "/1/:path*",
       "destination": "/?utm_source=cold_email&utm_medium=email&utm_campaign=prospect_outreach_2026&utm_content=tracking_fallback#pricing",
       "permanent": false
