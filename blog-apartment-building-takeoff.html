@@ -4,22 +4,91 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Handoff Alternative for Commercial Trade Takeoffs | ReadMyBlueprint</title>
+<title>Taking off a multi-story apartment building: drywall and framing walkthrough</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Handoff estimates residential remodels from a prompt. ReadMyBlueprint counts the actual commercial plan set for drywall, framing, insulation and CMU. First plan set free.">
-<link rel="canonical" href="https://www.readmyblueprint.com/handoff-alternative.html">
+<meta name="description" content="A step-by-step walkthrough for taking off drywall and framing on a multi-story apartment building: unit repetition, rated walls, which sheets to skip, and organizing by wall type.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-apartment-building-takeoff.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Handoff Alternative for Commercial Trade Takeoffs | ReadMyBlueprint">
-<meta property="og:description" content="Handoff estimates remodels from a prompt. ReadMyBlueprint counts your actual commercial plan set.">
-<meta property="og:url" content="https://www.readmyblueprint.com/handoff-alternative.html">
+<meta property="og:title" content="Taking off a multi-story apartment building: drywall and framing walkthrough">
+<meta property="og:description" content="How to organize an apartment-building drywall and framing takeoff: repeating units, rated walls, sheets to skip and wall-type grouping.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-apartment-building-takeoff.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Taking off a multi-story apartment building: drywall and framing walkthrough",
+  "description": "A step-by-step walkthrough for taking off drywall and framing on a multi-story apartment building: unit repetition, rated walls, which sheets to skip, and organizing by wall type.",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "url": "https://www.readmyblueprint.com/blog-apartment-building-takeoff.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/blog-apartment-building-takeoff.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you do a takeoff on an apartment building?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skim the set, find the wall-type legend, group walls by legend tag, take off one of each repeating unit type and multiply, count each wall once from floor plans, then convert quantities to materials and apply waste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which sheets should I skip for a drywall wall takeoff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count walls from floor plans. Treat ceiling plans, elevations, detail sheets, code and site plans, and other trades' sheets as references, since they redraw walls already counted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I handle rated walls on an apartment takeoff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Identify them from the wall-type legend and plan tags, count them as separate groups, and keep their board type and layers separate from non-rated walls of the same thickness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can software do an apartment building takeoff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Software can measure walls from vector PDFs and match them to legend rows. In our Freeport Square test, 68.9% of walls were auto-matched and 99.8% after one Confirm all. An estimator still verifies the result."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -48,17 +117,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
+a{color:var(--blue);}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -80,52 +149,27 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:0 0 .8rem;max-width:24ch;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:66ch;margin:0;}
-
-section{padding:48px 0;}
-section + section{border-top:1px solid var(--line);}
-.section-head{max-width:680px;margin:0 0 24px;}
-.section-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0 0 .5rem;}
-.section-head p{color:var(--muted);margin:0;}
-
-table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.92rem;}
-table.cmp th, table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
-table.cmp tr:last-child td{border-bottom:none;}
-table.cmp th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--surface-2);}
-table.cmp td:first-child{font-weight:600;width:26%;}
-.tbl-wrap{overflow-x:auto;}
-
-.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
-.fit-card.good{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
-.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
-.fit-card.good h3{color:#fff;}
-.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
-.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
-.fit-card:not(.good) li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
-.fit-card.good li::before{content:"✓";color:#8fd4a8;font-weight:700;flex-shrink:0;}
-
-.note{background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:.9rem;margin-top:20px;}
-.note strong{color:var(--amber);}
-
-.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
-.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
-.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
-
-@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
-details.faq{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}details.faq summary{cursor:pointer;font-weight:600}details.faq p{margin:10px 0 0;color:var(--muted)}
 </style>
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
 <link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Handoff a good alternative to ReadMyBlueprint for commercial takeoffs?", "acceptedAnswer": {"@type": "Answer", "text": "Handoff is built for residential remodelers and builders. It produces estimates from a text, voice or photo description and adds CRM, invoicing and a client portal. Its AI plan takeoff is limited to its top, sales-led plan and to residential plans up to 7,000 sq ft. For commercial drywall, framing, insulation or masonry plan sets, ReadMyBlueprint is built to count the actual plan set."}}, {"@type": "Question", "name": "What does ReadMyBlueprint count?", "acceptedAnswer": {"@type": "Answer", "text": "It reads the plan set and counts walls, metal and wood framing, drywall, plywood, insulation and CMU, grouped by wall type. Each wall is labeled matched, ambiguous, or needs confirmation."}}, {"@type": "Question", "name": "Can I check the counts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ReadMyBlueprint has a confirm step so the estimator reviews every count before it is used in a bid. On the Freeport Square test, 68.9% of walls were auto-matched and 99.8% after one Confirm all."}}, {"@type": "Question", "name": "Does ReadMyBlueprint replace Handoff's CRM and invoicing?", "acceptedAnswer": {"@type": "Answer", "text": "No. ReadMyBlueprint is a takeoff tool only. It does not do CRM, invoicing or client portals."}}, {"@type": "Question", "name": "Can I try ReadMyBlueprint before paying?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your first plan set is free, no card needed. There is also a tour at www.readmyblueprint.com/tour."}}]}</script>
 <div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-studio-poster.jpg" preload="none" data-video="page-studio"></video></div>
 <nav>
   <div class="nav-row">
@@ -202,64 +246,82 @@ details.faq{background:var(--surface);border:1px solid var(--line);border-radius
   </div>
 </nav>
 
-<div class="wrap hero">
-  <span class="eyebrow">&#9679; Compare</span>
-  <h1>Handoff alternative for commercial trade takeoffs</h1>
-  <p class="lede">They estimate remodels from a prompt; we count your actual plan set. An honest look at where Handoff fits, and where a plan-set takeoff tool fits better.</p>
-</div>
+<article class="article">
+  <span class="eyebrow">● Blog</span>
+  <h1>Taking off a multi-story apartment building: drywall and framing walkthrough</h1>
+  <div class="meta">Oct 8, 2026 · 8 min read</div>
 
-<section><div class="wrap">
-<div class="section-head"><span class="eyebrow">The short version</span><h2>They estimate remodels from a prompt. We count your actual plan set.</h2>
-<p>Handoff (handoff.ai) is an AI estimating and project-management app for residential remodelers and builders. You describe a job by text, voice or photo and it produces a priced estimate and proposal, alongside CRM, invoicing and a client portal. ReadMyBlueprint does a narrower job: it reads the real plan set and counts walls, metal and wood framing, drywall, plywood, insulation and CMU, and you check every count before it goes in a bid.</p></div>
-<div class="tbl-wrap"><table class="cmp">
-<tr><th>&nbsp;</th><th>ReadMyBlueprint</th><th>Handoff</th></tr>
-<tr><td>Core focus</td><td>Quantity takeoff from the actual plan set for commercial trade subs</td><td>AI estimating and project management for residential remodelers and builders</td></tr>
-<tr><td>Where the numbers come from</td><td>Walls, wall types and legends read off your PDF plans</td><td>A job description you give it by text, voice or photo</td></tr>
-<tr><td>Plan takeoff</td><td>The main product, available from your first plan set</td><td>AI plan takeoff is only on its top, sales-led plan, for residential plans up to 7,000 sq ft, with a stated turnaround of under 2 hours</td></tr>
-<tr><td>Checking the counts</td><td>Confirm step: you review every count, uncertain walls are flagged</td><td>Some reviewers on G2 and Capterra mention inconsistent quantities</td></tr>
-<tr><td>Beyond takeoff</td><td>Not a CRM, invoicing or client-portal tool</td><td>CRM, invoicing, client portal, proposals</td></tr>
-<tr><td>Trades</td><td>Drywall, metal and wood framing, insulation, CMU/masonry</td><td>General residential remodeling scopes</td></tr>
-<tr><td>Getting started</td><td>Self-serve, first plan set free, no card needed</td><td>Takeoff plan is sales-led</td></tr>
-</table></div>
-<div class="note"><strong>What we won't claim:</strong> if you run a residential remodeling business and want one app for estimates, proposals, invoices and client updates, Handoff is built for that and we are not. We don't do CRM or invoicing. Facts about Handoff are from its public materials and review sites, checked 2026-10-08; check their site for current details. See also our <a href="/compare.html" style="text-decoration:underline;">other comparisons</a>.</div>
-</div></section>
+  <p>An apartment building looks intimidating: dozens of identical units, stacked floors, corridors, stairs and a stack of rated walls. In practice it is one of the more orderly takeoffs, because so much of it repeats. Here is a working method for a multi-story, multi-unit job, with notes from a real plan set we tested.</p>
 
-<section><div class="wrap">
-<div class="section-head"><span class="eyebrow">Which one fits you</span><h2>Pick based on the job, not the brand.</h2></div>
-<div class="fit-grid">
-<div class="fit-card"><h3>Handoff probably fits better if&hellip;</h3><ul>
-<li>You are a residential remodeler or builder</li>
-<li>You want estimates, proposals, invoices and a client portal in one app</li>
-<li>You start from a described scope rather than a plan set</li>
-<li>Your plans are residential and under 7,000 sq ft</li></ul></div>
-<div class="fit-card good"><h3>ReadMyBlueprint probably fits better if&hellip;</h3><ul>
-<li>You sub drywall, framing, insulation or masonry on commercial or multifamily plan sets</li>
-<li>You need counts traced to the wall they came from</li>
-<li>You want to confirm every count before it goes in a bid</li>
-<li>You want to test it on your own plans before paying anything</li></ul></div>
-</div></div></section>
+  <h2>Step 1: Know the set before you measure</h2>
+  <p>Skim the whole set first. Find the sheet index, the floor plans for each level, the wall-type legend, the unit plans and the rated-assembly or code sheets. Note which levels are typical and which are unique (a ground floor with lobby and amenity space, a top floor with different ceilings or roof conditions). Check that each sheet's scale is printed and consistent. Our guide on <a href="/how-to-read-blueprints.html">reading blueprints</a> covers the basics.</p>
+  <p>Then locate the wall-type legend. On an apartment set it often defines a dozen or more assemblies. If it is hard to read, see <a href="/blog-no-wall-type-legend.html">what to do when the legend is missing or scrambled</a>.</p>
 
-<section><div class="wrap">
-<div class="section-head"><span class="eyebrow">Proof</span><h2>A real plan set, not a demo.</h2>
-<p>On a real multifamily set, Freeport Square Apartments (21 pages), 68.9% of walls were auto-matched, and 99.8% after one "Confirm all". Read the write-up in <a href="/blog-real-test-freeport-square.html" style="text-decoration:underline;">our Freeport Square test</a>. Trade pages: <a href="/drywall-takeoff.html">drywall</a>, <a href="/metal-framing-takeoff.html">metal framing</a>, <a href="/wood-framing-takeoff.html">wood framing</a>, <a href="/insulation-takeoff.html">insulation</a> and <a href="/cmu-takeoff.html">CMU</a>.</p></div>
-</div></section>
+  <h2>Step 2: Organize by wall type, not by room</h2>
+  <p>Group every wall by its legend tag. Typical apartment families include:</p>
+  <ul>
+    <li><strong>Demising walls</strong> between units, usually rated and often with acoustic insulation.</li>
+    <li><strong>Corridor walls</strong>, commonly rated.</li>
+    <li><strong>Interior non-bearing partitions</strong> inside the unit.</li>
+    <li><strong>Plumbing and chase walls</strong> with different framing depth.</li>
+    <li><strong>Shaft and stair walls</strong>, often rated, sometimes a different system entirely.</li>
+    <li><strong>Exterior wall interior face</strong>, which gets board on one side only.</li>
+  </ul>
+  <p>Totals by wall type give you what a supplier and a crew actually need. A running total of "wall footage" does not. Our page on <a href="/wall-type-matching.html">wall-type matching</a> shows how a measured wall gets tied to a legend row.</p>
 
-<section>
-  <div class="wrap">
-    <div class="section-head"><span class="eyebrow">FAQ</span><h2>Quick answers.</h2></div>
-    <details class="faq"><summary>Is Handoff a good alternative to ReadMyBlueprint for commercial takeoffs?</summary><p>Handoff is built for residential remodelers and builders. It produces estimates from a text, voice or photo description and adds CRM, invoicing and a client portal. Its AI plan takeoff is limited to its top, sales-led plan and to residential plans up to 7,000 sq ft. For commercial drywall, framing, insulation or masonry plan sets, ReadMyBlueprint is built to count the actual plan set.</p></details><details class="faq"><summary>What does ReadMyBlueprint count?</summary><p>It reads the plan set and counts walls, metal and wood framing, drywall, plywood, insulation and CMU, grouped by wall type. Each wall is labeled matched, ambiguous, or needs confirmation.</p></details><details class="faq"><summary>Can I check the counts?</summary><p>Yes. ReadMyBlueprint has a confirm step so the estimator reviews every count before it is used in a bid. On the Freeport Square test, 68.9% of walls were auto-matched and 99.8% after one Confirm all.</p></details><details class="faq"><summary>Does ReadMyBlueprint replace Handoff&#x27;s CRM and invoicing?</summary><p>No. ReadMyBlueprint is a takeoff tool only. It does not do CRM, invoicing or client portals.</p></details><details class="faq"><summary>Can I try ReadMyBlueprint before paying?</summary><p>Yes. Your first plan set is free, no card needed. There is also a tour at www.readmyblueprint.com/tour.</p></details>
+  <h2>Step 3: Handle rated and non-rated walls separately</h2>
+  <p>Two walls can be the same thickness and still be different assemblies. In the Freeport Square plan set we tested, wall types A4 and C4 are the same thickness, but one needs fire-rated board. Thickness alone will not tell you. Mark rated walls from the legend and the plan's rating hatching or tags, count them as their own group, and keep their board type, layers and insulation separate. Mixing rated and non-rated footage is a common reason board comes up short or gets over-ordered.</p>
+  <p>Also look for details that affect rated walls: shaft-wall systems, rated ceiling conditions and penetrations. Those may be in the sections, not the floor plan.</p>
+
+  <h2>Step 4: Skip sheets that redraw the same walls</h2>
+  <p>A plan set shows the same walls many times: floor plans, reflected ceiling plans, finish plans, enlarged unit plans, interior elevations and details. You count each wall once, from the floor plan. Adding walls from every sheet inflates your totals. Sheets to treat with care:</p>
+  <ul>
+    <li><strong>Reflected ceiling plans</strong>, which redraw the partitions. Use them for ceiling scope, not wall footage.</li>
+    <li><strong>Elevations</strong>, which show the same walls from the side.</li>
+    <li><strong>Detail sheets</strong>, where lines inside a detail are not additional walls.</li>
+    <li><strong>Code, life-safety and site plans</strong>, which reference walls already on the floor plans.</li>
+    <li><strong>Other trades' sheets</strong> such as mechanical or electrical.</li>
+  </ul>
+  <p>We learned this the hard way. On the same Freeport Square set, our first run counted walls on ceiling plans, elevations and details too. After counting walls from floor plans only, the total dropped from 17,648 LF to 8,684 LF, with eleven sheets listed as not counted. The write-up is <a href="/blog-counting-walls-once.html">counting walls once</a>. Keep the sheets you skip in a written list so a reviewer can see what you left out and why.</p>
+
+  <h2>Step 5: Use unit repetition</h2>
+  <p>Most apartment buildings have a small number of unit types, repeated across floors. Take off one unit of each type carefully, including every wall, closet, chase and tub surround. Then multiply by the count of that unit type. Check the count against the unit schedule or a unit-mix table, and look for units that differ because of position, such as end units, accessible units or units next to a stair.</p>
+  <p>Do the same for typical floors: take off one corridor and core layout and multiply by the number of identical floors. Then adjust for floors that are not typical. Be careful with story heights if floor-to-floor dimensions differ, because wall height drives board and stud length.</p>
+  <div class="callout"><strong>Check before you multiply:</strong> repetition is the biggest time saver and the biggest source of copied errors. Confirm that your base unit is right, because a mistake in unit 1 gets multiplied by every identical unit.</div>
+
+  <h2>Step 6: Turn quantities into materials</h2>
+  <p>Once footage is grouped by type, convert it with each assembly's recipe: studs by spacing, track by run, board by area and layers, insulation by cavity. Use the <a href="/how-to-estimate-drywall-sheets.html">drywall sheet guide</a>, the <a href="/how-to-calculate-metal-studs.html">metal stud guide</a> and the <a href="/calculators.html">calculators</a>. Then apply your waste factors by material. Pricing and labor are the next step. See <a href="/blog-drywall-bid-sheet.html">how subcontractors build the bid</a>.</p>
+
+  <h2>What this looked like on a real plan set</h2>
+  <p>We ran the 21-page Freeport Square apartment plan set, a multi-building project, through ReadMyBlueprint. The result was 68.9% of walls auto-matched to a spec on the set's own legend, and 99.8% after one "Confirm all." The rest came back flagged for a person to confirm instead of being guessed. That is one plan set, not a general promise. The full account, including what went wrong first, is in the <a href="/blog-real-test-freeport-square.html">Freeport Square write-up</a>. The tool measures the walls and groups them, and the estimator verifies the result before it goes into a bid.</p>
+  <p>Note that Freeport Square is a multi-building apartment project, and we make no claim that it matches your building's height, unit mix or rated assemblies. Treat this method as a framework and adjust it to your drawings.</p>
+
+  <h2>A quick checklist</h2>
+  <ol>
+    <li>Skim the full set and locate the legend.</li>
+    <li>List the sheets you will count and the sheets you will skip.</li>
+    <li>Group walls by legend tag, with rated walls separate.</li>
+    <li>Take off one of each unit type, then multiply and cross-check against the unit schedule.</li>
+    <li>Convert to materials by assembly, then apply waste.</li>
+    <li>Flag assumptions and write exclusions.</li>
+  </ol>
+
+<h2>Common questions</h2>
+  <h3>How do you do a takeoff on an apartment building?</h3>
+  <p>Skim the set, find the wall-type legend, group walls by legend tag, take off one of each repeating unit type and multiply, count each wall once from floor plans, then convert quantities to materials and apply waste.</p>
+  <h3>Which sheets should I skip for a drywall wall takeoff?</h3>
+  <p>Count walls from floor plans. Treat ceiling plans, elevations, detail sheets, code and site plans, and other trades' sheets as references, since they redraw walls already counted.</p>
+  <h3>How do I handle rated walls on an apartment takeoff?</h3>
+  <p>Identify them from the wall-type legend and plan tags, count them as separate groups, and keep their board type and layers separate from non-rated walls of the same thickness.</p>
+  <h3>Can software do an apartment building takeoff?</h3>
+  <p>Software can measure walls from vector PDFs and match them to legend rows. In our Freeport Square test, 68.9% of walls were auto-matched and 99.8% after one Confirm all. An estimator still verifies the result.</p>
+
+  <div class="cta-box">
+    <h3>See the labels on your own plan set</h3>
+    <p>Upload your plan set and see exactly which results are matched, and which need a second look. Your first one is free.</p>
+    <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
   </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="final-cta">
-      <h2>See your own numbers first.</h2>
-      <p>Your first plan set is free, no card needed. Or take the <a href="/tour.html" style="text-decoration:underline;">tour</a> first.</p>
-      <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
-    </div>
-  </div>
-</section>
+</article>
 
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>

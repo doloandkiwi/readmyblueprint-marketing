@@ -4,10 +4,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Self-Guided Product Tour | ReadMyBlueprint</title>
+<title>Features | ReadMyBlueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A self-guided tour of ReadMyBlueprint on a real 21-page apartment plan set: automatic wall reading, flagged wall types you confirm in one click, and studs, drywall, insulation and CMU counts traced to the sheets.">
-<link rel="canonical" href="https://www.readmyblueprint.com/tour.html">
+<meta name="description" content="Everything ReadMyBlueprint does: reads digital plan sets, measures and matches wall types, labels every result, outputs studs, track, drywall, insulation and CMU counts, exports CSV/Excel. And what it doesn't do.">
+<link rel="canonical" href="https://www.readmyblueprint.com/features.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -16,13 +16,30 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="Self-Guided Product Tour — ReadMyBlueprint">
-<meta property="og:description" content="Take a self-guided tour of ReadMyBlueprint on a real 21-page plan set.">
-<meta property="og:url" content="https://www.readmyblueprint.com/tour.html">
+<meta property="og:title" content="Features — ReadMyBlueprint">
+<meta property="og:description" content="Reads your digital plan set, matches wall types, labels every result matched, ambiguous or needs confirmation, and exports CSV/Excel. Plus what it doesn't do.">
+<meta property="og:url" content="https://www.readmyblueprint.com/features.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Features — ReadMyBlueprint">
+<meta name="twitter:description" content="Reads your digital plan set, matches wall types, labels every result matched, ambiguous or needs confirmation, and exports CSV/Excel. Plus what it doesn't do.">
+<meta name="twitter:image" content="https://www.readmyblueprint.com/og-image.svg">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "ReadMyBlueprint features",
+  "url": "https://www.readmyblueprint.com/features.html",
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "ReadMyBlueprint",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web"
+  }
+}
+</script>
 <style>
 :root{
   --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
@@ -163,6 +180,53 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
 @media (max-width:640px){ .tour-caption{padding:18px 20px 22px;} .tour-cta-slide{padding:40px 24px;} }
 </style>
+<style>
+.pg-hero{padding:56px 0 8px;text-align:center}
+.pg-hero h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:0 auto .8rem;max-width:22ch}
+.pg-hero .lede{font-size:1.08rem;color:var(--muted);max-width:60ch;margin:0 auto 22px}
+.pg-sec{padding:28px 0 36px}
+.pg-sec h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .5rem}
+.pg-sec .sub{color:var(--muted);max-width:64ch;margin:0 0 20px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.notebox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:0 0 18px;font-size:.95rem;color:var(--muted)}
+.notebox strong{color:var(--ink)}
+.notebox.offer{border-color:rgba(224,105,47,.6)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px}
+.plan{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;min-width:0}
+.plan.featured{border-color:rgba(224,105,47,.7);box-shadow:0 30px 60px -30px rgba(224,105,47,.5)}
+.plan .tier{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.plan h3{font-size:1.5rem;margin:8px 0 6px}
+.plan .amt{font-family:var(--display);font-size:2.3rem;font-weight:700;line-height:1.1}
+.plan .amt span{font-size:.95rem;font-weight:500;color:var(--muted)}
+.plan .off{color:var(--good);font-weight:600;font-size:.92rem;margin:4px 0 0}
+.plan .desc{color:var(--muted);margin:10px 0 16px}
+.plan ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
+.plan li{padding:7px 0 7px 24px;position:relative;border-top:1px solid var(--line)}
+.plan li::before{content:"\2713";position:absolute;left:0;color:var(--good)}
+.plan .btn{width:100%}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.faq>div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.faq h3{font-size:1.02rem;margin:0 0 6px}
+.faq p{margin:0;color:var(--muted);font-size:.94rem}
+.faq a,.notebox a,.grp a.more{color:var(--blue)}
+.grp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;margin:0 0 20px}
+.grp.flip .grp-img{order:2}
+.grp h2{font-size:1.4rem;margin:0 0 .5rem}
+.grp ul{margin:0 0 14px;padding-left:1.1rem;color:var(--muted)}
+.grp li{margin:5px 0}
+.grp .links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.92rem}
+.grp-img{margin:0;min-width:0}
+.grp-img img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.grp-img figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.toc a{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:.35rem .8rem;text-decoration:none;color:var(--muted)}
+.toc a:hover{color:var(--ink);border-color:var(--blue)}
+.endcta{text-align:center;background:linear-gradient(180deg,var(--blue-deep),#08192e);border-radius:18px;padding:40px 24px;margin:12px 0 0;color:#fff}
+.endcta h2{color:#fff;margin:0 0 8px}.endcta p{color:#c7d5e8;margin:0 auto 20px;max-width:50ch}
+@media(max-width:900px){.plans{grid-template-columns:1fr}.faq{grid-template-columns:1fr}.grp{grid-template-columns:1fr;padding:18px}.grp.flip .grp-img{order:0}}
+@media(max-width:640px){.pg-hero{padding-top:36px}.plan{padding:22px}}
+html,body{overflow-x:hidden}
+</style>
 <link rel="stylesheet" href="/assets/cinematic-theme.css">
 <link rel="stylesheet" href="/assets/premium.css">
 <meta name="theme-color" content="#06101f">
@@ -243,26 +307,44 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
-  <span class="eyebrow">● Self-guided tour</span>
-  <h1>Watch it read a real 21-page plan set.</h1>
-  <p class="lede">Freeport Square Apartments, a real interior renovation set. Click the pulsing dot on each screen to move through it: the automatic read, the walls it flags instead of guessing, and the final counts. About two minutes.</p>
+<div class="wrap pg-hero">
+  <span class="eyebrow">● Features</span>
+  <h1>What ReadMyBlueprint does, and what it doesn't.</h1>
+  <p class="lede">Upload a digital plan set and get studs, track, drywall, insulation and block counts back, every number traced to the wall it came from, anything uncertain flagged for you.</p>
+  <div class="cta-row"><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Try your first plan set free →</a><a href="/tour.html" class="btn btn-ghost btn-lg">Watch it work</a></div>
 </div>
-
-<section>
-  <div class="wrap tour">
-    <div class="tour-progress-line" aria-hidden="true"><span id="tourLine"></span></div>
-    <div class="tour-stage">
-      <div class="tour-media" id="tourMedia"></div>
-    </div>
-    <div class="tour-bar">
-      <button class="btn btn-ghost" id="tourPrev">← Back</button>
-      <span class="tour-progress" id="tourCount"></span>
-      <button class="btn btn-primary" id="tourNext">Next →</button>
-    </div>
-    <p class="hint">Click the dot, or use <kbd>←</kbd> <kbd>→</kbd>.</p>
-  </div>
-</section>
+<section class="pg-sec"><div class="wrap"><div class="toc">
+<a href="#reading">Reading the plan set</a><a href="#walls">Wall measurement &amp; wall-type matching</a><a href="#labels">Confidence labels &amp; flags</a><a href="#materials">Materials output per trade</a><a href="#export">Export CSV / Excel</a><a href="#limits">Supported files &amp; limits</a><a href="#wontdo">What it doesn't do</a>
+</div></div></section>
+<section class="wrap"><div class="grp" id="reading">
+  <figure class="grp-img"><img src="/assets/tour/v2/reading.jpg" alt="Reading plan progress bar, 21 pages" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Reading the plan set</h2><ul><li>Upload the whole PDF as-is. No tracing, no clicking walls.</li><li>It starts scanning every page automatically: wall geometry, the printed scale and the wall-type text. The 21-page Freeport Square set took about a minute.</li><li>Ceiling plans, elevations and details redraw walls already on the floor plans. It sets those sheets aside so it won't count the same wall twice, and tells you which ones.</li><li>A 100+ page plan set can take several minutes. Every plan set you upload stays listed under "Your projects."</li></ul><div class="links"><a class="more" href="/tour.html">Watch the tour →</a><a class="more" href="/help.html">Help Center walkthrough →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp flip" id="walls">
+  <figure class="grp-img"><img src="/assets/tour/v2/confirm.jpg" alt="Confirm wall types panel with a Confirm all button" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Wall measurement &amp; wall-type matching</h2><ul><li>Every wall is measured directly from the vector data in your plan set: its length and drawn thickness, calibrated to the sheet's own printed scale.</li><li>That thickness is checked against the wall-type legend already drawn on your plan set.</li><li>One legend match: matched. More than one: ambiguous, with every candidate shown. None: needs confirmation. Never silently assigned a best guess.</li><li>Flagged walls get a suggested type; you check and confirm them, in one click with "Confirm all", with no re-upload. In the tour run, resolved walls went from 68.9% to 99.8%.</li></ul><div class="links"><a class="more" href="/wall-type-matching.html">How wall-type matching works →</a><a class="more" href="/how-to-read-a-wall-type-legend.html">How to read a wall type legend →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp" id="labels">
+  <figure class="grp-img"><img src="/assets/tour/v2/results.jpg" alt="Results table with 2x6 and 2x4 wood stud walls auto-matched and rows labeled SPEC UNKNOWN" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Confidence labels &amp; flags</h2><ul><li>Every auto-detected result is labeled matched, ambiguous, or needs confirmation. Never left unmarked.</li><li>Rows the tool can't identify show as SPEC UNKNOWN and are left out of the totals until you confirm them.</li><li>You can override any flagged result. Your confirmation is recorded as yours, not silently reclassified as "matched."</li><li>An unconfirmed row stays flagged in your export. It is never quietly turned into a confident-looking number.</li></ul><div class="links"><a class="more" href="/confidence-labels.html">Confidence labels →</a><a class="more" href="/accuracy.html">Accuracy testing →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp flip" id="materials">
+  <figure class="grp-img"><img src="/assets/tour/v2/done.jpg" alt="99.8% resolved, with CMU block counts filled in" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Materials output per trade</h2><ul><li>One results table with a column per material: CMU, Metal, Lumber, Drywall, Insulation.</li><li>Drywall: a sheet count you can trace back to the wall. Metal framing: steel stud and track count tied to the gauge on your own legend.</li><li>Wood framing: wood stud and plywood counts from the actual wall. Insulation: coverage tied to the wall cavity. CMU: a block count from real wall area.</li><li>In the tour run, the 2x6 walls came back as 3,008 LF, 2,264 studs, 605 track, 1,131 drywall sheets and 208 bags of insulation, and 8,108 CMU blocks for the 10.5-inch walls.</li></ul><div class="links"><a class="more" href="/drywall-takeoff.html">Drywall →</a><a class="more" href="/metal-framing-takeoff.html">Metal framing →</a><a class="more" href="/wood-framing-takeoff.html">Wood framing →</a><a class="more" href="/insulation-takeoff.html">Insulation →</a><a class="more" href="/cmu-takeoff.html">CMU →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp" id="export">
+  <figure class="grp-img"><img src="/assets/tour/v2/traceable.jpg" alt="Sheet-by-sheet detail listing source sheets per material" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Export CSV / Excel</h2><ul><li>"Export these results (CSV)" turns the results table into a spreadsheet you can open in Excel and drop into a bid.</li><li>Every export includes the label column, so anyone reviewing the file sees what was verified and what wasn't.</li><li>Each material lists the sheets it was counted on, so you can check any line against the drawing before it goes in a bid.</li><li>Read-only API keys are available from your account, scoped to your own documents and material summaries.</li></ul><div class="links"><a class="more" href="/help.html">Export steps in the Help Center →</a><a class="more" href="/public-api.html">Public API →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp flip" id="limits">
+  <figure class="grp-img"><img src="/assets/tour/v2/plan.jpg" alt="First floor plan, sheet A201, Freeport Square Apartments" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>Supported files &amp; limits</h2><ul><li>Needs a real digital plan file exported from design software such as AutoCAD or Revit.</li><li>A scanned or photographed page has no drawing data to measure, so the tool says it can't measure that page rather than guess. If only some pages are scanned, the digital pages still work.</li><li>Wall types are checked against the legend on your own plan set. If the plan set has no legend, every wall is still measured, but results mostly come back as needs confirmation.</li><li>Solo Estimator includes 10 plan sets a month; Small Firm is unlimited. See <a href="/pricing.html" style="text-decoration:underline">pricing</a>.</li></ul><div class="links"><a class="more" href="/help.html">Help Center →</a><a class="more" href="/blog-vector-vs-scanned.html">Vector vs scanned PDFs →</a><a class="more" href="/pricing.html">Pricing →</a></div></div>
+</div></section>
+<section class="wrap"><div class="grp" id="wontdo">
+  <figure class="grp-img"><img src="/assets/tour/v2/results.jpg" alt="Results table showing rows marked SPEC UNKNOWN and left out of the totals" loading="lazy"><figcaption>Real screenshot, Freeport Square Apartments test set.</figcaption></figure>
+  <div><h2>What it doesn't do</h2><ul><li>It doesn't read scanned, photographed or flat-image PDFs.</li><li>It doesn't guess a wall's material to make a number look complete.</li><li>It doesn't auto-detect doors, windows, pipe, fixtures or other one-off items. Add those with a click on the drawing or "Manual count"; they go into the same takeoff.</li><li>It doesn't publish a single blended accuracy percentage. Results are labeled row by row, and the tested numbers are on the accuracy page.</li><li>The API can't upload, edit or delete anything. It is read-only.</li><li>It is assisted takeoff: you verify every bid before it goes out.</li></ul><div class="links"><a class="more" href="/accuracy.html">Accuracy →</a><a class="more" href="/help.html">Help Center →</a></div></div>
+</div></section>
+<section class="wrap pg-sec"><div class="endcta"><h2>Your first plan set is free.</h2><p>No card needed. See exactly what it matches, and exactly what it flags for you to confirm.</p><div class="cta-row"><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Try your first plan set free →</a><a href="/pricing.html" class="btn btn-ghost btn-lg" style="color:#fff;border-color:#3a4e6b">See pricing</a></div></div></section>
 
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>
@@ -272,134 +354,6 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
   </div>
 </footer>
-
-<script>
-// Every screenshot is from the real app on the real Freeport Square plan set
-// (01-Plans-FreeportSquareApts.pdf, 21 pages), captured 2026-10-01.
-// x/y = hotspot position in % of the screenshot.
-var LEADS_URL = "https://readmyblueprint.onrender.com/leads/newsletter";
-// Gate off 2026-10-03: GA4 showed 37 gate views, 1 submit, 1 tour completion in 30 days.
-// Set back to 0 to gate after the first step again.
-var GATE_AFTER = Infinity;
-var STEPS = [
-  { img:"/assets/tour/v2/plan.jpg", x:50, y:42, alt:"First floor plan, sheet A201, Freeport Square Apartments",
-    title:"Start with the PDF you're bidding.",
-    text:"This is sheet A201 of a real 21-page apartment renovation set, exported from CAD. You upload the whole set as-is. No tracing, no clicking walls." },
-  { img:"/assets/tour/v2/reading.jpg", x:12, y:33, alt:"Reading plan progress bar, 21 pages",
-    title:"It reads every sheet on its own.",
-    text:"Wall geometry, the printed scale and the wall-type text on all 21 pages. This set took about a minute. Nothing to click while it runs." },
-  { img:"/assets/tour/v2/results.jpg", x:9, y:9, alt:"Note listing 11 sheets not counted because they redraw the floor plan walls",
-    title:"It won't count the same wall twice.",
-    text:"Ceiling plans, elevations and details redraw walls already on the floor plans. It set aside 11 of those sheets and tells you exactly which ones." },
-  { img:"/assets/tour/v2/results.jpg", x:64, y:45, tip:"below", alt:"Results table with 2x6 and 2x4 wood stud walls auto-matched",
-    title:"Matched walls become material counts.",
-    text:"The 2x6 walls: 3,008 LF, 2,264 studs, 605 track, 1,131 drywall sheets and 208 bags of insulation, matched straight from the plans." },
-  { img:"/assets/tour/v2/results.jpg", x:12, y:59, tip:"right", alt:"Rows labeled SPEC UNKNOWN",
-    title:"What it can't identify, it flags.",
-    text:"Some wall thicknesses had nothing on the sheets saying what they were. Instead of guessing, they're marked SPEC UNKNOWN and left out of the totals." },
-  { img:"/assets/tour/v2/confirm.jpg", x:16, y:28, alt:"Confirm wall types panel with a Confirm all button",
-    title:"You confirm them in one click.",
-    text:"Each flagged wall was measured from the plans. It suggests what each one is; you check and confirm. No re-upload." },
-  { img:"/assets/tour/v2/done.jpg", x:42, y:37, tip:"right", alt:"99.8% resolved, with CMU block counts filled in",
-    title:"68.9% to 99.8% resolved.",
-    text:"After that one click, 7,837 of 7,857 LF of wall is matched to a material, including 8,108 CMU blocks for the 10.5-inch walls." },
-  { img:"/assets/tour/v2/traceable.jpg", x:13, y:12, tip:"right", alt:"Sheet-by-sheet detail listing source sheets per material",
-    title:"Every number shows where it came from.",
-    text:"Each material lists the sheets it was counted on, so you can check any line against the drawing before it goes in a bid." },
-  { img:"/assets/tour/v2/done.jpg", x:83, y:14, alt:"Export these results (CSV) button",
-    title:"Export it as a bid sheet.",
-    text:"One click turns the table into a CSV you can open in Excel and drop into your estimate." },
-  { end:true }
-];
-
-var current = 0;
-var mediaEl = document.getElementById('tourMedia');
-var lineEl = document.getElementById('tourLine');
-var countEl = document.getElementById('tourCount');
-var prevBtn = document.getElementById('tourPrev');
-var nextBtn = document.getElementById('tourNext');
-var params = new URLSearchParams(location.search);
-var gateError = params.get('subscribe_error');
-
-function track(name, extra){ if (window.gtag) gtag('event', name, extra || {}); }
-function esc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-function unlocked(){ try { return localStorage.getItem('rmbTourUnlocked') === '1'; } catch(e){ return false; } }
-function unlock(){ try { localStorage.setItem('rmbTourUnlocked','1'); } catch(e){} }
-function needsGate(i){ return i > GATE_AFTER && i < STEPS.length && !unlocked(); }
-
-if (params.get('subscribed') === '1') { unlock(); current = GATE_AFTER + 1; track('tour_gate_submit'); }
-if (gateError) { current = GATE_AFTER + 1; }
-
-function tipPos(s){
-  if (s.tip === 'below') return 'left:' + Math.min(Math.max(2, s.x - 12), 66) + '%;top:' + (s.y + 6) + '%;';
-  if (s.tip === 'right') return 'left:' + (s.x + 22) + '%;top:' + Math.max(2, s.y - 10) + '%;';
-  if (s.tip === 'above') return 'left:' + Math.min(Math.max(2, s.x - 12), 66) + '%;bottom:' + (100 - s.y + 6) + '%;';
-  var h = s.x > 55 ? 'right:' + (100 - s.x + 4) + '%;' : 'left:' + Math.max(2, s.x + 4) + '%;';
-  var v = s.y > 55 ? 'bottom:' + (100 - s.y - 4) + '%;' : 'top:' + Math.max(2, s.y - 4) + '%;';
-  return h + v;
-}
-function tipHtml(s, i, mobile){
-  var total = STEPS.length - 1;
-  return '<div class="tip' + (mobile ? ' tip-mobile' : '') + '"' + (mobile ? '' : ' style="' + tipPos(s) + '"') + '>' +
-    '<h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p>' +
-    '<div class="row"><span class="count">' + (i + 1) + ' / ' + total + '</span>' +
-    '<button class="btn btn-primary" data-next>' + (i === total - 1 ? 'Finish' : 'Next') + '</button></div></div>';
-}
-
-function render(){
-  var s = STEPS[current];
-  var total = STEPS.length - 1;
-  lineEl.style.width = Math.round(Math.min(current, total) / total * 100) + '%';
-  prevBtn.style.visibility = current === 0 ? 'hidden' : 'visible';
-
-  if (needsGate(current)) {
-    countEl.textContent = '';
-    nextBtn.style.visibility = 'hidden';
-    mediaEl.innerHTML = '<div class="gate"><h3>Enter your email to continue the tour.</h3>' +
-      '<p>See the rest of the run: the walls it flags, the one-click confirm, and the final counts.</p>' +
-      '<form action="' + LEADS_URL + '" method="POST">' +
-      '<input type="hidden" name="redirect" value="/tour">' +
-      '<input type="email" name="email" required placeholder="you@company.com" aria-label="Work email" autocomplete="email">' +
-      '<button class="btn btn-primary btn-lg" type="submit">Continue</button></form>' +
-      (gateError ? '<p class="err">That email didn&#39;t look right. Please try again.</p>' : '') +
-      '<p class="fine">We&#39;ll send occasional product updates. Unsubscribe anytime.</p></div>';
-    track('tour_gate_view');
-    return;
-  }
-  nextBtn.style.visibility = 'visible';
-
-  if (s.end) {
-    countEl.textContent = '';
-    nextBtn.textContent = 'Start over';
-    mediaEl.innerHTML = '<div class="tour-end"><div class="tour-badge">✓</div>' +
-      '<h3>That&#39;s the whole run.</h3>' +
-      '<p>21 pages read, 11 duplicate sheets set aside, flagged walls confirmed in one click, and studs, drywall, insulation and CMU counts traced to the sheets. Try it on a plan set you&#39;re bidding. Your first one is free, no card needed.</p>' +
-      '<div class="ctas"><a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Try your first plan set free</a>' +
-      '<a href="/blog-real-test-freeport-square.html" class="btn btn-ghost btn-lg">Read the full Freeport test</a></div></div>';
-    track('tour_complete');
-    return;
-  }
-
-  countEl.textContent = 'Step ' + (current + 1) + ' of ' + total;
-  nextBtn.textContent = 'Next →';
-  mediaEl.innerHTML = '<div class="shot"><img src="' + s.img + '" alt="' + esc(s.alt) + '">' +
-    '<button class="hot" style="left:' + s.x + '%;top:' + s.y + '%;" aria-label="Next step" data-next></button>' +
-    tipHtml(s, current, false) + '</div>' + tipHtml(s, current, true);
-  track('tour_step', { step: current + 1 });
-}
-
-function goTo(i){ current = Math.max(0, Math.min(STEPS.length - 1, i)); render(); }
-mediaEl.addEventListener('click', function(e){ if (e.target.closest('[data-next]')) goTo(current + 1); });
-prevBtn.addEventListener('click', function(){ goTo(current - 1); });
-nextBtn.addEventListener('click', function(){ goTo(current === STEPS.length - 1 ? 0 : current + 1); });
-document.addEventListener('keydown', function(e){
-  if (e.target.tagName === 'INPUT') return;
-  if (e.key === 'ArrowRight') goTo(current + 1);
-  if (e.key === 'ArrowLeft') goTo(current - 1);
-});
-STEPS.forEach(function(s){ if (s.img) { var im = new Image(); im.src = s.img; } });
-render();
-</script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/chatbot.js" defer></script>

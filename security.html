@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
+<script src="/assets/analytics.js" defer></script>
+<title>Security &amp; plan-file handling | ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How ReadMyBlueprint handles your uploaded plan files: who can see them, how accounts are protected, how payments work, and how to report a security issue.">
+<link rel="canonical" href="https://www.readmyblueprint.com/security.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="Security &amp; plan-file handling | ReadMyBlueprint">
+<meta property="og:description" content="How ReadMyBlueprint handles your uploaded plan files: who can see them, how accounts are protected, how payments work, and how to report a security issue.">
+<meta property="og:url" content="https://www.readmyblueprint.com/security.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f;
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0; --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:var(--blue);}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid var(--line);color:var(--ink);}
+main{padding:56px 0 80px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1rem;}
+h1{font-size:clamp(1.8rem,3.4vw,2.4rem);margin:0 0 .4rem;}
+.updated{color:var(--muted);font-size:.88rem;margin:0 0 2.6rem;}
+h2{font-size:1.25rem;margin:2.4rem 0 .8rem;}
+p,li{line-height:1.65;color:var(--ink);}
+p{margin:0 0 1rem;}
+ul{padding-left:1.3rem;margin:0 0 1rem;}
+li{margin-bottom:.5rem;}
+.callout{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:1.4rem 0;font-size:.92rem;}
+.callout strong{color:var(--accent);}
+.placeholder{background:#fbe7da;color:#8a3b12;padding:.05rem .35rem;border-radius:4px;font-family:var(--mono);font-size:.85em;}
+:root[data-theme="dark"] .placeholder, :root:not([data-theme="light"]) .placeholder{background:#3a2416;color:#f0895a;}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);max-width:1120px;margin:0 auto;padding:0 24px;}
+</style>
+<link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
+<meta name="theme-color" content="#06101f">
+</head>
+<body>
+
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-studio-poster.jpg" preload="none" data-video="page-studio"></video></div>
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <a href="/" class="btn">Back to site</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <span class="eyebrow">Security</span>
+  <h1>Security &amp; plan-file handling</h1>
+  <p class="updated">Last updated: October 8, 2026</p>
+
+  <p>Your plan sets are your clients' and your own work product. This page describes, in plain terms, what we actually do to protect them. It lists only things that are true of the product today. For the full legal detail, see our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+  <div class="callout"><strong>What we don't claim.</strong> ReadMyBlueprint is a small company. We do not hold a SOC 2 report, ISO 27001 certification or any other third-party security certification, and we do not run a bug bounty program. We would rather tell you that than imply otherwise.</div>
+
+  <h2>How your plan files are handled</h2>
+  <ul>
+    <li>You upload PDF plan sets through the web app over HTTPS. We use them to render pages, extract the vector geometry and text, and compute your takeoff.</li>
+    <li>Each uploaded plan belongs to the account that uploaded it. Every request to open a plan, a page, a takeoff item or an export checks that the plan belongs to the signed-in account; if it doesn't, the app responds as though it doesn't exist.</li>
+    <li>Uploaded files are stored on our backend's server storage, and the extracted data and your takeoff are stored in our database. They are not published and have no public link.</li>
+    <li>Plan files are not sent to our analytics tools. Those tools only see page views and product events such as sign-up or upload started.</li>
+  </ul>
+
+  <h2>Who can see your plans</h2>
+  <p>Other customers cannot. Access from our side is limited to the people operating ReadMyBlueprint, who can reach our hosting and database when needed to run and support the service (for example, to investigate a problem you report). We do not sell plan data or use it to build advertising profiles.</p>
+
+  <h2>Deleting your data</h2>
+  <ul>
+    <li><strong>Delete your account yourself.</strong> In the app, the account delete option asks for your password and a typed confirmation, cancels any active subscription, and then permanently deletes your account, uploaded-plan records, takeoff items, material mappings, sessions and API keys.</li>
+    <li><strong>Export first if you want a copy.</strong> The same account panel can export your account data (plan metadata, takeoff items, mappings) as a JSON file.</li>
+    <li><strong>Want a specific file removed, or confirmation that stored files are gone?</strong> Email <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a>. As stated in our <a href="/privacy.html">Privacy Policy</a>, we delete uploaded files and takeoff data within 30 days of account deletion, except billing records we must keep for tax and accounting law.</li>
+  </ul>
+
+  <h2>Accounts and sign-in</h2>
+  <ul>
+    <li>Passwords are never stored in readable form. They are salted and hashed with PBKDF2-SHA256 (260,000 iterations).</li>
+    <li>Sign-in sessions expire after 14 days. Password-reset links expire after one hour, and resetting a password signs out all existing sessions.</li>
+    <li>Login, sign-up and password-reset attempts are rate-limited to slow down password guessing.</li>
+    <li>Optional API keys, if you create them, are stored only as one-way hashes.</li>
+  </ul>
+
+  <h2>Encryption in transit</h2>
+  <p>The app and its API are served over HTTPS, and the API sends an HSTS header telling browsers to require HTTPS. It also sets standard protective headers (no framing, no MIME sniffing).</p>
+
+  <h2>Payments</h2>
+  <p>Payments are handled by Stripe using Stripe Checkout. Your card number, expiry and CVC are entered on Stripe's page and never pass through or get stored on our servers. We keep only a Stripe customer reference and your plan status. Stripe notifications to our server are verified with Stripe's signature before we act on them.</p>
+
+  <h2>Infrastructure</h2>
+  <ul>
+    <li>The backend and database run on <strong>Render</strong>.</li>
+    <li>The web app runs on <strong>Vercel</strong>.</li>
+    <li>DNS and cookie-free aggregate traffic analytics on this site run through <strong>Cloudflare</strong>.</li>
+    <li>Transactional email (account and password-reset emails) is sent through <strong>Resend</strong>.</li>
+  </ul>
+  <p>These providers are listed with their roles in our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Monitoring and analytics</h2>
+  <ul>
+    <li><strong>Error tracking:</strong> we use Sentry to find and fix crashes, with default personal-data collection turned off.</li>
+    <li><strong>Product analytics:</strong> Google Analytics 4 and PostHog measure usage. PostHog session replay masks everything typed into form fields, so passwords and form entries are not recorded.</li>
+  </ul>
+
+  <h2>Report a security issue</h2>
+  <p>If you think you've found a vulnerability or a problem with how your data is handled, email <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a> with what you found and how to reproduce it. Please don't access other customers' data while testing. We don't offer monetary rewards, but we read every report.</p>
+
+  <h2>Questions</h2>
+  <p>Questions about how we handle your plans? Write to <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a>, or read the <a href="/privacy.html">Privacy Policy</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>
+  <div class="footer-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-192.png" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint LLC · <a href="/terms.html">Terms of Service</a> · <a href="/privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+<script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
+<script src="/assets/video-loader.js" defer></script>
+</html>
