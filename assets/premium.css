@@ -1,7 +1,6 @@
 ﻿/* Premium layer: cinematic video heroes, cursor-lit cards, smooth scroll, page fade. Loaded after cinematic-theme.css. */
 
 /* page fade-in */
-body{animation:pg-in .7s ease both}
 @keyframes pg-in{from{opacity:0}to{opacity:1}}
 
 /* cinematic video behind the top of each page */
