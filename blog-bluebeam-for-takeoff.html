@@ -4,21 +4,91 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Blog</title>
+<title>Bluebeam for takeoff: strengths and gaps</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="Bluebeam Revu is strong for markup and measuring any PDF, but wall takeoff is manual clicking. What it does well, where the work adds up, and what to pair it with.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-bluebeam-for-takeoff.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="Bluebeam for takeoff: what it does well and what to pair it with">
+<meta property="og:description" content="Fair look at Bluebeam for drywall and framing takeoff: where it shines, where manual clicking adds up, and a pairing workflow.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-bluebeam-for-takeoff.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bluebeam for takeoff: what it does well, where manual clicking adds up, and what to pair it with",
+  "description": "Bluebeam Revu is strong for markup and measuring any PDF, but wall takeoff is manual clicking. What it does well, where the work adds up, and what to pair it with.",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "url": "https://www.readmyblueprint.com/blog-bluebeam-for-takeoff.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/blog-bluebeam-for-takeoff.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Bluebeam do automatic takeoff for drywall or framing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bluebeam's measure tools are manual: you click each wall or area. It is strong for markup, review and measuring any PDF, including scans. ReadMyBlueprint measures walls automatically from a digital PDF's vector geometry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use ReadMyBlueprint with Bluebeam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many estimators keep Bluebeam for markup and review and use ReadMyBlueprint for the framing, drywall, insulation and CMU counts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my plan set mixes digital and scanned sheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The digital sheets still work. A scanned or photographed page has no drawing data to measure, so ReadMyBlueprint tells you it cannot measure that page instead of guessing. You can measure that sheet by hand in Bluebeam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know which walls ReadMyBlueprint got right?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every result is labeled matched, ambiguous or needs confirmation, and the label is included in CSV and Excel exports. Flagged rows stay flagged until you confirm them."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -47,17 +117,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -75,20 +145,23 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -173,74 +246,70 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
+<article class="article">
   <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
-</div>
+  <h1>Bluebeam for takeoff: what it does well, where manual clicking adds up, and what to pair it with</h1>
+  <div class="meta">Oct 8, 2026 · 6 min read</div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-no-wall-type-legend.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>When your plan set has no wall-type legend (or a scrambled one): how to take off walls anyway</h2>
-    <p>What to do when a plan set has no wall-type legend or a scrambled one: take off the walls by hand, document your assumptions, and demand a tool that flags instead of guessing.</p>
-  </a>
-  <a class="post-card" href="/blog-bluebeam-for-takeoff.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Bluebeam for takeoff: what it does well, where manual clicking adds up, and what to pair it with</h2>
-    <p>A fair look at Bluebeam for drywall and framing takeoff: where it shines, where clicking every wall adds up, and a workflow that pairs it with ReadMyBlueprint.</p>
-  </a>
-  <a class="post-card" href="/blog-counting-walls-once.html">
-    <span class="date">Sep 29, 2026</span>
-    <h2>Our tool was counting some walls two or three times. Here's the fix</h2>
-    <p>Ceiling plans, finish plans and elevations redraw the same walls. Walls are now counted on floor plans only; the Freeport Square re-run went from 17,648 LF to 8,684 LF, with 68% matched automatically.</p>
-  </a>
-  <a class="post-card" href="/how-to-do-a-construction-takeoff.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to do a construction takeoff: step by step</h2>
-    <p>What a takeoff is and how to do one from a plan set, from scale checks to waste factors.</p>
-  </a>
-  <a class="post-card" href="/how-to-estimate-drywall-sheets.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to estimate drywall sheets from plans</h2>
-    <p>Wall length, height, sides, layers, openings and waste, with a worked example.</p>
-  </a>
-  <a class="post-card" href="/how-to-calculate-metal-studs.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to calculate metal studs and track from plans</h2>
-    <p>The spacing formula, extras for corners and openings, and track footage.</p>
-  </a>
-  <a class="post-card" href="/how-many-cmu-blocks.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How many CMU blocks do I need?</h2>
-    <p>1.125 blocks per square foot, openings, special blocks and waste, worked through.</p>
-  </a>
-  <a class="post-card" href="/blog-real-test-freeport-square.html">
-    <span class="date">Sep 22, 2026</span>
-    <h2>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h2>
-    <p>41.3% of wall footage auto-matched, the rest honestly flagged rather than guessed. Updated Sep 29: re-run after our sheet-counting fix.</p>
-  </a>
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+  <p>Bluebeam Revu is one of the most widely used tools in construction for PDF markup and review, and for good reason. For drywall, framing, insulation and masonry estimators, though, its measuring tools work the way the rest of the product does: you click. That is fine on a small job. On a 20-page set it adds up. This post covers what Bluebeam does well, where the manual work piles up, and how some estimators pair it with something else.</p>
+
+  <h2>What Bluebeam does well</h2>
+  <ul>
+    <li><strong>Markup and review.</strong> Clouds, callouts, highlights and comments on a PDF are what Bluebeam is known for, and it is widely used to review drawings with other people.</li>
+    <li><strong>Measurement on any PDF.</strong> Its measuring tools work on scanned plans as well as digital ones, because you are doing the tracing yourself. Vector-based automation cannot do that.</li>
+    <li><strong>Every trade.</strong> Concrete, roofing, paint and sitework can all be measured with the same tools. If you bid many trades, one tool covers them.</li>
+    <li><strong>Flexibility.</strong> You decide what counts, how it is marked and how it is color-coded.</li>
+  </ul>
+  <p>We are not suggesting you drop it. If your team reviews and marks up drawings in Bluebeam, keep doing that.</p>
+
+  <h2>Where manual clicking adds up</h2>
+  <p>Bluebeam is markup software with measuring tools, not an automatic wall counter. It has some helpers (VisualSearch for finding repeated symbols, Dynamic Fill for areas), but linear wall takeoff is still largely manual: you trace each wall run. For a wall-heavy trade, a few things follow from that.</p>
+  <ul>
+    <li><strong>Every wall is a click.</strong> A multifamily set can have hundreds of wall segments across floors and unit types. Each one is measured by hand, and a missed segment is a missed quantity.</li>
+    <li><strong>Scale calibration is on you.</strong> Reviewers of tools like this describe the same pitfall: if the scale on a sheet is calibrated wrong, every measurement on it is wrong by the same factor. Check the printed scale, and check it again when sheets in one set use different scales. Our <a href="/guides.html">guides</a> cover scales and how to read them.</li>
+    <li><strong>The legend work is manual too.</strong> You measure linear feet per wall tag, then match each tag to its assembly in the wall type legend. Walls with no tag, or with a tag the legend does not cover, are where errors hide. See <a href="/how-to-read-a-wall-type-legend.html">how to read a wall type legend</a>, and <a href="/blog-no-wall-type-legend.html">what to do when there is none</a>.</li>
+    <li><strong>Turning footage into materials.</strong> Linear feet become studs, track, board and insulation through your own formulas or spreadsheets. Bluebeam produces markups and measurement totals; the material list is separate work.</li>
+  </ul>
+  <p>None of this is a flaw in Bluebeam. It is what you get from a general markup tool. The question is whether the repetitive part, tracing walls and matching them to a legend, is where you want your hours to go.</p>
+
+  <div class="callout"><strong>A fair test:</strong> time yourself on one floor plan from your next bid, from first click to a labeled material list. Then decide which parts you want to keep doing by hand.</div>
+
+  <h2>What to pair it with</h2>
+  <p>ReadMyBlueprint is AI blueprint takeoff for drywall, metal and wood framing, insulation and CMU/masonry. It reads a digital PDF, measures walls from the drawing's vector geometry, and matches each wall's drawn thickness to the wall type legend. Output is a material list you can export to CSV or Excel. The practical split many estimators use: keep Bluebeam for markup and review, and use ReadMyBlueprint for the counts. Our <a href="/bluebeam-alternative.html">Bluebeam alternative page</a> has the side-by-side.</p>
+  <p>The part that matters most is what happens to walls the tool is unsure about. Each result carries a label: matched, ambiguous or needs confirmation. A wall that does not match any legend entry is flagged, not assigned a best guess, and the label travels into your export so a reviewer can see what was verified and what was not. See <a href="/confidence-labels.html">confidence labels</a> for the details. You still make the final call on every flagged wall, which is how it should work.</p>
+
+  <h2>What it cannot do</h2>
+  <ul>
+    <li><strong>Scanned plans.</strong> ReadMyBlueprint needs CAD- or Revit-exported vector PDFs. On a scanned page it tells you it cannot measure it instead of guessing. If your set mixes digital and scanned sheets, the digital sheets still work and the scanned ones are flagged individually. This is where Bluebeam fits better, because you can trace on any PDF. See <a href="/blog-vector-vs-scanned.html">vector vs. scanned PDFs</a>.</li>
+    <li><strong>Other trades.</strong> It covers drywall, framing, insulation and masonry, not roofing, paint or sitework.</li>
+    <li><strong>Markup and collaboration.</strong> It is a takeoff tool, not a review and markup platform.</li>
+    <li><strong>No guarantee.</strong> On one real 21-page set (Freeport Square Apartments), 68.9% of walls were auto-matched, and 99.8% after one "Confirm all". That is one plan set. Your results depend on your drawings, and you verify every bid before it goes out.</li>
+  </ul>
+
+  <h2>A pairing workflow</h2>
+  <ol>
+    <li>Get the vector PDF from the architect or GC and check that lines and text are selectable.</li>
+    <li>Run it through ReadMyBlueprint to get wall counts and a first material list, with labels showing which rows are matched and which need a decision.</li>
+    <li>Confirm the flagged rows against the legend and sections.</li>
+    <li>Open the same PDF in Bluebeam for markup, review comments and anything outside ReadMyBlueprint's scope, such as measuring a scanned reference sheet by hand.</li>
+    <li>Export and build your bid with every assumption written down.</li>
+  </ol>
+  <p>We are not claiming an hours-saved figure here. We have not measured one on your workflow, and it would be a made-up number. Time your own next bid both ways.</p>
+
+
+  <h2>Common questions</h2>
+  <p><strong>Does Bluebeam do automatic takeoff for drywall or framing?</strong><br>Bluebeam's measure tools are manual: you click each wall or area. It is strong for markup, review and measuring any PDF, including scans. ReadMyBlueprint measures walls automatically from a digital PDF's vector geometry.</p>
+  <p><strong>Can I use ReadMyBlueprint with Bluebeam?</strong><br>Yes. Many estimators keep Bluebeam for markup and review and use ReadMyBlueprint for the framing, drywall, insulation and CMU counts.</p>
+  <p><strong>What if my plan set mixes digital and scanned sheets?</strong><br>The digital sheets still work. A scanned or photographed page has no drawing data to measure, so ReadMyBlueprint tells you it cannot measure that page instead of guessing. You can measure that sheet by hand in Bluebeam.</p>
+  <p><strong>How do I know which walls ReadMyBlueprint got right?</strong><br>Every result is labeled matched, ambiguous or needs confirmation, and the label is included in CSV and Excel exports. Flagged rows stay flagged until you confirm them.</p>
+
+
+  <div class="cta-box">
+    <h3>Try the pairing on one plan set</h3>
+    <p>Upload a digital plan set and see the counts and labels next to your Bluebeam markup — your first one is free.</p>
+    <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
 
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>
