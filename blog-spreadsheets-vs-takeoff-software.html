@@ -4,21 +4,91 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Blog</title>
+<title>Spreadsheets vs takeoff software for drywall bids</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
+<meta name="description" content="Spreadsheets price well but measure poorly. Where each breaks, and a hybrid workflow: takeoff for quantities, export to CSV or Excel, price in your own sheet.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-spreadsheets-vs-takeoff-software.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="Spreadsheets vs. takeoff software for drywall bids">
+<meta property="og:description" content="Where spreadsheets work for drywall bids, where they break, and how to pair them with takeoff software.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-spreadsheets-vs-takeoff-software.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spreadsheets vs. takeoff software for drywall bids",
+  "description": "Spreadsheets price well but measure poorly. Where each breaks, and a hybrid workflow: takeoff for quantities, export to CSV or Excel, price in your own sheet.",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "url": "https://www.readmyblueprint.com/blog-spreadsheets-vs-takeoff-software.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint LLC"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ReadMyBlueprint",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.readmyblueprint.com/og-image.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.readmyblueprint.com/blog-spreadsheets-vs-takeoff-software.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a spreadsheet good enough for drywall bids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For pricing, yes. For getting quantities off the plans, it relies on manual measuring and typing, which is where most errors and time loss happen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use takeoff software with my existing spreadsheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most takeoff tools export CSV or Excel, so quantities can go straight into your own pricing sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does ReadMyBlueprint export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A CSV or Excel results table with a column per material and a label column showing matched, ambiguous, or needs confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ReadMyBlueprint replace my bid sheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It produces quantities for digital plan sets; your labor units, waste and markup stay in your own sheet."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -47,17 +117,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -75,20 +145,23 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -173,119 +246,69 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
+<article class="article">
   <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
-</div>
+  <h1>Spreadsheets vs. takeoff software for drywall bids</h1>
+  <div class="meta">Oct 8, 2026 · 5 min read</div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/missouri-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Missouri: plan rooms and bid sources</h2>
-    <p>A neutral map of Missouri state, MoDOT, city, county, university and regional plan-room sources, plus tips on planholder registration, pre-bid meetings and addenda.</p>
-  </a>
-  <a class="post-card" href="/kansas-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Kansas: plan rooms and bid sources</h2>
-    <p>Kansas bid sources for drywall, framing, insulation and CMU subs: the state eSupplier portal, Wichita, university and school-district pages and Kansas City plan rooms.</p>
-  </a>
-  <a class="post-card" href="/arkansas-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Arkansas: plan rooms and bid sources</h2>
-    <p>Where Arkansas subs find bids: the state's construction bid page and ARBuy, city portals in Little Rock, Fayetteville and more, ARDOT lettings, and tips on planholders and addenda.</p>
-  </a>
-  <a class="post-card" href="/blog-takeoff-software-small-contractors.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Takeoff software for small drywall and framing contractors: what actually matters</h2>
-    <p>Seven things a 1–10 person drywall or framing shop should check before buying takeoff software, and where each type of tool fits.</p>
-  </a>
-  <a class="post-card" href="/blog-spreadsheets-vs-takeoff-software.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Spreadsheets vs. takeoff software for drywall bids</h2>
-    <p>Spreadsheets are great for pricing and weak for measuring. A hybrid workflow: takeoff for quantities, export, then price in your own sheet.</p>
-  </a>
-  <a class="post-card" href="/blog-ai-takeoff-real-vs-hype.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>AI takeoff: what's real and what's hype</h2>
-    <p>A plain breakdown of what AI takeoff does reliably, where it breaks, and seven questions to ask any vendor.</p>
-  </a>
-  <a class="post-card" href="/blog-apartment-building-takeoff.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Taking off a multi-story apartment building: drywall and framing walkthrough</h2>
-    <p>How to organize an apartment-building takeoff: repeating units, rated walls, sheets to skip, and grouping by wall type.</p>
-  </a>
-  <a class="post-card" href="/blog-drywall-bid-sheet.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Drywall and framing bid sheet: how subcontractors build a bid</h2>
-    <p>From takeoff quantities to a finished proposal, with waste, labor, markup, exclusions and a bid-day checklist.</p>
-  </a>
-  <a class="post-card" href="/blog-become-a-drywall-framing-estimator.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>How to become a drywall and framing estimator</h2>
-    <p>The skills, training paths and career steps for drywall and framing estimators, with hiring tips for owners.</p>
-  </a>
-  <a class="post-card" href="/blog-no-wall-type-legend.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>When your plan set has no wall-type legend (or a scrambled one): how to take off walls anyway</h2>
-    <p>What to do when a plan set has no wall-type legend or a scrambled one: take off the walls by hand, document your assumptions, and demand a tool that flags instead of guessing.</p>
-  </a>
-  <a class="post-card" href="/blog-bluebeam-for-takeoff.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Bluebeam for takeoff: what it does well, where manual clicking adds up, and what to pair it with</h2>
-    <p>A fair look at Bluebeam for drywall and framing takeoff: where it shines, where clicking every wall adds up, and a workflow that pairs it with ReadMyBlueprint.</p>
-  </a>
-  <a class="post-card" href="/blog-counting-walls-once.html">
-    <span class="date">Sep 29, 2026</span>
-    <h2>Our tool was counting some walls two or three times. Here's the fix</h2>
-    <p>Ceiling plans, finish plans and elevations redraw the same walls. Walls are now counted on floor plans only; the Freeport Square re-run went from 17,648 LF to 8,684 LF, with 68% matched automatically.</p>
-  </a>
-  <a class="post-card" href="/how-to-do-a-construction-takeoff.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to do a construction takeoff: step by step</h2>
-    <p>What a takeoff is and how to do one from a plan set, from scale checks to waste factors.</p>
-  </a>
-  <a class="post-card" href="/how-to-estimate-drywall-sheets.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to estimate drywall sheets from plans</h2>
-    <p>Wall length, height, sides, layers, openings and waste, with a worked example.</p>
-  </a>
-  <a class="post-card" href="/how-to-calculate-metal-studs.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to calculate metal studs and track from plans</h2>
-    <p>The spacing formula, extras for corners and openings, and track footage.</p>
-  </a>
-  <a class="post-card" href="/how-many-cmu-blocks.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How many CMU blocks do I need?</h2>
-    <p>1.125 blocks per square foot, openings, special blocks and waste, worked through.</p>
-  </a>
-  <a class="post-card" href="/blog-real-test-freeport-square.html">
-    <span class="date">Sep 22, 2026</span>
-    <h2>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h2>
-    <p>41.3% of wall footage auto-matched, the rest honestly flagged rather than guessed. Updated Sep 29: re-run after our sheet-counting fix.</p>
-  </a>
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+  <p><strong>The short answer:</strong> spreadsheets are excellent for pricing and weak for measuring. The workflow that holds up for most small drywall subs is a hybrid: get quantities from a takeoff tool, export them, and drop them into the pricing sheet you already trust.</p>
+
+  <h2>What spreadsheets do well</h2>
+  <ul>
+    <li><strong>Your own numbers.</strong> Labor units, waste factors, markups, and supplier pricing are yours, and a spreadsheet lets you set them exactly how you bid.</li>
+    <li><strong>Flexibility.</strong> You can add a line for an odd condition (a curved soffit, a fire-rated shaft) without waiting for a vendor to support it.</li>
+    <li><strong>Zero new software.</strong> Everyone already knows how to open one, and it costs nothing to start.</li>
+    <li><strong>Transparency.</strong> Formulas are visible. Anyone can see how a total was built.</li>
+  </ul>
+
+  <h2>Where spreadsheets break</h2>
+  <ul>
+    <li><strong>Quantities are typed in by hand.</strong> Whether you scale off paper or measure on a PDF, someone reads a length and types it. That's slow, and every typed number is a chance for a slip.</li>
+    <li><strong>Formula errors hide.</strong> A broken range or a copied row can quietly change a total. The European Spreadsheet Risks Interest Group keeps a public <a href="https://eusprig.org/research-info/horror-stories/">collection of documented spreadsheet failures</a>. The point isn't that your sheet is wrong, it's that you can't easily tell.</li>
+    <li><strong>No link back to the drawing.</strong> A cell that says 1,240 LF doesn't tell you which walls it came from. When the GC asks about a number, you're re-measuring.</li>
+    <li><strong>Version control.</strong> Addenda arrive, a copy gets saved as "final_v3", and two people edit different files. Which sheet matches which plan revision?</li>
+  </ul>
+  <div class="callout"><strong>The pattern:</strong> spreadsheets fail at the step between the drawing and the cell. They're fine once the quantity is right.</div>
+
+  <h2>What takeoff software changes</h2>
+  <p>Takeoff software puts the measurement on the drawing itself. Manual tools give you running totals as you click; automated tools propose the quantities and ask you to review them. Either way the number is tied to a wall on a sheet, so you can find where it came from. What it usually doesn't do is replace your pricing logic, and in a small shop it shouldn't. Not sure which kind of tool fits? Read <a href="/blog-takeoff-software-small-contractors.html">what actually matters for small contractors</a>.</p>
+
+  <h2>A hybrid workflow that works</h2>
+  <ol>
+    <li><strong>Get quantities from the plans.</strong> Use a takeoff tool for studs, track, board and insulation counts, and add the one-off items (doors, specialty conditions) yourself.</li>
+    <li><strong>Review what's flagged.</strong> Confirm anything the tool wasn't sure about before it reaches a total.</li>
+    <li><strong>Export CSV or Excel.</strong> Keep the exported file as the record of what was measured, per revision.</li>
+    <li><strong>Paste into your pricing sheet.</strong> Your labor units, waste, and markup stay exactly as they are. Our <a href="/blog-drywall-bid-sheet.html">drywall bid sheet post</a> shows how to lay that sheet out.</li>
+    <li><strong>Sanity-check with a quick calculation.</strong> The <a href="/drywall-calculator.html">drywall calculator</a> and the guide on <a href="/how-to-estimate-drywall-sheets.html">how to estimate drywall sheets</a> are good cross-checks against the tool's totals.</li>
+  </ol>
+
+  <h2>When a spreadsheet alone is fine</h2>
+  <p>Not every bid needs software. A single-room remodel, a repair job, or a quick change order is often faster with a tape, a calculator and a sheet. If you bid a handful of small jobs a month, the setup time of a takeoff tool may not be worth it. The tipping point is usually when plan sets get long enough that counting walls takes a night, or when you start bidding more jobs than you can measure by hand.</p>
+
+  <h2>Habits that make the hybrid safer</h2>
+  <ul>
+    <li><strong>Keep quantities and pricing on separate tabs.</strong> Paste the export into its own tab and have the pricing tab read from it. When an addendum lands, you replace one tab, not hunt through formulas.</li>
+    <li><strong>Name files by plan revision.</strong> Put the date or addendum number in the export filename so the quantity record matches the drawings you bid from.</li>
+    <li><strong>Carry the flags with you.</strong> If a quantity came out as unconfirmed, keep that note next to the row until someone resolves it.</li>
+    <li><strong>Spot-check three walls.</strong> Pick a few and measure them yourself. If they agree, you've learned how much to trust the rest.</li>
+  </ul>
+
+  <h2>Where ReadMyBlueprint fits in that workflow</h2>
+  <p>ReadMyBlueprint handles step one for digital plan sets. It reads the wall geometry from the PDF, matches walls to the wall-type legend on your own drawings, and labels each result matched, ambiguous, or needs confirmation. "Export these results (CSV)" turns the results table into a spreadsheet you can open in Excel, and every export includes the label column, so your pricing sheet shows what was verified. See <a href="/features.html">features</a> for the full list and limits.</p>
+  <p>The limits matter. It needs digital CAD-exported plans and does not read scanned or photographed PDFs. It doesn't auto-detect doors, windows, pipe or fixtures, so those stay a manual add. And it assists the estimate, it doesn't finish it; you verify the bid before it goes out.</p>
+
+  <h2>Quick answers</h2>
+  <p><strong>Is a spreadsheet good enough for drywall bids?</strong> For pricing, yes. For getting quantities off the plans, it relies on manual measuring and typing, which is where most errors and time loss happen.</p>
+  <p><strong>Can I use takeoff software with my existing spreadsheet?</strong> Yes. Most takeoff tools export CSV or Excel, so quantities can go straight into your own pricing sheet.</p>
+  <p><strong>What does ReadMyBlueprint export?</strong> A CSV or Excel results table with a column per material and a label column showing matched, ambiguous, or needs confirmation.</p>
+  <p><strong>Does ReadMyBlueprint replace my bid sheet?</strong> No. It produces quantities for digital plan sets; your labor units, waste and markup stay in your own sheet.</p>
+
+  <div class="cta-box">
+    <h3>Try the hybrid workflow</h3>
+    <p>Upload your plan set and find out in minutes — your first one is free.</p>
+    <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
 
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>
