@@ -104,6 +104,13 @@
     .steps{grid-template-columns:1fr}
     .proof{grid-template-columns:1fr;padding:22px}
   }
+  .spf{display:grid;gap:12px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;max-width:620px;width:100%;margin-top:10px}
+  .spf label{font-size:14px;font-weight:600;display:block}
+  .spf input{display:block;width:100%;margin-top:5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit}
+  .spf .r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .spf button{border:0;cursor:pointer;font-family:inherit}
+  .sp-msg{min-height:1.2em;font-size:14px;margin:0}.sp-msg.err{color:#b42318}
+  @media (max-width:560px){.spf .r2{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -134,6 +141,14 @@
     <div class="cta-row">
       <a class="pill big" href="https://app.readmyblueprint.com/?signup=1">Upload my first plan set</a>
       <p class="alt">Rather not sign up? Email the PDF to <a href="mailto:support@readmyblueprint.com?subject=Plan%20set%20for%20a%20takeoff">support@readmyblueprint.com</a> and we'll send the counts back.</p>
+      <form id="send" class="spf" data-send-plans data-source="send_plans" data-view-event="send_plans_view" novalidate>
+        <b>Only have scans? Send the plans here and we will do the counts.</b>
+        <div class="r2"><label>Your name<input name="name" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label></div>
+        <label>Link to the plans (Drive, Dropbox, bid portal)<input name="link" type="url" placeholder="https://"></label>
+        <label>or attach a PDF (up to 40 MB)<input name="file" type="file" accept="application/pdf,.pdf"></label>
+        <p class="sp-msg" role="status"></p>
+        <button type="submit" class="pill big">Send my plans</button>
+      </form>
     </div>
     <div class="ticks">
       <span><i></i>First plan set free</span>
@@ -203,5 +218,6 @@
     <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="mailto:support@readmyblueprint.com">support@readmyblueprint.com</a></span>
   </div>
 </footer>
+<script src="/assets/send-plans-form.js" defer></script>
 </body>
 </html>
