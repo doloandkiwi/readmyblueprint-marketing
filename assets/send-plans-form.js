@@ -42,7 +42,7 @@
           track("plan_request_failed", { source: source });
           btn.disabled = false; btn.textContent = "Send my plans";
           msg.className = "sp-msg err";
-          msg.innerHTML = (err && err.message ? err.message + " " : "") + 'You can also email the plans to <a href="mailto:support@readmyblueprint.com?subject=Plan%20set%20for%20a%20takeoff">support@readmyblueprint.com</a>.';
+          msg.textContent = (err && err.message ? err.message + " " : "") + "You can also email the plans to support@readmyblueprint.com.";
         });
     });
   });
