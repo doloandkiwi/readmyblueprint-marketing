@@ -4,64 +4,38 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
 <script src="/assets/analytics.js" defer></script>
-<title>Blog</title>
+<title>Can ChatGPT Do a Drywall Takeoff? A Real Plan Sheet Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.">
-<link rel="canonical" href="https://www.readmyblueprint.com/blog.html">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://www.readmyblueprint.com/blog.html",
-      "url": "https://www.readmyblueprint.com/blog.html",
-      "name": "Blog",
-      "description": "Notes on takeoff, estimating, and how ReadMyBlueprint actually works under the hood.",
-      "inLanguage": "en-US",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "ReadMyBlueprint",
-        "url": "https://www.readmyblueprint.com/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "ReadMyBlueprint",
-        "url": "https://www.readmyblueprint.com/",
-        "logo": "https://www.readmyblueprint.com/og-image.svg"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.readmyblueprint.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://www.readmyblueprint.com/blog.html"
-        }
-      ]
-    }
-  ]
-}
-</script>
+<meta name="description" content="We gave free ChatGPT a real renovation floor plan and asked for a drywall and framing takeoff. It estimated 220 LF of new walls on a sheet that draws none. Our own tool got it wrong too. Here is what we fixed.">
+<link rel="canonical" href="https://www.readmyblueprint.com/blog-chatgpt-drywall-takeoff-test.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
-<meta property="og:title" content="ReadMyBlueprint Blog">
-<meta property="og:url" content="https://www.readmyblueprint.com/blog.html">
+<meta property="og:title" content="Can ChatGPT do a drywall takeoff? We tested it on a real plan sheet">
+<meta property="og:description" content="We gave free ChatGPT a real renovation floor plan and asked for a drywall and framing takeoff. It estimated 220 LF of new walls on a sheet that draws none. Our own tool got it wrong too. Here is what we fixed.">
+<meta property="og:url" content="https://www.readmyblueprint.com/blog-chatgpt-drywall-takeoff-test.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Can ChatGPT do a drywall takeoff? We tested it on a real plan sheet",
+  "description": "We gave free ChatGPT a real renovation floor plan and asked for a drywall and framing takeoff. It estimated 220 LF of new walls on a sheet that draws none. Our own tool got it wrong too. Here is what we fixed.",
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "url": "https://www.readmyblueprint.com/blog-chatgpt-drywall-takeoff-test.html",
+  "image": "https://www.readmyblueprint.com/og-image.svg",
+  "author": { "@type": "Organization", "name": "The ReadMyBlueprint Team", "url": "https://www.readmyblueprint.com/about" },
+  "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-chatgpt-drywall-takeoff-test.html" }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,17 +67,17 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;}
 h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
-a{color:inherit;}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+a{color:var(--blue);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);}
 .brand .dim{font-weight:500;color:var(--muted);}
 .brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
 .nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
-.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a{text-decoration:none;color:var(--muted);white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links .has-mega{position:relative;display:flex;align-items:center;}
 .nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
@@ -121,20 +95,43 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
 .btn-primary{background:var(--btn-accent);color:#fff;}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
 @media (max-width:1080px){ .nav-links{display:none;} }
 @media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
 
-.hero{padding:56px 0 24px;}
+.article{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
-.hero h1{font-size:clamp(2rem,4vw,2.6rem);margin:0 0 .8rem;}
-.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:0;}
-
-.posts{padding:8px 0 64px;display:flex;flex-direction:column;gap:0;}
-.post-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);}
-.post-card .date{font-family:var(--mono);font-size:.78rem;color:var(--muted);}
-.post-card h2{font-size:1.25rem;margin:8px 0 8px;}
-.post-card p{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch;}
-.post-card:hover h2{color:var(--blue);}
+.article h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:0 0 12px;}
+.article .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-bottom:32px;}
+.article p{font-size:1.03rem;margin:0 0 1.2rem;}
+.article h2{font-size:1.25rem;margin:2rem 0 .8rem;}
+.article ul{margin:0 0 1.2rem;padding-left:1.3rem;}
+.article li{margin-bottom:.5rem;}
+.callout{background:var(--blue-soft);border-radius:12px;padding:20px 24px;margin:24px 0;font-size:.95rem;}
+.callout strong{color:var(--blue);}
+.code-block{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:20px 0;font-family:var(--mono);font-size:.85rem;overflow-x:auto;white-space:pre;line-height:1.6;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.ba-card{border-radius:10px;padding:16px 18px;border:1px solid var(--line);}
+.ba-card.bad{background:var(--amber-soft);}
+.ba-card.good{background:var(--good-soft);}
+.ba-card .lbl{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:block;}
+.ba-card.bad .lbl{color:var(--amber);}
+.ba-card.good .lbl{color:var(--good);}
+.ba-card .val{font-family:var(--mono);font-size:.92rem;}
+@media (max-width:600px){ .before-after{grid-template-columns:1fr;} }
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.stat-card{border-radius:10px;padding:18px 20px;border:1px solid var(--line);background:var(--surface);}
+.stat-card .num{font-family:var(--mono);font-size:1.6rem;font-weight:600;color:var(--blue);}
+.stat-card .lbl{font-size:.85rem;color:var(--muted);margin-top:4px;}
+@media (max-width:600px){ .stat-grid{grid-template-columns:1fr;} }
+table.mat{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem;margin:20px 0;}
+table.mat th, table.mat td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);}
+table.mat th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;color:var(--muted);background:var(--surface-2);}
+table.mat tr:last-child td{border-bottom:none;}
+.tbl-wrap{overflow-x:auto;}
+.cta-box{background:var(--blue-deep);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;}
+.cta-box h3{color:#fff;margin:0 0 10px;font-size:1.2rem;}
+.cta-box p{color:#c7d5e8;margin:0 0 18px;}
 
 footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
@@ -219,139 +216,71 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </nav>
 
-<div class="wrap hero">
-  <span class="eyebrow">● Blog</span>
-  <h1>Notes on takeoff &amp; estimating</h1>
-  <p class="lede">Practical, no-fluff notes on how takeoff actually works — and how ReadMyBlueprint is built under the hood.</p>
-</div>
+<article class="article">
+  <span class="eyebrow">● Blog · Real test</span>
+  <h1>Can ChatGPT do a drywall takeoff? We tested it on a real plan sheet</h1>
+  <div class="meta">By <a href="/about" rel="author">The ReadMyBlueprint Team</a> · <time datetime="2026-10-09">Oct 9, 2026</time> · 7 min read</div>
 
-<div class="wrap posts">
-  <a class="post-card" href="/blog-chatgpt-drywall-takeoff-test.html">
-    <span class="date">Oct 9, 2026</span>
-    <h2>Can ChatGPT do a drywall takeoff? We tested it on a real plan sheet</h2>
-    <p>Free ChatGPT estimated 220 LF of new walls on a renovation sheet that draws none. Our own tool counted 1,280 LF of existing walls on the same sheet. What went wrong in both, and what we fixed.</p>
-  </a>
-  <a class="post-card" href="/missouri-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Missouri: plan rooms and bid sources</h2>
-    <p>A neutral map of Missouri state, MoDOT, city, county, university and regional plan-room sources, plus tips on planholder registration, pre-bid meetings and addenda.</p>
-  </a>
-  <a class="post-card" href="/kansas-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Kansas: plan rooms and bid sources</h2>
-    <p>Kansas bid sources for drywall, framing, insulation and CMU subs: the state eSupplier portal, Wichita, university and school-district pages and Kansas City plan rooms.</p>
-  </a>
-  <a class="post-card" href="/arkansas-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Arkansas: plan rooms and bid sources</h2>
-    <p>Where Arkansas subs find bids: the state's construction bid page and ARBuy, city portals in Little Rock, Fayetteville and more, ARDOT lettings, and tips on planholders and addenda.</p>
-  </a>
-  <a class="post-card" href="/oklahoma-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Oklahoma: plan rooms and bid sources</h2>
-    <p>Where Oklahoma subs find bids: state Bid Express postings, Oklahoma City on BidNet Direct, Tulsa construction bids, ODOT and AGC of Oklahoma, plus planholder tips.</p>
-  </a>
-  <a class="post-card" href="/plan-rooms-by-state.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Plan rooms and bid sources in all 50 states</h2>
-    <p>State-by-state guides to where drywall and framing subs find public bids: DOT lettings, procurement portals, city and university bids, builders exchanges and AGC chapters.</p>
-  </a>
-  <a class="post-card" href="/iowa-plan-rooms.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Where to find drywall & framing bids in Iowa: plan rooms and bid sources</h2>
-    <p>Where Iowa subs find bids: the state bid opportunities page, Iowa State and University of Iowa bids, Master Builders of Iowa and regional plan rooms.</p>
-  </a>
-  <a class="post-card" href="/blog-takeoff-software-small-contractors.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Takeoff software for small drywall and framing contractors: what actually matters</h2>
-    <p>Seven things a 1–10 person drywall or framing shop should check before buying takeoff software, and where each type of tool fits.</p>
-  </a>
-  <a class="post-card" href="/blog-spreadsheets-vs-takeoff-software.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Spreadsheets vs. takeoff software for drywall bids</h2>
-    <p>Spreadsheets are great for pricing and weak for measuring. A hybrid workflow: takeoff for quantities, export, then price in your own sheet.</p>
-  </a>
-  <a class="post-card" href="/blog-ai-takeoff-real-vs-hype.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>AI takeoff: what's real and what's hype</h2>
-    <p>A plain breakdown of what AI takeoff does reliably, where it breaks, and seven questions to ask any vendor.</p>
-  </a>
-  <a class="post-card" href="/blog-apartment-building-takeoff.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Taking off a multi-story apartment building: drywall and framing walkthrough</h2>
-    <p>How to organize an apartment-building takeoff: repeating units, rated walls, sheets to skip, and grouping by wall type.</p>
-  </a>
-  <a class="post-card" href="/blog-drywall-bid-sheet.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Drywall and framing bid sheet: how subcontractors build a bid</h2>
-    <p>From takeoff quantities to a finished proposal, with waste, labor, markup, exclusions and a bid-day checklist.</p>
-  </a>
-  <a class="post-card" href="/blog-become-a-drywall-framing-estimator.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>How to become a drywall and framing estimator</h2>
-    <p>The skills, training paths and career steps for drywall and framing estimators, with hiring tips for owners.</p>
-  </a>
-  <a class="post-card" href="/blog-no-wall-type-legend.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>When your plan set has no wall-type legend (or a scrambled one): how to take off walls anyway</h2>
-    <p>What to do when a plan set has no wall-type legend or a scrambled one: take off the walls by hand, document your assumptions, and demand a tool that flags instead of guessing.</p>
-  </a>
-  <a class="post-card" href="/blog-bluebeam-for-takeoff.html">
-    <span class="date">Oct 8, 2026</span>
-    <h2>Bluebeam for takeoff: what it does well, where manual clicking adds up, and what to pair it with</h2>
-    <p>A fair look at Bluebeam for drywall and framing takeoff: where it shines, where clicking every wall adds up, and a workflow that pairs it with ReadMyBlueprint.</p>
-  </a>
-  <a class="post-card" href="/blog-counting-walls-once.html">
-    <span class="date">Sep 29, 2026</span>
-    <h2>Our tool was counting some walls two or three times. Here's the fix</h2>
-    <p>Ceiling plans, finish plans and elevations redraw the same walls. Walls are now counted on floor plans only; the Freeport Square re-run went from 17,648 LF to 8,684 LF, with 68% matched automatically.</p>
-  </a>
-  <a class="post-card" href="/how-to-do-a-construction-takeoff.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to do a construction takeoff: step by step</h2>
-    <p>What a takeoff is and how to do one from a plan set, from scale checks to waste factors.</p>
-  </a>
-  <a class="post-card" href="/how-to-estimate-drywall-sheets.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to estimate drywall sheets from plans</h2>
-    <p>Wall length, height, sides, layers, openings and waste, with a worked example.</p>
-  </a>
-  <a class="post-card" href="/how-to-calculate-metal-studs.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How to calculate metal studs and track from plans</h2>
-    <p>The spacing formula, extras for corners and openings, and track footage.</p>
-  </a>
-  <a class="post-card" href="/how-many-cmu-blocks.html">
-    <span class="date">Sep 23, 2026 · Guide</span>
-    <h2>How many CMU blocks do I need?</h2>
-    <p>1.125 blocks per square foot, openings, special blocks and waste, worked through.</p>
-  </a>
-  <a class="post-card" href="/blog-real-test-freeport-square.html">
-    <span class="date">Sep 22, 2026</span>
-    <h2>We ran a real 21-page apartment plan set through our own tool — here's exactly what happened</h2>
-    <p>41.3% of wall footage auto-matched, the rest honestly flagged rather than guessed. Updated Sep 29: re-run after our sheet-counting fix.</p>
-  </a>
-  <a class="post-card" href="/blog-what-reviewers-actually-complain-about.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>What real takeoff-software reviews actually complain about</h2>
-    <p>We read real G2, Capterra, and Trustpilot reviews of seven takeoff and estimating tools. One complaint showed up more than any other — and it's exactly the failure mode our confirm-before-it-counts labeling exists to prevent.</p>
-  </a>
-  <a class="post-card" href="/blog-a-real-bug-we-found.html">
-    <span class="date">Sep 12, 2026</span>
-    <h2>A bug we found in our own insulation detection</h2>
-    <p>A real permit set once produced a fabricated "R-308 batt insulation" reading. Here's exactly how it happened, how we caught it, and how we fixed it for good — with the real legend text that exposed it.</p>
-  </a>
-  <a class="post-card" href="/blog-accuracy-percentage.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Why "98% accurate" should make you suspicious, not confident</h2>
-    <p>Every takeoff tool claims an accuracy percentage. Here's what that number actually hides, and why a label on every individual measurement tells you more than one blended figure ever could.</p>
-  </a>
-  <a class="post-card" href="/blog-vector-vs-scanned.html">
-    <span class="date">Sep 10, 2026</span>
-    <h2>Vector vs. scanned PDFs: why it actually matters for automated takeoff</h2>
-    <p>Not every PDF is the same underneath, and the difference determines whether a tool can measure your plan set at all — or has to guess. Here's what's actually inside the file.</p>
-  </a>
-</div>
+  <p><strong>Short answer: not yet, and not in the way that matters most.</strong> On October 9, 2026 we gave free ChatGPT (signed out, the version most people try first) a real first-floor plan from an apartment renovation and asked for a framing and drywall takeoff. It first declined to give a number, then, when pushed, estimated <strong>220 LF of new walls, 195 studs and 91 sheets</strong>. The sheet draws <strong>no new walls at all</strong>: every wall on it is marked "existing to remain."</p>
+
+  <p>We also ran our own tool on the same sheet. It got the same thing wrong, in a different way. Both results are below, along with what we changed.</p>
+
+  <h2>The test</h2>
+  <p>The plan set is the same 21-page apartment renovation we used in our <a href="/blog-real-test-freeport-square.html">first public test</a>. We used sheet A201 (first floor plan, 1/8" = 1'-0") and the wall-types table from sheet A901. We asked the question the way a sub would:</p>
+  <div class="code-block">I'm a drywall and framing subcontractor bidding this job. Do a takeoff for this floor:
+linear feet of NEW walls, number of studs, and number of 4x12 sheets of 5/8" drywall.
+Assume 9 ft wall height. Show your numbers.</div>
+  <p>We gave it every advantage we could: the scale, the building length (about 138 ft) and the default wall type from the legend (A4: 2x4 studs at 16" o.c., 5/8" gypsum both sides).</p>
+
+  <h2>What happened, step by step</h2>
+  <ul>
+    <li><strong>The PDF was rejected.</strong> Signed-out ChatGPT only accepted images, so we exported the sheets as PNGs, which is what most people would do next.</li>
+    <li><strong>Full sheets: "too low-resolution."</strong> It asked for sharper images and gave the formulas instead (LF × 0.75 = studs, LF × 0.375 = sheets).</li>
+    <li><strong>A sharp 250-dpi crop got shrunk anyway.</strong> The upload came back as a 1,024-pixel-wide image. At this scale that is about 6 pixels per foot, so a 4¾" wall is about 2 pixels wide.</li>
+    <li><strong>It said it couldn't tell new walls from existing.</strong> That was fair: we had cropped off the legend. So we typed the legend in: existing walls are gray with gray fill, new walls are solid black with black hatch, demolition is dashed.</li>
+    <li><strong>With the legend in hand, it gave numbers.</strong> 220 LF of new partitions (range 200–240), 195 studs including an 18% allowance, and 91 sheets of 4x12 including 10% waste. It labelled them "budgetary" and said to verify against the PDF.</li>
+  </ul>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="num">220 LF</div><div class="lbl">New walls, per ChatGPT (after being told how the legend works)</div></div>
+    <div class="stat-card"><div class="num">0 LF</div><div class="lbl">New-wall linework actually drawn on sheet A201</div></div>
+  </div>
+
+  <h2>How we know it's zero</h2>
+  <p>We didn't eyeball it. A CAD-exported PDF stores every line with its color, so we read the sheet's own vector data. Every wall on A201 is drawn in gray: about 1,400 LF of it. The only black linework on the plan is door swings, fixtures, tags and symbols. The renovation work on this floor is finishes, the elevator and MEP, and the community-room changes are drawn separately on the enlarged plans (sheet A207, which the dashed box on A201 points to).</p>
+  <p>So ChatGPT's 220 LF wasn't a measurement that came out a bit high. It was a plausible-sounding number for walls that aren't there. Priced as framing and board, that is real money in a bid, and the answer looked careful: formulas, a waste factor, a range.</p>
+
+  <h2>Our own tool got it wrong too</h2>
+  <p>Before writing this, we ran the same sheet through ReadMyBlueprint. <strong>It counted 1,280 LF of walls on A201</strong>: all the existing ones.</p>
+  <p>We already had a rule for this. When a plan set's legend labels a swatch "EXISTING PARTITION" or "EXISTING WALL", walls drawn in that fill aren't counted. On this sheet the rule failed for three reasons:</p>
+  <ul>
+    <li><strong>The label was too long.</strong> "EXISTING WALLS / ELEMENTS TO REMAIN (GRAY LINES, GRAY FILL, DOORS 45°)" is 72 characters. We ignored any label over 60, to stay clear of general notes.</li>
+    <li><strong>The demolition row looked like an "existing" label.</strong> In "EXISTING WALLS / ELEMENTS TO BE REMOVED", the words in the middle hid "removed" from our check.</li>
+    <li><strong>The swatch gray doesn't match the wall gray.</strong> The legend swatch is drawn at 75% gray, but the walls on the plan are at 88% gray. We required an exact match.</li>
+  </ul>
+  <div class="before-after">
+    <div class="ba-card bad"><span class="lbl">Before the fix</span><div class="val">A201: 1,280 LF counted<br>Whole set: 7,470 LF</div></div>
+    <div class="ba-card good"><span class="lbl">After the fix</span><div class="val">A201: 1,403 LF set aside as existing, 24 LF left<br>Whole set: 944 LF</div></div>
+  </div>
+  <p>The 24 LF left on A201 are short wall-shaped pieces we haven't traced yet, so a person should look at them. Our tool also skips enlarged-plan sheets like A207, so it doesn't count the same wall twice. That means the community-room walls on this job are still a manual count today. And when the tool sets walls aside, it says so on the sheet ("Not counted: 1,403 LF of walls drawn in the fill this plan set's legend marks as EXISTING"), so you can check it rather than trust it.</p>
+
+  <h2>What this means if you're tempted to use ChatGPT for takeoffs</h2>
+  <ul>
+    <li><strong>Use it for the math, not the measuring.</strong> Its formulas were right (16" o.c. = 0.75 studs per foot, 18 sq ft of board per foot of 9' wall). It can't see the drawing well enough to supply the footage.</li>
+    <li><strong>Watch what it does under pressure.</strong> Its first answer, "I can't tell," was the honest one. Asked again, it produced a number. If you push a chatbot for a figure, you'll get one.</li>
+    <li><strong>On renovations, new vs. existing matters more than anything else.</strong> Every tool, ours included, has to read the legend to get this right. Check it on any takeoff before you price it.</li>
+    <li><strong>Check images against the PDF.</strong> A CAD-exported PDF holds the exact linework. A screenshot throws most of it away before anyone reads it.</li>
+  </ul>
+
+  <div class="callout"><strong>How we ran this:</strong> ChatGPT at chatgpt.com, signed out, October 9, 2026. Paid tiers and the API may handle PDFs and resolution differently; we didn't test those. Plan set: a real 21-page apartment renovation bid set (project name withheld), sheets A201 and A901. Existing-wall linework measured from the PDF's vector paths. Our tool's numbers are from our own detection code before and after the October 9 fix.</div>
+
+  <div class="cta-box">
+    <h3>Check it on your own plan set</h3>
+    <p>Upload a real plan set and see every wall labelled matched, ambiguous or "confirm manually", plus what was left out and why. Your first one is free.</p>
+    <a href="https://app.readmyblueprint.com/?signup=1" class="btn btn-primary btn-lg">Get started</a>
+  </div>
+</article>
+
 
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a></div>
