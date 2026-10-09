@@ -256,6 +256,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <span class="eyebrow">● AI takeoff</span>
   <h1>AI takeoff software for drywall, framing and CMU</h1>
   <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back in minutes, each number traced to the wall it came from. It costs $49 per plan set with no subscription, and your first plan set is free.</p>
+  <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated October 2026</p>
   <div class="hero-ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;"><a href="/start-v2.html" class="btn btn-primary btn-lg">Try your first plan set free</a><a href="/tour" class="btn btn-ghost btn-lg">Take the 2-minute tour</a></div>
 </div>
 
@@ -307,6 +308,27 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <section>
   <div class="wrap">
     <div class="section-head">
+      <span class="eyebrow">What changed</span>
+      <h2>What changed in October 2026</h2>
+      <p>New since the September version of this page, from our own test runs and release log.</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card good"><h3>Shipped</h3><ul>
+<li><strong>Existing walls are now set aside.</strong> On Oct 5 and Oct 7 auto-detect started leaving out walls drawn in a legend's EXISTING fill and reading EXISTING CONSTRUCTION legends. On Oct 9 the legend check was widened (labels up to 100 characters, "TO BE REMOVED" rows rejected, plan grays matched within 0.15 of the legend swatch). On sheet A201 of the Freeport Square set the count went from 1,280 LF to 24 LF, with 1,403 LF set aside as existing; the whole 21-page set went from 7,470 LF to 944 LF. That is one plan set and one fix: on the other legend-bearing test sets, 5 of 6 were unchanged and one moved from 454 LF to 430 LF.</li>
+<li><strong>Hand-measure tool (Oct 8).</strong> Trace a line or an area point by point on the plan. Points snap to the sheet's own vector endpoints, and the item is measured with that page's scale and labeled "Hand-measured" in the export. It is for what auto-detect misses.</li>
+<li><strong>Quote export (Oct 8).</strong> Turn a takeoff into a priced PDF or Excel quote. Lines pre-fill from resolved wall types only; ambiguous rows are listed as "confirm first" and never priced. Prices, markup and tax are yours; totals are computed on the server.</li></ul></div>
+      <div class="fit-card"><h3>Still not solved</h3><ul>
+<li><strong>Still a gap, found Oct 7:</strong> on three public Missouri state bid plan sets we tested, auto-match was 0% of 3,571 LF, 0% of 4,466 LF and 0.3% of 674 LF. Their partition types are drawn as graphic details or as coded tags with one typed row (for example "M6 CMU 5-5/8"), which the legend reader cannot match to text. On plans like that, expect to confirm or hand-measure most walls. Reading graphic partition-type details is the next accuracy target.</li>
+<li><strong>Enlarged-plan sheets (for example A207) are skipped,</strong> so walls drawn only there are a manual count.</li>
+<li><strong>A general chatbot is not a substitute.</strong> On Oct 9 we gave free, signed-out ChatGPT sheet A201 and it estimated 220 LF of new walls, on a sheet that draws no new walls. <a href="/blog-chatgpt-drywall-takeoff-test.html" style="text-decoration:underline;">Read the test</a>.</li></ul></div>
+    </div>
+    <p style="margin-top:14px;">Full dated list: <a href="/changelog.html" style="text-decoration:underline;">changelog</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
       <span class="eyebrow">Questions</span>
       <h2>Common questions</h2>
     </div>
@@ -314,7 +336,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <div class="fit-card"><h3>What is AI takeoff software?</h3><p>AI takeoff software reads a digital plan set and measures or counts quantities automatically, instead of an estimator clicking every wall and corner by hand. You review the result, fix what it flagged, and export the quantities into your bid.</p></div>
       <div class="fit-card"><h3>How does ReadMyBlueprint's AI takeoff work?</h3><p>It reads the vector geometry inside a CAD-exported PDF, measures every wall, and matches each wall to the plan's own wall-type legend. It then returns studs, track, drywall sheets, insulation and CMU block, with every quantity labeled matched, ambiguous or needs-confirmation.</p></div>
       <div class="fit-card"><h3>How much does AI takeoff software cost?</h3><p>As of September 2026, Togal.AI lists $299 per user per month billed yearly (about $3,588 a year). ReadMyBlueprint is $49 per plan set with no subscription, $199 a month for 10 plan sets, and your first plan set is free.</p></div>
-      <div class="fit-card"><h3>Is AI takeoff accurate?</h3><p>It depends on the plan set. A good AI takeoff tool should show you which numbers it is sure of and which it guessed. ReadMyBlueprint never folds a guess into your total: anything it can't match to a spec on your drawings is flagged for you to confirm.</p></div>
+      <div class="fit-card"><h3>Is AI takeoff accurate?</h3><p>It depends on the plan set. A good AI takeoff tool should show you which numbers it is sure of and which it guessed. ReadMyBlueprint never folds a guess into your total: anything it can't match to a spec on your drawings is flagged for you to confirm. On three public Missouri bid sets we tested on Oct 7, auto-match was close to 0%, so those results had to be finished by hand.</p></div>
       <div class="fit-card"><h3>Does AI takeoff work on scanned plans?</h3><p>ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing.</p></div>
     </div>
   </div>

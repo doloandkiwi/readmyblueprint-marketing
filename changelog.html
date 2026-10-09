@@ -14,6 +14,7 @@
   "@graph": [
     {
       "@type": "WebPage",
+      "dateModified": "2026-10-09",
       "@id": "https://www.readmyblueprint.com/changelog.html",
       "url": "https://www.readmyblueprint.com/changelog.html",
       "name": "Changelog",
@@ -227,9 +228,26 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <span class="eyebrow">● Changelog</span>
   <h1>What's shipped</h1>
   <p class="lede">A real, dated log of what's changed — no marketing spin, just what's new and why it matters for your bids.</p>
+  <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated October 2026</p>
 </div>
 
 <div class="wrap log">
+
+  <div class="entry">
+    <div class="date">Oct 9, 2026</div>
+    <div>
+      <h3>Existing walls set aside, a hand-measure tool, quote export, and an honest test result</h3>
+      <ul>
+        <li>Oct 9: the existing-wall legend check now allows labels up to 100 characters, rejects "TO BE REMOVED" rows, and matches plan grays within 0.15 of the legend swatch. On Freeport Square sheet A201 the count went from 1,280 LF to 24 LF (1,403 LF set aside as existing); the whole set went from 7,470 LF to 944 LF. On the other legend-bearing test sets, 5 of 6 were unchanged. Walls drawn only on enlarged-plan sheets (for example A207) are still skipped.</li>
+        <li>Oct 9: we ran free, signed-out ChatGPT on the same sheet. It estimated 220 LF of new walls where the sheet draws none. <a href="/blog-chatgpt-drywall-takeoff-test.html">Read the test</a>.</li>
+        <li>Oct 8: new hand-measure tool. Trace a line or area point by point; points snap to the sheet's vector endpoints and the item is labeled "Hand-measured" in the export.</li>
+        <li>Oct 8: new quote export. A priced PDF or Excel quote from a takeoff, pre-filled from resolved wall types only; ambiguous rows are listed as "confirm first" and never priced.</li>
+        <li>Oct 7: auto-detect now skips other-discipline sheets by sheet number and reads EXISTING CONSTRUCTION legends. Oct 5: walls drawn in a legend's EXISTING fill are left out. Oct 1: coded partition tags (for example 0S3B) are decoded from the document's own key, schedules on rotated sheets are read, and wall-shaped sheet furniture repeated across pages is dropped.</li>
+        <li>Oct 7, tested and not fixed: on three public Missouri state bid sets, auto-match was 0% of 3,571 LF, 0% of 4,466 LF and 0.3% of 674 LF, because the partition types are drawn as graphic details or coded tags the legend reader cannot match. Those results need hand-finishing.</li>
+        <li>Oct 1: your first plan set is free for every new account, no card needed.</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="entry">
     <div class="date">Sep 22, 2026</div>
