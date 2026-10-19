@@ -6,7 +6,7 @@
 <script src="/assets/analytics.js" defer></script>
 <title>Real Takeoff Test: 21-Page Apartment Plan Set Results</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.">
+<meta name="description" content="A real end-to-end test on a 21-page apartment plan set: what auto-matched, what was honestly flagged, and the plan-sheet quirk behind the misses. After one Confirm all, 99.8% of walls resolved.">
 <link rel="canonical" href="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ReadMyBlueprint">
 <meta property="og:title" content="We ran a real apartment plan set through our own tool — here's exactly what happened">
-<meta property="og:description" content="41.3% of wall footage auto-matched on a real 21-page plan set, the rest honestly flagged, and the exact root cause we found.">
+<meta property="og:description" content="A real 21-page apartment plan set: what auto-matched, what was flagged, and the root cause. 99.8% of walls resolved after one Confirm all.">
 <meta property="og:url" content="https://www.readmyblueprint.com/blog-real-test-freeport-square.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "We ran a real 21-page apartment plan set through our own tool — here's exactly what happened",
-  "description": "A real end-to-end QA test on a real apartment building plan set: 41.3% of wall footage auto-matched, the rest honestly flagged, and the exact root cause we found in the plan sheet itself.",
+  "description": "A real end-to-end test on a 21-page apartment plan set: what auto-matched, what was honestly flagged, and the plan-sheet quirk behind the misses. After one Confirm all, 99.8% of walls resolved.",
   "datePublished": "2026-09-22",
   "dateModified": "2026-09-29",
   "url": "https://www.readmyblueprint.com/blog-real-test-freeport-square.html",
@@ -276,6 +276,14 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </ul>
 
   <p>We're publishing this the same way we published <a href="/blog-a-real-bug-we-found.html">the real bug we found in our own insulation detection</a> — because a specific, inspectable failure mode you can verify is worth more than a marketing number you can't.</p>
+
+    <h2>Frequently asked questions</h2>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">What was tested?</h3>
+  <p>A real 21-page apartment plan set (Freeport Square), run end to end through ReadMyBlueprint. This page covers the first run, which exposed a wall-legend text problem on one sheet. In the tour run on the same set, 68.9% of walls matched automatically and 99.8% after one Confirm all.</p>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">Why did so few walls match on the first run?</h3>
+  <p>The wall-type legend shares a sheet with the door schedule and the two tables' columns are interleaved, so the extracted text came out scrambled. It is a layout quirk of that one sheet, not a general property of plan sets.</p>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">Is this a general accuracy number?</h3>
+  <p>No. It is one plan set. Plans that draw partition types as graphic details instead of text legends can match far less, so expect to confirm walls by hand on those.</p>
 
   <div class="cta-box">
     <h3>See what confirm-before-it-counts actually looks like</h3>

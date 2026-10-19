@@ -248,6 +248,14 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <h2>What this doesn't mean</h2>
   <p>It doesn't mean the reading was somehow "close enough" or that this class of mistake is common — an R-308 callout is exactly as implausible as it sounds, and the real point of writing this up is that implausible, wrong output is findable and fixable when a tool's reasoning is a real, inspectable pattern instead of an opaque model's best guess. It also doesn't mean every number ReadMyBlueprint has ever produced is now suspect — the fix was verified against the same real document plus every other real plan set we test against, and every genuinely correct reading (R-13, R-30, R-38, R-48, and more) still comes through exactly as before.</p>
 
+    <h2>Frequently asked questions</h2>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">What was the R-308 insulation bug?</h3>
+  <p>On a real 5-page permit set, our insulation detection reported 'R-308 batt insulation'. No such product exists. The pattern let the letter R at the end of the word DETECTOR in a legend jump a line break and pick up the first three digits of the door-size code 3080.</p>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">How was it fixed?</h3>
+  <p>An insulation value now only counts when the R stands alone as its own token. We then audited every other pattern in the same file, closed the same gap in CMU block size reading, and added permanent tests built from the exact text that triggered it.</p>
+  <h3 style="font-size:1.05rem;margin:1.2rem 0 .4rem;">How do I catch a wrong reading like this on my own takeoff?</h3>
+  <p>Sanity-check every number against what is physically plausible, and use a tool that labels each result matched, ambiguous or needs confirmation instead of showing one confident total.</p>
+
   <div class="cta-box">
     <h3>See what confirm-before-it-counts actually looks like</h3>
     <p>Upload a real plan set and see every reading labeled honestly — your first one is free.</p>
