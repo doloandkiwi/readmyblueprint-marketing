@@ -188,7 +188,7 @@
     "a.btn-primary:hover,a.cta-main:hover,button.pill.big:hover,.spf button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(0,0,0,.6)!important}" +
     "a.btn-primary:active,a.cta-main:active,button.pill.big:active,.spf button[type=submit]:active{transform:scale(.98)}" +
     "a.btn-primary:focus-visible,a.cta-main:focus-visible,button.pill.big:focus-visible,.spf button[type=submit]:focus-visible{outline:3px solid #e0692f;outline-offset:3px}" +
-    "nav a.btn-primary{font-size:.9rem;padding:.6rem 1.2rem;min-height:0}nav a.btn-primary::before{margin-right:8px}";
+    "@media(max-width:480px){nav .nav-cta .btn-ghost{display:none}nav .nav-row{padding-left:16px;padding-right:16px}}nav a.btn-primary{font-size:.9rem;padding:.6rem 1.2rem;min-height:0}nav a.btn-primary::before{margin-right:8px}";
   var s = document.createElement("style");
   s.id = "rmb-cta-style";
   s.textContent = css;

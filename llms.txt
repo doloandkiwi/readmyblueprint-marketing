@@ -14,7 +14,7 @@ Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete mas
 
 ## Pricing
 
-Flat, transparent, self-serve — no sales call required. A new account's first plan set is free (no card). Per Upload is $49 one-time. Solo Estimator is $199/month for 10 plan sets. Small Firm (unlimited, multi-seat) is $499/month and up, quoted individually via support@readmyblueprint.com. Full pricing: https://www.readmyblueprint.com/#pricing
+Flat, transparent, self-serve, no sales call required. A new account's first plan set is free (no card). Current plans are listed on the pricing page: https://www.readmyblueprint.com/pricing.html
 
 ## Done-for-you takeoff service
 
@@ -35,6 +35,14 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Interactive product tour (no signup): https://www.readmyblueprint.com/tour
 - Comparison vs. STACK and Bluebeam: https://www.readmyblueprint.com/compare.html
 - Alternatives pages: /stack-alternative.html, /planswift-alternative.html, /togal-alternative.html, /bluebeam-alternative.html, /on-screen-takeoff-alternative.html
+
+## Answer pages
+
+- Free drywall takeoff software, what's free and what's not: https://www.readmyblueprint.com/free-drywall-takeoff-software.html
+- Drywall takeoff software for small contractors: https://www.readmyblueprint.com/drywall-takeoff-software-for-small-contractors.html
+- How to do a drywall takeoff from PDF plans: https://www.readmyblueprint.com/drywall-takeoff-from-pdf-plans.html
+- Free blueprint takeoff software: https://www.readmyblueprint.com/free-blueprint-takeoff-software.html
+- Real test on a 21-page plan set (Freeport Square: 68.9% of walls auto-matched, 99.8% after one Confirm all; one plan set): https://www.readmyblueprint.com/blog-real-test-freeport-square.html
 
 ## Contact
 
