@@ -31,19 +31,49 @@
       }
       fd.set("source", source);
       btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = ""; msg.className = "sp-msg";
-      fetch(API, { method: "POST", body: fd })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
-          if (!res.ok) throw new Error(typeof res.j.detail === "string" ? res.j.detail : "Could not send.");
-          track("plan_request_submitted", { source: source, has_file: !!fd.get("file") });
-          form.innerHTML = '<p class="sp-done"><b>Got it.</b> We will run your plans and email the counts back, usually the same day. We flag anything uncertain for you to confirm.</p>';
-        })
-        .catch(function (err) {
-          track("plan_request_failed", { source: source });
-          btn.disabled = false; btn.textContent = "Send my plans";
-          msg.className = "sp-msg err";
-          msg.textContent = (err && err.message ? err.message + " " : "") + "You can also email the plans to support@readmyblueprint.com.";
-        });
+      var f = fd.get("file");
+      var big = !!(f && f.size > 8 * 1024 * 1024);
+      var mb = f ? Math.round(f.size / 1048576) : 0;
+      var t0 = Date.now();
+      function fail(err, kind) {
+        track("plan_request_failed", { source: source, kind: kind, error: String(err && err.message || err).slice(0, 120), file_mb: mb, ms: Date.now() - t0, attempt: attempt });
+        btn.disabled = false; btn.textContent = "Send my plans";
+        msg.className = "sp-msg err";
+        msg.textContent = (err && err.message ? err.message + " " : "") + (big ? "If it keeps failing, email the PDF to support@readmyblueprint.com. " : "You can also email the plans to support@readmyblueprint.com.");
+      }
+      var attempt = 0;
+      function send() {
+        attempt++;
+        var x = new XMLHttpRequest();
+        x.open("POST", API);
+        x.timeout = 300000;
+        if (big) msg.textContent = "This file is large; it's uploading, please keep this page open.";
+        x.upload.onprogress = function (ev) {
+          if (big && ev.lengthComputable) {
+            var pct = Math.round(ev.loaded / ev.total * 100);
+            btn.textContent = "Uploading " + pct + "%";
+          }
+        };
+        function netfail(kind) {
+          if (attempt < 2) { msg.textContent = "Connection hiccup, retrying" + (big ? " (keep this page open)" : "") + "..."; setTimeout(send, 1500); return; }
+          fail(new Error("The upload did not go through."), kind);
+        }
+        x.onerror = function () { netfail("network"); };
+        x.ontimeout = function () { netfail("timeout"); };
+        x.onload = function () {
+          var j = {}; try { j = JSON.parse(x.responseText); } catch (e) {}
+          if (x.status >= 200 && x.status < 300) {
+            track("plan_request_submitted", { source: source, has_file: !!fd.get("file"), attempt: attempt, ms: Date.now() - t0 });
+            form.innerHTML = '<p class="sp-done"><b>Got it.</b> We will run your plans and email the counts back, usually the same day. We flag anything uncertain for you to confirm.</p>';
+          } else if (x.status >= 500 || x.status === 0) {
+            netfail("http_" + x.status);
+          } else {
+            fail(new Error(typeof j.detail === "string" ? j.detail : "Could not send."), "http_" + x.status);
+          }
+        };
+        x.send(fd);
+      }
+      send();
     });
   });
   // click tracking for elements tagged data-track="event_name"
