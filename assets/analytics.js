@@ -180,19 +180,8 @@
   );
 })();
 
-// Site-wide primary CTA style + click capture.
+// Primary CTA click capture (10/27: the site-wide CTA restyle was removed at the owner's request).
 (function () {
-  var css =
-    "a.btn-primary,a.cta-main,.btn.btn-primary,button.pill.big,.spf button[type=submit]{background:#111!important;color:#fff!important;font-size:1.08rem;font-weight:700;padding:1rem 1.9rem;min-height:52px;border-radius:999px;box-shadow:0 8px 22px -10px rgba(0,0,0,.55)!important;transition:transform .2s,box-shadow .2s;max-width:100%;text-align:center;justify-content:center}" +
-    "a.btn-primary::before,a.cta-main::before,button.pill.big::before,.spf button[type=submit]::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:#e0692f;margin-right:10px;flex:none;vertical-align:middle}" +
-    "a.btn-primary:hover,a.cta-main:hover,button.pill.big:hover,.spf button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(0,0,0,.6)!important}" +
-    "a.btn-primary:active,a.cta-main:active,button.pill.big:active,.spf button[type=submit]:active{transform:scale(.98)}" +
-    "a.btn-primary:focus-visible,a.cta-main:focus-visible,button.pill.big:focus-visible,.spf button[type=submit]:focus-visible{outline:3px solid #e0692f;outline-offset:3px}" +
-    "@media(max-width:480px){nav .nav-cta .btn-ghost{display:none}nav .nav-row{padding-left:16px;padding-right:16px}}nav a.btn-primary{font-size:.9rem;padding:.6rem 1.2rem;min-height:0}nav a.btn-primary::before{margin-right:8px}";
-  var s = document.createElement("style");
-  s.id = "rmb-cta-style";
-  s.textContent = css;
-  document.head.appendChild(s);
   document.addEventListener(
     "click",
     function (e) {
