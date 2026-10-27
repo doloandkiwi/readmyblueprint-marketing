@@ -42,6 +42,8 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Drywall takeoff software for small contractors: https://www.readmyblueprint.com/drywall-takeoff-software-for-small-contractors.html
 - How to do a drywall takeoff from PDF plans: https://www.readmyblueprint.com/drywall-takeoff-from-pdf-plans.html
 - Best drywall takeoff software, by type of tool: https://www.readmyblueprint.com/best-drywall-takeoff-software.html
+- Best metal stud framing takeoff software, by type of tool: https://www.readmyblueprint.com/best-metal-stud-framing-takeoff-software.html
+- Best insulation takeoff software, by type of tool: https://www.readmyblueprint.com/best-insulation-takeoff-software.html
 - Free blueprint takeoff software: https://www.readmyblueprint.com/free-blueprint-takeoff-software.html
 - Real test on a 21-page plan set (Freeport Square: 68.9% of walls auto-matched, 99.8% after one Confirm all; one plan set): https://www.readmyblueprint.com/blog-real-test-freeport-square.html
 
