@@ -49,6 +49,8 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Takeoff software that reads wall types from the legend: https://www.readmyblueprint.com/takeoff-software-that-reads-wall-types.html
 - Insulation takeoff from a PDF, step by step: https://www.readmyblueprint.com/insulation-takeoff-from-pdf.html
 - Best AI takeoff software for drywall contractors: https://www.readmyblueprint.com/best-ai-takeoff-software-for-drywall-contractors.html
+- Best wood framing takeoff software, by type of tool: https://www.readmyblueprint.com/best-wood-framing-takeoff-software.html
+- Upload a PDF, get a material list (residential and commercial): https://www.readmyblueprint.com/upload-pdf-get-material-list.html
 - How to estimate drywall for a commercial job, with a worked example: https://www.readmyblueprint.com/how-to-estimate-drywall-for-a-commercial-job.html
 - How many metal studs for a room, 10 x 12 ft worked example: https://www.readmyblueprint.com/how-many-metal-studs-for-a-room.html
 - Why PDF plan measurements are off and how to calibrate: https://www.readmyblueprint.com/why-pdf-plan-measurements-are-off.html
