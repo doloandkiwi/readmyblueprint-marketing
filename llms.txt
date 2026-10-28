@@ -44,6 +44,9 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Best drywall takeoff software, by type of tool: https://www.readmyblueprint.com/best-drywall-takeoff-software.html
 - Best metal stud framing takeoff software, by type of tool: https://www.readmyblueprint.com/best-metal-stud-framing-takeoff-software.html
 - Best insulation takeoff software, by type of tool: https://www.readmyblueprint.com/best-insulation-takeoff-software.html
+- How to estimate drywall for a commercial job, with a worked example: https://www.readmyblueprint.com/how-to-estimate-drywall-for-a-commercial-job.html
+- How many metal studs for a room, 10 x 12 ft worked example: https://www.readmyblueprint.com/how-many-metal-studs-for-a-room.html
+- Why PDF plan measurements are off and how to calibrate: https://www.readmyblueprint.com/why-pdf-plan-measurements-are-off.html
 - Free blueprint takeoff software: https://www.readmyblueprint.com/free-blueprint-takeoff-software.html
 - Real test on a 21-page plan set (Freeport Square: 68.9% of walls auto-matched, 99.8% after one Confirm all; one plan set): https://www.readmyblueprint.com/blog-real-test-freeport-square.html
 
