@@ -34,7 +34,7 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Help center / FAQ: https://www.readmyblueprint.com/help.html
 - Interactive product tour (no signup): https://www.readmyblueprint.com/tour
 - Comparison vs. STACK and Bluebeam: https://www.readmyblueprint.com/compare.html
-- Alternatives pages: /stack-alternative.html, /planswift-alternative.html, /togal-alternative.html, /bluebeam-alternative.html, /on-screen-takeoff-alternative.html
+- Alternatives pages: /stack-alternative.html, /planswift-alternative.html, /togal-alternative.html, /bluebeam-alternative.html, /on-screen-takeoff-alternative.html, /beam-ai-alternative.html, /attentive-ai-alternative.html, /countfire-alternative.html, /buzzbid-alternative.html, /kreo-alternative.html, /handoff-alternative.html, /etakeoff-alternative.html
 
 ## Answer pages
 
