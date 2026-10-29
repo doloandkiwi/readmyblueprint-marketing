@@ -140,7 +140,16 @@
       return;
     }
     if (!isLoginLink(a)) url.searchParams.set("signup", "1");
-    if (utm) {
+    if (utm && utm.utm_source) {
+      // A real visitor source (cold email, ads, etc.) beats the button's hardcoded page tag;
+      // the page name is kept as utm_content so both stay visible in the admin Source column.
+      var page = url.searchParams.get("utm_source");
+      UTM_KEYS.forEach(function (k) { url.searchParams.delete(k); });
+      UTM_KEYS.forEach(function (k) {
+        if (utm[k]) url.searchParams.set(k, utm[k]);
+      });
+      if (page && page !== utm.utm_source) url.searchParams.set("utm_content", page);
+    } else if (utm) {
       UTM_KEYS.forEach(function (k) {
         if (utm[k] && !url.searchParams.has(k)) url.searchParams.set(k, utm[k]);
       });
