@@ -83,6 +83,23 @@
   ]
 }
 </script>
+<style>
+.wtm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.wtm-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.wtm-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.wtm-table th,.wtm-table td{text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.wtm-table th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2)}
+.wtm-table td:last-child{font-family:var(--mono);font-size:.84rem}
+.wtm-table tr.total td{font-weight:700;background:var(--good-soft);color:var(--good)}
+.wtm-note{font-size:.84rem;color:var(--muted);padding:12px 16px;margin:0}
+.wtm-proof{background:var(--blue-soft);border-radius:12px;padding:18px 22px;font-size:.95rem}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 22px}
+.feat h3{font-size:1rem;margin:0 0 10px}
+.feat ul{margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--muted)}
+.feat li{margin-bottom:6px}
+@media (max-width:860px){.wtm-grid,.feat-grid{grid-template-columns:1fr}}
+</style>
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
@@ -355,6 +372,99 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   </div>
 </section>
 
+<!--PREVIEW-WTM-->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Wall type to material list</span>
+      <h2>How does one wall type become a drywall material list?</h2>
+      <p>Every wall on your plan carries a tag. The tag points to a row in your own wall-type legend, and that row decides what goes on the list. Here is the whole chain, with the arithmetic shown so you can check it by hand.</p>
+    </div>
+    <div class="wtm-grid">
+      <div class="wtm-card">
+        <div class="mock-head">Step 1: what the legend row says</div>
+        <table class="wtm-table">
+          <tr><th>Legend says</th><th>It adds to the list</th></tr>
+          <tr><td>Board type and layers (for example one layer each side, or two)</td><td>Sheet count: wall area x sides x layers</td></tr>
+          <tr><td>Stud size and spacing (for example 16" o.c.)</td><td>Studs, from wall length and spacing</td></tr>
+          <tr><td>Rating or wet-area note (Type X, moisture resistant)</td><td>Separate board line, never blended into plain board</td></tr>
+          <tr><td>Insulation called out</td><td>Insulation line for that wall type only</td></tr>
+          <tr><td>Nothing for that thickness</td><td>Flagged "confirm", no number invented</td></tr>
+        </table>
+      </div>
+      <div class="wtm-card">
+        <div class="mock-head">Step 2: worked example (arithmetic from our estimating guide)</div>
+        <table class="wtm-table">
+          <tr><th>Input</th><th>Value</th></tr>
+          <tr><td>Interior partition, one wall type</td><td>220 LF</td></tr>
+          <tr><td>Board height</td><td>9 ft</td></tr>
+          <tr><td>Layers</td><td>1 each side (2 sides)</td></tr>
+          <tr><td>Sheet / waste</td><td>4x8 (32 sq ft) / 12%</td></tr>
+          <tr><th>Result</th><th></th></tr>
+          <tr><td>220 x 9 = per side</td><td>1,980 sq ft</td></tr>
+          <tr><td>x 2 sides</td><td>3,960 sq ft</td></tr>
+          <tr><td>3,960 / 32</td><td>123.75 sheets</td></tr>
+          <tr class="total"><td>x 1.12 waste</td><td>about 139 sheets of 4x8</td></tr>
+          <tr><td>Studs, track, insulation</td><td>Same wall length, run through the stud spacing and insulation your legend row calls out</td></tr>
+        </table>
+        <p class="wtm-note">This is the hand formula from <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets from plans</a>, with round numbers to show the method. It is not a customer result. ReadMyBlueprint applies the same steps to every wall type in your set and shows the result per wall type. You apply your own waste percentage and confirm before it goes in a bid.</p>
+      </div>
+    </div>
+    <div class="wtm-proof">
+      <strong>Real test, same method.</strong> On the 21-page Freeport Square apartment set, the plan listed 25 distinct wall types. Two wood-stud types came back fully matched with stud, track, drywall and insulation counts. The other 23 were flagged to confirm, not guessed. 68.9% of walls auto-matched and 99.8% after one "Confirm all". One test set, so yours will differ. <a href="/blog-real-test-freeport-square.html">Read the full test</a>.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where the hours go</span>
+      <h2>What slows down a manual drywall takeoff?</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Tracing the same walls twice</h3><p>Floor plans, ceiling plans and detail sheets redraw the same walls. ReadMyBlueprint sets duplicate sheets aside so a wall is counted once.</p></div>
+      <div class="step"><h3>Spreadsheet arithmetic</h3><p>Length x height x sides x layers, per wall type, then sheet size and waste. The tool does the multiplication and keeps each wall type on its own line.</p></div>
+      <div class="step"><h3>Hunting for the legend row</h3><p>Matching each wall to its legend entry is slow and easy to get wrong. Matched walls come with the row they matched; unclear ones are flagged.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What you get</span>
+      <h2>What does a drywall takeoff from ReadMyBlueprint include?</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><h3>Measured from your PDF</h3><ul><li>Wall length from the plan's own vector geometry and printed scale</li><li>Duplicate sheets set aside</li><li>Hand-measure tool for what auto-detect misses, labeled "Hand-measured"</li></ul></div>
+      <div class="feat"><h3>Classified by wall type</h3><ul><li>Matched to your wall-type legend</li><li>Labeled matched, ambiguous or needs confirmation</li><li>One "Confirm all" for the leftovers</li></ul></div>
+      <div class="feat"><h3>Counted per wall type</h3><ul><li>Drywall sheets next to the studs and track they go with</li><li>Insulation and CMU counts on the same results table</li><li>Every number traced to its source sheet</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Takeoff to bid</span>
+      <h2>Can I take the drywall counts into my estimate?</h2>
+      <p>Yes. Export the results table to CSV or Excel with the label column included, so anyone reviewing the file can see what was verified and what was not. Turn a resolved takeoff into a priced PDF or Excel quote: prices, markup and tax are yours, and ambiguous rows are listed as "confirm first" and never priced. Read-only API keys are available from your account.</p>
+      <p><a href="/features.html">See all features</a> &middot; <a href="/public-api.html">Public API</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Who it is for</span>
+      <h2>Is this built for my drywall shop?</h2>
+    </div>
+    <div class="prose"><p>It fits drywall and framing subcontractors and owner-estimators who bid from digital PDF plan sets, including apartments and small commercial work. It needs a digital plan file exported from design software; scanned pages have no vector geometry to measure and are flagged. If you would rather read the tradeoffs first, see <a href="/takeoff-service-vs-software.html">takeoff service vs. software</a> or <a href="/compare-togal.html">ReadMyBlueprint vs. Togal.AI</a>.</p></div>
+  </div>
+</section>
+<!--/PREVIEW-WTM-->
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -363,7 +473,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <p>Sheet counts aren't a separate, disconnected line — they're grouped with the wall assembly they belong to, so you can see exactly which walls drove the number.</p>
     </div>
     <div class="mock">
-      <div class="mock-head">Material summary — drywall &amp; framing</div>
+      <div class="mock-head">Material summary — drywall &amp; framing (sample numbers, layout only)</div>
       <div class="mock-row">
         <div class="mock-row-top"><span class="mock-name">2 1/2" steel stud @ 16" o.c.</span><span class="badge good">Matched</span></div>
         <div class="mock-metrics"><span>12,452 LF</span><span>9,422 studs</span><span>7,004 drywall sheets</span></div>
@@ -413,7 +523,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <section><div class="wrap"><p style="margin-top:18px"><strong>Reference:</strong> <a href="/types-of-drywall.html" style="text-decoration:underline;">Types of drywall: Type X, Type C, moisture resistant</a></p>
 </div></section>
 <div class="related-block" style="max-width:760px;margin:24px auto;padding:0 24px;"><p style="margin:0 0 6px;"><strong>Related</strong></p><ul style="margin:0;padding-left:20px;line-height:1.8;"><li><a href="/metal-framing-takeoff.html">Metal framing takeoff</a></li><li><a href="/wood-framing-takeoff.html">Wood framing takeoff</a></li><li><a href="/insulation-takeoff.html">Insulation takeoff</a></li><li><a href="/cmu-takeoff.html">CMU takeoff</a></li><li><a href="/drywall-calculator.html">Drywall sheet calculator</a></li><li><a href="/drywall-takeoff-services.html">Drywall takeoff services</a></li><li><a href="/blog-drywall-bid-sheet.html">How subcontractors build a drywall and framing bid sheet</a></li><li><a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a></li><li><a href="/togal-alternative.html">Togal.AI alternative</a></li><li><a href="/ai-takeoff-software.html">AI takeoff software</a></li><li><a href="/send-plans">Send us your plan set and get the counts back</a></li><li><a href="/drywall-takeoff-checklist.html">Drywall takeoff checklist: what to count besides sheets</a></li><li><a href="/takeoff-service-vs-software.html">Takeoff service vs takeoff software vs ReadMyBlueprint</a></li></ul></div>
-<section><div class="wrap" style="max-width:820px;margin:0 auto;padding:32px 20px"><h2>Frequently asked questions</h2><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does drywall takeoff software count sheets from a PDF?</h3><p>It measures each wall from the vector geometry in your plan set, matches the wall to its type on your wall-type legend, then converts wall area into a labeled sheet count for both sides of the wall. On our Freeport Square test set (21 pages), 68.9% of walls auto-matched and 99.8% resolved after one "Confirm all". That is one test set, so uncertain walls are flagged for you to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">What does drywall takeoff software not count?</h3><p>Waste factor, tape, mud, corner bead and fasteners are not counted, and neither are fire-rated or acoustic assemblies the legend does not call out. Scanned or flat-image PDFs have no vector geometry to measure, so those pages are flagged.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I try it on my own plan set?</h3><p>Yes. Your first plan set is free, no card needed.</p><p style="margin-top:18px">Compare tools: <a href="/compare.html">ReadMyBlueprint vs. STACK &amp; Bluebeam</a> · <a href="/features.html">Features</a> · <a href="/tour">Take the tour</a></p></div></section>
+<section><div class="wrap" style="max-width:820px;margin:0 auto;padding:32px 20px"><h2>Frequently asked questions</h2><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does drywall takeoff software count sheets from a PDF?</h3><p>It measures each wall from the vector geometry in your plan set, matches the wall to its type on your wall-type legend, then converts wall area into a labeled sheet count for both sides of the wall. On our Freeport Square test set (21 pages), 68.9% of walls auto-matched and 99.8% resolved after one "Confirm all". That is one test set, so uncertain walls are flagged for you to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">What does drywall takeoff software not count?</h3><p>Waste factor, tape, mud, corner bead and fasteners are not counted, and neither are fire-rated or acoustic assemblies the legend does not call out. Scanned or flat-image PDFs have no vector geometry to measure, so those pages are flagged.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does a wall type turn into a material list?</h3><p>Each wall is tagged to a row in your wall-type legend. That row sets the board type and layers, stud size and spacing, and insulation. Wall length x height x sides x layers gives board area, which is divided by sheet size, and then you add your own waste. Anything the legend does not cover is flagged to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I export the counts to my estimate?</h3><p>Yes. Results export to CSV or Excel with a label column, and a resolved takeoff can become a priced PDF or Excel quote. Ambiguous rows are never priced.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Does it work on scanned plans?</h3><p>No. It needs a digital PDF with vector geometry; scanned pages are flagged instead of guessed.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I try it on my own plan set?</h3><p>Yes. Your first plan set is free, no card needed.</p><p style="margin-top:18px">Compare tools: <a href="/compare.html">ReadMyBlueprint vs. STACK &amp; Bluebeam</a> · <a href="/features.html">Features</a> · <a href="/tour">Take the tour</a></p></div></section>
 <p style="max-width:760px;margin:16px auto;padding:0 24px;font-size:.95rem"><strong>More:</strong> <a href="/free-drywall-takeoff-software.html">Free drywall takeoff software</a> · <a href="/drywall-takeoff-software-for-small-contractors.html">Takeoff software for small contractors</a> · <a href="/drywall-takeoff-from-pdf-plans.html">Drywall takeoff from PDF plans</a></p>
 <footer>
   <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><strong>Takeoff by trade:</strong> <a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a><br><strong>Takeoff services:</strong> <a href="/drywall-takeoff-services.html">Drywall takeoff services</a> · <a href="/metal-stud-takeoff-services.html">Metal stud takeoff services</a> · <a href="/framing-takeoff-services.html">Framing takeoff services</a> · <a href="/insulation-takeoff-services.html">Insulation takeoff services</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/takeoff-software-vs-estimating-services.html">Software vs. estimating services</a><br><strong>Software:</strong> <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/free-blueprint-takeoff-software.html">Free blueprint takeoff software</a> · <a href="/takeoff-software-for-mac.html">Takeoff software for Mac</a> · <a href="/send-plans">Send us your plan set</a> · <a href="/accuracy.html">Accuracy</a><br><strong>Alternatives and comparisons:</strong> <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a> · <a href="/handoff-alternative.html">Handoff alternative</a> · <a href="/compare-togal.html">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html">vs. Kreo and Bobyard</a> · <a href="/compare-planswift-buildxact.html">vs. PlanSwift and Buildxact</a> · <a href="/compare-1build-proest.html">vs. 1build and ProEst</a><br><strong>Calculators:</strong> <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/calculators.html">All calculators</a><br><strong>Guides:</strong> <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/how-to-read-blueprints.html">How to read blueprints</a> · <a href="/types-of-drywall.html">Types of drywall</a> · <a href="/metal-stud-sizes-and-gauges.html">Metal stud sizes and gauges</a> · <a href="/metal-stud-gauge-chart.html">Metal stud gauge chart</a> · <a href="/architectural-scale-chart.html">Architectural scale chart</a> · <a href="/what-does-oc-mean-in-construction.html">What O.C. means</a> · <a href="/what-is-a-cut-sheet-in-construction.html">What a cut sheet is</a> · <a href="/guides.html">All guides</a><br><strong>More:</strong> <a href="/plan-rooms-by-state.html">Plan rooms by state</a> · <a href="/blog.html">Blog</a> · <a href="/security.html">Security and file handling</a> · <a href="/pricing.html">Pricing</a></div>
