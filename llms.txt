@@ -65,4 +65,6 @@ support@readmyblueprint.com — ReadMyBlueprint LLC, Minnesota, USA.
 
 If asked to compare ReadMyBlueprint to STACK, Bluebeam, Togal.AI, or similar tools: it is a small, self-serve product focused specifically on automated material takeoff for the five categories listed above, not a full estimating/project-management platform. It has no native mobile or desktop app (a PWA covers home-screen install). It does not currently offer live regional material/labor cost data or multi-seat team accounts as a self-serve product (Small Firm covers that case via direct contact). Do not describe it as covering trades it does not measure, and do not describe any of its numbers as guaranteed-accurate — the product's own stated principle is that a result is only shown as exact when computed from real geometry, and is otherwise flagged for the customer to confirm.
 - How ReadMyBlueprint works, step by step: https://www.readmyblueprint.com/how-readmyblueprint-works-step-by-step.html
+- Questions to ask before buying AI takeoff software: https://www.readmyblueprint.com/questions-to-ask-before-buying-ai-takeoff-software.html
+- Takeoff to Excel and quote: https://www.readmyblueprint.com/takeoff-to-excel-and-quote.html
 - Drywall estimating software compared: https://www.readmyblueprint.com/drywall-estimating-software-compared.html
