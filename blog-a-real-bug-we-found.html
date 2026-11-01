@@ -6,7 +6,7 @@
 <script src="/assets/analytics.js" defer></script>
 <title>A bug we found in our own insulation detection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ReadMyBlueprint's own insulation detection once produced a fabricated R-308 reading from an unrelated door-size legend entry. Here's exactly how it happened, how we caught it, and how we fixed it for good.">
+<meta name="description" content="Our insulation detection once misread a door-size code as R-308 batt insulation. How the bug happened, how we caught it, and how we fixed it for good.">
 <link rel="canonical" href="https://www.readmyblueprint.com/blog-a-real-bug-we-found.html">
 <meta name="theme-color" content="#0d2b4e">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -20,20 +20,34 @@
 <meta property="og:url" content="https://www.readmyblueprint.com/blog-a-real-bug-we-found.html">
 <meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A bug we found in our own insulation detection">
+<meta name="twitter:description" content="Our insulation detection once misread a door-size code as R-308 batt insulation. How the bug happened, how we caught it, and how we fixed it for good.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "A bug we found in our own insulation detection",
-  "description": "ReadMyBlueprint's own insulation detection once produced a fabricated R-308 reading from an unrelated door-size legend entry. Here's exactly how it happened, how we caught it, and how we fixed it for good.",
+  "description": "Our insulation detection once misread a door-size code as R-308 batt insulation. How the bug happened, how we caught it, and how we fixed it for good.",
   "datePublished": "2026-09-12",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-11-01",
   "url": "https://www.readmyblueprint.com/blog-a-real-bug-we-found.html",
   "image": "https://www.readmyblueprint.com/og-image.svg",
   "author": { "@type": "Organization", "name": "The ReadMyBlueprint Team", "url": "https://www.readmyblueprint.com/about" },
   "publisher": { "@type": "Organization", "name": "ReadMyBlueprint", "logo": { "@type": "ImageObject", "url": "https://www.readmyblueprint.com/og-image.svg" } },
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.readmyblueprint.com/blog-a-real-bug-we-found.html" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What was the R-308 insulation bug?", "acceptedAnswer": { "@type": "Answer", "text": "On a real 5-page permit set, our insulation detection reported 'R-308 batt insulation'. No such product exists. The pattern let the letter R at the end of the word DETECTOR in a legend jump a line break and pick up the first three digits of the door-size code 3080." } },
+    { "@type": "Question", "name": "How was it fixed?", "acceptedAnswer": { "@type": "Answer", "text": "An insulation value now only counts when the R stands alone as its own token. We then audited every other pattern in the same file, closed the same gap in CMU block size reading, and added permanent tests built from the exact text that triggered it." } },
+    { "@type": "Question", "name": "How do I catch a wrong reading like this on my own takeoff?", "acceptedAnswer": { "@type": "Answer", "text": "Sanity-check every number against what is physically plausible, and use a tool that labels each result matched, ambiguous or needs confirmation instead of showing one confident total." } }
+  ]
 }
 </script>
 
