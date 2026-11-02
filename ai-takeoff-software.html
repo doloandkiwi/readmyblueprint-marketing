@@ -255,8 +255,8 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <div class="wrap hero">
   <span class="eyebrow">● AI takeoff</span>
   <h1>AI takeoff software for drywall, framing and CMU</h1>
-  <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back in minutes, each number traced to the wall it came from. It is priced per plan set with no subscription (<a href="/pricing.html">see pricing</a>), and your first plan set is free.</p>
-  <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated October 2026</p>
+  <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back, each number traced to the wall it came from and hand-checked by our team before you see it. It is priced per plan set with no subscription (<a href="/pricing.html">see pricing</a>), and your first plan set is free.</p>
+  <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated November 2026</p>
   <div class="hero-ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;"><a href="/start-v2.html" class="btn btn-primary btn-lg">Try your first plan set free</a><a href="/tour" class="btn btn-ghost btn-lg">Take the 2-minute tour</a></div>
 </div>
 
@@ -302,6 +302,27 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     </div>
     <div class="note"><strong>What we won't claim:</strong> we haven't run side-by-side accuracy tests against these tools, so we don't say our counts are "more accurate." What we can show is how our numbers are produced, including a <a href="/blog-real-test-freeport-square.html" style="text-decoration:underline;">real end-to-end test on a 21-page plan set</a>, with the parts that didn't fully resolve.</div>
     <p style="margin-top:18px;">More detail: <a href="/compare-togal.html" style="text-decoration:underline;">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html" style="text-decoration:underline;">vs. Kreo &amp; Bobyard</a> · <a href="/etakeoff-alternative.html" style="text-decoration:underline;">eTakeoff alternative</a> · <a href="/online-takeoff-software.html" style="text-decoration:underline;">online takeoff software</a> · <a href="/confidence-labels.html" style="text-decoration:underline;">how the confidence labels work</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Release notes</span>
+      <h2>What changed in late October 2026</h2>
+      <p>New since the October 9 version of this page, from our own bench runs and release log. Numbers are linear feet the software measured, next to a hand or by-eye count where we have one.</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card good"><h3>Shipped</h3><ul>
+<li><strong>Every result is hand-checked before you see it (Oct 27).</strong> The software still does the counting pass, but customers now get the counts only after our team has checked the plan set sheet by sheet and published the checked takeoff. You get an email when it is ready.</li>
+<li><strong>Tag keys and plan notes are read (Oct 14&ndash;16).</strong> The engine now reads tag-keyed wall legends and the "unless noted" default type in the plan notes. On a restroom renovation set it went from 0 LF to 142 LF typed by tag (by-eye count about 250&ndash;350 LF); on a wood-framed set, resolved walls went from 16.3% to 42.9% of 1,131 LF; on a college set it went from 47 LF to 629 LF (hand count 718 LF).</li>
+<li><strong>Fewer over-counts (Oct 16 and Oct 28).</strong> Existing buildings, structural sheets, glazing and storefront lines, and the same wall drawn twice are now set aside. On one high-school set the count went from 2,923 LF to 0 LF against a hand count of 8.5 LF of new wall.</li>
+<li><strong>Honest about unreadable sheets (Oct 28).</strong> When a sheet is scanned, uses outlined lettering, or has no scale, the result says so plainly instead of returning a low number.</li></ul></div>
+      <div class="fit-card"><h3>Still not solved</h3><ul>
+<li><strong>Some sets are still over-counted.</strong> On one bench set the software measured 978 LF where the hand count of the B-series walls is 238 LF, because existing walls there are still counted. On another it measured 1,495 LF against 991 LF of drywall by hand.</li>
+<li><strong>Some sets are still under-counted.</strong> The restroom set above is 142 LF against roughly 250&ndash;350 LF by eye, because untagged walls draw the same as existing walls and are withheld.</li>
+<li><strong>Scanned plans are not measured by the software.</strong> You can still send them; they are counted by hand.</li></ul></div>
+    </div>
   </div>
 </section>
 
