@@ -128,6 +128,25 @@
   }
   var utm = hasIncoming ? incoming : readStoredUtm();
 
+  // First-touch (2026-11-02): referrer + landing page + campaign of the very first
+  // visit, written once and never overwritten. Appended to app links as ft_ref/ft_lp
+  // so the app can store where every signup came from. No visual effect.
+  var FT_KEY = "rmb_ft";
+  var ft = null;
+  try { ft = JSON.parse(localStorage.getItem(FT_KEY) || "null"); } catch (e) {}
+  if (!ft) {
+    ft = { lp: window.location.pathname.slice(0, 200) };
+    try {
+      if (document.referrer) {
+        var rr = new URL(document.referrer);
+        if (rr.host !== window.location.host) ft.ref = (rr.origin + rr.pathname).slice(0, 300);
+      }
+    } catch (e) {}
+    if (hasIncoming) ft.utm = incoming;
+    try { localStorage.setItem(FT_KEY, JSON.stringify(ft)); } catch (e) {}
+  }
+  if (!utm && ft.utm) utm = ft.utm;
+
   function isLoginLink(a) {
     return /\b(log\s?in|sign\s?in)\b/i.test(a.textContent || "");
   }
@@ -154,6 +173,8 @@
         if (utm[k] && !url.searchParams.has(k)) url.searchParams.set(k, utm[k]);
       });
     }
+    if (ft.ref) url.searchParams.set("ft_ref", ft.ref);
+    if (ft.lp) url.searchParams.set("ft_lp", ft.lp);
     a.href = url.toString();
   }
 
