@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYSRNLSF27"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});try{if(localStorage.getItem("rmb_consent")==="granted")gtag("consent","update",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"})}catch(e){}gtag("js",new Date());gtag("config","G-QYSRNLSF27");</script>
+<script src="/assets/analytics.js" defer></script>
+<title>Wall Assembly Calculator: Studs, Track, Drywall, Insulation | ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free wall assembly calculator: enter wall length, height, stud spacing, layers and openings to get studs, track LF, drywall sheets (4x8, 4x10, 4x12) with waste, and insulation SF per wall type.">
+<link rel="canonical" href="https://www.readmyblueprint.com/wall-assembly-calculator.html">
+<meta name="theme-color" content="#0d2b4e">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReadMyBlueprint">
+<meta property="og:title" content="Wall Assembly Calculator: Studs, Track, Drywall, Insulation">
+<meta property="og:description" content="Free wall assembly calculator: enter wall length, height, stud spacing, layers and openings to get studs, track LF, drywall sheets (4x8, 4x10, 4x12) with waste, and insulation SF per wall type.">
+<meta property="og:url" content="https://www.readmyblueprint.com/wall-assembly-calculator.html">
+<meta property="og:image" content="https://www.readmyblueprint.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<style>
+:root{
+  --ink:#0f1b2d; --paper:#f6f3ea; --surface:#ffffff; --surface-2:#eeeadb;
+  --muted:#5c6470; --line:#dcd5c2; --blue:#1a4d8f; --blue-deep:#0d2b4e;
+  --blue-soft:#e7eef7; --accent:#ad4c1f;--btn-accent:#ad4c1f; --accent-soft:#fbe7da;
+  --good:#2f7a4d; --good-soft:#e7f2ea; --amber:#b5650a; --amber-soft:#f7ecdb;
+  --shadow: 0 1px 2px rgba(15,27,45,0.06), 0 12px 32px -16px rgba(15,27,45,0.25);
+  --display:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+    --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+    --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+    --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f5; --paper:#0d1420; --surface:#141d2c; --surface-2:#1b2536;
+  --muted:#9aa5b4; --line:#2a3547; --blue:#6ea3e0;
+  --blue-soft:#1c2b40; --accent:#f0895a;--btn-accent:#bb4611; --accent-soft:#3a2416;
+  --good:#6fbf7c; --good-soft:#173222; --amber:#e0a34c; --amber-soft:#3a2a12;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;text-wrap:balance;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1240px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;}
+.brand .dim{font-weight:500;color:var(--muted);}
+.brand .mark{width:26px;height:26px;display:block;flex-shrink:0;}
+.nav-links{display:flex;gap:18px;font-size:.92rem;color:var(--muted);}
+.nav-links a{text-decoration:none;white-space:nowrap;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links .has-mega{position:relative;display:flex;align-items:center;}
+.nav-links .has-mega>a{display:flex;align-items:center;gap:5px;}
+.nav-links .has-mega>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55;transition:transform .15s ease,margin-top .15s ease;}
+.nav-links .has-mega:hover>a::after,.nav-links .has-mega:focus-within>a::after{transform:rotate(225deg);margin-top:3px;}
+.mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;z-index:30;}
+.has-mega:hover .mega-panel,.has-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;}
+.mega-panel-inner{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:flex;gap:4px;white-space:nowrap;}
+.mega-col{display:flex;flex-direction:column;min-width:210px;}
+.mega-col h4{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;padding:0 10px;}
+.mega-col a{display:block;padding:8px 10px;border-radius:8px;font-size:.88rem;color:var(--ink);text-decoration:none;line-height:1.3;white-space:normal;}
+.mega-col a:hover{background:var(--surface-2);}
+.mega-col a .mega-desc{display:block;font-size:.75rem;color:var(--muted);margin-top:2px;font-weight:400;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:.55rem 1.1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);white-space:nowrap;}
+.btn-primary{background:var(--btn-accent);color:#fff;}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-lg{padding:.8rem 1.5rem;font-size:1rem;border-radius:10px;}
+@media (max-width:1080px){ .nav-links{display:none;} }
+@media (max-width:640px){ .nav-row{padding:14px 16px;} .brand{font-size:.88rem;} .nav-cta{gap:6px;} .nav-cta .btn{padding:.5rem .75rem;font-size:.82rem;} }
+
+.hero{padding:56px 0 24px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:99px;padding:.3rem .7rem;margin-bottom:1.1rem;}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:0 0 .8rem;max-width:22ch;}
+.hero p.lede{font-size:1.05rem;color:var(--muted);max-width:66ch;margin:0;}
+
+section{padding:48px 0;}
+section + section{border-top:1px solid var(--line);}
+.section-head{max-width:680px;margin:0 0 24px;}
+.section-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0 0 .5rem;}
+.section-head p{color:var(--muted);margin:0;}
+
+table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.92rem;}
+table.cmp th, table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--surface-2);}
+table.cmp td:first-child{font-weight:600;width:26%;}
+.tbl-wrap{overflow-x:auto;}
+
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fit-card{border-radius:12px;padding:26px;border:1px solid var(--line);background:var(--surface);}
+.fit-card.good{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
+.fit-card h3{font-size:1.05rem;margin:0 0 14px;}
+.fit-card.good h3{color:#fff;}
+.fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fit-card li{display:flex;gap:10px;font-size:.92rem;line-height:1.5;}
+.fit-card:not(.good) li::before{content:"→";color:var(--blue);font-weight:700;flex-shrink:0;}
+.fit-card.good li::before{content:"✓";color:#8fd4a8;font-weight:700;flex-shrink:0;}
+
+.note{background:var(--amber-soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:.9rem;margin-top:20px;}
+.note strong{color:var(--amber);}
+
+.final-cta{background:var(--blue-deep);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;}
+.final-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 12px;}
+.final-cta p{color:#c7d5e8;font-size:1.02rem;max-width:52ch;margin:0 auto 24px;}
+
+@media (max-width:860px){ .fit-grid{grid-template-columns:1fr;} }
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);}
+</style>
+<style>
+.calc{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem}
+.calc input,.calc select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+.calc small{font-weight:400;color:var(--muted)}
+.calc-out{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.calc-out div{background:var(--blue-soft);border-radius:12px;padding:14px 16px}
+.calc-out b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.6rem;color:var(--blue-deep)}
+.calc-out span{font-size:.85rem;color:var(--muted)}
+.calc-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.calc-cta{margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--accent-soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.faq h3{margin:18px 0 6px;font-size:1.05rem}
+.faq p{margin:0;color:var(--muted);line-height:1.6}
+.calc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.calc-list a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink)}
+.calc-list a b{display:block;margin-bottom:6px}
+.calc-list a span{color:var(--muted);font-size:.9rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many studs do I need for a wall?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the wall length in inches by the stud spacing, round up, and add one for the end stud. This page then adds 2 studs per opening and 1 per corner or wall intersection. For a 20 ft wall at 16 in on center, 240 / 16 = 15, plus 1 is 16 field studs before openings and corners."}}, {"@type": "Question", "name": "How much track does a metal stud wall need?", "acceptedAnswer": {"@type": "Answer", "text": "One run of top track and one run of bottom track, so 2 x wall length. This calculator removes the bottom track at doors, adds header track over every opening, and adds sill track under windows. Net effect: doors add nothing, each window adds 2 x its width."}}, {"@type": "Question", "name": "How many sheets of drywall for a wall?", "acceptedAnswer": {"@type": "Answer", "text": "Take net wall area (length x height minus openings), multiply by the total number of board layers on both sides, divide by the sheet area (32, 40 or 48 sq ft) and round up after adding waste. The page shows all three sheet sizes at once."}}, {"@type": "Question", "name": "Does the calculator deduct door and window openings?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every opening you enter is deducted in full from the board and insulation area. Many estimators ignore small openings because the cut-outs are rarely reusable, so set those to zero quantity if that is your practice."}}, {"@type": "Question", "name": "What waste factor should I use?", "acceptedAnswer": {"@type": "Answer", "text": "The default is 10 percent, which is a common starting point for drywall. Use a higher number for short walls, many corners or soffits. Waste applies to drywall only; insulation and framing are shown without waste."}}, {"@type": "Question", "name": "Can I mix different wall types in one calculation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add a card for each wall type (for example a 3-5/8 in 20 ga partition and a 6 in 18 ga shaft wall), give each its own layers per side, and the page totals them. Stud gauge and size are labels for grouping; they do not change the count."}}, {"@type": "Question", "name": "What does this calculator not include?", "acceptedAnswer": {"@type": "Answer", "text": "Fasteners, joint compound, tape, corner bead, deflection track details, blocking, cripple studs, soffits and bulkheads, and ceilings. It is a quantity estimate to check your own numbers, not a replacement for reading the plans."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Wall Assembly Calculator", "url": "https://www.readmyblueprint.com/wall-assembly-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (web browser)", "description": "Free wall assembly calculator: enter wall length, height, stud spacing, layers and openings to get studs, track LF, drywall sheets (4x8, 4x10, 4x12) with waste, and insulation SF per wall type.", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "ReadMyBlueprint", "url": "https://www.readmyblueprint.com/"}}</script>
+<style>
+.wt{border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;background:var(--surface)}
+.wt h3{margin:0 0 12px;font-size:1.05rem}
+.op{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:8px;align-items:end}
+.rm{background:transparent;border:1px solid var(--line);border-radius:8px;padding:8px;cursor:pointer;color:var(--ink);font:inherit}
+.res{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:14px}
+.res th,.res td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+.res th:first-child,.res td:first-child{text-align:left}
+.res tr.tot td{font-weight:700;background:var(--blue-soft)}
+.formulas li{margin:6px 0}
+</style>
+<link rel="stylesheet" href="/assets/cinematic-theme.css">
+<link rel="stylesheet" href="/assets/premium.css">
+<meta name="theme-color" content="#06101f">
+
+<div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-studio-poster.jpg" preload="none" data-video="page-studio"></video></div>
+<nav>
+  <div class="nav-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-64.png" width="32" height="32" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <div class="nav-links">
+      <div class="has-mega">
+        <a href="/features.html">Features</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>How it works</h4>
+              <a href="/confidence-labels.html">Confidence Labels<span class="mega-desc">Matched, ambiguous, or needs confirmation</span></a>
+              <a href="/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
+              <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
+              <a href="/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
+              <a href="/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/drywall-takeoff.html">Materials</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>By material</h4>
+              <a href="/drywall-takeoff.html">Drywall<span class="mega-desc">Sheet counts traced to the wall</span></a>
+              <a href="/metal-framing-takeoff.html">Metal Framing<span class="mega-desc">Stud &amp; track from the legend</span></a>
+              <a href="/wood-framing-takeoff.html">Wood Framing<span class="mega-desc">Studs &amp; sheathing counts</span></a>
+              <a href="/insulation-takeoff.html">Insulation<span class="mega-desc">Real cavity coverage</span></a>
+              <a href="/cmu-takeoff.html">CMU<span class="mega-desc">Block counts from wall area</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-mega">
+        <a href="/for-homeowners.html">Who it's for</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Built for</h4>
+              <a href="/for-homeowners.html">Homeowners<span class="mega-desc">One remodel, no software experience needed</span></a>
+              <a href="/for-estimators.html">Solo Estimators<span class="mega-desc">Dozens of sheets a week, no busywork</span></a>
+              <a href="/for-general-contractors.html">General Contractors<span class="mega-desc">Cross-check a sub's numbers fast</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/compare.html">Compare</a>
+      <a href="/tour.html">Tour</a>
+      <div class="has-mega">
+        <a href="/help.html">Resources</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Resources</h4>
+              <a href="/help.html">Help Center<span class="mega-desc">Guides, FAQ, API docs</span></a>
+              <a href="/blog.html">Blog<span class="mega-desc">Notes on takeoff &amp; estimating</span></a>
+              <a href="/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
+              <a href="/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
+              <a href="/toolkit.html">Bid-Prep Toolkit<span class="mega-desc">Free template + checklist</span></a><a href="/calculators.html">Free Calculators<span class="mega-desc">Studs, drywall, CMU, insulation</span></a><a href="/guides.html">All Guides<span class="mega-desc">Blueprints, scales, wall types</span></a>
+              <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/about.html">About</a>
+      <a href="/pricing.html">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.readmyblueprint.com" class="btn btn-ghost">Log in</a>
+      <a href="/start-v2.html" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+<div class="wrap hero">
+  <span class="eyebrow">● Free calculator, no sign-up</span>
+  <h1>Wall assembly calculator</h1>
+  <p class="lede">A steel-stud wall needs one stud per spacing interval plus one, two runs of track, and board area equal to net wall area times the layers on each side. Enter your wall types below and get studs, track LF, drywall sheets (4x8, 4x10, 4x12) with waste, and insulation SF, per wall type and in total. Every formula is listed under the calculator.</p>
+</div>
+<section><div class="wrap">
+<div class="calc" style="max-width:1000px">
+<div class="calc-grid"><label>Drywall waste (%)<input type="number" id="waste" value="10" min="0" step="any" inputmode="decimal"></label></div>
+<div id="types"></div>
+<p style="margin-top:16px"><button class="btn btn-ghost" id="addType" type="button">+ Add wall type</button></p>
+<div id="results" aria-live="polite"></div>
+<div class="calc-cta"><span>Counting a whole plan set instead of one wall run?</span>
+<a href="https://app.readmyblueprint.com/?signup=1&utm_source=seo&utm_medium=content&utm_campaign=wall-assembly-calculator" class="btn btn-primary">Skip the math: upload the PDF, your first plan set is free</a></div>
+</div></div></section>
+<section><div class="wrap" style="max-width:880px">
+<div class="section-head"><span class="eyebrow">Method</span><h2>Formulas and assumptions</h2></div>
+<ul class="formulas">
+<li><strong>Field studs</strong> = ceil(length x 12 / spacing in) + 1.</li>
+<li><strong>Opening studs</strong> = 2 per opening (jamb pair), times quantity.</li>
+<li><strong>Corner studs</strong> = 1 extra per corner or wall intersection you enter.</li>
+<li><strong>Total studs</strong> = field + opening + corner. All studs are cut at wall height; cripples, king-stud doubling and blocking are not included.</li>
+<li><strong>Track LF</strong> = 2 x length (top and bottom). Doors: bottom track removed (minus width) and header track added (plus width), net zero. Windows: header plus sill, so plus 2 x width.</li>
+<li><strong>Net wall area</strong> = length x height minus the sum of opening width x height x quantity. Every opening is deducted in full.</li>
+<li><strong>Drywall sheets</strong> = net area x total layers (both sides) / sheet area (32, 40 or 48 sq ft) x (1 + waste), rounded up. Per-wall-type rows round up each type; the total row combines unrounded sheet counts before rounding, so it can be lower than the sum of the rows.</li>
+<li><strong>Insulation SF</strong> = net wall area, once, if insulation is selected. No waste is applied.</li>
+<li>Stud size and gauge are labels used to identify the wall type. Track is assumed to match the stud size. Height and spacing apply per wall type.</li>
+<li>Not included: fasteners, mud, tape, bead, deflection track, soffits, ceilings.</li>
+</ul>
+<h3>Worked examples (computed by hand)</h3>
+<p><strong>Example 1:</strong> 20 ft x 10 ft wall, 16 in spacing, 1 door 3x7, 2 corners, 1 layer each side, insulated, 10% waste. Studs: 240/16 = 15, +1 = 16, +2 (door), +2 (corners) = 20. Track: 2 x 20 = 40 LF. Net area: 200 - 21 = 179 sq ft. Board: 179 x 2 = 358 sq ft. 4x8: 358/32 = 11.19 x 1.1 = 12.31, so 13. 4x10: 8.95 x 1.1 = 9.85, so 10. 4x12: 7.46 x 1.1 = 8.20, so 9. Insulation: 179 SF.</p>
+<p><strong>Example 2:</strong> 33 ft x 9 ft wall, 24 in spacing, 2 windows 4x3 and 1 door 3x7, 1 corner, 2 layers on one side and 1 on the other, no insulation, 10% waste. Studs: 396/24 = 16.5, rounds up to 17, +1 = 18, +6 (3 openings), +1 = 25. Track: 66 + 2 x (2 x 4) = 82 LF. Net area: 297 - 24 - 21 = 252 sq ft. Board: 252 x 3 = 756 sq ft. 4x8: 23.63 x 1.1 = 25.99, so 26. 4x10: 18.9 x 1.1 = 20.79, so 21. 4x12: 15.75 x 1.1 = 17.33, so 18. Insulation: 0.</p>
+<p><strong>Example 3:</strong> Examples 1 and 2 as two wall types in one run. Studs 20 + 25 = 45. Track 40 + 82 = 122 LF. Board 358 + 756 = 1,114 sq ft. 4x8: 34.81 x 1.1 = 38.29, so 39. 4x10: 27.85 x 1.1 = 30.64, so 31. 4x12: 23.21 x 1.1 = 25.53, so 26 (the per-type rows would sum to 27). Insulation: 179 SF.</p>
+<p><button class="btn btn-ghost" type="button" id="ex1">Load example 1</button> <button class="btn btn-ghost" type="button" id="ex2">Load example 2</button> <button class="btn btn-ghost" type="button" id="ex3">Load examples 1 + 2</button></p>
+</div></section>
+<section><div class="wrap faq" style="max-width:880px"><div class="section-head"><span class="eyebrow">Questions</span><h2>Common questions</h2></div>
+<h3>How many studs do I need for a wall?</h3><p>Divide the wall length in inches by the stud spacing, round up, and add one for the end stud. This page then adds 2 studs per opening and 1 per corner or wall intersection. For a 20 ft wall at 16 in on center, 240 / 16 = 15, plus 1 is 16 field studs before openings and corners.</p><h3>How much track does a metal stud wall need?</h3><p>One run of top track and one run of bottom track, so 2 x wall length. This calculator removes the bottom track at doors, adds header track over every opening, and adds sill track under windows. Net effect: doors add nothing, each window adds 2 x its width.</p><h3>How many sheets of drywall for a wall?</h3><p>Take net wall area (length x height minus openings), multiply by the total number of board layers on both sides, divide by the sheet area (32, 40 or 48 sq ft) and round up after adding waste. The page shows all three sheet sizes at once.</p><h3>Does the calculator deduct door and window openings?</h3><p>Yes. Every opening you enter is deducted in full from the board and insulation area. Many estimators ignore small openings because the cut-outs are rarely reusable, so set those to zero quantity if that is your practice.</p><h3>What waste factor should I use?</h3><p>The default is 10 percent, which is a common starting point for drywall. Use a higher number for short walls, many corners or soffits. Waste applies to drywall only; insulation and framing are shown without waste.</p><h3>Can I mix different wall types in one calculation?</h3><p>Yes. Add a card for each wall type (for example a 3-5/8 in 20 ga partition and a 6 in 18 ga shaft wall), give each its own layers per side, and the page totals them. Stud gauge and size are labels for grouping; they do not change the count.</p><h3>What does this calculator not include?</h3><p>Fasteners, joint compound, tape, corner bead, deflection track details, blocking, cripple studs, soffits and bulkheads, and ceilings. It is a quantity estimate to check your own numbers, not a replacement for reading the plans.</p>
+<p style="margin-top:22px">Related: <a href="/metal-stud-calculator.html" style="text-decoration:underline;">metal stud calculator</a>, <a href="/drywall-calculator.html" style="text-decoration:underline;">drywall calculator</a>, <a href="/insulation-calculator.html" style="text-decoration:underline;">insulation calculator</a>, or <a href="/calculators.html" style="text-decoration:underline;">all free calculators</a>.</p></div></section>
+<script>
+function wallCalc(types,waste){
+  var w=1+(waste||0)/100,out=[],T={studs:0,track:0,net:0,ins:0,raw:{32:0,40:0,48:0}};
+  types.forEach(function(t){
+    var L=t.len,H=t.ht,S=t.sp||16,oa=0,os=0,winw=0;
+    (t.ops||[]).forEach(function(o){var q=o.qty||0;os+=2*q;oa+=o.w*o.h*q;if(o.kind==="window")winw+=o.w*q;});
+    var studs=(L>0?Math.ceil(L*12/S-1e-9)+1:0)+os+(t.corners||0);
+    var track=2*L+2*winw;
+    var net=Math.max(0,L*H-oa),board=net*((t.a||0)+(t.b||0));
+    var sh={};[32,40,48].forEach(function(s){sh[s]=Math.ceil(board/s*w-1e-9);T.raw[s]+=board/s*w;});
+    var ins=t.ins?net:0;
+    out.push({name:t.name,label:t.label,studs:studs,track:track,net:net,sheets:sh,ins:ins});
+    T.studs+=studs;T.track+=track;T.net+=net;T.ins+=ins;
+  });
+  T.sheets={};[32,40,48].forEach(function(s){T.sheets[s]=Math.ceil(T.raw[s]-1e-9);});
+  return {rows:out,total:T};
+}
+if(typeof module!=="undefined")module.exports=wallCalc;
+(function(){
+if(typeof document==="undefined")return;
+var tc=document.getElementById("types"),n=0;
+var SZ=["1-5/8 in","2-1/2 in","3-5/8 in","4 in","6 in"],GA=["25 ga","20 ga","18 ga","16 ga"];
+function opt(a,s){return a.map(function(x){return "<option"+(x===s?" selected":"")+">"+x+"</option>"}).join("")}
+function opRow(o){o=o||{};return '<div class="op"><label>Opening<select class="o-kind"><option value="door"'+(o.kind==="door"?" selected":"")+'>Door</option><option value="window"'+(o.kind==="window"?" selected":"")+'>Window</option></select></label><label>Width ft<input class="o-w" type="number" min="0" step="any" value="'+(o.w||3)+'"></label><label>Height ft<input class="o-h" type="number" min="0" step="any" value="'+(o.h||7)+'"></label><label>Qty<input class="o-q" type="number" min="0" step="1" value="'+(o.qty==null?1:o.qty)+'"></label><button type="button" class="rm o-rm">Remove</button></div>'}
+function addType(t){t=t||{};n++;var d=document.createElement("div");d.className="wt";
+d.innerHTML='<h3>Wall type '+n+'</h3><div class="calc-grid"><label>Name<input class="t-name" value="'+(t.name||"Type "+n)+'"></label><label>Total length (ft)<input class="t-len" type="number" min="0" step="any" value="'+(t.len==null?20:t.len)+'"></label><label>Height (ft)<input class="t-ht" type="number" min="0" step="any" value="'+(t.ht==null?10:t.ht)+'"></label><label>Stud spacing (in o.c.)<select class="t-sp">'+opt(["12","16","19.2","24"],String(t.sp||16))+'</select></label><label>Stud / track size<select class="t-sz">'+opt(SZ,t.sz||"3-5/8 in")+'</select></label><label>Gauge<select class="t-ga">'+opt(GA,t.ga||"20 ga")+'</select></label><label>Drywall layers, side A<input class="t-a" type="number" min="0" step="1" value="'+(t.a==null?1:t.a)+'"></label><label>Drywall layers, side B<input class="t-b" type="number" min="0" step="1" value="'+(t.b==null?1:t.b)+'"></label><label>Corners / intersections<input class="t-c" type="number" min="0" step="1" value="'+(t.corners||0)+'"></label><label>Insulation<select class="t-ins"><option value="1"'+(t.ins===false?"":" selected")+'>Yes</option><option value="0"'+(t.ins===false?" selected":"")+'>No</option></select></label></div><div class="ops"><p style="margin:12px 0 0"><strong>Openings to deduct</strong></p></div><p style="margin:10px 0 0"><button type="button" class="btn btn-ghost add-op">+ Add opening</button> <button type="button" class="btn btn-ghost rm-t">Remove wall type</button></p>';
+tc.appendChild(d);var ops=d.querySelector(".ops");(t.ops||[]).forEach(function(o){ops.insertAdjacentHTML("beforeend",opRow(o))});
+d.querySelector(".add-op").onclick=function(){ops.insertAdjacentHTML("beforeend",opRow());render()};
+d.querySelector(".rm-t").onclick=function(){d.remove();render()};
+render()}
+tc.addEventListener("click",function(e){if(e.target.classList.contains("o-rm")){e.target.closest(".op").remove();render()}});
+tc.addEventListener("input",render);tc.addEventListener("change",render);
+document.getElementById("waste").addEventListener("input",render);
+function num(el){return Math.max(0,parseFloat(el.value)||0)}
+function read(){var r=[];tc.querySelectorAll(".wt").forEach(function(d){var ops=[];d.querySelectorAll(".op").forEach(function(o){ops.push({kind:o.querySelector(".o-kind").value,w:num(o.querySelector(".o-w")),h:num(o.querySelector(".o-h")),qty:Math.floor(num(o.querySelector(".o-q")))})});
+r.push({name:d.querySelector(".t-name").value||"Wall",label:d.querySelector(".t-sz").value+" "+d.querySelector(".t-ga").value,len:num(d.querySelector(".t-len")),ht:num(d.querySelector(".t-ht")),sp:parseFloat(d.querySelector(".t-sp").value),a:Math.floor(num(d.querySelector(".t-a"))),b:Math.floor(num(d.querySelector(".t-b"))),corners:Math.floor(num(d.querySelector(".t-c"))),ins:d.querySelector(".t-ins").value==="1",ops:ops})});return r}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function nf(x){return (Math.round(x*100)/100).toLocaleString()}
+function render(){var res=wallCalc(read(),num(document.getElementById("waste")));
+var h='<div class="tbl-wrap"><table class="res"><tr><th>Wall type</th><th>Studs</th><th>Track LF</th><th>Net area SF</th><th>4x8 sheets</th><th>4x10 sheets</th><th>4x12 sheets</th><th>Insulation SF</th></tr>';
+res.rows.forEach(function(r){h+='<tr><td>'+esc(r.name)+' <small>('+esc(r.label)+')</small></td><td>'+r.studs+'</td><td>'+nf(r.track)+'</td><td>'+nf(r.net)+'</td><td>'+r.sheets[32]+'</td><td>'+r.sheets[40]+'</td><td>'+r.sheets[48]+'</td><td>'+nf(r.ins)+'</td></tr>'});
+var T=res.total;h+='<tr class="tot"><td>Total</td><td>'+T.studs+'</td><td>'+nf(T.track)+'</td><td>'+nf(T.net)+'</td><td>'+T.sheets[32]+'</td><td>'+T.sheets[40]+'</td><td>'+T.sheets[48]+'</td><td>'+nf(T.ins)+'</td></tr></table></div><p class="calc-note">Each sheet column is the count if you buy that one size. Drywall includes waste; framing and insulation do not.</p>';
+document.getElementById("results").innerHTML=h}
+var E1={name:"Example 1",len:20,ht:10,sp:16,a:1,b:1,corners:2,ins:true,ops:[{kind:"door",w:3,h:7,qty:1}]};
+var E2={name:"Example 2",len:33,ht:9,sp:24,a:2,b:1,corners:1,ins:false,ops:[{kind:"window",w:4,h:3,qty:2},{kind:"door",w:3,h:7,qty:1}]};
+function load(a){tc.innerHTML="";n=0;a.forEach(addType);document.getElementById("types").scrollIntoView({behavior:"smooth"})}
+document.getElementById("ex1").onclick=function(){load([E1])};
+document.getElementById("ex2").onclick=function(){load([E2])};
+document.getElementById("ex3").onclick=function(){load([E1,E2])};
+document.getElementById("addType").onclick=function(){addType()};
+addType(E1);
+})();
+</script>
+<section><div class="wrap"><p style="margin-top:18px"><strong>Reference:</strong> <a href="/types-of-drywall.html" style="text-decoration:underline;">Types of drywall: Type X, Type C, moisture resistant</a></p>
+</div></section>
+<div class="related-block" style="max-width:760px;margin:24px auto;padding:0 24px;"><p style="margin:0 0 6px;"><strong>Related</strong></p><ul style="margin:0;padding-left:20px;line-height:1.8;"><li><a href="/drywall-takeoff.html">Drywall takeoff software: counts from your whole plan set</a></li><li><a href="/calculators.html">All free calculators</a></li><li><a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a></li><li><a href="/send-plans">Send us your plan set and get the counts back</a></li></ul></div>
+<p style="max-width:760px;margin:16px auto;padding:0 24px;font-size:.95rem"><strong>More:</strong> <a href="/free-drywall-takeoff-software.html">Free drywall takeoff software</a> · <a href="/drywall-takeoff-software-for-small-contractors.html">Takeoff software for small contractors</a> · <a href="/drywall-takeoff-from-pdf-plans.html">Drywall takeoff from PDF plans</a></p>
+<footer>
+  <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><strong>Takeoff by trade:</strong> <a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a><br><strong>Takeoff services:</strong> <a href="/drywall-takeoff-services.html">Drywall takeoff services</a> · <a href="/metal-stud-takeoff-services.html">Metal stud takeoff services</a> · <a href="/framing-takeoff-services.html">Framing takeoff services</a> · <a href="/insulation-takeoff-services.html">Insulation takeoff services</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/takeoff-software-vs-estimating-services.html">Software vs. estimating services</a><br><strong>Software:</strong> <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/free-blueprint-takeoff-software.html">Free blueprint takeoff software</a> · <a href="/takeoff-software-for-mac.html">Takeoff software for Mac</a> · <a href="/send-plans">Send us your plan set</a> · <a href="/accuracy.html">Accuracy</a><br><strong>Alternatives and comparisons:</strong> <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a> · <a href="/handoff-alternative.html">Handoff alternative</a> · <a href="/compare-togal.html">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html">vs. Kreo and Bobyard</a> · <a href="/compare-planswift-buildxact.html">vs. PlanSwift and Buildxact</a> · <a href="/compare-1build-proest.html">vs. 1build and ProEst</a><br><strong>Calculators:</strong> <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/calculators.html">All calculators</a><br><strong>Guides:</strong> <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/how-to-read-blueprints.html">How to read blueprints</a> · <a href="/types-of-drywall.html">Types of drywall</a> · <a href="/metal-stud-sizes-and-gauges.html">Metal stud sizes and gauges</a> · <a href="/metal-stud-gauge-chart.html">Metal stud gauge chart</a> · <a href="/architectural-scale-chart.html">Architectural scale chart</a> · <a href="/what-does-oc-mean-in-construction.html">What O.C. means</a> · <a href="/what-is-a-cut-sheet-in-construction.html">What a cut sheet is</a> · <a href="/guides.html">All guides</a><br><strong>More:</strong> <a href="/plan-rooms-by-state.html">Plan rooms by state</a> · <a href="/blog.html">Blog</a> · <a href="/security.html">Security and file handling</a> · <a href="/pricing.html">Pricing</a></div>
+  <div class="wrap footer-row">
+    <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-64.png" width="32" height="32" alt=""><span class="dim">Read My</span>Blueprint</a>
+    <span>© 2026 ReadMyBlueprint LLC. Based in Saint Paul, MN. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
+    <span><a href="/terms.html" style="text-decoration:underline;">Terms</a> · <a href="/privacy.html" style="text-decoration:underline;">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "715b2f30ac5a4298896f728a394dab0f"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/chatbot.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script src="/assets/premium.js" defer></script>
+<script src="/assets/video-loader.js" defer></script>
+</html>
