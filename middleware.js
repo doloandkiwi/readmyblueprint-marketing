@@ -1,4 +1,4 @@
-// Sticky 50/50 homepage split (11/02): control = /index.html, cta = /index-cta-variant.html.
+// Sticky 50/50 homepage split (11/02; cta arm = benefit-headline rewrite 11/03): control = /index.html, cta = /index-cta-variant.html.
 // URL stays "/"; arm lives in cookie rmb_home_ab (readable by assets/analytics.js -> PostHog home_variant).
 // Bots/crawlers always get control and no cookie. QA override: /?ab=cta or /?ab=control.
 export const config = { matcher: "/" };
