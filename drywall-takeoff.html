@@ -76,6 +76,46 @@
     },
     {
       "@type": "Question",
+      "name": "How does a wall type turn into a material list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each wall is tagged to a row in your wall-type legend. That row sets the board type and layers, stud size and spacing, and insulation. Wall length x height x sides x layers gives board area, which is divided by sheet size, and then you add your own waste. Anything the legend does not cover is flagged to confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export the counts to my estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Results export to CSV or Excel with a label column, and a resolved takeoff can become a priced PDF or Excel quote. Ambiguous rows are never priced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on scanned plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It needs a digital PDF with vector geometry; scanned pages are flagged instead of guessed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a drywall takeoff take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send your plan set and the takeoff comes back within 24 hours. Your first plan set is free, no card needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are fire-rated and moisture-resistant boards counted separately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are only separated when your wall-type legend calls the rating or wet-area board out. When it does, that board goes on its own line and is never blended into plain board. When the legend does not say, the wall is flagged to confirm."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Can I try it on my own plan set?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -313,7 +353,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="hero-grid">
     <div>
   <span class="eyebrow">For drywall subs and owner-estimators</span>
-  <h1>The AI does the counting. You do the estimating.</h1>
+  <h1>Drywall takeoffs from your PDF: board, studs and track counted, back within 24 hours</h1>
   <p class="lede">Send us your plan set. ReadMyBlueprint counts board, studs, track and insulation by wall type, traced to the wall it came from, and flags what it can't read. You confirm every number before it goes in a bid. Your first plan set is free, no card needed.</p>
 <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated October 2026</p>
   <div class="hero-ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;"><a href="/send-plans" class="btn btn-primary btn-lg cta-main">Continue — send my plan set</a><small class="cta-note">Free first plan set · no card needed</small></div>
@@ -525,7 +565,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <section><div class="wrap"><p style="margin-top:18px"><strong>Reference:</strong> <a href="/types-of-drywall.html" style="text-decoration:underline;">Types of drywall: Type X, Type C, moisture resistant</a></p>
 </div></section>
 <div class="related-block" style="max-width:760px;margin:24px auto;padding:0 24px;"><p style="margin:0 0 6px;"><strong>Related</strong></p><ul style="margin:0;padding-left:20px;line-height:1.8;"><li><a href="/metal-framing-takeoff.html">Metal framing takeoff</a></li><li><a href="/wood-framing-takeoff.html">Wood framing takeoff</a></li><li><a href="/insulation-takeoff.html">Insulation takeoff</a></li><li><a href="/cmu-takeoff.html">CMU takeoff</a></li><li><a href="/drywall-calculator.html">Drywall sheet calculator</a></li><li><a href="/drywall-takeoff-services.html">Drywall takeoff services</a></li><li><a href="/blog-drywall-bid-sheet.html">How subcontractors build a drywall and framing bid sheet</a></li><li><a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a></li><li><a href="/togal-alternative.html">Togal.AI alternative</a></li><li><a href="/ai-takeoff-software.html">AI takeoff software</a></li><li><a href="/send-plans">Send us your plan set and get the counts back</a></li><li><a href="/drywall-takeoff-checklist.html">Drywall takeoff checklist: what to count besides sheets</a></li><li><a href="/takeoff-service-vs-software.html">Takeoff service vs takeoff software vs ReadMyBlueprint</a></li></ul></div>
-<section><div class="wrap" style="max-width:820px;margin:0 auto;padding:32px 20px"><h2>Frequently asked questions</h2><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does drywall takeoff software count sheets from a PDF?</h3><p>It measures each wall from the vector geometry in your plan set, matches the wall to its type on your wall-type legend, then converts wall area into a labeled sheet count for both sides of the wall. On our Freeport Square test set (21 pages), 68.9% of walls auto-matched and 99.8% resolved after one "Confirm all". That is one test set, so uncertain walls are flagged for you to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">What does drywall takeoff software not count?</h3><p>Waste factor, tape, mud, corner bead and fasteners are not counted, and neither are fire-rated or acoustic assemblies the legend does not call out. Scanned or flat-image PDFs have no vector geometry to measure, so those pages are flagged.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does a wall type turn into a material list?</h3><p>Each wall is tagged to a row in your wall-type legend. That row sets the board type and layers, stud size and spacing, and insulation. Wall length x height x sides x layers gives board area, which is divided by sheet size, and then you add your own waste. Anything the legend does not cover is flagged to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I export the counts to my estimate?</h3><p>Yes. Results export to CSV or Excel with a label column, and a resolved takeoff can become a priced PDF or Excel quote. Ambiguous rows are never priced.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Does it work on scanned plans?</h3><p>No. It needs a digital PDF with vector geometry; scanned pages are flagged instead of guessed.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I try it on my own plan set?</h3><p>Yes. Your first plan set is free, no card needed.</p><p style="margin-top:18px">Compare tools: <a href="/compare.html">ReadMyBlueprint vs. STACK &amp; Bluebeam</a> · <a href="/features.html">Features</a> · <a href="/tour">Take the tour</a></p></div></section>
+<section><div class="wrap" style="max-width:820px;margin:0 auto;padding:32px 20px"><h2>Frequently asked questions</h2><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does drywall takeoff software count sheets from a PDF?</h3><p>It measures each wall from the vector geometry in your plan set, matches the wall to its type on your wall-type legend, then converts wall area into a labeled sheet count for both sides of the wall. On our Freeport Square test set (21 pages), 68.9% of walls auto-matched and 99.8% resolved after one "Confirm all". That is one test set, so uncertain walls are flagged for you to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">What does drywall takeoff software not count?</h3><p>Waste factor, tape, mud, corner bead and fasteners are not counted, and neither are fire-rated or acoustic assemblies the legend does not call out. Scanned or flat-image PDFs have no vector geometry to measure, so those pages are flagged.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How does a wall type turn into a material list?</h3><p>Each wall is tagged to a row in your wall-type legend. That row sets the board type and layers, stud size and spacing, and insulation. Wall length x height x sides x layers gives board area, which is divided by sheet size, and then you add your own waste. Anything the legend does not cover is flagged to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I export the counts to my estimate?</h3><p>Yes. Results export to CSV or Excel with a label column, and a resolved takeoff can become a priced PDF or Excel quote. Ambiguous rows are never priced.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Does it work on scanned plans?</h3><p>No. It needs a digital PDF with vector geometry; scanned pages are flagged instead of guessed.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">How long does a drywall takeoff take?</h3><p>Send your plan set and the takeoff comes back within 24 hours. Your first plan set is free, no card needed.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Are fire-rated and moisture-resistant boards counted separately?</h3><p>They are only separated when your wall-type legend calls the rating or wet-area board out. When it does, that board goes on its own line and is never blended into plain board. When the legend does not say, the wall is flagged to confirm.</p><h3 style="font-size:1.05rem;margin:1.1rem 0 .3rem">Can I try it on my own plan set?</h3><p>Yes. Your first plan set is free, no card needed.</p><p style="margin-top:18px">Compare tools: <a href="/compare.html">ReadMyBlueprint vs. STACK &amp; Bluebeam</a> · <a href="/features.html">Features</a> · <a href="/tour">Take the tour</a></p></div></section>
 <p style="max-width:760px;margin:16px auto;padding:0 24px;font-size:.95rem"><strong>More:</strong> <a href="/free-drywall-takeoff-software.html">Free drywall takeoff software</a> · <a href="/drywall-takeoff-software-for-small-contractors.html">Takeoff software for small contractors</a> · <a href="/drywall-takeoff-from-pdf-plans.html">Drywall takeoff from PDF plans</a></p>
 <p style="max-width:760px;margin:16px auto;padding:0 24px;font-size:.95rem">Building a full wall type? Try the free <a href="/wall-assembly-calculator.html" style="text-decoration:underline;">wall assembly calculator</a> for studs, track, drywall sheets and insulation per wall type.</p>
 <footer>
