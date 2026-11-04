@@ -1,0 +1,51 @@
+/* Phone / tablet menu. Shared by every page with a main nav. Built by /assets/mobile-nav.js.
+   Hidden on desktop (above 1080px; above 820px on pages whose inline nav hides at 820). */
+.mn-btn{display:none;align-items:center;justify-content:center;width:40px;height:40px;margin-left:6px;padding:0;border-radius:8px;border:1px solid var(--line,#dcd5c2);background:transparent;color:var(--ink,#0f1b2d);cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.mn-btn:hover{background:var(--surface-2,#eeeadb)}
+.mn-btn:focus-visible,.mn-panel a:focus-visible,.mn-tog:focus-visible{outline:2px solid var(--blue,#1a4d8f);outline-offset:2px}
+.mn-bars,.mn-bars::before,.mn-bars::after{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
+.mn-bars{position:relative}
+.mn-bars::before,.mn-bars::after{content:"";position:absolute;left:0}
+.mn-bars::before{top:-6px}
+.mn-bars::after{top:6px}
+.mn-open .mn-bars{background:transparent}
+.mn-open .mn-bars::before{top:0;transform:rotate(45deg)}
+.mn-open .mn-bars::after{top:0;transform:rotate(-45deg)}
+nav.mn-nav>.mn-btn{margin-left:8px}
+nav.mn-nav>.btn{margin-left:auto}
+.mn-panel{display:none;position:absolute;top:100%;left:0;right:0;z-index:40;max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px);overflow-y:auto;overscroll-behavior:contain;padding:8px 16px 18px;background:var(--surface,#fff);border-bottom:1px solid var(--line,#dcd5c2);box-shadow:var(--shadow,0 12px 32px -16px rgba(15,27,45,.25));font-family:var(--body,Inter,system-ui,sans-serif);font-size:1rem;line-height:1.4;text-align:left;white-space:normal}
+.mn-open>.mn-panel{display:block}
+.mn-panel a{color:var(--ink,#0f1b2d);text-decoration:none}
+.mn-top,.mn-glink{display:flex;align-items:center;min-height:46px;padding:10px 6px;font-weight:600;font-size:1rem}
+.mn-top{border-bottom:1px solid var(--line,#dcd5c2)}
+.mn-group{border-bottom:1px solid var(--line,#dcd5c2)}
+.mn-group .mn-glink{flex:1}
+.mn-ghead{display:flex;align-items:center}
+.mn-tog{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:0;background:transparent;color:var(--muted,#5c6470);cursor:pointer;border-radius:8px}
+.mn-tog::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-4px;transition:transform .15s ease,margin-top .15s ease}
+.mn-tog[aria-expanded="true"]::before{transform:rotate(225deg);margin-top:4px}
+.mn-sub{padding:0 0 10px}
+.mn-sub[hidden]{display:none}
+.mn-sub h4{font-family:var(--mono,'IBM Plex Mono',ui-monospace,monospace);font-size:.66rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#5c6470);margin:10px 0 4px;padding:0 10px}
+.mn-sub a{display:block;padding:10px;border-radius:8px;font-size:.92rem;font-weight:500}
+.mn-sub a:hover,.mn-top:hover{background:var(--surface-2,#eeeadb)}
+.mn-sub .mega-desc{display:block;font-size:.78rem;font-weight:400;color:var(--muted,#5c6470);margin-top:2px}
+.mn-panel a.mn-login{display:flex;align-items:center;justify-content:center;min-height:46px;margin-top:14px;border:1px solid var(--line,#dcd5c2);border-radius:8px;font-weight:600}
+/* dark homepage pill nav */
+.mn-dark .mn-panel{background:#0a1b30;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 60px -20px rgba(0,0,0,.8)}
+.mn-dark .mn-panel a{color:#eef3fa}
+.mn-dark .mn-btn{border-color:rgba(255,255,255,.18);color:#eef3fa}
+.mn-dark .mn-btn:hover{background:rgba(255,255,255,.1)}
+.mn-dark .mn-top,.mn-dark .mn-group,.mn-dark .mn-panel a.mn-login{border-color:rgba(255,255,255,.1)}
+.mn-dark .mn-sub a:hover,.mn-dark .mn-top:hover{background:rgba(255,255,255,.08)}
+.mn-dark .mn-tog,.mn-dark .mn-sub h4,.mn-dark .mn-sub .mega-desc{color:#9fb1c8}
+.mn-float .mn-panel{top:calc(100% + 8px);border-radius:18px}
+.mn-svc .mn-panel{left:20px;right:20px;top:calc(100% + 8px);border-radius:18px;border:1px solid var(--line,#e6e8ec)}
+@media (min-width:1081px){.mn-btn:not(.mn-bp820),.mn-panel:not(.mn-bp820){display:none!important}}
+@media (min-width:821px){.mn-btn.mn-bp820,.mn-panel.mn-bp820{display:none!important}}
+@media (max-width:1080px){.mn-btn:not(.mn-bp820){display:flex}}
+@media (max-width:820px){.mn-btn.mn-bp820{display:flex}}
+@media (prefers-reduced-motion:reduce){.mn-bars,.mn-bars::before,.mn-bars::after,.mn-tog::before{transition:none}}
+@media (max-width:480px){.mn-nav .nav-cta>.btn-ghost{display:none}}
+nav.mn-float{gap:8px}
+@media (max-width:480px){.mn-svc .nav-in{gap:8px;padding-left:16px}.mn-svc .brand{font-size:15px;gap:8px}.mn-svc .nav-cta{gap:8px}.mn-svc .pill{padding:10px 14px;font-size:14px}}

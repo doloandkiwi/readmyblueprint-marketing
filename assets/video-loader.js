@@ -15,13 +15,27 @@
     v.addEventListener('canplay', function () { var q = v.play(); if (q && q.catch) q.catch(function () {}); }, { once: true });
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
+  function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function show(v, near) {
+    if (near) { load(v); if (v.paused && v.dataset.loaded) play(v); }
+    else if (v.dataset.loaded && !v.paused) v.pause();
+  }
+  if ('IntersectionObserver' in window) {
+    // load / play only while within about one and a half screens of the viewport; pause when far away
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { show(e.target, e.isIntersecting); });
+    }, { rootMargin: '150% 0px 50% 0px' });
+    vids.forEach(function (v) { io.observe(v); });
+    document.addEventListener('visibilitychange', function () {
+      vids.forEach(function (v) { if (document.hidden) { if (!v.paused) v.pause(); } else if (v.dataset.loaded) { var r = v.getBoundingClientRect(), h = window.innerHeight; if (r.top < h * 1.5 && r.bottom > -h * 0.5) play(v); } });
+    });
+    return;
+  }
   function check() {
     var h = window.innerHeight;
     vids.forEach(function (v) {
       var r = v.getBoundingClientRect();
-      var near = r.top < h * 1.5 && r.bottom > -h * 0.5;
-      if (near) { load(v); if (v.paused && v.dataset.loaded) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
-      else if (v.dataset.loaded && !v.paused) v.pause();
+      show(v, r.top < h * 1.5 && r.bottom > -h * 0.5);
     });
   }
   var queued = false;
