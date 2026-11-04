@@ -56,6 +56,7 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 - Why PDF plan measurements are off and how to calibrate: https://www.readmyblueprint.com/why-pdf-plan-measurements-are-off.html
 - Free blueprint takeoff software: https://www.readmyblueprint.com/free-blueprint-takeoff-software.html
 - Real test on a 21-page plan set (Freeport Square: 68.9% of walls auto-matched, 99.8% after one Confirm all; one plan set): https://www.readmyblueprint.com/blog-real-test-freeport-square.html
+- Auto-match vs reference count on 10 real plan sets (anonymized; 3 of 8 matched anything, repeat-count spread, where it missed): https://www.readmyblueprint.com/auto-match-vs-reference-count-10-plan-sets.html
 
 ## Contact
 
