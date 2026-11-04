@@ -293,6 +293,26 @@ footer .f-links{margin-top:10px;line-height:2}footer .f-links a{text-decoration:
 </style>
 <link rel="stylesheet" href="/assets/premium-home.css">
 </head>
+<style id="pv-home-css">
+.hero .pv-cat{font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,1.8vw,1.4rem);color:#eef3fa;max-width:34ch;line-height:1.35;margin:0 0 14px;letter-spacing:-.01em}
+.pv-nums{padding:0 0 16vh}
+.pv-nums .row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pv-nums .stat{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:28px}
+.pv-nums .stat b{display:block;font-family:var(--display);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:600;letter-spacing:-.035em;line-height:1;color:#fff}
+.pv-nums .stat:nth-child(3) b{color:var(--accent)}
+.pv-nums .stat span{display:block;margin-top:10px;color:var(--muted);line-height:1.55;font-size:.95rem}
+.pv-nums .cap{text-align:center;color:var(--muted);font-size:.9rem;line-height:1.6;max-width:70ch;margin:22px auto 0}
+.pv-nums .cap a{color:#fff;text-decoration:underline}
+.pv-quote{padding:0 0 16vh}
+.pv-quote .slot{max-width:820px;margin:0 auto;position:relative;border:2px dashed rgba(224,105,47,.6);border-radius:24px;padding:44px 40px 36px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));text-align:center}
+.pv-quote .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:99px;white-space:nowrap}
+.pv-quote .mark{font-family:var(--display);font-size:4.5rem;line-height:.6;color:var(--accent);opacity:.8;display:block;height:34px}
+.pv-quote blockquote{margin:6px 0 20px;font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.3;letter-spacing:-.02em;color:#9fb1c8;font-style:italic}
+.pv-quote .who{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--muted);font-size:.9rem}
+.pv-quote .av{width:40px;height:40px;border-radius:50%;border:1px dashed rgba(255,255,255,.3);flex:none}
+.pv-quote .note-pv{margin:22px auto 0;font-size:.82rem;color:var(--muted);max-width:60ch;line-height:1.55}
+@media(max-width:820px){.pv-nums .row{grid-template-columns:1fr}.pv-quote .slot{padding:40px 20px 28px}}
+</style>
 <body>
 
 <nav>
@@ -307,6 +327,7 @@ footer .f-links{margin-top:10px;line-height:2}footer .f-links a{text-decoration:
     <div class="eyebrow">Construction takeoff software</div>
     <a href="/start-v2.html" class="offer-pill">Your first plan set: <b>free</b> →</a>
     <h1 data-scramble>Your plans, <em>counted.</em></h1>
+    <p class="pv-cat" id="pv-category">Takeoff software for drywall, framing, insulation and CMU subs.</p>
     <p>ReadMyBlueprint is AI takeoff software for drywall, framing, insulation and CMU contractors: upload a plan set and get studs, track, drywall, insulation and block back in minutes — every number traced to the wall it came from, anything uncertain flagged for you.</p>
     <div class="ctas"><a href="/start-v2.html" class="btn btn-primary">Try your first plan set free →</a><a href="#story" class="btn btn-ghost">Watch it work</a></div>
     <p class="hero-guarantee" style="margin-top:12px;font-size:.95rem;font-weight:600">Your first plan set is free, no card needed.</p>
@@ -363,6 +384,18 @@ footer .f-links{margin-top:10px;line-height:2}footer .f-links a{text-decoration:
 </section>
 
 
+<section class="pv-nums" id="pv-numbers">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">In our own published test</div>
+    <div class="row">
+      <div class="stat"><b>21</b><span>pages in a real apartment plan set (&ldquo;Freeport Square&rdquo;), run end to end through the live product</span></div>
+      <div class="stat"><b>68.9%</b><span>of walls auto-matched to a confirmed material spec</span></div>
+      <div class="stat"><b>99.8%</b><span>of walls resolved after one &ldquo;Confirm all&rdquo;</span></div>
+    </div>
+    <p class="cap">Figures are from our own published test on this one plan set, not a general accuracy number &mdash; other plan sets will differ. <a href="/blog-real-test-freeport-square.html">Read the full write-up, including what it flagged &rarr;</a></p>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap">
     <div class="sec-head reveal"><div class="eyebrow">Product demo</div><h2>See it read a real plan set, start to finish.</h2><p>Upload to results in one take — no cuts, no staged data. This is the actual app on a real architectural plan set.</p></div>
@@ -379,6 +412,18 @@ footer .f-links{margin-top:10px;line-height:2}footer .f-links a{text-decoration:
       <a class="reveal" href="/for-homeowners.html"><h3>Homeowners &amp; small remodels</h3><p>Upload the plan your contractor sent you and get a real material count back.</p></a>
     </div>
     <div class="mats reveal"><a href="/metal-framing-takeoff.html">Metal framing takeoff</a><a href="/drywall-takeoff.html">Drywall takeoff</a><a href="/wood-framing-takeoff.html">Wood framing takeoff</a><a href="/insulation-takeoff.html">Insulation takeoff</a><a href="/cmu-takeoff.html">CMU takeoff</a><a href="/compare.html">Compare vs STACK &amp; Bluebeam</a><a href="/accuracy.html">Accuracy</a><a href="/calculators.html">Free takeoff calculators</a></div>
+  </div>
+</section>
+
+<section class="pv-quote" id="pv-testimonial">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">What customers say</div><h2>In their words.</h2></div>
+    <div class="slot">
+      <span class="tag">Empty slot</span>
+      <span class="mark">&ldquo;</span>
+      <blockquote>[Customer quote goes here once a customer says yes in writing]</blockquote>
+      <div class="who"><span class="av"></span><span>[First name, trade] &mdash; added only with the customer's written OK</span></div>
+    </div>
   </div>
 </section>
 

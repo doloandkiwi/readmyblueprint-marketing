@@ -366,6 +366,29 @@ html,body{overflow-x:hidden}
 <meta name="theme-color" content="#06101f">
 
 <div class="cine-top" aria-hidden="true"><video autoplay muted loop playsinline poster="/assets/video/page-estimator-poster.jpg" preload="none" data-video="page-estimator"></video></div>
+<style id="pv-pricing-css">
+.pv-anchor{margin:26px 0 0;padding:18px 22px;border-radius:16px;border:1px solid rgba(224,105,47,.45);background:rgba(224,105,47,.08);display:flex;gap:14px;align-items:flex-start}
+.pv-anchor .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);white-space:nowrap;padding-top:4px}
+.pv-anchor p{margin:0;font-size:1.05rem;line-height:1.55;color:var(--ink)}
+.pv-anchor p b{font-family:var(--display)}
+.pv-cmp{margin:40px 0 0}
+.pv-cmp h2{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0 0 .4rem}
+.pv-cmp .sub{color:var(--muted);margin:0 0 16px;max-width:64ch}
+.pv-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+table.pv-table{width:100%;border-collapse:collapse;min-width:640px;font-size:.95rem}
+.pv-table th,.pv-table td{padding:13px 16px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+.pv-table thead th{border-top:0;font-family:var(--display);font-size:1.1rem;vertical-align:bottom}
+.pv-table thead th small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:4px}
+.pv-table tbody th{font-weight:500;color:var(--muted);width:26%}
+.pv-table td.feat,.pv-table th.feat{background:rgba(224,105,47,.07)}
+.pv-table thead th.feat{box-shadow:inset 0 3px 0 #e0692f}
+.pv-table .y{color:var(--good);font-weight:600}
+.pv-table .n{color:var(--muted);opacity:.7}
+.pv-table .btnrow td{padding-top:16px;padding-bottom:16px}
+.pv-table .btnrow .btn{width:100%}
+.pv-foot{font-size:.82rem;color:var(--muted);margin:10px 2px 0}
+.pv-swipe{display:none;font-size:.82rem;color:var(--blue);margin:0 0 8px;font-family:var(--mono)}@media(max-width:640px){.pv-anchor{flex-direction:column;gap:6px}.pv-swipe{display:block}table.pv-table{min-width:560px}.pv-table th,.pv-table td{padding:11px 12px;font-size:.88rem}.pv-table tbody th{width:30%}}
+</style>
 <nav>
   <div class="nav-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-64.png" width="32" height="32" alt=""><span class="dim">Read My</span>Blueprint</a>
@@ -473,6 +496,29 @@ html,body{overflow-x:hidden}
         <ul><li>Unlimited plan sets &amp; auto-detect runs</li><li>Everything in Solo Estimator</li><li>Multi-seat access</li><li>Shared material-mapping library</li><li>Priority support</li></ul>
         <a href="mailto:sales@readmyblueprint.com" class="btn btn-ghost">Contact us</a>
       </div>
+    </div>
+
+    <div class="pv-anchor" id="pv-anchor"><span class="k">The time it saves</span><p>A hand takeoff on a mid-size set can take an estimator most of a day. <b>Here it's one upload</b> &mdash; and your first plan set is free, no card needed.</p></div>
+    <div class="pv-cmp" id="pv-compare">
+      <h2>Compare the three plans</h2>
+      <p class="sub">Everything below is taken from the plan cards above and the &ldquo;What's included&rdquo; section on this page.</p>
+      <p class="pv-swipe">&larr; swipe sideways to see all three plans &rarr;</p><div class="pv-tablewrap"><table class="pv-table">
+        <thead><tr><th></th><th><small>Pay as you go</small>Per Upload</th><th class="feat"><small>Most popular</small>Solo Estimator</th><th><small>For teams</small>Small Firm</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Price</th><td>$49 / plan set<br><span class="y">Your first one: free</span></td><td class="feat">$199 / month</td><td>$499 / month &amp; up</td></tr>
+          <tr><th scope="row">Plan sets</th><td>One plan set per purchase</td><td class="feat">10 per month, one seat</td><td>Unlimited, multiple seats</td></tr>
+          <tr><th scope="row">Auto-detect runs</th><td>Full auto-detect on one plan set</td><td class="feat">10 per month</td><td>Unlimited</td></tr>
+          <tr><th scope="row">All 5 material categories, CSV &amp; Excel export</th><td><span class="y">&#10003;</span></td><td class="feat"><span class="y">&#10003;</span></td><td><span class="y">&#10003;</span></td></tr>
+          <tr><th scope="row">Assisted click-to-measure mode</th><td><span class="n">&mdash;</span></td><td class="feat"><span class="y">&#10003;</span></td><td><span class="y">&#10003;</span></td></tr>
+          <tr><th scope="row">Saved material &amp; assembly library</th><td><span class="n">&mdash;</span></td><td class="feat"><span class="y">&#10003;</span></td><td><span class="y">&#10003;</span></td></tr>
+          <tr><th scope="row">Multi-seat access</th><td><span class="n">&mdash;</span></td><td class="feat"><span class="n">&mdash;</span></td><td><span class="y">&#10003;</span></td></tr>
+          <tr><th scope="row">Shared material-mapping library</th><td><span class="n">&mdash;</span></td><td class="feat"><span class="n">&mdash;</span></td><td><span class="y">&#10003;</span></td></tr>
+          <tr><th scope="row">Support</th><td><span class="n">&mdash;</span></td><td class="feat">Priority email support</td><td>Priority support</td></tr>
+          <tr><th scope="row">7-day money-back guarantee</th><td><span class="y">&#10003;</span></td><td class="feat"><span class="y">&#10003;</span></td><td><span class="n">&mdash;</span></td></tr>
+          <tr class="btnrow"><th></th><td><a href="/start-v2.html" class="btn btn-primary">Try one free</a></td><td class="feat"><a href="/start-v2.html" class="btn btn-primary">Subscribe</a></td><td><a href="mailto:sales@readmyblueprint.com" class="btn btn-ghost">Contact us</a></td></tr>
+        </tbody>
+      </table></div>
+      <p class="pv-foot">&mdash; means the feature is not listed for that plan on this page. Small Firm includes everything in Solo Estimator.</p>
     </div>
     <p class="notebox" style="margin-top:22px"><strong>Already a Solo Estimator subscriber?</strong> Refer a friend who subscribes and get $20/mo off your own plan — stack up to 5 referrals for Solo Estimator at $99/mo instead of $199/mo. Your referral link is in your account page once you're signed up.</p>
     <p style="margin:18px 0 0;font-size:.95rem"><a href="/start-v2.html" style="text-decoration:underline">Not sure yet? Upload your plan set and see what it finds first →</a></p>
