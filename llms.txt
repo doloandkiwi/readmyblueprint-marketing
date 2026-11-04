@@ -5,7 +5,7 @@
 ## What it is
 
 - A web app at https://app.readmyblueprint.com — no install required, works in any modern browser, installable as a PWA.
-- Built and operated by a single engineer, not a large estimating firm — see /about.html for how accuracy is actually validated (real, hand-calculated plan sets, not a claimed professional background).
+- Built and operated by a single engineer, not a large estimating firm — see /about.html for how accuracy is actually validated (reference counts measured from real plan sets, not a claimed professional background).
 - Assisted takeoff, not automatic takeoff: the customer verifies every bid before it goes out.
 
 ## What it measures today
@@ -18,7 +18,7 @@ Flat, transparent, self-serve, no sales call required. A new account's first pla
 
 ## Done-for-you takeoff service
 
-Contractors who'd rather not run the software themselves can email the PDF plan set to support@readmyblueprint.com and get studs, track, drywall sheets, insulation and CMU counts per wall type back within 24 hours, checked by a person against the drawings. The first plan set is free.
+Contractors who'd rather not run the software themselves can email the PDF plan set to support@readmyblueprint.com and get studs, track, drywall sheets, insulation and CMU counts per wall type back within 24 hours, checked against the drawings. The first plan set is free.
 - Drywall takeoff services: https://www.readmyblueprint.com/drywall-takeoff-services
 - Framing takeoff services: https://www.readmyblueprint.com/framing-takeoff-services
 - Metal stud takeoff services: https://www.readmyblueprint.com/metal-stud-takeoff-services
@@ -28,6 +28,7 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 
 - Homepage and pricing: https://www.readmyblueprint.com/
 - How accuracy is validated: https://www.readmyblueprint.com/about.html
+- How we count, step by step: https://www.readmyblueprint.com/how-we-count.html
 - Confidence labels explained: https://www.readmyblueprint.com/confidence-labels.html
 - How wall-type matching works: https://www.readmyblueprint.com/wall-type-matching.html
 - Public read-only API + MCP server: https://www.readmyblueprint.com/help.html#api

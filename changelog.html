@@ -135,7 +135,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 
 .entry{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);}
 .entry:last-child{border-bottom:none;}
 .entry .date{font-family:var(--mono);font-size:.82rem;color:var(--muted);padding-top:2px;}
-.entry h3{font-size:1.1rem;margin:0 0 8px;}
+.entry h2{letter-spacing:-.03em;font-size:1.1rem;margin:0 0 8px;}
 .entry ul{margin:0;padding-left:1.1rem;color:var(--ink);font-size:.95rem;}
 .entry li{margin-bottom:6px;line-height:1.55;}
 .entry li:last-child{margin-bottom:0;}
@@ -163,6 +163,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
               <a href="/wall-type-matching.html">Wall-Type Matching<span class="mega-desc">How a wall gets identified</span></a>
               <a href="/public-api.html">Public API<span class="mega-desc">Read-only, account-scoped keys</span></a>
               <a href="/accuracy.html">Accuracy<span class="mega-desc">Tested against real plan sets</span></a>
+              <a href="/how-we-count.html">How We Count<span class="mega-desc">Our process, misses included</span></a>
               <a href="/roi-calculator.html">ROI Calculator<span class="mega-desc">Does it pay for itself?</span></a>
             </div>
           </div>
@@ -196,7 +197,29 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
           </div>
         </div>
       </div>
-      <a href="/compare.html">Compare</a>
+      <div class="has-mega">
+        <a href="/compare.html">Compare</a>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <h4>Compare</h4>
+              <a href="/compare.html">All comparisons<span class="mega-desc">How we differ from other tools</span></a>
+              <a href="/compare-togal.html">vs. Togal.AI<span class="mega-desc">Side by side</span></a>
+              <a href="/compare-planswift-buildxact.html">vs. PlanSwift &amp; Buildxact<span class="mega-desc">Desktop and estimating suites</span></a>
+              <a href="/compare-kreo-bobyard.html">vs. Kreo &amp; Bobyard<span class="mega-desc">AI takeoff tools</span></a>
+              <a href="/compare-1build-proest.html">vs. 1build &amp; ProEst<span class="mega-desc">Estimating platforms</span></a>
+            </div>
+            <div class="mega-col">
+              <h4>Best software lists</h4>
+              <a href="/best-construction-takeoff-software-2027.html">Construction takeoff<span class="mega-desc">How to choose, all trades</span></a>
+              <a href="/best-drywall-takeoff-software-2027.html">Drywall takeoff<span class="mega-desc">For small subs</span></a>
+              <a href="/best-framing-takeoff-software-2027.html">Framing takeoff<span class="mega-desc">Wood and metal</span></a>
+              <a href="/best-insulation-takeoff-software.html">Insulation takeoff<span class="mega-desc">For small subcontractors</span></a>
+              <a href="/best-cmu-block-takeoff-software.html">CMU block takeoff<span class="mega-desc">For masonry subs</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="/tour.html">Tour</a>
       <div class="has-mega">
         <a href="/help.html">Resources</a>
@@ -209,6 +232,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
               <a href="/glossary.html">Glossary<span class="mega-desc">Common terms, plain English</span></a>
               <a href="/roadmap.html">Roadmap<span class="mega-desc">What's being considered next</span></a>
               <a href="/toolkit.html">Bid-Prep Toolkit<span class="mega-desc">Free template + checklist</span></a><a href="/calculators.html">Free Calculators<span class="mega-desc">Studs, drywall, CMU, insulation</span></a><a href="/guides.html">All Guides<span class="mega-desc">Blueprints, scales, wall types</span></a>
+              <a href="/plan-rooms-by-state.html">Plan Rooms by State<span class="mega-desc">Where to find open bids</span></a>
               <a href="/changelog.html">Changelog<span class="mega-desc">What's shipped, dated</span></a>
             </div>
           </div>
@@ -236,15 +260,15 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Oct 30, 2026</div>
     <div>
-      <h3>Hand-checked results, share links, phone uploads, and a better wall reader</h3>
+      <h2>Checked results, share links, phone uploads, and a better wall reader</h2>
       <ul>
-        <li>Oct 27: customers now see counts only after our team has hand-checked the plan set sheet by sheet and published the checked takeoff; you get an email when it is ready.</li>
+        <li>Oct 27: customers now see counts only after our team has checked the plan set sheet by sheet against the drawings and published the checked takeoff; you get an email when it is ready.</li>
         <li>Oct 19: share a takeoff with a revocable, read-only link.</li>
         <li>Oct 23 and Oct 30: phone uploads accept PDFs that arrive without ".pdf" in the name, a photo gets a plain message instead of an error, and every failed upload shows an email address to send the PDF to.</li>
         <li>Oct 14&ndash;16: the wall reader now reads tag-keyed legends and the plan notes' default wall type. On our bench: a restroom renovation set went from 0 LF to 142 LF (by eye about 250&ndash;350 LF); a wood-framed set from 16.3% to 42.9% resolved of 1,131 LF; a college set from 47 LF to 629 LF (hand 718 LF); a high-school set from 2,923 LF to 0 LF (hand 8.5 LF), because the existing building is no longer counted.</li>
         <li>Oct 28: glazing and storefront lines, limit-of-work lines, faded background walls and walls drawn twice are set aside; exterior walls are their own category; masonry default types are read from the plan notes; sheets that can't be read (scanned, outlined lettering, no scale) now say so plainly.</li>
         <li>Oct 29: CAD floor plans with embedded image fragments are accepted, and color-filled walls are typed from the wall-symbol schedule.</li>
-        <li>Still not solved: on one bench set the software measures 978 LF where the hand count is 238 LF (existing walls still counted), and on another 1,495 LF against 991 LF by hand.</li>
+        <li>Still not solved: on one bench set the software measures 978 LF where the reference count is 238 LF (existing walls still counted), and on another 1,495 LF against a 991 LF reference count.</li>
       </ul>
     </div>
   </div>
@@ -252,14 +276,14 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Oct 9, 2026</div>
     <div>
-      <h3>Existing walls set aside, a hand-measure tool, quote export, and an honest test result</h3>
+      <h2>Existing walls set aside, a hand-measure tool, quote export, and an honest test result</h2>
       <ul>
         <li>Oct 9: the existing-wall legend check now allows labels up to 100 characters, rejects "TO BE REMOVED" rows, and matches plan grays within 0.15 of the legend swatch. On Freeport Square sheet A201 the count went from 1,280 LF to 24 LF (1,403 LF set aside as existing); the whole set went from 7,470 LF to 944 LF. On the other legend-bearing test sets, 5 of 6 were unchanged. Walls drawn only on enlarged-plan sheets (for example A207) are still skipped.</li>
         <li>Oct 9: we ran free, signed-out ChatGPT on the same sheet. It estimated 220 LF of new walls where the sheet draws none. <a href="/blog-chatgpt-drywall-takeoff-test.html">Read the test</a>.</li>
         <li>Oct 8: new hand-measure tool. Trace a line or area point by point; points snap to the sheet's vector endpoints and the item is labeled "Hand-measured" in the export.</li>
         <li>Oct 8: new quote export. A priced PDF or Excel quote from a takeoff, pre-filled from resolved wall types only; ambiguous rows are listed as "confirm first" and never priced.</li>
         <li>Oct 7: auto-detect now skips other-discipline sheets by sheet number and reads EXISTING CONSTRUCTION legends. Oct 5: walls drawn in a legend's EXISTING fill are left out. Oct 1: coded partition tags (for example 0S3B) are decoded from the document's own key, schedules on rotated sheets are read, and wall-shaped sheet furniture repeated across pages is dropped.</li>
-        <li>Oct 7, tested and not fixed: on three public Missouri state bid sets, auto-match was 0% of 3,571 LF, 0% of 4,466 LF and 0.3% of 674 LF, because the partition types are drawn as graphic details or coded tags the legend reader cannot match. Those results need hand-finishing.</li>
+        <li>Oct 7, tested and not fixed: on three public Missouri state bid sets, auto-match was 0% of 3,571 LF, 0% of 4,466 LF and 0.3% of 674 LF, because the partition types are drawn as graphic details or coded tags the legend reader cannot match. Those results need more confirming by you.</li>
         <li>Oct 1: your first plan set is free for every new account, no card needed.</li>
       </ul>
     </div>
@@ -268,7 +292,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 22, 2026</div>
     <div>
-      <h3>Two real site bugs fixed, and a real bar-scale reading gap closed</h3>
+      <h2>Two real site bugs fixed, and a real bar-scale reading gap closed</h2>
       <ul>
         <li>Fixed the "Get started" button running off the edge of the screen on phones — present on every page except the homepage, now fixed everywhere.</li>
         <li>Fixed a dark-mode bug where five different sections (the final call-to-action, the two on-site feature videos, comparison-page highlight cards, and the tour page's CTA) turned into unreadable light-background blocks in dark mode instead of staying dark navy.</li>
@@ -281,7 +305,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 12, 2026</div>
     <div>
-      <h3>Listed on G2, another insulation-reading bug fixed, and a new blog post</h3>
+      <h2>Listed on G2, another insulation-reading bug fixed, and a new blog post</h2>
       <ul>
         <li>ReadMyBlueprint is now listed on <a href="https://www.g2.com/products/read-my-blue-print/reviews">G2</a>, with real pricing, screenshots, and a description — on top of the existing Capterra/GetApp/Software Advice listing.</li>
         <li>Fixed a second, different insulation-reading bug: plumbing riser diagram labels ("R-1," "R-2," etc.) were being misread as insulation R-values on some sheets. See the <a href="/blog-a-real-bug-we-found.html">original bug writeup</a> for the first version of this issue.</li>
@@ -293,7 +317,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 12, 2026</div>
     <div>
-      <h3>A new logo, a real video hero, and a fixed insulation-reading bug</h3>
+      <h2>A new logo, a real video hero, and a fixed insulation-reading bug</h2>
       <ul>
         <li>New brand mark site-wide — a ruler-and-tick-mark "R" — replacing the plain blue square.</li>
         <li>The homepage now opens with a real animated hero and two on-site feature videos instead of a static mockup.</li>
@@ -307,7 +331,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 10, 2026</div>
     <div>
-      <h3>Faster, cleaner, and mobile-friendly</h3>
+      <h2>Faster, cleaner, and mobile-friendly</h2>
       <ul>
         <li>The plan workspace now works properly on a phone — review results and add anything auto-detect missed from the jobsite, not just a desktop.</li>
         <li>Routine security and dependency updates across the platform.</li>
@@ -318,7 +342,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 9, 2026</div>
     <div>
-      <h3>First-time offer, a real getting-started guide, and a clearer results view</h3>
+      <h2>First-time offer, a real getting-started guide, and a clearer results view</h2>
       <ul>
         <li>New accounts get their first plan set free — once per account.</li>
         <li>Added a full step-by-step guide, right on the page, covering upload through export.</li>
@@ -332,7 +356,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Sep 8, 2026</div>
     <div>
-      <h3>Public launch: accounts, billing, and full auto-detection</h3>
+      <h2>Public launch: accounts, billing, and full auto-detection</h2>
       <ul>
         <li>Real accounts with private, isolated data per customer — your plans are never visible to anyone else.</li>
         <li>Subscriptions and one-time uploads, backed by a 7-day money-back guarantee.</li>
@@ -346,9 +370,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
   <div class="entry">
     <div class="date">Aug 23, 2026</div>
     <div>
-      <h3>Core takeoff engine hardened against real-world plan sets</h3>
+      <h2>Core takeoff engine hardened against real-world plan sets</h2>
       <ul>
-        <li>Fixed a measurement bug affecting some rotated large-format sheets (common on D/E-size architectural and civil drawings) — every affected page re-verified against hand-calculated values after the fix, with zero regressions.</li>
+        <li>Fixed a measurement bug affecting some rotated large-format sheets (common on D/E-size architectural and civil drawings) — every affected page re-verified against reference values calculated from the drawings after the fix, with zero regressions.</li>
         <li>Added a coverage check that tells you when a page couldn't be fully read, instead of silently returning a partial result.</li>
       </ul>
     </div>
@@ -357,7 +381,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 </div>
 
 <footer>
-  <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><strong>Takeoff by trade:</strong> <a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a><br><strong>Takeoff services:</strong> <a href="/drywall-takeoff-services.html">Drywall takeoff services</a> · <a href="/metal-stud-takeoff-services.html">Metal stud takeoff services</a> · <a href="/framing-takeoff-services.html">Framing takeoff services</a> · <a href="/insulation-takeoff-services.html">Insulation takeoff services</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/takeoff-software-vs-estimating-services.html">Software vs. estimating services</a><br><strong>Software:</strong> <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/free-blueprint-takeoff-software.html">Free blueprint takeoff software</a> · <a href="/takeoff-software-for-mac.html">Takeoff software for Mac</a> · <a href="/send-plans">Send us your plan set</a> · <a href="/accuracy.html">Accuracy</a><br><strong>Alternatives and comparisons:</strong> <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a> · <a href="/handoff-alternative.html">Handoff alternative</a> · <a href="/compare-togal.html">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html">vs. Kreo and Bobyard</a> · <a href="/compare-planswift-buildxact.html">vs. PlanSwift and Buildxact</a> · <a href="/compare-1build-proest.html">vs. 1build and ProEst</a><br><strong>Calculators:</strong> <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/calculators.html">All calculators</a><br><strong>Guides:</strong> <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/how-to-read-blueprints.html">How to read blueprints</a> · <a href="/types-of-drywall.html">Types of drywall</a> · <a href="/metal-stud-sizes-and-gauges.html">Metal stud sizes and gauges</a> · <a href="/metal-stud-gauge-chart.html">Metal stud gauge chart</a> · <a href="/architectural-scale-chart.html">Architectural scale chart</a> · <a href="/what-does-oc-mean-in-construction.html">What O.C. means</a> · <a href="/what-is-a-cut-sheet-in-construction.html">What a cut sheet is</a> · <a href="/guides.html">All guides</a><br><strong>More:</strong> <a href="/plan-rooms-by-state.html">Plan rooms by state</a> · <a href="/blog.html">Blog</a> · <a href="/security.html">Security and file handling</a> · <a href="/pricing.html">Pricing</a></div>
+  <div class="wrap footer-links-seo" style="font-size:13px;line-height:1.9;opacity:.75;padding:14px 0 4px;"><strong>Takeoff by trade:</strong> <a href="/drywall-takeoff.html">Drywall takeoff</a> · <a href="/metal-framing-takeoff.html">Metal framing takeoff</a> · <a href="/wood-framing-takeoff.html">Wood framing takeoff</a> · <a href="/insulation-takeoff.html">Insulation takeoff</a> · <a href="/cmu-takeoff.html">CMU takeoff</a> · <a href="/plasterboard-takeoff-software.html">Plasterboard takeoff software</a><br><strong>Takeoff services:</strong> <a href="/drywall-takeoff-services.html">Drywall takeoff services</a> · <a href="/metal-stud-takeoff-services.html">Metal stud takeoff services</a> · <a href="/framing-takeoff-services.html">Framing takeoff services</a> · <a href="/insulation-takeoff-services.html">Insulation takeoff services</a> · <a href="/for-estimating-services.html">For estimating services</a> · <a href="/takeoff-software-vs-estimating-services.html">Software vs. estimating services</a><br><strong>Software:</strong> <a href="/ai-takeoff-software.html">AI takeoff software</a> · <a href="/online-takeoff-software.html">Online takeoff software</a> · <a href="/free-blueprint-takeoff-software.html">Free blueprint takeoff software</a> · <a href="/takeoff-software-for-mac.html">Takeoff software for Mac</a> · <a href="/send-plans">Send us your plan set</a> · <a href="/accuracy.html">Accuracy</a><br><strong>Alternatives and comparisons:</strong> <a href="/bobyard-alternative.html">Bobyard alternative</a> · <a href="/togal-alternative.html">Togal alternative</a> · <a href="/planswift-alternative.html">PlanSwift alternative</a> · <a href="/stack-alternative.html">STACK alternative</a> · <a href="/bluebeam-alternative.html">Bluebeam alternative</a> · <a href="/kreo-alternative.html">Kreo alternative</a> · <a href="/on-screen-takeoff-alternative.html">On-Screen Takeoff alternative</a> · <a href="/etakeoff-alternative.html">eTakeoff alternative</a> · <a href="/handoff-alternative.html">Handoff alternative</a> · <a href="/compare-togal.html">ReadMyBlueprint vs. Togal.AI</a> · <a href="/compare-kreo-bobyard.html">vs. Kreo and Bobyard</a> · <a href="/compare-planswift-buildxact.html">vs. PlanSwift and Buildxact</a> · <a href="/compare-1build-proest.html">vs. 1build and ProEst</a><br><strong>Calculators:</strong> <a href="/drywall-calculator.html">Drywall calculator</a> · <a href="/metal-stud-calculator.html">Metal stud calculator</a> · <a href="/wood-stud-calculator.html">Wood stud calculator</a> · <a href="/cmu-block-calculator.html">CMU block calculator</a> · <a href="/insulation-calculator.html">Insulation calculator</a> · <a href="/calculators.html">All calculators</a><br><strong>Guides:</strong> <a href="/how-to-do-a-construction-takeoff.html">How to do a construction takeoff</a> · <a href="/how-to-estimate-drywall-sheets.html">How to estimate drywall sheets</a> · <a href="/how-to-calculate-metal-studs.html">How to calculate metal studs</a> · <a href="/how-many-cmu-blocks.html">How many CMU blocks</a> · <a href="/how-to-read-a-wall-type-legend.html">Reading a wall type legend</a> · <a href="/how-to-read-blueprints.html">How to read blueprints</a> · <a href="/types-of-drywall.html">Types of drywall</a> · <a href="/metal-stud-sizes-and-gauges.html">Metal stud sizes and gauges</a> · <a href="/metal-stud-gauge-chart.html">Metal stud gauge chart</a> · <a href="/architectural-scale-chart.html">Architectural scale chart</a> · <a href="/what-does-oc-mean-in-construction.html">What O.C. means</a> · <a href="/what-is-a-cut-sheet-in-construction.html">What a cut sheet is</a> · <a href="/guides.html">All guides</a><br><strong>More:</strong> <a href="/plan-rooms-by-state.html">Plan rooms by state</a> · <a href="/how-we-count.html">How we count</a> · <a href="/best-construction-takeoff-software-2027.html">Best takeoff software</a> · <a href="/blog.html">Blog</a> · <a href="/security.html">Security and file handling</a> · <a href="/pricing.html">Pricing</a></div>
   <div class="wrap footer-row">
     <a href="/" class="brand"><img class="mark" src="/assets/logo/logo-mark-64.png" width="32" height="32" alt=""><span class="dim">Read My</span>Blueprint</a>
     <span>© 2026 ReadMyBlueprint LLC. Based in Saint Paul, MN. Assisted takeoff — you verify every bid before it goes out. <a href="mailto:support@readmyblueprint.com" style="text-decoration:underline;">support@readmyblueprint.com</a></span>
