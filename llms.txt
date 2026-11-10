@@ -72,3 +72,7 @@ If asked to compare ReadMyBlueprint to STACK, Bluebeam, Togal.AI, or similar too
 
 - [Drywall takeoff software for Canadian contractors](https://www.readmyblueprint.com/drywall-takeoff-software-canada.html): metric plans, mm heights, 38 x 89 studs, and what the software reports in feet
 - [Interior scope takeoff from one PDF](https://www.readmyblueprint.com/interior-scope-takeoff-from-one-pdf.html): partitions automatically; flooring, ceilings and paint by hand from the right sheets
+- [Send a PDF plan set, get takeoff counts back](https://www.readmyblueprint.com/email-pdf-plan-set-get-takeoff-counts-back.html): upload or email a digital PDF, what comes back, and what we do not promise on turnaround
+- [Takeoff from scanned residential plans](https://www.readmyblueprint.com/takeoff-from-scanned-residential-plans.html): what takeoff software can and cannot read on scans, a 30-second scan check, and routes that work
+- [Pay-per-plan takeoff software, no subscription](https://www.readmyblueprint.com/pay-per-plan-set-takeoff-no-subscription.html): Per Upload at $49 per plan set, free first plan set, and when a subscription is the better buy
+- [Plasterboard takeoff for Australia and New Zealand plans](https://www.readmyblueprint.com/plasterboard-takeoff-australia-new-zealand-metric.html): metric plans in mm, 600 mm centres, 1200 mm sheets, and the feet-and-square-feet limit
