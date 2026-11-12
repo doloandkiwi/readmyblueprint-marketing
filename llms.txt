@@ -1,6 +1,6 @@
 # ReadMyBlueprint
 
-> ReadMyBlueprint reads a digital (vector) construction plan set PDF and automatically measures material quantities — steel and wood framing, drywall, plywood, insulation, and CMU block — directly from the drawing's real geometry and printed scale. Every result carries a confidence label (matched, ambiguous, or needs confirmation) and nothing is ever presented as an exact measurement unless it was actually computed from real vector geometry and a calibrated scale. It does not guess from scanned or photographed pages, and it does not replace a licensed estimator's own verification of a bid.
+> ReadMyBlueprint reads a digital (vector) construction plan set PDF and automatically measures material quantities — steel and wood framing, drywall, plywood, insulation, and CMU block — directly from the drawing's real geometry and printed scale. Every result carries a confidence label (matched, ambiguous, or needs confirmation) and nothing is ever presented as an exact measurement unless it was actually computed from real vector geometry and a calibrated scale. It does not guess from scanned or photographed pages, and it does not replace a licensed estimator's own verification of a bid. Scanned plans are counted too: upload them or send them, and the counts come back the same way.
 
 ## What it is
 
@@ -10,7 +10,7 @@
 
 ## What it measures today
 
-Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete masonry unit) block — read from a real digital plan set's vector geometry, wall-type legend text, and printed scale. It does not currently detect electrical, plumbing, mechanical, painting, or roofing quantities. It does not support scanned or raster (image-only) PDFs — only real digital plan files exported from design software (AutoCAD, Revit, etc.).
+Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete masonry unit) block — read from a real digital plan set's vector geometry, wall-type legend text, and printed scale. It does not currently detect electrical, plumbing, mechanical, painting, or roofing quantities. It does not support scanned or raster (image-only) PDFs — only real digital plan files exported from design software (AutoCAD, Revit, etc.). Scanned plans are counted too: upload them or send them, and the counts come back the same way.
 
 ## Pricing
 
@@ -18,7 +18,7 @@ Flat, transparent, self-serve, no sales call required. A new account's first pla
 
 ## Done-for-you takeoff service
 
-Contractors who'd rather not run the software themselves can email the PDF plan set to support@readmyblueprint.com and get studs, track, drywall sheets, insulation and CMU counts per wall type back within 24 hours, checked against the drawings. The first plan set is free.
+Contractors who'd rather not run the software themselves can email the PDF plan set to support@readmyblueprint.com and get studs, track, drywall sheets, insulation and CMU counts per wall type back usually the same day, always within 24 hours, checked against the drawings. The first plan set is free.
 - Drywall takeoff services: https://www.readmyblueprint.com/drywall-takeoff-services
 - Framing takeoff services: https://www.readmyblueprint.com/framing-takeoff-services
 - Metal stud takeoff services: https://www.readmyblueprint.com/metal-stud-takeoff-services

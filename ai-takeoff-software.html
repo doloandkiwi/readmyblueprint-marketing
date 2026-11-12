@@ -64,7 +64,7 @@
    "name": "Does AI takeoff work on scanned plans?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing."
+    "text": "ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing. Scanned plans are counted too: upload them or send them, and the counts come back the same way."
    }
   }
  ]
@@ -282,7 +282,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
 <div class="wrap hero">
   <span class="eyebrow">● AI takeoff</span>
   <h1>AI takeoff software for drywall, framing and CMU</h1>
-  <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back, each number traced to the wall it came from and checked against the drawings by our team before you see it. It is priced per plan set with no subscription (<a href="/pricing.html">see pricing</a>), and your first plan set is free.</p>
+  <p class="lede"><strong>Short answer:</strong> AI takeoff software reads your PDF plan set and counts materials automatically. ReadMyBlueprint does this for wall trades: upload a CAD-exported PDF and get studs, track, drywall sheets, insulation and CMU block back, each number traced to the wall it came from and checked by three independent automated passes before you see it. It is priced per plan set with no subscription (<a href="/pricing.html">see pricing</a>), and your first plan set is free.</p>
   <p class="updated-line" style="font-size:13px;opacity:.7;margin:10px 0 0;">Updated November 2026</p>
   <div class="hero-ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;"><a href="/start-v2.html" class="btn btn-primary btn-lg">Try your first plan set free</a><a href="/tour" class="btn btn-ghost btn-lg">Take the 2-minute tour</a></div>
 </div>
@@ -341,7 +341,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
     </div>
     <div class="fit-grid">
       <div class="fit-card good"><h3>Shipped</h3><ul>
-<li><strong>Every result is checked before you see it (Oct 27).</strong> The software still does the counting pass, but customers now get the counts only after our team has checked the plan set sheet by sheet and published the checked takeoff. You get an email when it is ready.</li>
+<li><strong>Every result is checked before you see it (Oct 27).</strong> The software still does the counting pass, but customers now get the counts only after three independent automated passes have checked the plan set and the checked takeoff is published. You get an email when it is ready.</li>
 <li><strong>Tag keys and plan notes are read (Oct 14&ndash;16).</strong> The engine now reads tag-keyed wall legends and the "unless noted" default type in the plan notes. On a restroom renovation set it went from 0 LF to 142 LF typed by tag (by-eye count about 250&ndash;350 LF); on a wood-framed set, resolved walls went from 16.3% to 42.9% of 1,131 LF; on a college set it went from 47 LF to 629 LF (reference count 718 LF).</li>
 <li><strong>Fewer over-counts (Oct 16 and Oct 28).</strong> Existing buildings, structural sheets, glazing and storefront lines, and the same wall drawn twice are now set aside. On one high-school set the count went from 2,923 LF to 0 LF against a reference count of 8.5 LF of new wall.</li>
 <li><strong>Honest about unreadable sheets (Oct 28).</strong> When a sheet is scanned, uses outlined lettering, or has no scale, the result says so plainly instead of returning a low number.</li></ul></div>
@@ -385,7 +385,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);}
       <div class="fit-card"><h3>How does ReadMyBlueprint's AI takeoff work?</h3><p>It reads the vector geometry inside a CAD-exported PDF, measures every wall, and matches each wall to the plan's own wall-type legend. It then returns studs, track, drywall sheets, insulation and CMU block, with every quantity labeled matched, ambiguous or needs-confirmation.</p></div>
       <div class="fit-card"><h3>How much does AI takeoff software cost?</h3><p>As of September 2026, Togal.AI is sold as a per-user subscription billed yearly. ReadMyBlueprint is priced per plan set with no subscription required, with a monthly plan for regular volume, and your first plan set is free. Current prices are on the <a href="/pricing.html">pricing page</a>.</p></div>
       <div class="fit-card"><h3>Is AI takeoff accurate?</h3><p>It depends on the plan set. A good AI takeoff tool should show you which numbers it is sure of and which it guessed. ReadMyBlueprint never folds a guess into your total: anything it can't match to a spec on your drawings is flagged for you to confirm. On three public Missouri bid sets we tested on Oct 7, auto-match was close to 0%, so those results had to be finished by hand.</p></div>
-      <div class="fit-card"><h3>Does AI takeoff work on scanned plans?</h3><p>ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing.</p></div>
+      <div class="fit-card"><h3>Does AI takeoff work on scanned plans?</h3><p>ReadMyBlueprint does not. It needs vector PDFs exported from CAD or Revit. On a scanned page it tells you it can't measure it instead of guessing. Scanned plans are counted too: upload them or send them, and the counts come back the same way.</p></div>
     </div>
   </div>
 </section>
