@@ -1,6 +1,6 @@
 # ReadMyBlueprint
 
-> ReadMyBlueprint reads a digital (vector) construction plan set PDF and automatically measures material quantities — steel and wood framing, drywall, plywood, insulation, and CMU block — directly from the drawing's real geometry and printed scale. Every result carries a confidence label (matched, ambiguous, or needs confirmation) and nothing is ever presented as an exact measurement unless it was actually computed from real vector geometry and a calibrated scale. It does not guess from scanned or photographed pages, and it does not replace a licensed estimator's own verification of a bid. Scanned plans are counted too: upload them or send them, and the counts come back the same way.
+> ReadMyBlueprint reads a digital (vector) construction plan set PDF and automatically measures material quantities — steel and wood framing, drywall, plywood, insulation, and CMU block — directly from the drawing's real geometry and printed scale. Every result carries a confidence label (matched, ambiguous, or needs confirmation) and nothing is ever presented as an exact measurement unless it was actually computed from real vector geometry and a calibrated scale. It does not replace a licensed estimator's own verification of a bid. Scanned plans are counted too: upload them or send them, and the counts come back the same way.
 
 ## What it is
 
@@ -10,7 +10,7 @@
 
 ## What it measures today
 
-Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete masonry unit) block — read from a real digital plan set's vector geometry, wall-type legend text, and printed scale. It does not currently detect electrical, plumbing, mechanical, painting, or roofing quantities. It does not support scanned or raster (image-only) PDFs — only real digital plan files exported from design software (AutoCAD, Revit, etc.). Scanned plans are counted too: upload them or send them, and the counts come back the same way.
+Steel and wood stud framing, drywall, plywood, insulation, and CMU (concrete masonry unit) block — read from a real digital plan set's vector geometry, wall-type legend text, and printed scale. It does not currently detect electrical, plumbing, mechanical, painting, or roofing quantities. Scanned or photographed plans are supported: digital PDFs are measured instantly, and scanned plans are counted too, usually the same day and always within 24 hours.
 
 ## Pricing
 
