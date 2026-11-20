@@ -205,13 +205,13 @@
   <url><loc>https://www.readmyblueprint.com/architectural-scale-chart.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/guides.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/for-estimating-services.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://www.readmyblueprint.com/ai-takeoff-software.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://www.readmyblueprint.com/ai-takeoff-software.html</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/online-takeoff-software.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/etakeoff-alternative.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/bobyard-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.readmyblueprint.com/stack-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.readmyblueprint.com/togal-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.readmyblueprint.com/planswift-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.readmyblueprint.com/planswift-alternative.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.readmyblueprint.com/kreo-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.readmyblueprint.com/bluebeam-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.readmyblueprint.com/on-screen-takeoff-alternative.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
@@ -487,17 +487,17 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.readmyblueprint.com/free-drywall-takeoff-software.html</loc><lastmod>2026-11-12</lastmod>
+    <loc>https://www.readmyblueprint.com/free-drywall-takeoff-software.html</loc><lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.readmyblueprint.com/drywall-takeoff-software-for-small-contractors.html</loc><lastmod>2026-11-12</lastmod>
+    <loc>https://www.readmyblueprint.com/drywall-takeoff-software-for-small-contractors.html</loc><lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.readmyblueprint.com/drywall-takeoff-from-pdf-plans.html</loc><lastmod>2026-11-12</lastmod>
+    <loc>https://www.readmyblueprint.com/drywall-takeoff-from-pdf-plans.html</loc><lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -507,7 +507,7 @@
     <priority>0.7</priority>
   </url>
   <url><loc>https://www.readmyblueprint.com/best-drywall-takeoff-software.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://www.readmyblueprint.com/best-metal-stud-framing-takeoff-software.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://www.readmyblueprint.com/best-metal-stud-framing-takeoff-software.html</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/best-insulation-takeoff-software.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/how-to-estimate-drywall-for-a-commercial-job.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/how-many-metal-studs-for-a-room.html</loc><lastmod>2026-10-28</lastmod></url>
@@ -571,4 +571,6 @@
   <url><loc>https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-12x14-room.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-2-car-garage.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-1000-sq-ft-house.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://www.readmyblueprint.com/takeoff-software-for-scanned-pdf-plans.html</loc><lastmod>2026-11-20</lastmod></url>
+  <url><loc>https://www.readmyblueprint.com/free-takeoff-software-no-demo-no-card.html</loc><lastmod>2026-11-20</lastmod></url>
 </urlset>
