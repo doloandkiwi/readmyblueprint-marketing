@@ -17,6 +17,11 @@
       "permanent": false
     },
     {
+      "source": "/join",
+      "destination": "https://app.readmyblueprint.com/?signup=1&utm_source=cold_email&utm_medium=email&utm_campaign=outreach_join",
+      "permanent": false
+    },
+    {
       "source": "/go/tour",
       "destination": "/tour?utm_source=cold_email&utm_medium=email&utm_campaign=outreach_go&utm_content=tour",
       "permanent": false
