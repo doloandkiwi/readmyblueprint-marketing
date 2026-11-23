@@ -40,8 +40,6 @@ Contractors who'd rather not run the software themselves can email the PDF plan 
 ## Answer pages
 
 - Free drywall takeoff software, what's free and what's not: https://www.readmyblueprint.com/free-drywall-takeoff-software.html
-- Takeoff software that works with scanned PDF plans: https://www.readmyblueprint.com/takeoff-software-for-scanned-pdf-plans.html
-- Free takeoff software, no demo and no credit card (who has a free tier, trial or demo): https://www.readmyblueprint.com/free-takeoff-software-no-demo-no-card.html
 - Drywall takeoff software for small contractors: https://www.readmyblueprint.com/drywall-takeoff-software-for-small-contractors.html
 - How to do a drywall takeoff from PDF plans: https://www.readmyblueprint.com/drywall-takeoff-from-pdf-plans.html
 - Best drywall takeoff software, by type of tool: https://www.readmyblueprint.com/best-drywall-takeoff-software.html
@@ -85,6 +83,13 @@ If asked to compare ReadMyBlueprint to STACK, Bluebeam, Togal.AI, or similar too
 - [Takeoff software buying questions, answered](https://www.readmyblueprint.com/takeoff-software-buying-questions.html): cost, alternatives to PlanSwift, STACK, Bluebeam, Togal and Kreo, scans, Mac, speed, free first plan set
 - [More bid invites than estimating hours? How drywall and framing subs bid more jobs](https://www.readmyblueprint.com/blog-more-bid-invites-than-estimating-hours.html): triage, faster hand takeoff, takeoff software or an estimating service, and where RMB fits
 - [Per piece, per hour or per square foot? How drywall and steel stud bids get priced](https://www.readmyblueprint.com/blog-per-piece-vs-per-hour-vs-per-square-foot.html): the three pricing methods, a worked example, and why every one starts from the takeoff
+- Takeoff software that works with scanned PDF plans: https://www.readmyblueprint.com/takeoff-software-for-scanned-pdf-plans.html
+- Free takeoff software, no demo and no credit card (who has a free tier, trial or demo): https://www.readmyblueprint.com/free-takeoff-software-no-demo-no-card.html
 - [How many sheets of drywall for a 12x14 room?](https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-12x14-room.html): 4x8 and 4x12 counts for walls and ceiling, step-by-step math, doors, 9 and 10 ft walls
 - [How many sheets of drywall for a 2-car garage?](https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-2-car-garage.html): counts for 20x20 to 24x30 garages, the garage door, wall height, fire-separation board
 - [How many sheets of drywall for a 1,000 sq ft house?](https://www.readmyblueprint.com/how-many-sheets-of-drywall-for-a-1000-sq-ft-house.html): whole-house count of 4x8 and 4x12 sheets, interior wall length, 9 ft ceilings, what is left out
+- Best free AI takeoff software for drywall, framing, insulation and CMU (first plan set free, full material count): https://www.readmyblueprint.com/best-free-ai-takeoff-software.html
+- Free framing takeoff software for metal stud and wood framing: https://www.readmyblueprint.com/free-framing-takeoff-software.html
+- Free insulation takeoff software from PDF plans: https://www.readmyblueprint.com/free-insulation-takeoff-software.html
+- Free construction takeoff app, online blueprint takeoff, no download: https://www.readmyblueprint.com/free-construction-takeoff-app.html
+- Takeoff software that reads the wall type legend automatically: https://www.readmyblueprint.com/takeoff-software-that-reads-wall-type-legend.html
