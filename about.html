@@ -13,7 +13,7 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": ["WebPage", "AboutPage"],
       "@id": "https://www.readmyblueprint.com/about.html",
       "url": "https://www.readmyblueprint.com/about.html",
       "name": "About ReadMyBlueprint",
@@ -24,11 +24,23 @@
         "name": "ReadMyBlueprint",
         "url": "https://www.readmyblueprint.com/"
       },
+      "about": { "@id": "https://www.readmyblueprint.com/#organization" },
+      "mainEntity": { "@id": "https://www.readmyblueprint.com/#organization" },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://www.readmyblueprint.com/#organization",
         "name": "ReadMyBlueprint",
+        "legalName": "ReadMyBlueprint LLC",
         "url": "https://www.readmyblueprint.com/",
-        "logo": "https://www.readmyblueprint.com/og-image.svg"
+        "logo": "https://www.readmyblueprint.com/og-image.svg",
+        "email": "support@readmyblueprint.com",
+        "slogan": "Never present an estimate as an exact measurement.",
+        "knowsAbout": ["construction takeoff", "drywall takeoff", "metal stud framing takeoff", "wood framing takeoff", "insulation takeoff", "CMU block takeoff", "wall-type legend reading"],
+        "sameAs": [
+          "https://x.com/readmyblueprint",
+          "https://www.g2.com/products/read-my-blue-print/reviews",
+          "https://toolradar.com/tools/readmyblueprint"
+        ]
       }
     },
     {

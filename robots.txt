@@ -1,4 +1,19 @@
+# AI search and assistant crawlers are welcome. /p/ holds private preview links and stays blocked for everyone.
 User-agent: *
+Allow: /
+Disallow: /p/
+
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
 Allow: /
 Disallow: /p/
 
