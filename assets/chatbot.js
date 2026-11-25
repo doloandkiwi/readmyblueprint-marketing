@@ -3,7 +3,7 @@
 
   var TREE = {
     root: {
-      bot: "Hey — I can help point you in the right direction. What are you trying to do?",
+      bot: "Hi. I can point you in the right direction. What are you trying to do?",
       options: [
         { label: "See if my trade is covered", next: "trade" },
         { label: "Understand pricing", next: "pricing" },
@@ -21,39 +21,39 @@
       ]
     },
     trade_covered: {
-      bot: function(data){ return "Good news — ReadMyBlueprint auto-detects " + data.name + " directly from the drawing, with quantities traced back to the real geometry, not a guess."; },
+      bot: function(data){ return "Good news: ReadMyBlueprint counts " + data.name + " from your plan set, with quantities traced back to the drawing. Checked counts come back within 24 hours, usually the same day."; },
       options: [
         { label: "See how that works", href: function(data){ return data.page; } },
-        { label: "Try it — $15 for my first plan set", href: "https://app.readmyblueprint.com" },
+        { label: "Try it: first plan set free", href: "https://app.readmyblueprint.com/?signup=1&utm_source=chatbot" },
         { label: "← Back to menu", next: "root" }
       ]
     },
     trade_not_covered: {
-      bot: "Being straight with you: we don't auto-detect that yet. Today it's steel & wood framing, drywall, plywood, insulation, and CMU block — that's the real ceiling right now, not a \"coming soon.\" If those five make up most of your plan set, the rest is just something you'd still count by hand.",
+      bot: "Being straight with you: we don't auto-detect that yet. Today it's steel & wood framing, drywall, plywood, insulation, and CMU block. That's the real ceiling right now, not a \"coming soon.\" If those five make up most of your plan set, the rest is just something you'd still count by hand.",
       options: [
         { label: "See exactly what's covered", href: "/compare.html" },
         { label: "← Back to menu", next: "root" }
       ]
     },
     pricing: {
-      bot: "It's flat, not per-seat: your first plan set is $15, no subscription required. If you're running more than a few a month, Solo Estimator is $199/mo for 10 plan sets. No sales call, no quote request either way.",
+      bot: "It's flat, not per-seat. Your first plan set is free, no card needed. After that it's $49 per plan set with no subscription, or Solo Estimator at $199/mo if you run more than a few a month. No sales call, no quote request either way.",
       options: [
-        { label: "See full pricing", href: "/#pricing" },
+        { label: "See full pricing", href: "/pricing.html" },
         { label: "← Back to menu", next: "root" }
       ]
     },
     ready: {
-      bot: "You can upload it right now — there's no sales call in the way. If you'd rather see it work on someone else's plan set first, the interactive tour walks through the exact same screens.",
+      bot: "You can upload it right now, with no sales call in the way, and your first plan set is free. If you'd rather see it work on someone else's plan set first, the tour walks through the same screens.",
       options: [
-        { label: "Get started — $15", href: "https://app.readmyblueprint.com" },
+        { label: "Upload my plan set free", href: "https://app.readmyblueprint.com/?signup=1&utm_source=chatbot" },
         { label: "Take the interactive tour first", href: "/tour.html" },
         { label: "← Back to menu", next: "root" }
       ]
     },
     human: {
-      bot: "Sure thing — we keep support simple. A real person (not a bot) reads every message here.",
+      bot: "Sure. Email support@readmyblueprint.com and we'll get back to you, usually the same day.",
       options: [
-        { label: "Email support@readmyblueprint.com", href: "mailto:support@readmyblueprint.com" },
+        { label: "Contact us", href: "/contact.html" },
         { label: "← Back to menu", next: "root" }
       ]
     }
@@ -92,7 +92,7 @@
   panel.innerHTML =
     '<div id="rmb-chat-head"><div><strong>ReadMyBlueprint</strong><span>Usually answers in a few clicks</span></div><button id="rmb-chat-close" aria-label="Close chat">✕</button></div>' +
     '<div id="rmb-chat-body"></div>' +
-    '<div id="rmb-chat-foot">Scripted answers, not AI — for anything else, email support@readmyblueprint.com</div>';
+    '<div id="rmb-chat-foot">Scripted answers, not AI. For anything else, email support@readmyblueprint.com</div>';
 
   document.body.appendChild(btn);
   document.body.appendChild(panel);
