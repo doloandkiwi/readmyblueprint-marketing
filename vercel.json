@@ -1,6 +1,36 @@
 {
   "redirects": [
     {
+      "source": "/best-drywall-takeoff-software-2027",
+      "destination": "/best-drywall-takeoff-software",
+      "permanent": true
+    },
+    {
+      "source": "/best-drywall-takeoff-software-2027.html",
+      "destination": "/best-drywall-takeoff-software",
+      "permanent": true
+    },
+    {
+      "source": "/togal-vs-stack-2027",
+      "destination": "/togal-vs-stack-for-drywall",
+      "permanent": true
+    },
+    {
+      "source": "/togal-vs-stack-2027.html",
+      "destination": "/togal-vs-stack-for-drywall",
+      "permanent": true
+    },
+    {
+      "source": "/takeoff-software-that-reads-wall-types",
+      "destination": "/takeoff-software-that-reads-wall-type-legend",
+      "permanent": true
+    },
+    {
+      "source": "/takeoff-software-that-reads-wall-types.html",
+      "destination": "/takeoff-software-that-reads-wall-type-legend",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
