@@ -1,0 +1,21 @@
+Section,Item,Quantity,Unit,Waste %,Qty with waste,Unit cost (yours),Extended,Notes
+Framing,"Metal stud 3-5/8 in., 20 ga",0,ea,10,"=ROUNDUP(C2*(1+E2/100),0)",,"=IF(G2="""","""",F2*G2)",Studs per wall type from the takeoff sheet
+Framing,Metal track 3-5/8 in. (top + bottom),0,10 ft stick,10,"=ROUNDUP(C3*(1+E3/100),0)",,"=IF(G3="""","""",F3*G3)",2 x wall length
+Framing,Wood stud 2x4 (if wood framing),0,ea,10,"=ROUNDUP(C4*(1+E4/100),0)",,"=IF(G4="""","""",F4*G4)",Add corners and openings
+Framing,Wood plates 2x4 (if wood framing),0,LF,10,"=ROUNDUP(C5*(1+E5/100),0)",,"=IF(G5="""","""",F5*G5)",
+Framing,Blocking / backing for fixtures,0,LF,5,"=ROUNDUP(C6*(1+E6/100),0)",,"=IF(G6="""","""",F6*G6)",Check the elevations and finish schedule
+Board,"5/8 in. Type X gypsum, 4x8",0,sheet,10,"=ROUNDUP(C7*(1+E7/100),0)",,"=IF(G7="""","""",F7*G7)",Fire-rated walls
+Board,"1/2 in. gypsum, 4x8",0,sheet,10,"=ROUNDUP(C8*(1+E8/100),0)",,"=IF(G8="""","""",F8*G8)",Standard partitions
+Board,Moisture-resistant board,0,sheet,10,"=ROUNDUP(C9*(1+E9/100),0)",,"=IF(G9="""","""",F9*G9)",Wet areas
+Board,Ceiling board,0,sheet,12,"=ROUNDUP(C10*(1+E10/100),0)",,"=IF(G10="""","""",F10*G10)",More waste on small rooms
+Insulation,Batt insulation (sound or thermal),0,bag,5,"=ROUNDUP(C11*(1+E11/100),0)",,"=IF(G11="""","""",F11*G11)",Coverage per bag is on the label
+Finishing,Joint compound,0,pail,0,"=ROUNDUP(C12*(1+E12/100),0)",,"=IF(G12="""","""",F12*G12)",Match the finish level in the specs
+Finishing,Joint tape,0,roll,0,"=ROUNDUP(C13*(1+E13/100),0)",,"=IF(G13="""","""",F13*G13)",
+Finishing,Corner bead and trim,0,LF,5,"=ROUNDUP(C14*(1+E14/100),0)",,"=IF(G14="""","""",F14*G14)",
+Fasteners,Drywall screws,0,box,0,"=ROUNDUP(C15*(1+E15/100),0)",,"=IF(G15="""","""",F15*G15)",
+Fasteners,Stud / track screws,0,box,0,"=ROUNDUP(C16*(1+E16/100),0)",,"=IF(G16="""","""",F16*G16)",
+Accessories,Acoustic sealant,0,tube,0,"=ROUNDUP(C17*(1+E17/100),0)",,"=IF(G17="""","""",F17*G17)",
+Labor,Hang,0,sq ft,0,"=ROUNDUP(C18*(1+E18/100),0)",,"=IF(G18="""","""",F18*G18)",Your own labor rate
+Labor,Frame,0,LF,0,"=ROUNDUP(C19*(1+E19/100),0)",,"=IF(G19="""","""",F19*G19)",Your own labor rate
+Labor,Tape and finish,0,sq ft,0,"=ROUNDUP(C20*(1+E20/100),0)",,"=IF(G20="""","""",F20*G20)",Your own labor rate
+Other,Lift / equipment / dumpster,0,lot,0,"=ROUNDUP(C21*(1+E21/100),0)",,"=IF(G21="""","""",F21*G21)",

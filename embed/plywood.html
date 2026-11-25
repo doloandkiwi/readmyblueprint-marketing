@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plywood sheet calculator | ReadMyBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Embeddable plywood sheet calculator from ReadMyBlueprint.">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.4;color:#14233a;background:#fff;padding:14px}
+h1{font-size:1.05rem;margin:0 0 12px;color:#0d2b4e}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:flex;flex-direction:column;font-size:.82rem;font-weight:600;gap:4px}
+input,select{font:inherit;font-weight:400;padding:8px 10px;border:1px solid #c6d2e2;border-radius:8px;background:#fff;color:#14233a;width:100%}
+input:focus,select:focus{outline:2px solid #2f6fd0;outline-offset:1px}
+small{font-weight:400;color:#5b6b82;font-size:.74rem}
+.o{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.o div{background:#eaf1fb;border-radius:10px;padding:10px 12px}
+.o b{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.3rem;color:#0d2b4e}
+.o span{font-size:.78rem;color:#5b6b82}
+.n{margin:12px 0 0;font-size:.78rem;color:#5b6b82}
+.p{margin:12px 0 0;padding-top:10px;border-top:1px solid #e1e8f2;font-size:.78rem;color:#5b6b82;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between}
+.p a{color:#1d58b5;font-weight:600;text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Plywood sheet calculator</h1>
+<div class="g">
+<label>Gross area (sq ft)<input type="number" id="area" value="1200" min="0" step="any" inputmode="decimal"><small>wall, roof or floor area to cover</small></label>
+<label>Openings to subtract (sq ft)<input type="number" id="open" value="100" min="0" step="any" inputmode="decimal"><small>windows, doors, skylights</small></label>
+<label>Waste allowance (%)<input type="number" id="waste" value="10" min="0" step="any" inputmode="decimal"></label>
+<label>Sheet size<select id="size"><option value="32" selected>4 x 8 ft (32 sq ft)</option><option value="36">4 x 9 ft (36 sq ft)</option><option value="40">4 x 10 ft (40 sq ft)</option></select></label>
+</div>
+<div class="o" id="out" aria-live="polite"></div>
+<p class="n">Net area = gross area minus openings. Sheets = net area x (1 + waste %) / sheet area, rounded up.</p>
+<div class="p"><span>Counting a whole plan set? <a href="https://www.readmyblueprint.com/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=plywood" target="_blank" rel="noopener">Upload your plan, first plan set free, no card needed</a></span><span>Powered by <a href="https://www.readmyblueprint.com/?utm_source=embed&amp;utm_medium=widget&amp;utm_campaign=plywood" target="_blank" rel="noopener">ReadMyBlueprint</a></span></div>
+<script>
+(function(){
+  const ids=["area", "open", "waste", "size"];
+  const get=()=>Object.fromEntries(ids.map(k=>[k,Math.max(0,parseFloat(document.getElementById(k).value)||0)]));
+  function resize(){try{parent.postMessage({rmbEmbedHeight:document.documentElement.scrollHeight},"*")}catch(e){}}
+  function calc(){
+    const v=get();
+    const net=Math.max(0,v.area-v.open), withWaste=net*(1+v.waste/100);
+    const sheets=v.size>0?Math.ceil(withWaste/v.size-1e-9):0;
+    const rows=[["Net area (sq ft)",Math.round(net*10)/10],["Area with waste (sq ft)",Math.round(withWaste*10)/10],["Sheets (estimate)",sheets]];
+    document.getElementById("out").innerHTML=rows.map(([l,x])=>`<div><b>${x.toLocaleString()}</b><span>${l}</span></div>`).join("");
+    resize();
+  }
+  ids.forEach(k=>document.getElementById(k).addEventListener("input",calc));
+  window.addEventListener("resize",resize);
+  calc();
+})();
+</script>
+</body>
+</html>
